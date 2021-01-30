@@ -1,0 +1,581 @@
+@import "./variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap");
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Raleway", "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: $themecolorBlue;
+  height: 100%;
+  font-family: "Quicksand";
+}
+#root {
+  height: 100%;
+  //position: relative !important;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+//reset
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+iframe {
+  border: none;
+  box-shadow: $themeBoxShadow;
+}
+
+//typgrafi
+h1 {
+  color: #fff;
+  // color: $themecolorBlueNewRed;
+  @media all and (max-width: $xs-max) {
+    font-size: 2em;
+  }
+}
+p {
+  font-size: 0.95rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  // font-weight: 300;
+  //font-weight: 500;
+}
+
+//buttons
+.button {
+  box-shadow: $themeBoxShadow;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.8em;
+  border: none;
+  transition: 1s;
+  text-transform: uppercase;
+  padding: 12px 18px;
+  border-radius: $themeBorderRadius;
+  -webkit-border-radius: $themeBorderRadius;
+  -moz-border-radius: $themeBorderRadius;
+  -ms-border-radius: $themeBorderRadius;
+  -o-border-radius: $themeBorderRadius;
+
+  &:hover {
+    //opacity: 0.9;
+  }
+
+  @media all and (min-width: $sm-min) {
+    font-size: 0.9em;
+  }
+}
+
+.btn-submit {
+  background-color: $themecolorGreen;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+.orange-btn {
+  background: $themecolorOrange;
+  color: #fff;
+}
+
+.green-btn {
+  background: $themecolorGreen;
+  margin-right: 1rem;
+}
+
+.yellow-btn {
+  background: $themecolorYellow;
+  margin-right: 1rem;
+}
+
+.red-btn {
+  background: $themecolorRed;
+}
+
+.turquoise-btn {
+  background: $themecolorTurquoise;
+  margin-right: 1rem;
+}
+
+.pink-btn {
+  background: $themecolorPink;
+  margin-right: 1rem;
+}
+
+//header
+.site-header-section {
+  display: none;
+  padding: 1.3rem calc(3.75rem - 15px);
+
+  .text-black {
+    color: $themecolor;
+  }
+
+  @media all and (min-width: $lg-min) {
+    display: block;
+    width: 75%;
+    margin-left: 25%;
+  }
+
+  @media all and (min-width: $xl-min) {
+    width: 80%;
+    margin-left: 20%;
+  }
+
+  img {
+    max-width: 130px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+//nav
+.navigation {
+  .nav {
+    width: 100%;
+    display: flex;
+    padding: 2rem calc(1.5rem - 15px);
+
+    @media all and (min-width: $sm-min) {
+      padding: 2rem calc(2.25rem - 15px);
+    }
+    @media all and (min-width: $md-min) {
+      padding: 2rem calc(3rem - 15px);
+    }
+
+    .col {
+      display: flex;
+      align-items: center;
+    }
+    ul.links {
+      display: none;
+    }
+    h2 {
+      margin-bottom: 0;
+      margin-left: 1rem;
+      color: $themecolor;
+      font-size: 2.2rem;
+      a {
+        text-decoration: none;
+        color: $themecolor;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    @media all and (min-width: $lg-min) {
+      padding: 2rem calc(1.75rem - 15px) 1rem calc(3.75rem - 15px);
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 25%;
+      position: fixed;
+      height: 100%;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      background: $themecolorDarkGrey;
+
+      .col {
+        display: block;
+      }
+      h2 {
+        margin-left: 0;
+        color: $themecolorBlue;
+        color: $themecolorBlueNewPink;
+        font-size: 2.2rem;
+        padding-bottom: 0.2rem;
+        a {
+          color: $themecolorBlue;
+          color: $themecolorBlueNewPink;
+        }
+      }
+
+      ul.links {
+        display: block;
+        margin-top: 0;
+        li {
+          display: block;
+          font-size: 0.85rem;
+          margin: 2px 0;
+          color: #fff;
+          font-weight: 300;
+          a {
+            color: #fff;
+
+            &:hover {
+              text-decoration: none;
+              color: #75bff0;
+            }
+          }
+
+          ul.sub-list {
+            li {
+              font-size: 0.85rem;
+              margin: 1px 14px;
+
+              a {
+                color: $linkColor;
+                font-weight: 300;
+
+                &:hover {
+                  text-decoration: none;
+                  color: #75bff0;
+                }
+
+                &:active {
+                  //when click
+                  color: #75bff0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    @media all and (min-width: $xl-min) {
+      width: 20%;
+      padding: 2rem calc(1.75rem - 15px) 2rem calc(3.75rem - 15px);
+    }
+  }
+}
+
+//blog
+.blog-section {
+  .post {
+    overflow: hidden;
+    padding-left: 80px;
+    margin-bottom: 2rem;
+
+    img {
+      position: absolute;
+      top: 20px;
+      left: -100px;
+      opacity: 0.6;
+    }
+  }
+}
+
+//sidebar
+.sidebar-section {
+  font-size: 0.95em;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  min-height: 150px;
+  // border: 1px solid #333;
+  background: $themecolorLightgrey;
+  color: $themecolor;
+  padding: 1.5rem 2rem;
+  border-radius: $themeBorderRadius;
+  box-shadow: $themeBoxShadow;
+  @media all and (min-width: $md-min) {
+    margin-top: 0;
+  }
+  h4 {
+    margin-bottom: 0.8rem;
+    color: $themecolorBlue;
+  }
+  p {
+    font-size: 1em;
+    line-height: 1.7;
+    white-space: pre-line;
+  }
+}
+
+//home tec
+.textComp-section {
+  h1 {
+    margin-bottom: 2rem;
+  }
+
+  .card {
+    min-height: 150px;
+    padding: 0 0.75rem;
+
+    @media all and (min-width: $xl-min) {
+      padding: 0.5rem 1rem;
+    }
+  }
+  ul.advantages-list {
+    list-style: circle;
+    padding: 1rem 0 0 1rem;
+    li {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+//content
+.content-section {
+  width: 100%;
+  min-height: 800px;
+  padding: 0 calc(1.5rem - 15px) 5rem calc(1.5rem - 15px);
+  @media all and (min-width: $sm-min) {
+    padding: 0 calc(2.25rem - 15px) 5rem calc(2.25rem - 15px);
+  }
+  @media all and (min-width: $md-min) {
+    padding: 0 calc(3rem - 15px) 5rem calc(3rem - 15px);
+  }
+  @media all and (min-width: $lg-min) {
+    width: 75%;
+    margin-left: 25%;
+  }
+  @media all and (min-width: $xl-min) {
+    width: 80%;
+    margin-left: 20%;
+    padding: 0 calc(3.75rem - 15px) 5rem calc(3.75rem - 15px);
+  }
+  //comp_intro
+  header.comp_intro {
+    margin-bottom: 2rem;
+    color: #fff;
+    p {
+      font-size: 1.1em;
+      white-space: pre-line;
+    }
+  }
+  article.comp_test_info {
+    font-size: 0.95em;
+    margin-bottom: 2rem;
+    min-height: 150px;
+    background: #fff;
+    background: #cce5ff;
+    color: $themecolor;
+    padding: 1.5rem 2rem;
+    border-radius: $themeBorderRadius;
+    box-shadow: $themeBoxShadow;
+
+    margin-top: 4rem;
+    h4 {
+      color: $themecolorBlueNewRed;
+      color: $themecolorDarkBlue;
+    }
+    p {
+      white-space: pre-line;
+    }
+  }
+  .loading,
+  .error {
+    color: #fff;
+  }
+}
+
+//card
+.card {
+  border-radius: 3px;
+}
+.card-title {
+  font-weight: 300;
+}
+
+//conditional and strings
+.btn-and-message {
+  height: 50px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.message {
+  min-height: 3rem;
+  float: right;
+  opacity: 0;
+  transition: 1s;
+
+  h4 {
+    font-size: 2.2em;
+    font-weight: 300;
+    color: $themecolorPink;
+
+    @media all and(max-width: 380px) {
+      font-size: 1.7em;
+    }
+
+    @media all and (min-width: $sm-min) {
+      font-size: 2.2em;
+    }
+
+    @media all and (min-width: $xl-min) {
+      font-size: 3em;
+    }
+  }
+
+  p {
+    color: #fff;
+    font-weight: 300;
+    //font-size: 1.3em;
+  }
+}
+
+.message.show {
+  opacity: 1;
+}
+
+.btn-and-message.higher {
+  height: 140px;
+  padding: 0.5rem 0;
+}
+
+//footer
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: $themecolorDarkBlue;
+  color: #fff;
+  width: 100%;
+  min-height: 10rem;
+  padding: 2rem calc(1.5rem - 15px) 1rem calc(1.5rem - 15px);
+  @media all and (min-width: $sm-min) {
+    padding: 2rem calc(2.25rem - 15px) 1rem calc(2.25rem - 15px);
+  }
+  @media all and (min-width: $md-min) {
+    padding: 2rem calc(3rem - 15px) 1rem calc(3rem - 15px);
+  }
+  @media all and (min-width: $lg-min) {
+    width: 75%;
+    margin-left: 25%;
+  }
+  @media all and (min-width: $xl-min) {
+    width: 80%;
+    margin-left: 20%;
+    padding: 2rem calc(3.75rem - 15px) 1rem calc(3.75rem - 15px);
+  }
+  .udemy {
+    a {
+      color: #020c70;
+      color: #fff;
+      font-weight: 500;
+      font-size: 1.1rem;
+      display: inline-block;
+      position: relative;
+      &::before {
+        opacity: 0.4;
+        position: absolute;
+        bottom: -3px;
+        left: 1px;
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: #020c70;
+        background: #fff;
+        -webkit-transition: width 0.2s ease-in;
+        transition: width 0.2s ease-in;
+      }
+      &::after {
+        content: "\f061";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        margin-left: 10px;
+      }
+      &:hover {
+        text-decoration: none;
+        filter: brightness(80%);
+      }
+    }
+  }
+  .copy {
+    font-size: 0.8rem;
+    color: #020c70;
+    color: #fff;
+  }
+  ul.social_icons_list {
+    display: flex;
+    justify-content: flex-end;
+    li.social {
+      a {
+        text-decoration: none;
+        font-size: 0;
+        display: inline-block;
+        margin-right: 2rem;
+        &:after {
+          font-weight: 900;
+          font-size: 1.2rem;
+          color: #020c70;
+          color: #fff;
+          text-align: center;
+          border-radius: 50%;
+          transition: 1s;
+        }
+        &:hover {
+          filter: brightness(80%);
+        }
+        &.mail {
+          &:after {
+            font-family: "Font Awesome 5 Free";
+            content: "\f0e0";
+          }
+        }
+        &.fb {
+          &:after {
+            font-family: "Font Awesome 5 Brands";
+            content: "\f082";
+          }
+        }
+        &.linkedin {
+          &:after {
+            font-family: "Font Awesome 5 Brands";
+            content: "\f08c";
+          }
+        }
+        &.twitter {
+          &:after {
+            font-family: "Font Awesome 5 Brands";
+            content: "\f081";
+          }
+        }
+      }
+    }
+  }
+}
+//buttons
+.delBtn {
+  color: $themecolorBlueNewRed;
+  transition: 0.5s all ease;
+  cursor: pointer;
+  &:hover {
+    filter: brightness(80%);
+  }
+}
+.addBtn {
+  background: $themecolorGreen;
+  color: #fff;
+  padding: 2px 10px;
+  transition: 0.5s all ease;
+  border: none;
+  border-radius: $themeBorderRadius;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  &:hover {
+    filter: brightness(80%);
+  }
+  &.adding {
+    opacity: 0.5;
+  }
+}

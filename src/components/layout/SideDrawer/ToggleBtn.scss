@@ -1,0 +1,28 @@
+@import "../../../variables.scss";
+
+.toggle-btn {
+  height: 30px;
+  width: 28px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0;
+  box-sizing: border-box; //so the lines stay inside btn
+
+  &:focus {
+    outline: none; //when clicking-no outline
+  }
+
+  .toggle-btn-line {
+    width: 30px;
+    height: 2px;
+    background: #fff;
+  }
+
+  @media all and (min-width: $lg-min) {
+    display: none;
+  }
+}

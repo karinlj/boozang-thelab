@@ -1,0 +1,46 @@
+@import "../../variables.scss";
+
+//TodoList
+.collection-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  line-height: 1.5rem;
+  padding: 15px 20px;
+  margin: 0;
+  border-bottom: 1px solid $themeBorderColor;
+  color: $themecolor;
+
+  &:first-of-type {
+    border-radius: $themeBorderRadius $themeBorderRadius 0 0;
+  }
+  &:last-of-type {
+    border-radius: 0 0 $themeBorderRadius $themeBorderRadius;
+  }
+}
+//AddTodo
+.add-todo-form {
+  border-radius: 0.25rem;
+  background-color: #fff;
+  line-height: 1.5rem;
+  padding: 10px 20px;
+  margin: 0;
+  border-bottom: 1px solid $themeBorderColor;
+  color: $themecolor;
+  margin-top: 2rem;
+  label {
+    color: $themecolor;
+    font-weight: 600;
+    font-size: 90%;
+    margin-bottom: 0.3rem;
+  }
+  input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $themeBorderColor;
+  }
+  .addTodo {
+    padding-top: 1rem;
+  }
+}
