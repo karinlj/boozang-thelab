@@ -1,24 +1,27 @@
 @import "../../variables.scss";
 
 //TodoList
-.collection-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #fff;
-  line-height: 1.5rem;
-  padding: 15px 20px;
-  margin: 0;
-  border-bottom: 1px solid $themeBorderColor;
-  color: $themecolor;
+.collection {
+  .collection-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    line-height: 1.5rem;
+    padding: 15px 20px;
+    margin: 0;
+    border-bottom: 1px solid $themeBorderColor;
+    color: $themecolor;
 
-  &:first-of-type {
-    border-radius: $themeBorderRadius $themeBorderRadius 0 0;
-  }
-  &:last-of-type {
-    border-radius: 0 0 $themeBorderRadius $themeBorderRadius;
+    &:first-of-type {
+      border-radius: $themeBorderRadius $themeBorderRadius 0 0;
+    }
+    &:last-of-type {
+      border-radius: 0 0 $themeBorderRadius $themeBorderRadius;
+    }
   }
 }
+
 //AddTodo
 .add-todo-form {
   border-radius: 0.25rem;

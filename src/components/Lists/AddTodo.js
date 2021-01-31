@@ -11,7 +11,7 @@ const AddTodo = ({ addTodo }) => {
     const todo = { title: title };
     setIsLoading(true);
     setTimeout(() => {
-      fetch("http://localhost:8000/todos/", {
+      fetch("http://localhost:9000/todos/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         //what I post as json-format

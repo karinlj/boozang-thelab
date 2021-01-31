@@ -15,7 +15,7 @@ const SortedList = () => {
   // Fetch Tasks
   const fetchTodos = async () => {
     //fetch() returns promise
-    const res = await fetch("http://localhost:8000/todos");
+    const res = await fetch("http://localhost:9000/todos");
     //res.json(); returns promise
     const data = await res.json();
     return data;
@@ -89,7 +89,7 @@ const SortedList = () => {
           <SortedListIntro />
           {error && <div className="error">{error}</div>}
           {isLoading && <div className="loading">Loading...</div>}
-          {todos && <TodoList TodoList={todos} handleDelete={handleDelete} />}
+          {todos && <TodoList todos={todos} handleDelete={handleDelete} />}
           <AddTodo addTodo={addTodo} />
         </div>
         <SortedListTestInfo />

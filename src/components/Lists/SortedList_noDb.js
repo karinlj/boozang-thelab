@@ -18,7 +18,7 @@ const SortedList = () => {
     //title= argument in addTodo() from AddTodo component
     const newTodo = {
       title: title,
-      id: Math.random(),
+      id: Math.floor(Math.random() * 10000) + 1,
     };
     setTodos([...todos, newTodo]);
   };
