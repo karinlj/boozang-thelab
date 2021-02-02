@@ -379,9 +379,17 @@ h5 {
       white-space: pre-line;
     }
   }
-  .loading,
-  .error {
+  .loading {
     color: #fff;
+  }
+  .error {
+    color: darkred;
+  }
+  .video_secttion {
+    > div {
+      float: right;
+      padding-bottom: 1rem;
+    }
   }
 }
 

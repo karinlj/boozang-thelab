@@ -11,7 +11,7 @@ import Home from "./components/Home";
 import Intro from "./components/Intro";
 import Overview from "./components/Overview";
 import SortedList from "./components/Lists/SortedList";
-//import UnsortedList from "./components/Lists/UnsortedList";
+import UnsortedList from "./components/Lists/UnsortedList";
 
 function App() {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
@@ -54,9 +54,9 @@ function App() {
               <Route path="/SortedList">
                 <SortedList />
               </Route>
-              {/* <Route path="/UnsortedList">
+              <Route path="/UnsortedList">
                 <UnsortedList />
-              </Route> */}
+              </Route>
             </Switch>
           </div>
         </div>

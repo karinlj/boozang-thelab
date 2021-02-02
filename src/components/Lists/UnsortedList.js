@@ -1,105 +1,108 @@
-import React from "react";
-import SortedList from "./SortedList";
-import TodoList from "./TodoList";
-import AddItem from "./AddItem";
-// import Sidebar from "../Sidebar";
+import { useState, useEffect } from "react";
 import "./Lists.scss";
-// import HeaderText from "../HeaderText";
-// import VideoSidebar from "../Video/VideoSidebar";
+import { UnsortedListIntro } from "./text/UnsortedListIntro";
+import { UnsortedListTestInfo } from "./text/UnsortedListTestInfo";
+import ReactPlayer from "react-player/lazy";
+import TodoList from "./TodoList";
+import AddTodo from "./AddTodo";
+//import { addData } from "../fetchFunctions/fetchFunctions";
+import { getData } from "../fetchFunctions/fetchFunctions";
+import { deleteData } from "../fetchFunctions/fetchFunctions";
 
-class UnsortedList extends SortedList {
-  addTodo = (todo) => {
-    todo.id = Math.random();
-    //new array with spread op
-    let todosNew = [...this.state.todos];
+const UnsortedList = () => {
+  const [todos, setTodos] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
+  const todosUrl = "http://localhost:9000/todos/";
+
+  useEffect(() => {
+    const getTodos = async () => {
+      const todosFromServer = await getData(todosUrl);
+      //setting Gui state
+      setTodos(todosFromServer);
+      setIsLoading(false);
+      if (todosFromServer) {
+        setError(null);
+      } else {
+        setError("Ooops!! Could not fetch data...");
+      }
+    };
+    getTodos();
+  }, []);
+
+  //delete Todo in db and Gui
+  const handleDelete = async (id) => {
+    //id= argument in handleDelete() from TodoList component
+    //fetch(`http://localhost:9000/todos/${id}`
+    await deleteData(todosUrl + id);
+    //setting Gui state
+    setTodos(
+      todos.filter((todo) => {
+        return todo.id !== id;
+      })
+    );
+  };
+
+  //addTodo in Gui
+  const addTodo = (newTodo) => {
+    console.log("newTodo", newTodo);
+    let todosNew = [...todos];
+    console.log("todosNew", todosNew);
     let randomIndex = Math.floor(Math.random() * todosNew.length);
-    //alert(randomIndex);
-    //add todo at random index
-    todosNew.splice(randomIndex, 0, todo);
-    this.setState({
-      todos: todosNew,
-    });
+    console.log(randomIndex);
+    //add todo at random index (replace 0)
+    todosNew.splice(randomIndex, 0, newTodo);
+    setTodos(todosNew);
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const { newContent } = this.state;
-    //temporary new object
-    let tmpItem = { id: Math.random(), content: newContent };
+  useEffect(() => {
+    console.log("todos:", todos);
+  }, [todos]);
 
-    //new array with spread op
-    let todos = [...this.state.todos];
-
-    if (newContent) {
-      // console.log("state.newContent", newContent)
-
-      let randomIndex = Math.floor(Math.random() * todos.length);
-      //console.log("randomIndex", randomIndex);
-      //add todo at random index
-      todos.splice(randomIndex, 0, tmpItem);
-
-      this.setState({
-        todos,
-        newContent: "",
-      });
-    }
-  };
-
-  render() {
-    const { todos, newContent } = this.state;
-
-    return (
-      <div className="row justify-content-between">
-        <div className="col-12 col-md-6">
-          <div className="todo-section">
-            {/* <header>
-              <HeaderText componentName={this.constructor.name} />
-            </header> */}
-            {/* <Items items={todos} onDelete={this.handleDelete} /> */}
-
-            <AddItem
-              inputContent={newContent}
-              onInputChange={this.handleChange}
-              onFormSubmit={this.handleSubmit}
-            />
-          </div>
+  return (
+    <div className="row justify-content-between">
+      <div className="col-12 col-md-6">
+        <div className="todo-section">
+          <UnsortedListIntro />
+          {error && <div className="error">{error}</div>}
+          {isLoading && <div className="loading">Loading...</div>}
+          {todos && <TodoList todos={todos} handleDelete={handleDelete} />}
+          <AddTodo addTodo={addTodo} />
         </div>
+        <UnsortedListTestInfo />
+      </div>
 
-        <div className="col-12 col-md-5">
-          {/* <Sidebar componentName={this.constructor.name} />
-
-          <VideoSidebar
-            src="https://www.youtube.com/embed/Fh1HH-BVJkE"
-            height="230"
-            width="100%"
-            title="getting-started"
+      <div className="col-12 col-md-5">
+        <div className="video_secttion">
+          <ReactPlayer
+            controls
+            url="https://www.youtube.com/embed/Fh1HH-BVJkE"
+            width="280px"
+            height="180px"
           />
-
-          <VideoSidebar
-            src="https://www.youtube.com/embed/3c4ZX7IESyM"
-            height="230"
-            width="100%"
-            title="getting-started"
+          <ReactPlayer
+            controls
+            url="https://www.youtube.com/embed/3c4ZX7IESyM"
+            width="280px"
+            height="180px"
           />
-
-          <VideoSidebar
-            src="https://www.youtube.com/embed/nFzlyKzNHHg"
-            height="230"
-            width="100%"
-            title="getting-started"
+          <ReactPlayer
+            controls
+            url="https://www.youtube.com/embed/nFzlyKzNHHg"
+            width="280px"
+            height="180px"
           />
-
-          <VideoSidebar
-            src="https://www.youtube.com/embed/6ZztczG5VCQ"
-            height="230"
-            width="100%"
-            title="getting-started"
-          /> */}
+          <ReactPlayer
+            controls
+            url="https://www.youtube.com/embed/6ZztczG5VCQ"
+            width="280px"
+            height="180px"
+          />
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default UnsortedList;
