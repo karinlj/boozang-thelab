@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Lists.scss";
-import { UnsortedListIntro } from "./text/UnsortedListIntro";
-import { UnsortedListTestInfo } from "./text/UnsortedListTestInfo";
+import { UnsortedListIntro } from "./text/Intros";
+import { UnsortedListTestInfo } from "./text/TestInfos";
 import ReactPlayer from "react-player/lazy";
 import TodoList from "./TodoList";
 import AddTodo from "./AddTodo";
@@ -14,7 +14,7 @@ const UnsortedList = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const todosUrl = "http://localhost:9000/todos/";
+  const todosUrl = "http://localhost:9000/todos";
 
   useEffect(() => {
     const getTodos = async () => {
@@ -35,7 +35,7 @@ const UnsortedList = () => {
   const handleDelete = async (id) => {
     //id= argument in handleDelete() from TodoList component
     //fetch(`http://localhost:9000/todos/${id}`
-    await deleteData(todosUrl + id);
+    await deleteData(todosUrl, id);
     //setting Gui state
     setTodos(
       todos.filter((todo) => {
@@ -72,7 +72,6 @@ const UnsortedList = () => {
         </div>
         <UnsortedListTestInfo />
       </div>
-
       <div className="col-12 col-md-5">
         <div className="video_secttion">
           <ReactPlayer

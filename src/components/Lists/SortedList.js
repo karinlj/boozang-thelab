@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Lists.scss";
-import { SortedListIntro } from "./text/SortedListIntro";
-import { SortedListTestInfo } from "./text/SortedListTestInfo";
+import { SortedListIntro } from "./text/Intros";
+import { SortedListTestInfo } from "./text/TestInfos";
 //import ReactPlayer from "react-player/youtube";
 import ReactPlayer from "react-player/lazy";
 import TodoList from "./TodoList";
@@ -62,26 +62,27 @@ const SortedList = () => {
         </div>
         <SortedListTestInfo />
       </div>
-
       <div className="col-12 col-md-5">
-        <ReactPlayer
-          controls
-          url="https://www.youtube.com/embed/9zIJX5v9vhE"
-          width="280px"
-          height="180px"
-        />
-        <ReactPlayer
-          controls
-          url="https://www.youtube.com/embed/SgEpi29xTQ0"
-          width="280px"
-          height="180px"
-        />
-        <ReactPlayer
-          controls
-          url="https://www.youtube.com/embed/QngusW1ODWA"
-          width="280px"
-          height="180px"
-        />
+        <div className="video_secttion">
+          <ReactPlayer
+            controls
+            url="https://www.youtube.com/embed/9zIJX5v9vhE"
+            width="280px"
+            height="180px"
+          />
+          <ReactPlayer
+            controls
+            url="https://www.youtube.com/embed/SgEpi29xTQ0"
+            width="280px"
+            height="180px"
+          />
+          <ReactPlayer
+            controls
+            url="https://www.youtube.com/embed/QngusW1ODWA"
+            width="280px"
+            height="180px"
+          />
+        </div>
       </div>
     </div>
   );

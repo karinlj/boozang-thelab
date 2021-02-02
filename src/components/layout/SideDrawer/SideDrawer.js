@@ -47,13 +47,18 @@ const SideDrawer = (props) => {
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/Tables">
-                      <div onClick={props.clickLink}>Tables</div>
+                    <NavLink to="/tasktracker">
+                      <div onClick={props.clickLink}>Task Tracker</div>
                     </NavLink>
                   </li>
                   <li>
                     <NavLink to="/formValidation">
                       <div onClick={props.clickLink}>Form validation</div>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/Tables">
+                      <div onClick={props.clickLink}>Tables</div>
                     </NavLink>
                   </li>
                 </ul>

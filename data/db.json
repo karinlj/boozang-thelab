@@ -9,12 +9,26 @@
       "id": 3
     },
     {
-      "title": "Run with Hugo",
+      "title": "play some",
       "id": 4
+    }
+  ],
+  "catList": [
+    {
+      "id": 1,
+      "name": "Filip",
+      "instruction": "Eats owners hair then claws head stick butt in face find empty spot in cupboard and sleep all day."
     },
     {
-      "title": "Play some more",
-      "id": 5
+      "id": 3,
+      "name": "Hugo",
+      "instruction": "Fish i must find my red catnip fishy fish poop in litter box, scratch the walls lick plastic bags but toy mouse squeak roll over small kitty."
+    },
+    {
+      
+      "id": 4,
+      "name": "Theo",
+      "instruction": "Massacre a bird in the living room and then look like the cutest and most innocent animal on the planet cats are cute but in the middle of the night i crawl onto your chest and purr gently."
     }
   ]
 }

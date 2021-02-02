@@ -1,14 +1,14 @@
-const Todo = ({ handleDelete, todo }) => {
+const CatListItem = ({ handleDelete, item }) => {
   return (
     <div className="collection-item">
-      <span>{todo.title}</span>
+      <span>{item.name}</span>
       {/* call handleDelete(), pass todo.id as parameter to SortedList */}
       <i
         className="fas fa-trash-alt delBtn"
         title="Delete"
-        onClick={() => handleDelete(todo.id)}
+        onClick={() => handleDelete(item.id)}
       ></i>
     </div>
   );
 };
-export default Todo;
+export default CatListItem;

@@ -2,7 +2,7 @@
 
 ## Description
 
-Frontend platform built with React.js for learning test automation and the Boozang tool. Version 2.
+Frontend platform built with React.js for learning test automation and the Boozang tool. Mock backend with json-server. Version 2.
 
 ## Installation
 

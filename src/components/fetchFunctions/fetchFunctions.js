@@ -1,3 +1,4 @@
+//connector?
 export const getData = async (url) => {
   try {
     //fetch() returns promise
@@ -25,9 +26,10 @@ export const addData = async (url, item) => {
   }
 };
 
-export const deleteData = async (url) => {
+export const deleteData = async (url, id) => {
+  url = url.endsWith("/") ? "" : url + "/";
   try {
-    const result = await fetch(url, {
+    const result = await fetch(url + id, {
       method: "DELETE",
     });
     const data = await result.json();

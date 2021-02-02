@@ -12,6 +12,7 @@ import Intro from "./components/Intro";
 import Overview from "./components/Overview";
 import SortedList from "./components/Lists/SortedList";
 import UnsortedList from "./components/Lists/UnsortedList";
+import TaskTracker from "./components/Lists/TaskTracker";
 
 function App() {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
@@ -51,11 +52,14 @@ function App() {
               <Route path="/overview">
                 <Overview />
               </Route>
-              <Route path="/SortedList">
+              <Route path="/sortedList">
                 <SortedList />
               </Route>
-              <Route path="/UnsortedList">
+              <Route path="/unsortedList">
                 <UnsortedList />
+              </Route>
+              <Route path="/taskTracker">
+                <TaskTracker />
               </Route>
             </Switch>
           </div>
@@ -64,15 +68,6 @@ function App() {
       </div>
 
       {/*   <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/create">
-              <Create />
-            </Route>
-            <Route path="/posts/:post_id">
-              <PostDetails />
-            </Route>
             <Route path="*">
               <NotFound />
             </Route>
