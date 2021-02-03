@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { addData } from "../../fetchFunctions/fetchFunctions";
 
-const AddCat = () => {
+const AddCat = ({ addCat }) => {
   const [name, setName] = useState("");
   const [instruction, setInstruction] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  const catsUrl = "http://localhost:9000/cats/";
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,9 +14,13 @@ const AddCat = () => {
     const cat = { name: name, instruction: instruction };
     setIsLoading(true);
     setTimeout(async () => {
-      await addData(cat);
-      console.log("cat", cat);
+      const data = await addData(catsUrl, cat);
+      //   console.log("cat", cat);
+      addCat(data);
       setIsLoading(false);
+      //reset
+      setName("");
+      setInstruction("");
     }, 1000);
   };
 

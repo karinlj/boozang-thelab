@@ -34,7 +34,8 @@ const SortedList = () => {
   //delete Todo in db and Gui
   const handleDelete = async (id) => {
     //id= argument in handleDelete() from TodoList component
-    await deleteData(todosUrl + id);
+    console.log("todosUrl", todosUrl);
+    await deleteData(todosUrl, id);
     //setting Gui state
     setTodos(
       todos.filter((todo) => {

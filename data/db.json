@@ -1,30 +1,22 @@
 {
   "todos": [
     {
-      "id": 1,
-      "title": "Buy some milk"
-    },
-    {
-      "title": "Play with Filip",
-      "id": 3
-    },
-    {
-      "title": "play some",
-      "id": 4
+      "title": "Play with Hugo",
+      "id": 1
     }
   ],
-  "catList": [
+  "cats": [
     {
       "id": 1,
       "name": "Filip",
-      "instruction": "Some overweight, needs diet food for at lest 2 months."
+      "instruction": "Some overweight, needs diet food for at least 2 months."
     },
     {
       "id": 3,
       "name": "Hugo",
-      "instruction": "A litte overweight, needs diet food for at lest 1 month."    },
+      "instruction": "A litte overweight, needs diet food for at least 1 month."
+    },
     {
-      
       "id": 4,
       "name": "Theo",
       "instruction": "Perfect fit, normal food."

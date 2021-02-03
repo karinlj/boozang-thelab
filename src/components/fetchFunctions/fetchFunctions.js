@@ -27,7 +27,7 @@ export const addData = async (url, item) => {
 };
 
 export const deleteData = async (url, id) => {
-  url = url.endsWith("/") ? "" : url + "/";
+  url = url.endsWith("/") ? url : url + "/";
   try {
     const result = await fetch(url + id, {
       method: "DELETE",

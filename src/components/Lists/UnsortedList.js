@@ -35,6 +35,7 @@ const UnsortedList = () => {
   const handleDelete = async (id) => {
     //id= argument in handleDelete() from TodoList component
     //fetch(`http://localhost:9000/todos/${id}`
+    console.log("todosUrl", todosUrl);
     await deleteData(todosUrl, id);
     //setting Gui state
     setTodos(

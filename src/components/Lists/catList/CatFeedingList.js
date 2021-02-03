@@ -9,36 +9,43 @@ import { CatFeedingIntro } from "../text/Intros";
 import { CatFeedingTestInfo } from "../text/TestInfos";
 
 const CatFeedingList = () => {
-  const [tasks, setTasks] = useState(null);
+  const [cat, setCats] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const tasksUrl = "http://localhost:9000/catList/";
+  const catsUrl = "http://localhost:9000/cats/";
+
   useEffect(() => {
-    const getTasks = async () => {
-      const tasksFromServer = await getData(tasksUrl);
-      // console.log("tasksUrl:", tasksUrl);
+    const getCats = async () => {
+      const catFromServer = await getData(catsUrl);
+      // console.log("catUrl:", catUrl);
       //setting Gui state
-      setTasks(tasksFromServer);
+      setCats(catFromServer);
       setIsLoading(false);
-      if (tasksFromServer) {
+      if (catFromServer) {
         setError(null);
       } else {
         setError("Ooops!! Could not fetch data...");
       }
     };
-    getTasks();
+    getCats();
   }, []);
   //delete Todo in db and Gui
   const handleDelete = async (id) => {
     //id= argument in handleDelete() from TodoList component
-    await deleteData(tasksUrl + id);
+    console.log("catsUrl", catsUrl);
+    await deleteData(catsUrl, id);
     //setting Gui state
-    setTasks(
-      tasks.filter((todo) => {
+    setCats(
+      cat.filter((todo) => {
         return todo.id !== id;
       })
     );
+  };
+  //set Gui state
+  const addCat = async (newCat) => {
+    console.log("newCat", newCat);
+    setCats(newCat);
   };
 
   return (
@@ -48,8 +55,8 @@ const CatFeedingList = () => {
           <CatFeedingIntro />
           {error && <div className="error">{error}</div>}
           {isLoading && <div className="loading">Loading...</div>}
-          {tasks && <CatList items={tasks} handleDelete={handleDelete} />}
-          <AddCat />
+          {cat && <CatList items={cat} handleDelete={handleDelete} />}
+          <AddCat addCat={addCat} />
         </div>
         <CatFeedingTestInfo />
       </div>
