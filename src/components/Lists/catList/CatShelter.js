@@ -4,12 +4,13 @@ import ReactPlayer from "react-player/lazy";
 import CatList from "./CatList";
 import { getData } from "../../fetchFunctions/fetchFunctions";
 import { deleteData } from "../../fetchFunctions/fetchFunctions";
-import AddCat from "./AddCat";
-import { CatFeedingIntro } from "../text/Intros";
-import { CatFeedingTestInfo } from "../text/TestInfos";
+// import AddCat from "./AddCat";
+import { CatShelterIntro } from "../text/Intros";
+import { CatShelterTestInfo } from "../text/TestInfos";
+import { Link } from "react-router-dom";
 
-const CatFeedingList = () => {
-  const [cat, setCats] = useState(null);
+const CatShelter = () => {
+  const [cats, setCats] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -17,12 +18,12 @@ const CatFeedingList = () => {
 
   useEffect(() => {
     const getCats = async () => {
-      const catFromServer = await getData(catsUrl);
+      const catsFromServer = await getData(catsUrl);
       // console.log("catUrl:", catUrl);
       //setting Gui state
-      setCats(catFromServer);
+      setCats(catsFromServer);
       setIsLoading(false);
-      if (catFromServer) {
+      if (catsFromServer) {
         setError(null);
       } else {
         setError("Ooops!! Could not fetch data...");
@@ -37,28 +38,34 @@ const CatFeedingList = () => {
     await deleteData(catsUrl, id);
     //setting Gui state
     setCats(
-      cat.filter((todo) => {
+      cats.filter((todo) => {
         return todo.id !== id;
       })
     );
   };
-  //set Gui state
-  const addCat = async (newCat) => {
-    console.log("newCat", newCat);
-    setCats(newCat);
-  };
-
+  // //set Gui state
+  // const addCat = async (newCat) => {
+  //   console.log("newCat", newCat);
+  //   setCats(newCat);
+  // };
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6">
         <div className="todo-section">
-          <CatFeedingIntro />
+          <CatShelterIntro />
+          <header className="cat_shelter_heading">
+            <button className="addBtn" title="Add">
+              <Link to="/addcat">Add Cat</Link>
+            </button>
+          </header>
+
           {error && <div className="error">{error}</div>}
           {isLoading && <div className="loading">Loading...</div>}
-          {cat && <CatList items={cat} handleDelete={handleDelete} />}
-          <AddCat addCat={addCat} />
+          {cats && <CatList items={cats} handleDelete={handleDelete} />}
+
+          {/* <AddCat addCat={addCat} /> */}
         </div>
-        <CatFeedingTestInfo />
+        <CatShelterTestInfo />
       </div>
       <div className="col-12 col-md-5">
         <div className="video_section"></div>
@@ -67,4 +74,4 @@ const CatFeedingList = () => {
   );
 };
 
-export default CatFeedingList;
+export default CatShelter;

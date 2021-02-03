@@ -9,17 +9,17 @@
     {
       "id": 1,
       "name": "Filip",
-      "instruction": "Some overweight, needs diet food for at least 2 months."
+      "description": "Annoy owner until he gives you food say meow repeatedly until belly rubs."
     },
     {
       "id": 3,
       "name": "Hugo",
-      "instruction": "A litte overweight, needs diet food for at least 1 month."
+      "description": "Eat a plant, kill a hand spot something, big eyes, big eyes, crouch, shake butt, prepare to pounce for take a big fluffing crap."
     },
     {
       "id": 4,
       "name": "Theo",
-      "instruction": "Perfect fit, normal food."
+      "description": "Sleep lick the plastic bag and sleep on dog bed, force dog to sleep on floor, lick left leg for ninety minutes, still dirty."
     }
   ]
 }

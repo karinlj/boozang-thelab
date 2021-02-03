@@ -333,7 +333,7 @@ h5 {
 //content
 .content-section {
   width: 100%;
-  min-height: 800px;
+  min-height: 600px;
   padding: 0 calc(1.5rem - 15px) 5rem calc(1.5rem - 15px);
   @media all and (min-width: $sm-min) {
     padding: 0 calc(2.25rem - 15px) 5rem calc(2.25rem - 15px);
@@ -581,6 +581,8 @@ h5 {
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
+  line-height: 1.8;
+
   &:hover {
     filter: brightness(80%);
   }

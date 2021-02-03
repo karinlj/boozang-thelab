@@ -26,7 +26,7 @@ export const UnsortedListTestInfo = () => {
     </article>
   );
 };
-export const CatFeedingTestInfo = () => {
+export const CatShelterTestInfo = () => {
   return (
     <article className="comp_test_info">
       <h4>Why learn: Cat Feeding List?</h4>

@@ -29,7 +29,7 @@ const Navbar = ({ handleDrawerClick }) => (
               </li>
 
               <li>
-                Lists, forms and tables
+                Lists
                 <ul className="sub-list">
                   <li>
                     <NavLink to="/sortedList">Sorted list</NavLink>
@@ -38,8 +38,14 @@ const Navbar = ({ handleDrawerClick }) => (
                     <NavLink to="/unsortedList">Unsorted list</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/catFeedingList">Cat Feeding List</NavLink>
+                    <NavLink to="/catshelter">Cat Shelter</NavLink>
                   </li>
+                </ul>
+              </li>
+
+              <li>
+                Forms and tables
+                <ul className="sub-list">
                   <li>
                     <NavLink to="/formValidation">Form validation</NavLink>
                   </li>

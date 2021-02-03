@@ -24,10 +24,10 @@ export const UnsortedListIntro = () => {
     </header>
   );
 };
-export const CatFeedingIntro = () => {
+export const CatShelterIntro = () => {
   return (
     <header className="comp_intro">
-      <h1>Cat Feeding List</h1>
+      <h1>Cat Shelter</h1>
       <p>
         Lick human with sandpaper tongue purr like an angel stare at guinea pigs
         for go into a room to decide you didn't want to be in there anyway sit
