@@ -566,6 +566,7 @@ h5 {
   color: $themecolorBlueNewRed;
   transition: 0.5s all ease;
   cursor: pointer;
+  padding: 2px;
   &:hover {
     filter: brightness(80%);
   }

@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
-import "./Lists.scss";
+import "../Lists.scss";
 import ReactPlayer from "react-player/lazy";
 import CatList from "./CatList";
-import { getData } from "../fetchFunctions/fetchFunctions";
-import { deleteData } from "../fetchFunctions/fetchFunctions";
-import { TaskTrackerIntro } from "./text/Intros";
-import { TaskTrackerTestInfo } from "./text/TestInfos";
+import { getData } from "../../fetchFunctions/fetchFunctions";
+import { deleteData } from "../../fetchFunctions/fetchFunctions";
+import AddCat from "./AddCat";
+import { CatFeedingIntro } from "../text/Intros";
+import { CatFeedingTestInfo } from "../text/TestInfos";
 
-const TaskTracker = () => {
+const CatFeedingList = () => {
   const [tasks, setTasks] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -44,19 +45,19 @@ const TaskTracker = () => {
     <div className="row justify-content-between">
       <div className="col-12 col-md-6">
         <div className="todo-section">
-          <TaskTrackerIntro />
+          <CatFeedingIntro />
           {error && <div className="error">{error}</div>}
           {isLoading && <div className="loading">Loading...</div>}
           {tasks && <CatList items={tasks} handleDelete={handleDelete} />}
-          {/* <AddTodo /> */}
+          <AddCat />
         </div>
-        <TaskTrackerTestInfo />
+        <CatFeedingTestInfo />
       </div>
       <div className="col-12 col-md-5">
-        <div className="video_section">Videos</div>
+        <div className="video_section"></div>
       </div>
     </div>
   );
 };
 
-export default TaskTracker;
+export default CatFeedingList;

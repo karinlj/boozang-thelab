@@ -1,4 +1,3 @@
-import "./Lists.scss";
 import CatListItem from "./CatListItem";
 
 const CatList = ({ items, handleDelete }) => {

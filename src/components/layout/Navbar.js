@@ -38,7 +38,7 @@ const Navbar = ({ handleDrawerClick }) => (
                     <NavLink to="/unsortedList">Unsorted list</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/tasktracker">Task Tracker</NavLink>
+                    <NavLink to="/catFeedingList">Cat Feeding List</NavLink>
                   </li>
                   <li>
                     <NavLink to="/formValidation">Form validation</NavLink>

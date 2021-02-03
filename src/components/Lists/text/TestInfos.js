@@ -26,10 +26,10 @@ export const UnsortedListTestInfo = () => {
     </article>
   );
 };
-export const TaskTrackerTestInfo = () => {
+export const CatFeedingTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Why learn: Task Tracker?</h4>
+      <h4>Why learn: Cat Feeding List?</h4>
       <p>
         Missing until dinner time destroy the blinds lay on arms while you're
         using the keyboard or i cry and cry and cry unless you pet me, and then

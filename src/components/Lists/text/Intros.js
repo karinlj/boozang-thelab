@@ -24,7 +24,7 @@ export const UnsortedListIntro = () => {
     </header>
   );
 };
-export const TaskTrackerIntro = () => {
+export const CatFeedingIntro = () => {
   return (
     <header className="comp_intro">
       <h1>Cat Feeding List</h1>

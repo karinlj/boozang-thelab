@@ -12,7 +12,7 @@ import Intro from "./components/Intro";
 import Overview from "./components/Overview";
 import SortedList from "./components/Lists/SortedList";
 import UnsortedList from "./components/Lists/UnsortedList";
-import TaskTracker from "./components/Lists/TaskTracker";
+import CatFeedingList from "./components/Lists/catList/CatFeedingList";
 
 function App() {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
@@ -58,8 +58,8 @@ function App() {
               <Route path="/unsortedList">
                 <UnsortedList />
               </Route>
-              <Route path="/taskTracker">
-                <TaskTracker />
+              <Route path="/catFeedingList">
+                <CatFeedingList />
               </Route>
             </Switch>
           </div>
