@@ -11,6 +11,17 @@ export const getData = async (url) => {
   }
 };
 
+export const getSingleItem = async (url, id) => {
+  url = url.endsWith("/") ? url : url + "/";
+  try {
+    const result = await fetch(url + id);
+    const data = await result.json();
+    return data;
+  } catch (err) {
+    console.log("error:", err);
+  }
+};
+
 export const addData = async (url, item) => {
   try {
     const result = await fetch(url, {
@@ -18,6 +29,21 @@ export const addData = async (url, item) => {
       headers: { "Content-Type": "application/json" },
       //what I post as json-format
       body: JSON.stringify(item),
+    });
+    const data = await result.json();
+    return data;
+  } catch (err) {
+    console.log("error:", err);
+  }
+};
+
+export const updateData = async (url, updItem) => {
+  try {
+    const result = await fetch(url, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      //what I post as json-format
+      body: JSON.stringify(updItem),
     });
     const data = await result.json();
     return data;

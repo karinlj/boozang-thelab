@@ -1,31 +1,32 @@
 import { useState, useEffect } from "react";
 import { addData } from "../../fetchFunctions/fetchFunctions";
+import { useHistory } from "react-router-dom";
 
-const AddCat = ({ addCat }) => {
+const AddCat = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const catsUrl = "http://localhost:9000/cats/";
+  const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const cat = { name: name, description: description };
+    const cat = { name: name, description: description, foundHome: false };
     setIsLoading(true);
     setTimeout(async () => {
       const data = await addData(catsUrl, cat);
-      //   console.log("cat", cat);
-      addCat(data);
-      setIsLoading(false);
-      //reset
-      setName("");
-      setDescription("");
+      // addCat(data);
+      history.push("/catshelter");
+      //   setIsLoading(false);
+      //   setName("");
+      //   setDescription("");
     }, 1000);
   };
 
   useEffect(() => {
-    console.log("name", name);
+    //console.log("name", name);
   }, [name]);
   return (
     <div className="row justify-content-between">

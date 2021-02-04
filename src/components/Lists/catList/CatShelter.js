@@ -3,7 +3,9 @@ import "../Lists.scss";
 import ReactPlayer from "react-player/lazy";
 import CatList from "./CatList";
 import { getData } from "../../fetchFunctions/fetchFunctions";
+import { getSingleItem } from "../../fetchFunctions/fetchFunctions";
 import { deleteData } from "../../fetchFunctions/fetchFunctions";
+//import { updateData } from "../../fetchFunctions/fetchFunctions";
 // import AddCat from "./AddCat";
 import { CatShelterIntro } from "../text/Intros";
 import { CatShelterTestInfo } from "../text/TestInfos";
@@ -14,7 +16,7 @@ const CatShelter = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const catsUrl = "http://localhost:9000/cats/";
+  const catsUrl = "http://localhost:9000/cats";
 
   useEffect(() => {
     const getCats = async () => {
@@ -38,10 +40,38 @@ const CatShelter = () => {
     await deleteData(catsUrl, id);
     //setting Gui state
     setCats(
-      cats.filter((todo) => {
-        return todo.id !== id;
+      cats.filter((cat) => {
+        return cat.id !== id;
       })
     );
+  };
+  const togglefoundHome = async (id) => {
+    console.log("id", id);
+    //getting the cat
+    const catToToggle = await getSingleItem(catsUrl, id);
+    //creating cat with updated foundHome
+    const updatedCat = { ...catToToggle, foundHome: !catToToggle.foundHome };
+    //PUT request...
+    const result = await fetch(catsUrl + "/" + id, {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(updatedCat),
+    });
+    const data = await result.json();
+
+    //set Gui state
+    setCats(
+      cats.map((cat) => {
+        return cat.id === id ? { ...cat, foundHome: data.foundHome } : cat;
+      })
+    );
+
+    // if (cat.id === id) {
+    //   console.log("cat.foundHome", cat.foundHome);
+    //   return (cat.foundHome = !cat.foundHome);
+    // }
   };
   // //set Gui state
   // const addCat = async (newCat) => {
@@ -61,7 +91,7 @@ const CatShelter = () => {
 
           {error && <div className="error">{error}</div>}
           {isLoading && <div className="loading">Loading...</div>}
-          {cats && <CatList items={cats} handleDelete={handleDelete} />}
+          {cats && <CatList items={cats} togglefoundHome={togglefoundHome} />}
 
           {/* <AddCat addCat={addCat} /> */}
         </div>

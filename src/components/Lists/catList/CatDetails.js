@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 // import { useHistory } from "react-router-dom";
-import { getData } from "../../fetchFunctions/fetchFunctions";
+//import { getData } from "../../fetchFunctions/fetchFunctions";
+import { getSingleItem } from "../../fetchFunctions/fetchFunctions";
 // import { deleteData } from "../../fetchFunctions/fetchFunctions";
 
 const CatDetails = () => {
@@ -11,12 +12,11 @@ const CatDetails = () => {
 
   const { cat_id } = useParams();
   const catsUrl = "http://localhost:9000/cats/";
-  const singleCatUrl = catsUrl + cat_id;
+  // const singleCatUrl = catsUrl + cat_id;
 
   useEffect(() => {
     const getSingleCat = async () => {
-      const catFromServer = await getData(singleCatUrl);
-      console.log("singleCatUrl:", singleCatUrl);
+      const catFromServer = await getSingleItem(catsUrl, cat_id);
       //setting Gui state
       setSingleCat(catFromServer);
       setIsLoading(false);
