@@ -7,13 +7,19 @@ const AddCat = () => {
   const [description, setDescription] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [inOrOut, setInOrOut] = useState("outside");
 
   const catsUrl = "http://localhost:9000/cats/";
   const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newCat = { name: name, description: description, foundHome: false };
+    const newCat = {
+      name: name,
+      description: description,
+      inOrOut: inOrOut,
+      foundHome: false,
+    };
     setIsLoading(true);
     setTimeout(async () => {
       const addedCatToServer = await addData(catsUrl, newCat);
@@ -26,6 +32,9 @@ const AddCat = () => {
       return addedCatToServer;
     }, 1000);
   };
+  useEffect(() => {
+    console.log("inOrOut", inOrOut);
+  }, [inOrOut]);
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6">
@@ -52,6 +61,39 @@ const AddCat = () => {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
+
+              <div className="goOutOrNot">
+                <div>
+                  <label>
+                    <input
+                      type="radio"
+                      name="location"
+                      // checked={true}
+                      value="outside"
+                      checked={inOrOut === "outside"}
+                      onChange={(e) => {
+                        setInOrOut(e.target.value);
+                      }}
+                    />
+                    <span>Wants to go outside</span>
+                  </label>
+                </div>
+                <div>
+                  <label>
+                    <input
+                      type="radio"
+                      name="location"
+                      value="inside"
+                      checked={inOrOut === "inside"}
+                      onChange={(e) => {
+                        setInOrOut(e.target.value);
+                      }}
+                    />
+                    <span>Stay inside</span>
+                  </label>
+                </div>
+              </div>
+
               <div className="text-center addTodo">
                 {isLoading && (
                   <button className="addBtn adding">Adding Cat...</button>
