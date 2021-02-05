@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "../Lists.scss";
-import ReactPlayer from "react-player/lazy";
+//import ReactPlayer from "react-player/lazy";
 import CatList from "./CatList";
 import { getData } from "../../fetchFunctions/fetchFunctions";
 import { updateData } from "../../fetchFunctions/fetchFunctions";
@@ -53,7 +53,7 @@ const CatShelter = () => {
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6">
-        <div className="todo-section">
+        <div className="catshelter_section">
           <CatShelterIntro />
           <header className="cat_shelter_heading">
             <button className="addBtn" title="Add">

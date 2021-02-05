@@ -7,7 +7,7 @@ const AddCat = () => {
   const [description, setDescription] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [inOrOut, setInOrOut] = useState("outside");
+  const [inOrOutside, setInOrOutside] = useState("outside");
 
   const catsUrl = "http://localhost:9000/cats/";
   const history = useHistory();
@@ -17,7 +17,7 @@ const AddCat = () => {
     const newCat = {
       name: name,
       description: description,
-      inOrOut: inOrOut,
+      inOrOutside: inOrOutside,
       foundHome: false,
     };
     setIsLoading(true);
@@ -33,12 +33,12 @@ const AddCat = () => {
     }, 1000);
   };
   useEffect(() => {
-    console.log("inOrOut", inOrOut);
-  }, [inOrOut]);
+    console.log("inOrOutside", inOrOutside);
+  }, [inOrOutside]);
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6">
-        <div className="todo-section">
+        <div className="catshelter_section">
           {error && <div className="error">{error}</div>}
           <article className="add_cat">
             <h2>Add Cat</h2>
@@ -70,9 +70,9 @@ const AddCat = () => {
                       name="location"
                       // checked={true}
                       value="outside"
-                      checked={inOrOut === "outside"}
+                      checked={inOrOutside === "outside"}
                       onChange={(e) => {
-                        setInOrOut(e.target.value);
+                        setInOrOutside(e.target.value);
                       }}
                     />
                     <span>Wants to go outside</span>
@@ -84,9 +84,9 @@ const AddCat = () => {
                       type="radio"
                       name="location"
                       value="inside"
-                      checked={inOrOut === "inside"}
+                      checked={inOrOutside === "inside"}
                       onChange={(e) => {
-                        setInOrOut(e.target.value);
+                        setInOrOutside(e.target.value);
                       }}
                     />
                     <span>Stay inside</span>

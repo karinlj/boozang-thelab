@@ -27,7 +27,7 @@ const CatDetails = () => {
       }
     };
     getSingleCat();
-  }, []);
+  }, [singleCatUrl]);
 
   //delete Todo in db and Gui
   const handleDelete = async (id) => {
@@ -45,13 +45,17 @@ const CatDetails = () => {
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6">
-        <div className="todo-section">
+        <div className="catshelter_section">
           {error && <div className="error">{error}</div>}
           {isLoading && <div className="loading">Loading...</div>}
           {singleCat && (
             <article className="single_cat">
               <header>
-                <h2>{singleCat.name}</h2>
+                <div className="cat_name">
+                  <i className="fas fa-cat"></i>
+                  <h2>{singleCat.name}</h2>
+                </div>
+
                 <button
                   className="delete"
                   onClick={() => handleDelete(singleCat.id)}
@@ -60,7 +64,24 @@ const CatDetails = () => {
                 </button>
               </header>
 
-              <div>{singleCat.description}</div>
+              <div className="collection">
+                <div className="collection-item">{singleCat.description}</div>
+                <div className="collection-item">
+                  {singleCat.inOrOutside === "outside" ? (
+                    <div>Wants to go outside.</div>
+                  ) : (
+                    <div>Wants to stai inside.</div>
+                  )}
+                </div>
+                <div className="collection-item">
+                  {" "}
+                  {singleCat.foundHome ? (
+                    <div>Found a permanent home.</div>
+                  ) : (
+                    <div>Needs a permanent home</div>
+                  )}
+                </div>
+              </div>
             </article>
           )}
         </div>
