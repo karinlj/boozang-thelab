@@ -1,9 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-// import { useHistory } from "react-router-dom";
-//import { getData } from "../../fetchFunctions/fetchFunctions";
-import { getSingleItem } from "../../fetchFunctions/fetchFunctions";
-// import { deleteData } from "../../fetchFunctions/fetchFunctions";
+import { useHistory } from "react-router-dom";
+import { getData } from "../../fetchFunctions/fetchFunctions";
+import { deleteData } from "../../fetchFunctions/fetchFunctions";
 
 const CatDetails = () => {
   const [singleCat, setSingleCat] = useState(null);
@@ -12,11 +11,12 @@ const CatDetails = () => {
 
   const { cat_id } = useParams();
   const catsUrl = "http://localhost:9000/cats/";
-  // const singleCatUrl = catsUrl + cat_id;
+  const singleCatUrl = catsUrl + cat_id;
+  const history = useHistory();
 
   useEffect(() => {
     const getSingleCat = async () => {
-      const catFromServer = await getSingleItem(catsUrl, cat_id);
+      const catFromServer = await getData(singleCatUrl);
       //setting Gui state
       setSingleCat(catFromServer);
       setIsLoading(false);
@@ -29,8 +29,17 @@ const CatDetails = () => {
     getSingleCat();
   }, []);
 
-  const handleClick = () => {
-    console.log("click");
+  //delete Todo in db and Gui
+  const handleDelete = async (id) => {
+    //console.log("id:", id);
+    const deletedCatFromServer = await deleteData(catsUrl, id);
+    if (deletedCatFromServer) {
+      //redirecting so do not have to set gui state
+      history.push("/catshelter");
+    } else {
+      setError("Ooops!! Could not fetch data...");
+    }
+    return deletedCatFromServer;
   };
 
   return (
@@ -43,7 +52,10 @@ const CatDetails = () => {
             <article className="single_cat">
               <header>
                 <h2>{singleCat.name}</h2>
-                <button className="delete" onClick={handleClick}>
+                <button
+                  className="delete"
+                  onClick={() => handleDelete(singleCat.id)}
+                >
                   Moved
                 </button>
               </header>

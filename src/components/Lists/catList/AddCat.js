@@ -6,32 +6,31 @@ const AddCat = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const catsUrl = "http://localhost:9000/cats/";
   const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const cat = { name: name, description: description, foundHome: false };
+    const newCat = { name: name, description: description, foundHome: false };
     setIsLoading(true);
     setTimeout(async () => {
-      const data = await addData(catsUrl, cat);
-      // addCat(data);
-      history.push("/catshelter");
-      //   setIsLoading(false);
-      //   setName("");
-      //   setDescription("");
+      const addedCatToServer = await addData(catsUrl, newCat);
+      if (addedCatToServer) {
+        //redirecting so do not have to set gui state
+        history.push("/catshelter");
+      } else {
+        setError("Ooops!! Could not fetch data...");
+      }
+      return addedCatToServer;
     }, 1000);
   };
-
-  useEffect(() => {
-    //console.log("name", name);
-  }, [name]);
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6">
         <div className="todo-section">
+          {error && <div className="error">{error}</div>}
           <article className="add_cat">
             <h2>Add Cat</h2>
             <form className="add-todo-form" onSubmit={handleSubmit}>

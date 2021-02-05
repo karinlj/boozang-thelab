@@ -22,7 +22,7 @@
       "id": 4,
       "name": "Theo",
       "description": "Sleep lick the plastic bag and sleep on dog bed, force dog to sleep on floor, lick left leg for ninety minutes, still dirty.",
-      "foundHome": true
+      "foundHome": false
     },
     {
       "name": "Truls",
@@ -31,22 +31,10 @@
       "foundHome": false
     },
     {
-      "name": "Luki",
-      "description": "Wonderful cat",
-      "id": 6,
-      "foundHome": false
-    },
-    {
-      "name": "Oliver",
-      "description": "Beautiful",
-      "id": 7,
-      "foundHome": false
-    },
-    {
       "name": "Loke",
-      "description": "Qute  cat",
+      "description": "Qute :) ",
       "foundHome": false,
-      "id": 8
+      "id": 6
     }
   ]
 }
