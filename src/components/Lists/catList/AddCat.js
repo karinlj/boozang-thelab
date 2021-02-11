@@ -5,9 +5,10 @@ import { useHistory } from "react-router-dom";
 const AddCat = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const [inOrOutside, setInOrOutside] = useState("outside");
+
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [inOrOutside, setInOrOutside] = useState("outside");
 
   const catsUrl = "http://localhost:9000/cats/";
   const history = useHistory();
@@ -32,13 +33,17 @@ const AddCat = () => {
       return addedCatToServer;
     }, 1000);
   };
+  const handleCancel = () => {
+    history.push("/catshelter");
+  };
   useEffect(() => {
-    console.log("inOrOutside", inOrOutside);
+    //  console.log("inOrOutside", inOrOutside);
   }, [inOrOutside]);
+
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6">
-        <div className="catshelter_section">
+        <section className="catshelter_section">
           {error && <div className="error">{error}</div>}
           <article className="add_cat">
             <h2>Add Cat</h2>
@@ -68,7 +73,6 @@ const AddCat = () => {
                     <input
                       type="radio"
                       name="location"
-                      // checked={true}
                       value="outside"
                       checked={inOrOutside === "outside"}
                       onChange={(e) => {
@@ -93,20 +97,33 @@ const AddCat = () => {
                   </label>
                 </div>
               </div>
-
-              <div className="text-center addTodo">
-                {isLoading && (
-                  <button className="addBtn adding">Adding Cat...</button>
-                )}
-                {!isLoading && (
-                  <button className="addBtn" title="Add">
-                    Add Cat
-                  </button>
-                )}
-              </div>
+              <section className="btn_section">
+                <div className="text-center">
+                  {isLoading && (
+                    <input
+                      type="submit"
+                      value="Adding Cat..."
+                      className="formBtn adding"
+                    />
+                  )}
+                  {!isLoading && (
+                    <input
+                      type="submit"
+                      value="Add Cat"
+                      className="formBtn add"
+                    />
+                  )}
+                </div>
+                <input
+                  type="button"
+                  value="Cancel"
+                  className="formBtn cancel"
+                  onClick={handleCancel}
+                />
+              </section>
             </form>
           </article>
-        </div>
+        </section>
       </div>
     </div>
   );

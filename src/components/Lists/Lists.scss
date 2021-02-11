@@ -47,14 +47,12 @@
       padding-top: 1rem;
     }
   }
-  input,
+  input[type="text"],
   textarea {
     width: 100%;
+    padding-right: 0.5rem;
     border: none;
     border-bottom: 1px solid $themeBorderColor;
-  }
-  .addTodo {
-    padding-top: 0.5rem;
   }
 }
 //cat shelter
@@ -82,11 +80,8 @@
       color: #fff;
     }
   }
+  //cat Details
   .single_cat {
-    background: $themecolorDarkBlue;
-    padding: 1rem 1.5rem;
-    color: #fff;
-
     header {
       display: flex;
       justify-content: space-between;
@@ -98,24 +93,15 @@
         i {
           font-size: 1.3rem;
           margin-right: 0.5rem;
+          color: $themecolorBlueNew;
+        }
+        input {
+          border-bottom: none;
         }
       }
-      .delete {
-        text-transform: uppercase;
-        font-size: 80%;
-        border-radius: $themeBorderRadius;
-        background: $themecolorNewRed;
-        color: #fff;
-        border: none;
-        font-weight: 600;
-        padding: 0.3rem 0.4rem;
-      }
     }
-    .collection-item {
-      background: $themecolorBlue;
-      color: #fff;
-      border: none;
-      margin-bottom: 5px;
+    .add-todo-form {
+      margin-top: 0;
     }
   }
   .new_home {
@@ -124,7 +110,7 @@
     // transition: all 0.3s ease;
     padding: 5px;
     &.found {
-      color: $themecolorBlue;
+      color: $themecolorBlueNew;
     }
   }
   .goOutOrNot {

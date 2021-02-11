@@ -54,7 +54,7 @@ const Footer = () => {
       <div className="container">
         <div className="row">
           <div className="col">
-            <p className="copy">© {new Date().getFullYear()}-Boozang</p>
+            <p className="copy">© {new Date().getFullYear()} - Boozang</p>
           </div>
         </div>
       </div>

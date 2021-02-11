@@ -3,50 +3,26 @@
     {
       "title": "Play with Hugo",
       "id": 1
+    },
+    {
+      "title": "Play with Filip",
+      "id": 2
     }
   ],
   "cats": [
     {
-      "id": 1,
-      "name": "Filip",
-      "description": "Annoy owner until he gives you food say meow repeatedly until belly rubs.",
-      "inOrOutside": "outside",
-      "foundHome": true
-    },
-    {
-      "id": 3,
-      "name": "Hugo",
-      "description": "Eat a plant, kill a hand spot something, big eyes, big eyes, crouch, shake butt, prepare to pounce for take a big fluffing crap.",
-      "inOrOutside": "outside",
-      "foundHome": true
-    },
-    {
-      "id": 4,
-      "name": "Theo",
-      "description": "Sleep lick the plastic bag and sleep on dog bed, force dog to sleep on floor, lick left leg for ninety minutes, still dirty.",
-      "inOrOutside": "outside",
-      "foundHome": false
-    },
-    {
-      "name": "Truls",
-      "description": "Beautiful cat\n",
-      "id": 5,
-      "inOrOutside": "outside",
-      "foundHome": false
-    },
-    {
-      "name": "Loke",
-      "description": "Qute :) ",
-      "inOrOutside": "outside",
-      "foundHome": false,
-      "id": 6
-    },
-    {
       "name": "Lukas",
       "description": "Big, loving cat. Black and white. No tail.",
       "inOrOutside": "outside",
-      "foundHome": false,
+      "foundHome": true,
       "id": 7
+    },
+    {
+      "name": "Filip",
+      "description": "Big kind cat. Black and white.",
+      "inOrOutside": "inside",
+      "foundHome": false,
+      "id": 8
     }
   ]
 }

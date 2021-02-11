@@ -56,7 +56,7 @@ const CatShelter = () => {
         <div className="catshelter_section">
           <CatShelterIntro />
           <header className="cat_shelter_heading">
-            <button className="addBtn" title="Add">
+            <button className="formBtn add" title="Add">
               <Link to="/addcat">Add Cat</Link>
             </button>
           </header>
@@ -64,8 +64,6 @@ const CatShelter = () => {
           {error && <div className="error">{error}</div>}
           {isLoading && <div className="loading">Loading...</div>}
           {cats && <CatList items={cats} togglefoundHome={togglefoundHome} />}
-
-          {/* <AddCat addCat={addCat} /> */}
         </div>
         <CatShelterTestInfo />
       </div>

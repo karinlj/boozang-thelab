@@ -36,17 +36,21 @@ const AddTodo = ({ addTodo }) => {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-        <div className="text-center addTodo">
-          {/* conditional rendering */}
-          {isLoading && (
-            <button className="addBtn adding">Adding Todo...</button>
-          )}
-          {!isLoading && (
-            <button className="addBtn" title="Add">
-              Add Todo
-            </button>
-          )}
-        </div>
+        <section className="btn_section">
+          <div className="text-center">
+            {/* conditional rendering */}
+            {isLoading && (
+              <input
+                type="submit"
+                value="Adding Todo..."
+                className="formBtn adding"
+              />
+            )}
+            {!isLoading && (
+              <input type="submit" value="Add Todo" className="formBtn add" />
+            )}
+          </div>
+        </section>
       </form>
     </div>
   );
