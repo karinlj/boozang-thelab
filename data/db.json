@@ -1,10 +1,6 @@
 {
   "todos": [
     {
-      "title": "Play with Hugo",
-      "id": 1
-    },
-    {
       "title": "Play with Filip",
       "id": 2
     }
@@ -21,8 +17,26 @@
       "name": "Filip",
       "description": "Big kind cat. Black and white.",
       "inOrOutside": "inside",
-      "foundHome": false,
+      "foundHome": true,
       "id": 8
+    }
+  ],
+  "users": [
+    {
+      "firstname": "a",
+      "lastname": "b",
+      "username": "Corriee",
+      "email": "kaljunggren@gmail.com",
+      "password": "fdfdsfsf",
+      "id": 1
+    },
+    {
+      "firstname": "a",
+      "lastname": "b",
+      "username": "gfgdgdgdgd",
+      "email": "kaljunggren@gmail.com",
+      "password": "fgdgdgdgdgd",
+      "id": 2
     }
   ]
 }

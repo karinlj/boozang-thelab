@@ -28,7 +28,7 @@ const AddCat = () => {
         //redirecting so do not have to set gui state
         history.push("/catshelter");
       } else {
-        setError("Ooops!! Could not fetch data...");
+        setError("Ooops!! Could not add data...");
       }
       return addedCatToServer;
     }, 1000);
@@ -47,7 +47,7 @@ const AddCat = () => {
           {error && <div className="error">{error}</div>}
           <article className="add_cat">
             <h2>Add Cat</h2>
-            <form className="add-todo-form" onSubmit={handleSubmit}>
+            <form className="list_form" onSubmit={handleSubmit}>
               <label htmlFor="name">Name: </label>
               <input
                 type="text"

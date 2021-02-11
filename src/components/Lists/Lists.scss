@@ -29,7 +29,7 @@
 }
 
 //AddTodo
-.add-todo-form {
+.list_form {
   border-radius: 0.25rem;
   background-color: #fff;
   line-height: 1.5rem;
@@ -48,6 +48,8 @@
     }
   }
   input[type="text"],
+  input[type="email"],
+  input[type="password"],
   textarea {
     width: 100%;
     padding-right: 0.5rem;
@@ -100,7 +102,7 @@
         }
       }
     }
-    .add-todo-form {
+    .list_form {
       margin-top: 0;
     }
   }

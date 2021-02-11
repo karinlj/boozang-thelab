@@ -1,3 +1,4 @@
+//Lists
 export const SortedListTestInfo = () => {
   return (
     <article className="comp_test_info">
@@ -35,6 +36,22 @@ export const CatShelterTestInfo = () => {
         using the keyboard or i cry and cry and cry unless you pet me, and then
         maybe i cry just for fun. Hit you unexpectedly who's the baby, for head
         nudges stare out the window.
+      </p>
+    </article>
+  );
+};
+//Forms
+export const FormValidationTestInfo = () => {
+  return (
+    <article className="comp_test_info">
+      <h4>Why learn: FormValidation?</h4>
+      <p>
+        In test automation, it's important not to not hard-code information
+        entered in forms, as this information will often change. A common
+        mistake is to record separate flows for each set of data, making tests
+        numerous and difficult to maintain. Ideally, you want to be able to keep
+        your data separate in a JSON or CSV, and map this data directly into
+        forms.
       </p>
     </article>
   );

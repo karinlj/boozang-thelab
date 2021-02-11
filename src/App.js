@@ -15,6 +15,7 @@ import UnsortedList from "./components/Lists/UnsortedList";
 import CatShelter from "./components/Lists/catList/CatShelter";
 import CatDetails from "./components/Lists/catList/CatDetails";
 import AddCat from "./components/Lists/catList/AddCat";
+import FormValidation from "./components/forms/FormValidation";
 
 function App() {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
@@ -68,6 +69,9 @@ function App() {
               </Route>
               <Route path="/cats/:cat_id">
                 <CatDetails />
+              </Route>
+              <Route path="/formValidation">
+                <FormValidation />
               </Route>
             </Switch>
           </div>

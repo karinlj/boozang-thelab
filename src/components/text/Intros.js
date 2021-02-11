@@ -1,3 +1,4 @@
+//Lists
 export const SortedListIntro = () => {
   return (
     <header className="comp_intro">
@@ -33,6 +34,18 @@ export const CatShelterIntro = () => {
         for go into a room to decide you didn't want to be in there anyway sit
         by the fire or making sure that fluff gets into the owner's eyes fat
         baby cat best buddy little guy.
+      </p>
+    </header>
+  );
+};
+//Forms
+export const FormValidationIntro = () => {
+  return (
+    <header className="comp_intro">
+      <h1>FormValidation</h1>
+      <p>
+        Many applications use forms to submit data. Here you can submit a form
+        and the contents of the form will be displayed below.
       </p>
     </header>
   );

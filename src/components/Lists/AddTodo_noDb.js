@@ -16,7 +16,7 @@ const AddTodo = ({ addTodo }) => {
 
   return (
     <div>
-      <form className="add-todo-form" onSubmit={handleSubmit}>
+      <form className="list_form" onSubmit={handleSubmit}>
         <label htmlFor="">Add new Todo:</label>
         <br />
         <input

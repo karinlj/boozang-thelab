@@ -82,7 +82,7 @@ const CatDetails = () => {
           {error && <div className="error">{error}</div>}
           {singleCat && (
             <article className="single_cat">
-              <form className="add-todo-form" onSubmit={handleSubmit}>
+              <form className="list_form" onSubmit={handleSubmit}>
                 <header>
                   <div className="cat_name">
                     <i className="fas fa-cat"></i>
