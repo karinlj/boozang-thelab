@@ -34,7 +34,7 @@ const SortedList = () => {
   //delete Todo in db and Gui
   const handleDelete = async (id) => {
     //id= argument in handleDelete() from TodoList component
-    console.log("todosUrl", todosUrl);
+    // console.log("todosUrl", todosUrl);
     await deleteData(todosUrl, id);
     //setting Gui state
     setTodos(
@@ -48,7 +48,7 @@ const SortedList = () => {
     setTodos([...todos, newTodo]);
   };
   useEffect(() => {
-    console.log("todos:", todos);
+    // console.log("todos:", todos);
   }, [todos]);
 
   return (

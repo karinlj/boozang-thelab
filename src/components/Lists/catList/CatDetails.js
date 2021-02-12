@@ -24,7 +24,7 @@ const CatDetails = () => {
   useEffect(() => {
     const getSingleCat = async () => {
       const catFromServer = await getData(singleCatUrl);
-      console.log("catFromServer", catFromServer);
+      // console.log("catFromServer", catFromServer);
       //setting Gui state
       setSingleCat(catFromServer);
       setIsLoading(false);
@@ -44,7 +44,7 @@ const CatDetails = () => {
   }, [singleCatUrl]);
 
   const handleChange = (e) => {
-    console.log("hej", e.target.value);
+    // console.log("hej", e.target.value);
     const { name, value } = e.target;
     setNewValues({
       ...newValues,
@@ -62,8 +62,10 @@ const CatDetails = () => {
       inOrOutside: newValues.inOrOutside,
     };
     //PUT request...send update
-    const catFromServer = await updateData(singleCatUrl, updatedCat);
-    if (catFromServer) {
+    const cupdatedCatFromServer = await updateData(singleCatUrl, updatedCat);
+    // console.log("cupdatedCatFromServer", cupdatedCatFromServer);
+
+    if (cupdatedCatFromServer) {
       //redirecting so do not have to set gui state
       history.push("/catshelter");
     } else {
@@ -85,8 +87,7 @@ const CatDetails = () => {
     history.push("/catshelter");
   };
   useEffect(() => {
-    console.log("newValues.inOrOutside:", newValues.inOrOutside);
-    console.log("newValues.name:", newValues.name);
+    //  console.log("newValues.inOrOutside:", newValues.inOrOutside);
   }, [newValues]);
   return (
     <div className="row justify-content-between">

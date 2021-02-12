@@ -3,42 +3,49 @@ import { addData } from "../../fetchFunctions/fetchFunctions";
 import { useHistory } from "react-router-dom";
 
 const AddCat = () => {
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const [inOrOutside, setInOrOutside] = useState("outside");
-
+  const [newValues, setNewValues] = useState({
+    name: "",
+    description: "",
+    inOrOutside: "",
+  });
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const catsUrl = "http://localhost:9000/cats/";
   const history = useHistory();
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    // console.log("hej", e.target.value);
+    //name-attributet
+    const { name, value } = e.target;
+    setNewValues({
+      ...newValues, //all the values +
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newCat = {
-      name: name,
-      description: description,
-      inOrOutside: inOrOutside,
+      ...newValues,
       foundHome: false,
     };
     setIsLoading(true);
-    setTimeout(async () => {
-      const addedCatToServer = await addData(catsUrl, newCat);
-      if (addedCatToServer) {
-        //redirecting so do not have to set gui state
-        history.push("/catshelter");
-      } else {
-        setError("Ooops!! Could not add data...");
-      }
-      return addedCatToServer;
-    }, 1000);
+    const addedCatToServer = await addData(catsUrl, newCat);
+    if (addedCatToServer) {
+      //redirecting so do not have to set gui state
+      history.push("/catshelter");
+    } else {
+      setError("Ooops!! Could not add data...");
+    }
+    return addedCatToServer;
   };
   const handleCancel = () => {
     history.push("/catshelter");
   };
   useEffect(() => {
-    //  console.log("inOrOutside", inOrOutside);
-  }, [inOrOutside]);
+    // console.log("newValues.inOrOutside", newValues.inOrOutside);
+  }, [newValues]);
 
   return (
     <div className="row justify-content-between">
@@ -53,8 +60,9 @@ const AddCat = () => {
                 type="text"
                 name="name"
                 required
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={newValues.name}
+                onChange={(e) => handleChange(e)}
+                //onChange={(e) => setName(e.target.value)}
               />
               <br />
               <label htmlFor="description" className="description">
@@ -63,8 +71,8 @@ const AddCat = () => {
               <textarea
                 type="text"
                 name="description"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
+                value={newValues.description}
+                onChange={(e) => handleChange(e)}
               ></textarea>
 
               <div className="goOutOrNot">
@@ -72,12 +80,10 @@ const AddCat = () => {
                   <label>
                     <input
                       type="radio"
-                      name="location"
+                      name="inOrOutside"
                       value="outside"
-                      checked={inOrOutside === "outside"}
-                      onChange={(e) => {
-                        setInOrOutside(e.target.value);
-                      }}
+                      checked={newValues.inOrOutside === "outside"}
+                      onChange={(e) => handleChange(e)}
                     />
                     <span>Wants to go outside</span>
                   </label>
@@ -86,12 +92,10 @@ const AddCat = () => {
                   <label>
                     <input
                       type="radio"
-                      name="location"
+                      name="inOrOutside"
                       value="inside"
-                      checked={inOrOutside === "inside"}
-                      onChange={(e) => {
-                        setInOrOutside(e.target.value);
-                      }}
+                      checked={newValues.inOrOutside === "inside"}
+                      onChange={(e) => handleChange(e)}
                     />
                     <span>Stay inside</span>
                   </label>

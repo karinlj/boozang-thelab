@@ -8,18 +8,16 @@ const AddTodo = ({ addTodo }) => {
   const todosUrl = "http://localhost:9000/todos/";
 
   //add Todo in db
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     //(json server makes id)
     const todo = { title: title };
     setIsLoading(true);
-    setTimeout(async () => {
-      const data = await addData(todosUrl, todo);
-      addTodo(data);
-      setIsLoading(false);
-      //reset
-      setTitle("");
-    }, 1000);
+    const data = await addData(todosUrl, todo);
+    addTodo(data);
+    setIsLoading(false);
+    //reset
+    setTitle("");
   };
   useEffect(() => {
     // console.log("title:", title);

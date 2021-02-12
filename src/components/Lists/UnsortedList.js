@@ -5,7 +5,6 @@ import { UnsortedListTestInfo } from "../text/TestInfos";
 import ReactPlayer from "react-player/lazy";
 import TodoList from "./TodoList";
 import AddTodo from "./AddTodo";
-//import { addData } from "../fetchFunctions/fetchFunctions";
 import { getData } from "../fetchFunctions/fetchFunctions";
 import { deleteData } from "../fetchFunctions/fetchFunctions";
 
@@ -35,7 +34,6 @@ const UnsortedList = () => {
   const handleDelete = async (id) => {
     //id= argument in handleDelete() from TodoList component
     //fetch(`http://localhost:9000/todos/${id}`
-    console.log("todosUrl", todosUrl);
     await deleteData(todosUrl, id);
     //setting Gui state
     setTodos(
@@ -47,18 +45,15 @@ const UnsortedList = () => {
 
   //addTodo in Gui
   const addTodo = (newTodo) => {
-    console.log("newTodo", newTodo);
     let todosNew = [...todos];
-    console.log("todosNew", todosNew);
     let randomIndex = Math.floor(Math.random() * todosNew.length);
-    console.log(randomIndex);
     //add todo at random index (replace 0)
     todosNew.splice(randomIndex, 0, newTodo);
     setTodos(todosNew);
   };
 
   useEffect(() => {
-    console.log("todos:", todos);
+    // console.log("todos:", todos);
   }, [todos]);
 
   return (

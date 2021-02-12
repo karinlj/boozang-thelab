@@ -9,7 +9,6 @@ import { getData } from "../fetchFunctions/fetchFunctions";
 
 function FormValidation() {
   const [error, setError] = useState(null);
-
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -17,7 +16,6 @@ function FormValidation() {
     email: "",
     password: "",
   });
-
   const usersUrl = "http://localhost:9000/users/";
 
   const handleChange = (e) => {
@@ -28,7 +26,6 @@ function FormValidation() {
       [name]: value,
     });
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newUser = {

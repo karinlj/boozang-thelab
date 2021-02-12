@@ -5,14 +5,18 @@
       "id": 2
     },
     {
-      "title": "do the dishes",
-      "id": 3
+      "title": "Make some dinner",
+      "id": 4
+    },
+    {
+      "title": "Do the dishes",
+      "id": 5
     }
   ],
   "cats": [
     {
       "name": "Lukas",
-      "description": "Big, loving cat. Black and white. No tail.",
+      "description": "Big, loving, beautiful cat. Black and white. No tail.",
       "inOrOutside": "outside",
       "foundHome": true,
       "id": 7
@@ -23,6 +27,20 @@
       "inOrOutside": "inside",
       "foundHome": true,
       "id": 8
+    },
+    {
+      "name": "Hugo",
+      "description": "Stripes",
+      "inOrOutside": "outside",
+      "foundHome": true,
+      "id": 9
+    },
+    {
+      "name": "Trulsis",
+      "description": "Black beauty. Funny cat.",
+      "inOrOutside": "outside",
+      "foundHome": true,
+      "id": 10
     }
   ],
   "users": [
