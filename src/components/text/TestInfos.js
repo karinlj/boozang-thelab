@@ -16,7 +16,7 @@ export const SortedListTestInfo = () => {
 export const UnsortedListTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Why learn: UnsortedList?</h4>
+      <h4>Why learn: Unsorted list?</h4>
       <p>
         One common problem in test automation is to be able to uniquely identify
         objects in lists. When identifying elements using CSS selectors,
@@ -30,7 +30,7 @@ export const UnsortedListTestInfo = () => {
 export const CatShelterTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Why learn: Cat Feeding List?</h4>
+      <h4>Why learn: Cat feeding list?</h4>
       <p>
         Missing until dinner time destroy the blinds lay on arms while you're
         using the keyboard or i cry and cry and cry unless you pet me, and then
@@ -44,7 +44,7 @@ export const CatShelterTestInfo = () => {
 export const FormValidationTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Why learn: FormValidation?</h4>
+      <h4>Why learn: Form validation?</h4>
       <p>
         In test automation, it's important not to not hard-code information
         entered in forms, as this information will often change. A common

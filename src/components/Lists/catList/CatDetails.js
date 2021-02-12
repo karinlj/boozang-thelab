@@ -10,10 +10,11 @@ const CatDetails = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // const [values, setValues] = useState(null);
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const [inOrOutside, setInOrOutside] = useState("");
+  const [newValues, setNewValues] = useState({
+    name: "",
+    description: "",
+    inOrOutside: "",
+  });
 
   const { cat_id } = useParams();
   const catsUrl = "http://localhost:9000/cats/";
@@ -23,6 +24,7 @@ const CatDetails = () => {
   useEffect(() => {
     const getSingleCat = async () => {
       const catFromServer = await getData(singleCatUrl);
+      console.log("catFromServer", catFromServer);
       //setting Gui state
       setSingleCat(catFromServer);
       setIsLoading(false);
@@ -31,14 +33,43 @@ const CatDetails = () => {
       } else {
         setError("Ooops!! Could not fetch data...");
       }
-      //inital value
-      setName(catFromServer.name);
-      setDescription(catFromServer.description);
-      setInOrOutside(catFromServer.inOrOutside);
+      //inital values
+      setNewValues({
+        name: catFromServer.name,
+        description: catFromServer.description,
+        inOrOutside: catFromServer.inOrOutside,
+      });
     };
     getSingleCat();
   }, [singleCatUrl]);
 
+  const handleChange = (e) => {
+    console.log("hej", e.target.value);
+    const { name, value } = e.target;
+    setNewValues({
+      ...newValues,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    //creating cat with updated name and description
+    const updatedCat = {
+      ...singleCat,
+      name: newValues.name,
+      description: newValues.description,
+      inOrOutside: newValues.inOrOutside,
+    };
+    //PUT request...send update
+    const catFromServer = await updateData(singleCatUrl, updatedCat);
+    if (catFromServer) {
+      //redirecting so do not have to set gui state
+      history.push("/catshelter");
+    } else {
+      setError("Ooops!! Could not update data...");
+    }
+  };
   const handleDelete = async (id) => {
     const deletedCatFromServer = await deleteData(catsUrl, id);
     if (deletedCatFromServer) {
@@ -50,31 +81,13 @@ const CatDetails = () => {
     return deletedCatFromServer;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    //creating cat with updated name and description
-    const updatedCat = {
-      ...singleCat,
-      name: name,
-      description: description,
-      inOrOutside: inOrOutside,
-    };
-    //PUT request...send update
-    const catFromServer = await updateData(singleCatUrl, updatedCat);
-    if (catFromServer) {
-      //redirecting so do not have to set gui state
-      history.push("/catshelter");
-    } else {
-      setError("Ooops!! Could not update data...");
-    }
-  };
-
   const handleCancel = () => {
     history.push("/catshelter");
   };
   useEffect(() => {
-    // console.log("new values:", name, description, inOrOutside);
-  }, [name, description, inOrOutside]);
+    console.log("newValues.inOrOutside:", newValues.inOrOutside);
+    console.log("newValues.name:", newValues.name);
+  }, [newValues]);
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6">
@@ -94,7 +107,8 @@ const CatDetails = () => {
                         required
                         placeholder="Enter name..."
                         defaultValue={singleCat.name}
-                        onChange={(e) => setName(e.target.value)}
+                        onChange={(e) => handleChange(e)}
+                        //onChange={(e) => setName(e.target.value)}
                       />
                     </h2>
                   </div>
@@ -110,7 +124,7 @@ const CatDetails = () => {
                   name="description"
                   placeholder="Enter description..."
                   defaultValue={singleCat.description}
-                  onChange={(e) => setDescription(e.target.value)}
+                  onChange={(e) => handleChange(e)}
                 ></textarea>
 
                 <div className="goOutOrNot">
@@ -118,13 +132,11 @@ const CatDetails = () => {
                     <label>
                       <input
                         type="radio"
-                        name="location"
+                        name="inOrOutside"
                         value="outside"
                         //checked if...
                         defaultChecked={singleCat.inOrOutside === "outside"}
-                        onChange={(e) => {
-                          setInOrOutside(e.target.value);
-                        }}
+                        onChange={(e) => handleChange(e)}
                       />
                       <span>Wants to go outside</span>
                     </label>
@@ -133,12 +145,10 @@ const CatDetails = () => {
                     <label>
                       <input
                         type="radio"
-                        name="location"
+                        name="inOrOutside"
                         value="inside"
                         defaultChecked={singleCat.inOrOutside === "inside"}
-                        onChange={(e) => {
-                          setInOrOutside(e.target.value);
-                        }}
+                        onChange={(e) => handleChange(e)}
                       />
                       <span>Stay inside</span>
                     </label>

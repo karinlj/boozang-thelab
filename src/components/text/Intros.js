@@ -28,7 +28,7 @@ export const UnsortedListIntro = () => {
 export const CatShelterIntro = () => {
   return (
     <header className="comp_intro">
-      <h1>Cat Shelter</h1>
+      <h1>Cat shelter</h1>
       <p>
         Lick human with sandpaper tongue purr like an angel stare at guinea pigs
         for go into a room to decide you didn't want to be in there anyway sit
@@ -42,7 +42,7 @@ export const CatShelterIntro = () => {
 export const FormValidationIntro = () => {
   return (
     <header className="comp_intro">
-      <h1>FormValidation</h1>
+      <h1>Form validation</h1>
       <p>
         Many applications use forms to submit data. Here you can submit a form
         and the contents of the form will be displayed below.

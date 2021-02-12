@@ -21,7 +21,7 @@ function FormValidation() {
   const usersUrl = "http://localhost:9000/users/";
 
   const handleChange = (e) => {
-    console.log("hej", e.target.value);
+    //console.log("hej", e.target.value);
     const { name, value } = e.target;
     setFormData({
       ...formData,

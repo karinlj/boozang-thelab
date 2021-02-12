@@ -61,7 +61,6 @@ const CatShelter = () => {
               <Link to="/addcat">Add Cat</Link>
             </button>
           </header>
-
           {error && <div className="error">{error}</div>}
           {isLoading && <div className="loading">Loading...</div>}
           {cats && <CatList items={cats} togglefoundHome={togglefoundHome} />}
@@ -74,5 +73,4 @@ const CatShelter = () => {
     </div>
   );
 };
-
 export default CatShelter;
