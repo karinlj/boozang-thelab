@@ -1,3 +1,4 @@
+import Udemy from "../../img/udemy-logo.png";
 const Footer = () => {
   //UI component
   return (
@@ -5,8 +6,9 @@ const Footer = () => {
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-7">
-            <h5 className="udemy">
+            <h5 className="udemy_link">
               <a href="https://www.udemy.com/code-less-test-automation-with-boozang/">
+                <img src={Udemy} alt="udemy-logo" />
                 Free Boozang Udemy course
               </a>
             </h5>

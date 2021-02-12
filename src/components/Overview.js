@@ -1,3 +1,5 @@
+import ReactPlayer from "react-player/lazy";
+
 const Overview = () => {
   return (
     <div className="row justify-content-between">
@@ -37,18 +39,20 @@ const Overview = () => {
       </div>
 
       <div className="col-12 col-md-4">
-        {/* <VideoSidebar
-          src="https://www.youtube.com/embed/u7HRbyUAFDg"
-          height="230"
-          width="100%"
-          title="getting-started"
-        />
-        <VideoSidebar
-          src="https://www.youtube.com/embed/POqOQ-hQuTk"
-          height="230"
-          width="100%"
-          title="getting-started"
-        /> */}
+        <div className="video_section">
+          <ReactPlayer
+            controls
+            url="https://www.youtube.com/embed/u7HRbyUAFDg"
+            width="280px"
+            height="180px"
+          />
+          <ReactPlayer
+            controls
+            url="https://www.youtube.com/embed/POqOQ-hQuTk"
+            width="280px"
+            height="180px"
+          />
+        </div>
       </div>
     </div>
   );

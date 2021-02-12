@@ -117,7 +117,7 @@ function FormValidation() {
         </div>
       </div>
       <div className="col-12 col-md-5">
-        <div className="video_secttion">
+        <div className="video_section">
           <ReactPlayer
             controls
             url="https://www.youtube.com/embed/6L6CLCKSf1s"

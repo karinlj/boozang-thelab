@@ -1,3 +1,5 @@
+import ReactPlayer from "react-player/lazy";
+
 const Introduction = () => {
   return (
     <div className="row justify-content-between">
@@ -33,18 +35,20 @@ const Introduction = () => {
       </div>
 
       <div className="col-12 col-md-4">
-        {/* <VideoSidebar
-          src="https://www.youtube.com/embed/-91YkYkmjZk"
-          height="230"
-          width="100%"
-          title="Why do test automation"
-        />
-        <VideoSidebar
-          src="https://www.youtube.com/embed/850MnrHoEYc"
-          height="230"
-          width="100%"
-          title="getting-started"
-        /> */}
+        <div className="video_section">
+          <ReactPlayer
+            controls
+            url="https://www.youtube.com/embed/-91YkYkmjZk"
+            width="280px"
+            height="180px"
+          />
+          <ReactPlayer
+            controls
+            url="https://www.youtube.com/embed/850MnrHoEYc"
+            width="280px"
+            height="180px"
+          />
+        </div>
       </div>
     </div>
   );

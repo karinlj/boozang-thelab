@@ -1,4 +1,4 @@
-import Boozang from "../../img/boozang.png";
+import Boozang from "../../img/boozang_logo_reverse@2x.png";
 
 const Header = () => {
   return (
@@ -7,7 +7,7 @@ const Header = () => {
         <div className="container">
           <div className="row justify-content-end">
             <ul>
-              <li>
+              <li className="boozang_logo_text">
                 Powered by &nbsp;{" "}
                 <a href="https:boozang.com">
                   <img src={Boozang} alt="boozang logo" />

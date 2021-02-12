@@ -8,7 +8,7 @@ import SideDrawer from "./components/layout/SideDrawer/SideDrawer";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Home from "./components/Home";
-import Intro from "./components/Intro";
+import Introduction from "./components/Introduction";
 import Overview from "./components/Overview";
 import SortedList from "./components/Lists/SortedList";
 import UnsortedList from "./components/Lists/UnsortedList";
@@ -50,7 +50,7 @@ function App() {
                 <Home />
               </Route>
               <Route path="/introduction">
-                <Intro />
+                <Introduction />
               </Route>
               <Route path="/overview">
                 <Overview />

@@ -127,27 +127,23 @@ h5 {
 //header
 .site-header-section {
   display: none;
-  padding: 1.3rem calc(3.75rem - 15px);
+  padding: 1.8rem calc(3.75rem - 15px);
 
-  .text-black {
-    color: $themecolor;
+  .boozang_logo_text {
+    color: #fff;
   }
-
   @media all and (min-width: $lg-min) {
     display: block;
     width: 75%;
     margin-left: 25%;
   }
-
   @media all and (min-width: $xl-min) {
     width: 80%;
     margin-left: 20%;
   }
-
   img {
     max-width: 130px;
   }
-
   a {
     text-decoration: none;
   }
@@ -353,27 +349,26 @@ h5 {
     margin-bottom: 2rem;
     color: #fff;
     p {
-      font-size: 1.1em;
+      font-size: 1.1rem;
       white-space: pre-line;
     }
   }
   article.comp_test_info {
-    font-size: 0.95em;
+    font-size: 0.95rem;
     margin-bottom: 2rem;
     min-height: 150px;
     background: #fff;
-    background: #cce5ff;
-    color: $themecolor;
+    background: $themecolorBlueNewLightest;
     padding: 1.5rem 2rem;
     border-radius: $themeBorderRadius;
     box-shadow: $themeBoxShadow;
-
     margin-top: 4rem;
     h4 {
       color: $themecolorBlueNewDark;
     }
     p {
       white-space: pre-line;
+      color: $themecolorDarker;
     }
   }
   .loading {
@@ -382,7 +377,7 @@ h5 {
   .error {
     color: $themecolorNewPinkLight;
   }
-  .video_secttion {
+  .video_section {
     > div {
       float: right;
       padding-bottom: 1rem;
@@ -452,6 +447,7 @@ h5 {
   flex-direction: column;
   justify-content: space-between;
   background: $themecolorBlueNewDark;
+
   color: #fff;
   width: 100%;
   min-height: 10rem;
@@ -471,7 +467,11 @@ h5 {
     margin-left: 20%;
     padding: 2rem calc(3.75rem - 15px) 1rem calc(3.75rem - 15px);
   }
-  .udemy {
+  .udemy_link {
+    img {
+      max-width: 30px;
+      margin-right: 3px;
+    }
     a {
       color: #020c70;
       color: #fff;

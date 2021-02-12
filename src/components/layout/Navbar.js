@@ -27,7 +27,6 @@ const Navbar = ({ handleDrawerClick }) => (
                   </li>
                 </ul>
               </li>
-
               <li>
                 Lists
                 <ul className="sub-list">
@@ -42,7 +41,6 @@ const Navbar = ({ handleDrawerClick }) => (
                   </li>
                 </ul>
               </li>
-
               <li>
                 Forms and tables
                 <ul className="sub-list">
@@ -54,7 +52,6 @@ const Navbar = ({ handleDrawerClick }) => (
                   </li>
                 </ul>
               </li>
-
               <li>
                 Timing
                 <ul className="sub-list">
@@ -107,7 +104,7 @@ const Navbar = ({ handleDrawerClick }) => (
                   </li>
                 </ul>
               </li>
-
+              {/* 
               <li>
                 Users and roles
                 <ul className="sub-list">
@@ -118,7 +115,7 @@ const Navbar = ({ handleDrawerClick }) => (
                     <NavLink to="/roleBasedLogin">Role-based login</NavLink>
                   </li>
                 </ul>
-              </li>
+              </li> */}
               <li>
                 CI server
                 <ul className="sub-list">
