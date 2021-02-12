@@ -41,6 +41,13 @@
       "inOrOutside": "outside",
       "foundHome": true,
       "id": 10
+    },
+    {
+      "name": "Theo",
+      "description": "Big, fine cat",
+      "inOrOutside": "outside",
+      "foundHome": false,
+      "id": 11
     }
   ],
   "users": [

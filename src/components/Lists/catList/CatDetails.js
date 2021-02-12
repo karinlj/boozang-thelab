@@ -9,7 +9,6 @@ const CatDetails = () => {
   const [singleCat, setSingleCat] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-
   const [newValues, setNewValues] = useState({
     name: "",
     description: "",
@@ -94,6 +93,7 @@ const CatDetails = () => {
       <div className="col-12 col-md-6">
         <section className="catshelter_section">
           {error && <div className="error">{error}</div>}
+          {isLoading && <div className="loading">Loading...</div>}
           {singleCat && (
             <article className="single_cat">
               <form className="list_form" onSubmit={handleSubmit}>

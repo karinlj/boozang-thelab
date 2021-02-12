@@ -3,13 +3,13 @@ import { addData } from "../../fetchFunctions/fetchFunctions";
 import { useHistory } from "react-router-dom";
 
 const AddCat = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [newValues, setNewValues] = useState({
     name: "",
     description: "",
     inOrOutside: "",
   });
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
 
   const catsUrl = "http://localhost:9000/cats/";
   const history = useHistory();
