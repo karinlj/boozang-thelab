@@ -16,6 +16,7 @@ import CatShelter from "./components/Lists/catList/CatShelter";
 import CatDetails from "./components/Lists/catList/CatDetails";
 import AddCat from "./components/Lists/catList/AddCat";
 import FormValidation from "./components/forms/FormValidation";
+import SpeedGame from "./components/timing/SpeedGame";
 
 function App() {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
@@ -72,6 +73,9 @@ function App() {
               </Route>
               <Route path="/formValidation">
                 <FormValidation />
+              </Route>
+              <Route path="/speedGame">
+                <SpeedGame />
               </Route>
             </Switch>
           </div>

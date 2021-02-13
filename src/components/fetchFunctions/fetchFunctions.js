@@ -3,9 +3,15 @@ export const getData = async (url) => {
   try {
     //fetch() returns promise
     const result = await fetch(url);
+    //result men status ej ok
+    if (!result.ok) {
+      // console.log("result:", result);
+      throw Error("Fetch data error: " + result.statusText);
+    }
     //result.json(); returns promise
     const data = await result.json();
     return data;
+    //inget result ex hittar ej url
   } catch (err) {
     console.log("error:", err);
   }
@@ -19,6 +25,9 @@ export const addData = async (url, item) => {
       //what I post as json-format
       body: JSON.stringify(item),
     });
+    if (!result.ok) {
+      throw Error("Fetch data error: " + result.statusText);
+    }
     const data = await result.json();
     return data;
   } catch (err) {
@@ -34,6 +43,9 @@ export const updateData = async (url, updItem) => {
       //what I post as json-format
       body: JSON.stringify(updItem),
     });
+    if (!result.ok) {
+      throw Error("Fetch data error: " + result.statusText);
+    }
     const data = await result.json();
     return data;
   } catch (err) {
@@ -47,6 +59,9 @@ export const deleteData = async (url, id) => {
     const result = await fetch(url + id, {
       method: "DELETE",
     });
+    if (!result.ok) {
+      throw Error("Fetch data error: " + result.statusText);
+    }
     const data = await result.json();
     return data;
   } catch (err) {

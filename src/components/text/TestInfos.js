@@ -56,3 +56,33 @@ export const FormValidationTestInfo = () => {
     </article>
   );
 };
+//Timing
+export const SpeedGameTestInfo = () => {
+  return (
+    <article className="comp_test_info">
+      <h4>Why learn: Speed Game</h4>
+      <p>
+        A classic problem in test automation is handling render waits. If
+        certain elements are taking longer to render, the test might fail. On
+        the other hand, if we create long delays the overall test takes too long
+        to run. Best if is we can wait until an element appears, but then click
+        it as fast as we can.
+      </p>
+    </article>
+  );
+};
+export const WaitGameTestInfo = () => {
+  return (
+    <article className="comp_test_info">
+      <h4>Why learn: Wait Game</h4>
+      <p>
+        Sometimes there is a necessity to wait a certain time to make sure the
+        application catches up. In test automation, being reactive is not always
+        the best medicine, and sometimes it pays off to be patient. A common
+        scenario is when a back-end system needs to process something behind the
+        scenes, that the front-end isn't aware of. In these cases, it's crucial
+        to be able to force a delay.
+      </p>
+    </article>
+  );
+};

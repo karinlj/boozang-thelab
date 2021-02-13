@@ -11,7 +11,7 @@ const AddCat = () => {
     inOrOutside: "",
   });
 
-  const catsUrl = "http://localhost:9000/cats/";
+  const catsUrl = "http://localhost:9000/dogs/";
   const history = useHistory();
 
   const handleChange = (e) => {

@@ -50,3 +50,30 @@ export const FormValidationIntro = () => {
     </header>
   );
 };
+//Timing
+export const SpeedGameIntro = () => {
+  return (
+    <header className="comp_intro">
+      <h1>Speed Game</h1>
+      <p>
+        This game tests the user reaction time. This is also useful to show-case
+        test automation render waits. where x is a random time between 1 and 10
+        seconds. The hit the button as fast as you can. The smaller the number
+        of milliseconds above, the better.
+      </p>
+    </header>
+  );
+};
+export const WaitGameIntro = () => {
+  return (
+    <header className="comp_intro">
+      <h1>Wait Game</h1>
+      <p>
+        As opposed to speed game, this game tests the users time perception
+        skill. This is also useful to showcase delay functionality in testing.
+        Try to to hit the "End Game" button after exactly 5 seconds, and the
+        goal is to have as few milliseconds as possible above 5 seconds.
+      </p>
+    </header>
+  );
+};

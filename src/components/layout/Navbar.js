@@ -56,7 +56,7 @@ const Navbar = ({ handleDrawerClick }) => (
                 Timing
                 <ul className="sub-list">
                   <li>
-                    <NavLink to="/speed">Speed</NavLink>
+                    <NavLink to="/speedGame">Speed Game</NavLink>
                   </li>
                   <li>
                     <NavLink to="/wait">Wait</NavLink>

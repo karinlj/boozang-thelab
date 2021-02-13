@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 import "./form.scss";
 import ReactPlayer from "react-player/lazy";
 import { FormValidationIntro } from "../text/Intros";
@@ -9,6 +8,7 @@ import { getData } from "../fetchFunctions/fetchFunctions";
 
 function FormValidation() {
   const [error, setError] = useState(null);
+  const [printForm, setPrintForm] = useState(false);
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -26,44 +26,44 @@ function FormValidation() {
       [name]: value,
     });
   };
+  //hantera fel i formuläret
+  const validate = (data) => {
+    let status = 0;
+    if (data.username.length < 4) {
+      return [status, "Username needs to be al least 4 characters."];
+    } else if (data.password.length < 6) {
+      return [status, "Password needs to be al least 6 characters."];
+    } else {
+      return [1, "ok"];
+    }
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newUser = {
       ...formData,
     };
-
     let [status, message] = validate(newUser);
-    if (status === 1) {
-      const addUserToServer = await addData(usersUrl, newUser);
-      return addUserToServer;
-    } else {
+    //om det finns fel
+    if (status !== 1) {
       setError(message);
       return;
     }
-    // if (addUserToServer) {
-    //   console.log("addUserToServer", addUserToServer);
-    // } else {
-    //   setError("Ooops!! Could not add data...");
-    // }
-    // return addUserToServer;
-  };
-  const validate = (data) => {
-    let status = 0;
-    if (data.password.length < 6) {
-      return [status, "Password needs to be al least 6 characters."];
-    } else if (data.username.length < 4) {
-      return [status, "Username needs to be al least 4 characters."];
+    setError(null);
+    const addUserToServer = await addData(usersUrl, newUser);
+    //hantera fel i datahämtning
+    if (!addUserToServer) {
+      setError("Ooops!! Could not add data...");
+      return;
     }
-    return [1, "ok"];
+    setPrintForm(true);
   };
-
   useEffect(() => {
-    console.log("formData", formData);
+    //console.log("formData", formData);
   }, [formData]);
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6">
-        <div className="form-section">
+        <div className="form_section">
           <FormValidationIntro />
           {error && <div className="error">{error}</div>}
           <form className="list_form" onSubmit={handleSubmit}>
@@ -113,11 +113,43 @@ function FormValidation() {
               </div>
             </section>
           </form>
-          <FormValidationTestInfo />
+
+          {printForm && (
+            <article className="print_form show">
+              <div className="card">
+                <div className="card-body">
+                  <ul>
+                    <li>
+                      <strong>Name: &nbsp;</strong>
+                      {formData.firstname}
+                    </li>
+                    <li>
+                      <strong>Lastname: &nbsp;</strong>
+                      {formData.lastname}
+                    </li>
+                    <li>
+                      <strong>Username: &nbsp;</strong>
+                      {formData.username}
+                    </li>
+                    <li>
+                      <strong>Email: &nbsp;</strong>
+                      {formData.email}
+                    </li>
+                    <li>
+                      <strong>Password: &nbsp;</strong>
+                      {formData.password}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          )}
         </div>
       </div>
       <div className="col-12 col-md-5">
-        <div className="video_section">
+        <FormValidationTestInfo />
+
+        {/* <div className="video_section">
           <ReactPlayer
             controls
             url="https://www.youtube.com/embed/6L6CLCKSf1s"
@@ -148,7 +180,7 @@ function FormValidation() {
             width="280px"
             height="180px"
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );
