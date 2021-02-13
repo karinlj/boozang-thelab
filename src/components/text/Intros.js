@@ -1,7 +1,7 @@
 //Lists
 export const SortedListIntro = () => {
   return (
-    <header className="comp_intro">
+    <article className="comp_intro">
       <h1>Sorted list </h1>
       <p>
         In this simple application we can add and delete todos from a list.
@@ -10,24 +10,24 @@ export const SortedListIntro = () => {
         most cases, we should add a list of items to the todo-list, and then
         remove the list of items again.
       </p>
-    </header>
+    </article>
   );
 };
 export const UnsortedListIntro = () => {
   return (
-    <header className="comp_intro">
+    <article className="comp_intro">
       <h1>Unsorted list</h1>
       <p>
         In this section we repeat the same exercise as in sorted list, but
         allowing the list items to be added to a random position in the list.
         This adds complexity when identifying the elements to remove.
       </p>
-    </header>
+    </article>
   );
 };
 export const CatShelterIntro = () => {
   return (
-    <header className="comp_intro">
+    <article className="comp_intro">
       <h1>Cat shelter</h1>
       <p>
         Lick human with sandpaper tongue purr like an angel stare at guinea pigs
@@ -35,25 +35,25 @@ export const CatShelterIntro = () => {
         by the fire or making sure that fluff gets into the owner's eyes fat
         baby cat best buddy little guy.
       </p>
-    </header>
+    </article>
   );
 };
 //Forms
 export const FormValidationIntro = () => {
   return (
-    <header className="comp_intro">
+    <article className="comp_intro">
       <h1>Form validation</h1>
       <p>
         Many applications use forms to submit data. Here you can submit a form
         and the contents of the form will be displayed below.
       </p>
-    </header>
+    </article>
   );
 };
 //Timing
 export const SpeedGameIntro = () => {
   return (
-    <header className="comp_intro">
+    <article className="comp_intro">
       <h1>Speed Game</h1>
       <p>
         This game tests the user reaction time. This is also useful to show-case
@@ -61,12 +61,12 @@ export const SpeedGameIntro = () => {
         seconds. The hit the button as fast as you can. The smaller the number
         of milliseconds above, the better.
       </p>
-    </header>
+    </article>
   );
 };
 export const WaitGameIntro = () => {
   return (
-    <header className="comp_intro">
+    <article className="comp_intro">
       <h1>Wait Game</h1>
       <p>
         As opposed to speed game, this game tests the users time perception
@@ -74,6 +74,6 @@ export const WaitGameIntro = () => {
         Try to to hit the "End Game" button after exactly 5 seconds, and the
         goal is to have as few milliseconds as possible above 5 seconds.
       </p>
-    </header>
+    </article>
   );
 };

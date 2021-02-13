@@ -54,6 +54,7 @@ h1 {
 }
 p {
   font-size: 0.95rem;
+  font-size: 1rem;
 }
 h1,
 h2,
@@ -130,7 +131,12 @@ h5 {
   padding: 1.8rem calc(3.75rem - 15px);
 
   .boozang_logo_text {
-    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    span {
+      padding-right: 1rem;
+      color: $navLinkColor;
+    }
   }
   @media all and (min-width: $lg-min) {
     display: block;
@@ -154,15 +160,13 @@ h5 {
   .nav {
     width: 100%;
     display: flex;
-    padding: 2rem calc(1.5rem - 15px);
-
+    padding: 1.8rem calc(1.5rem - 15px);
     @media all and (min-width: $sm-min) {
-      padding: 2rem calc(2.25rem - 15px);
+      padding: 1.8rem calc(2.25rem - 15px);
     }
     @media all and (min-width: $md-min) {
-      padding: 2rem calc(3rem - 15px);
+      padding: 1.8rem calc(3rem - 15px);
     }
-
     .col {
       display: flex;
       align-items: center;
@@ -175,16 +179,15 @@ h5 {
       margin-left: 1rem;
       color: $themecolor;
       font-size: 2.2rem;
+      line-height: 1;
       a {
         text-decoration: none;
         color: $themecolor;
-
         &:hover {
           text-decoration: none;
         }
       }
     }
-
     @media all and (min-width: $lg-min) {
       padding: 2rem calc(1.75rem - 15px) 1rem calc(3.75rem - 15px);
       flex-direction: column;
@@ -196,7 +199,6 @@ h5 {
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
       background: $themecolorBlueNewDarkest;
-
       .col {
         display: block;
       }
@@ -208,10 +210,9 @@ h5 {
         padding-bottom: 0.2rem;
         a {
           color: $themecolorBlueNew;
-          color: $themecolorNewPink;
+          color: $themecolorNewRed;
         }
       }
-
       ul.links {
         display: block;
         margin-top: 0;
@@ -225,7 +226,7 @@ h5 {
 
             &:hover {
               text-decoration: none;
-              color: #75bff0;
+              color: $linkColor;
             }
           }
 
@@ -235,16 +236,16 @@ h5 {
               margin: 1px 14px;
 
               a {
-                color: $linkColor;
+                color: $navLinkColor;
 
                 &:hover {
                   text-decoration: none;
-                  color: #75bff0;
+                  color: $linkColor;
                 }
 
                 &:active {
                   //when click
-                  color: #75bff0;
+                  color: $linkColor;
                 }
               }
             }
@@ -276,53 +277,53 @@ h5 {
 }
 
 //sidebar
-.sidebar-section {
-  font-size: 0.95em;
-  margin-top: 5rem;
-  margin-bottom: 2rem;
-  min-height: 150px;
-  // border: 1px solid #333;
-  background: $themecolorLightgrey;
-  color: $themecolor;
-  padding: 1.5rem 2rem;
-  border-radius: $themeBorderRadius;
-  box-shadow: $themeBoxShadow;
-  @media all and (min-width: $md-min) {
-    margin-top: 0;
-  }
-  h4 {
-    margin-bottom: 0.8rem;
-    color: $themecolorBlueNew;
-  }
-  p {
-    font-size: 1em;
-    line-height: 1.7;
-    white-space: pre-line;
-  }
-}
+// .sidebar-section {
+//   font-size: 0.95em;
+//   margin-top: 5rem;
+//   margin-bottom: 2rem;
+//   min-height: 150px;
+//   // border: 1px solid #333;
+//   background: $themecolorLightgrey;
+//   color: $themecolor;
+//   padding: 1.5rem 2rem;
+//   border-radius: $themeBorderRadius;
+//   box-shadow: $themeBoxShadow;
+//   @media all and (min-width: $md-min) {
+//     margin-top: 0;
+//   }
+//   h4 {
+//     margin-bottom: 0.8rem;
+//     color: $themecolorBlueNew;
+//   }
+//   p {
+//     font-size: 1em;
+//     line-height: 1.7;
+//     white-space: pre-line;
+//   }
+// }
 
 //home tec
-.textComp-section {
-  h1 {
-    margin-bottom: 2rem;
-  }
+// .textComp-section {
+//   h1 {
+//     margin-bottom: 2rem;
+//   }
 
-  .card {
-    min-height: 150px;
-    padding: 0 0.75rem;
+//   .card {
+//     min-height: 150px;
+//     padding: 0 0.75rem;
 
-    @media all and (min-width: $xl-min) {
-      padding: 0.5rem 1rem;
-    }
-  }
-  ul.advantages-list {
-    list-style: circle;
-    padding: 1rem 0 0 1rem;
-    li {
-      font-size: 0.9rem;
-    }
-  }
-}
+//     @media all and (min-width: $xl-min) {
+//       padding: 0.5rem 1rem;
+//     }
+//   }
+//   ul._list {
+//     list-style: circle;
+//     padding: 1rem 0 0 1rem;
+//     li {
+//       font-size: 0.9rem;
+//     }
+//   }
+// }
 
 //content
 .content-section {
@@ -344,20 +345,29 @@ h5 {
     margin-left: 20%;
     padding: 0 calc(3.75rem - 15px) 5rem calc(3.75rem - 15px);
   }
+
   //comp_intro
-  header.comp_intro {
+  .comp_intro {
     margin-bottom: 2rem;
     color: #fff;
     p {
-      font-size: 1.1rem;
+      font-size: 1rem;
       white-space: pre-line;
     }
+    a {
+      color: $linkColor;
+    }
+    ul._list {
+      list-style-type: square;
+      padding: 0 0 0 1rem;
+      li {
+        font-size: 0.9rem;
+      }
+    }
   }
-  article.comp_test_info {
-    font-size: 0.95rem;
+  .comp_test_info {
     margin-bottom: 2rem;
     min-height: 150px;
-    background: #fff;
     background: $themecolorBlueNewLightest;
     padding: 1.5rem 2rem;
     border-radius: $themeBorderRadius;
@@ -604,15 +614,6 @@ button.formBtn {
   &.delete {
     background: $themecolorNewRed;
     color: #fff;
-
-    // text-transform: uppercase;
-    // font-size: 80%;
-    // border-radius: $themeBorderRadius;
-    // color: #fff;
-    // border: none;
-    // font-weight: 600;
-    // padding: 0.2rem 0.9rem;
-    // width: auto;
   }
 }
 

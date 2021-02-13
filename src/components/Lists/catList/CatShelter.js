@@ -65,10 +65,9 @@ const CatShelter = () => {
           {isLoading && <div className="loading">Loading...</div>}
           {cats && <CatList items={cats} togglefoundHome={togglefoundHome} />}
         </div>
-        <CatShelterTestInfo />
       </div>
       <div className="col-12 col-md-5">
-        <div className="video_section"></div>
+        <CatShelterTestInfo />
       </div>
     </div>
   );

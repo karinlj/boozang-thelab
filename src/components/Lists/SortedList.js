@@ -61,10 +61,11 @@ const SortedList = () => {
           {todos && <TodoList todos={todos} handleDelete={handleDelete} />}
           <AddTodo addTodo={addTodo} />
         </div>
-        <SortedListTestInfo />
       </div>
       <div className="col-12 col-md-5">
-        <div className="video_section">
+        <SortedListTestInfo />
+
+        {/* <div className="video_section">
           <ReactPlayer
             controls
             url="https://www.youtube.com/embed/9zIJX5v9vhE"
@@ -83,7 +84,7 @@ const SortedList = () => {
             width="280px"
             height="180px"
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );

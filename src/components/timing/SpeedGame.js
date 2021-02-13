@@ -42,18 +42,19 @@ const SpeedGame = () => {
               <h4>{this.state.message}</h4> <p>{this.state.messageSmall}</p>
             </div> */}
           </div>
-          <SpeedGameTestInfo />
         </div>
       </div>
       <div className="col-12 col-md-5">
-        <div className="video_section">
+        <SpeedGameTestInfo />
+
+        {/* <div className="video_section">
           <ReactPlayer
             controls
             url="https://www.youtube.com/embed/92CUwz7s4sM"
             width="280px"
             height="180px"
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );

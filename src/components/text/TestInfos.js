@@ -30,7 +30,7 @@ export const UnsortedListTestInfo = () => {
 export const CatShelterTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Why learn: Cat feeding list?</h4>
+      <h4>Why learn: Cat Shelter?</h4>
       <p>
         Missing until dinner time destroy the blinds lay on arms while you're
         using the keyboard or i cry and cry and cry unless you pet me, and then

@@ -5,17 +5,13 @@ const Header = () => {
     <header className="site-header">
       <div className="site-header-section">
         <div className="container">
-          <div className="row justify-content-end">
-            <ul>
-              <li className="boozang_logo_text">
-                Powered by &nbsp;{" "}
-                <a href="https:boozang.com">
-                  <img src={Boozang} alt="boozang logo" />
-                  {/* <br />
+          <div className="boozang_logo_text">
+            <span>Powered by</span>
+            <a href="https:boozang.com">
+              <img src={Boozang} alt="boozang logo" />
+              {/* <br />
                   <h4 className="">Try it out now!</h4> */}
-                </a>
-              </li>
-            </ul>
+            </a>
           </div>
         </div>
       </div>

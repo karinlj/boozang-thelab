@@ -66,10 +66,11 @@ const UnsortedList = () => {
           {todos && <TodoList todos={todos} handleDelete={handleDelete} />}
           <AddTodo addTodo={addTodo} />
         </div>
-        <UnsortedListTestInfo />
       </div>
       <div className="col-12 col-md-5">
-        <div className="video_section">
+        <UnsortedListTestInfo />
+
+        {/* <div className="video_section">
           <ReactPlayer
             controls
             url="https://www.youtube.com/embed/Fh1HH-BVJkE"
@@ -94,7 +95,7 @@ const UnsortedList = () => {
             width="280px"
             height="180px"
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );
