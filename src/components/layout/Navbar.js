@@ -59,7 +59,7 @@ const Navbar = ({ handleDrawerClick }) => (
                     <NavLink to="/speedGame">Speed Game</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/wait">Wait</NavLink>
+                    <NavLink to="/waitGame">Wait Game</NavLink>
                   </li>
                 </ul>
               </li>

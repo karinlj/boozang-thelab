@@ -1,191 +1,91 @@
 import { useState, useEffect } from "react";
-//import "./Timing.scss";
-import ReactPlayer from "react-player/lazy";
 import { SpeedGameIntro } from "../text/Intros";
 import { SpeedGameTestInfo } from "../text/TestInfos";
 
 const SpeedGame = () => {
+  const [isRunning, setIsRunning] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [timeMessage, setTimeMessage] = useState("");
+  const [count, setCount] = useState(0);
+  const [intervallur, setIntervallur] = useState(null);
+
+  const handleStart = () => {
+    if (!isRunning) {
+      setIsRunning(true);
+      setSuccessMessage("");
+      setTimeMessage("");
+      let startCount = Math.floor(Math.random() * 10000) + 1000; //random nr mellan 1000-10000ms
+      console.log("random_startCount: " + startCount);
+      //start counting down at randomnr
+      setCount(startCount);
+      intervalUpdate();
+    }
+  };
+  const handleStop = () => {
+    if (isRunning) {
+      setIsRunning(false);
+      setSuccessMessage("You are fast!!");
+      setTimeMessage(`Your reaction time is ${-count} ms.`);
+      clearInterval(intervallur);
+    }
+  };
+  const intervalUpdate = () => {
+    let myInterval = setInterval(() => {
+      // count down
+      setCount((count) => count - 100);
+    }, 100);
+    setIntervallur(myInterval);
+  };
+  useEffect(() => {
+    // console.log("isRunning: ", isRunning);
+    // console.log("count: ", count);
+  }, [isRunning, count]);
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6">
-        <div className="timing-section">
+        <section className="timing_section">
           <SpeedGameIntro />
-          <div className="btn-and-message higher">
-            <div>
+          <div>
+            <input
+              type="button"
+              value="Start Game"
+              className="formBtn add"
+              onClick={handleStart}
+            />
+            {count < 0 && (
               <input
                 type="button"
-                value="  Start game"
-                className="formBtn add"
-              />
-              <input
-                type="button"
-                value="  End game"
+                value="End Game"
                 className="formBtn delete"
+                onClick={handleStop}
               />
-
-              {/* <MainBtn
-                classProp="button start-btn"
-                clickProp={this.handleStart}
-              >
-                Start game
-              </MainBtn>
-
-              <MainBtn
-                classProp={this.state.stopClass}
-                clickProp={this.handleStop}
-              >
-                End game
-              </MainBtn> */}
-            </div>
-
-            {/* <div className={this.state.messageClass}>
-              <h4>{this.state.message}</h4> <p>{this.state.messageSmall}</p>
-            </div> */}
+            )}
           </div>
-        </div>
+
+          <div className="messages">
+            {!isRunning && (
+              <div className="success_message">
+                <h4>{successMessage}</h4>
+              </div>
+            )}
+            {!isRunning && (
+              <div className="time_message">
+                <p>{timeMessage}</p>
+              </div>
+            )}
+          </div>
+        </section>
       </div>
       <div className="col-12 col-md-5">
         <SpeedGameTestInfo />
-
-        {/* <div className="video_section">
-          <ReactPlayer
-            controls
-            url="https://www.youtube.com/embed/92CUwz7s4sM"
-            width="280px"
-            height="180px"
-          />
-        </div> */}
+        {/* <VideoSidebar
+          src="https://www.youtube.com/embed/92CUwz7s4sM"
+          height="230"
+          width="100%"
+          title="getting-started"
+        /> */}
       </div>
     </div>
   );
 };
-
 export default SpeedGame;
-
-// class Speed extends Component {
-//   //class based
-
-//   state = {
-//     isRunning: false,
-//     stopClass: "button stop-btn",
-//     message: "",
-//     messageSmall: "",
-//     messageClass: "message", //invisible
-
-//     count: 0,
-//     startCount: 0,
-//     interval: null
-//   };
-
-//   handleStart = () => {
-//     if (!this.state.isRunning) {
-//       let startCount = Math.floor(Math.random() * 10000) + 1000; //random nr 1-10s
-//       // console.log('random' + startCount);
-
-//       this.setState({
-//         count: startCount, //start counting down at randomnr
-//         stopClass: "button stop-btn",
-//         message: "", //reset
-//         messageSmall: "",
-//         messageClass: "message", //invisible
-//         isRunning: true
-//       });
-//       this.intervalUpdate();
-//     }
-//   };
-
-//   intervalUpdate = () => {
-//     let myInterval = setInterval(() => {
-//       //this.myInterval
-
-//       // console.log("My count" + this.state.count);
-//       this.setState({
-//         count: this.state.count - 100, // count down every second
-//         interval: myInterval
-//       });
-//       if (this.state.count < 0) {
-//         this.setState({
-//           stopClass: "button stop-btn show"
-//         });
-//       }
-//     }, 100);
-//   };
-
-//   handleStop = () => {
-//     if (this.state.isRunning) {
-//       // console.log('count ' + -this.state.count);
-
-//       clearInterval(this.state.interval);
-
-//       this.setState({
-//         isRunning: false
-//       });
-//     }
-//     this.message();
-//   };
-
-//   message = () => {
-//     let countOutput = -this.state.count;
-//     let messageNew;
-//     let messageSmallNew;
-
-//     if (countOutput < 0) {
-//       messageNew = "Fail!";
-//       messageSmallNew = "No cheating... you clicked too early.";
-//     } else {
-//       messageNew = "Success!";
-//       messageSmallNew = "You clicked " + countOutput + " ms too late...";
-//     }
-
-//     this.setState({
-//       message: messageNew,
-//       messageSmall: messageSmallNew,
-//       messageClass: "message show"
-//     });
-//   };
-
-//   render() {
-//     return (
-//       <div className="row justify-content-between">
-//         <div className="col-12 col-md-6">
-//           <div className="timing-section">
-//             <header>
-//               <HeaderText componentName={this.constructor.name} />
-//             </header>
-
-//             <div className="btn-and-message higher">
-//               <div>
-//                 <MainBtn classProp="button start-btn" clickProp={this.handleStart}>
-//                   Start game
-//                 </MainBtn>
-
-//                 <MainBtn classProp={this.state.stopClass} clickProp={this.handleStop}>
-//                   End game
-//                 </MainBtn>
-//               </div>
-
-//               <div className={this.state.messageClass}>
-//                 <h4>
-//                   {this.state.message}
-//                 </h4>
-//                 <p>
-//                   {this.state.messageSmall}
-//                 </p>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-
-//         <div className="col-12 col-md-5">
-//           <Sidebar componentName={this.constructor.name} />
-//           <VideoSidebar
-//           src="https://www.youtube.com/embed/92CUwz7s4sM"
-//           height="230"
-//           width="100%"
-//           title="getting-started"
-//           />
-//         </div>
-//       </div>
-//     );
-//   }
-// }

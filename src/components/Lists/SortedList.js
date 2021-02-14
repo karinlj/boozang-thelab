@@ -3,7 +3,7 @@ import "./Lists.scss";
 import { SortedListIntro } from "../text/Intros";
 import { SortedListTestInfo } from "../text/TestInfos";
 //import ReactPlayer from "react-player/youtube";
-import ReactPlayer from "react-player/lazy";
+//import ReactPlayer from "react-player/lazy";
 import TodoList from "./TodoList";
 import AddTodo from "./AddTodo";
 import { getData } from "../fetchFunctions/fetchFunctions";

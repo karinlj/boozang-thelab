@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./form.scss";
-import ReactPlayer from "react-player/lazy";
+//import ReactPlayer from "react-player/lazy";
 import { FormValidationIntro } from "../text/Intros";
 import { FormValidationTestInfo } from "../text/TestInfos";
 import { addData } from "../fetchFunctions/fetchFunctions";

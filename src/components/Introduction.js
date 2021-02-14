@@ -1,4 +1,4 @@
-import ReactPlayer from "react-player/lazy";
+//import ReactPlayer from "react-player/lazy";
 
 const Introduction = () => {
   return (

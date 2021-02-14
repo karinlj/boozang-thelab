@@ -204,13 +204,11 @@ h5 {
       }
       h2 {
         margin-left: 0;
-        color: $themecolorBlueNew;
-        color: $themecolorNewPink;
         font-size: 2.2rem;
         padding-bottom: 0.2rem;
         a {
           color: $themecolorBlueNew;
-          color: $themecolorNewRed;
+          color: $themecolorNewPink;
         }
       }
       ul.links {
@@ -404,52 +402,64 @@ h5 {
 }
 
 //conditional and strings
-.btn-and-message {
-  height: 50px;
-
-  display: flex;
-  justify-content: space-between;
-}
-
-.message {
-  min-height: 3rem;
-  float: right;
-  opacity: 0;
-  transition: 1s;
-
-  h4 {
-    font-size: 2.2em;
-    font-weight: 300;
-    color: $themecolorPink;
-
-    @media all and(max-width: 380px) {
-      font-size: 1.7em;
+.timing_section {
+  .messages {
+    margin-top: 2rem;
+    .success_message {
+      color: $themecolorGreen;
     }
-
-    @media all and (min-width: $sm-min) {
-      font-size: 2.2em;
-    }
-
-    @media all and (min-width: $xl-min) {
-      font-size: 3em;
+    .time_message {
+      color: #fff;
+      margin-top: 0.5rem;
     }
   }
-
-  p {
-    color: #fff;
-    font-weight: 300;
-    //font-size: 1.3em;
-  }
 }
+// .btn-and-message {
+//   height: 50px;
 
-.message.show {
-  opacity: 1;
-}
+//   display: flex;
+//   justify-content: space-between;
+// }
 
-.btn-and-message.higher {
-  height: 140px;
-  padding: 0.5rem 0;
-}
+// .message {
+//   min-height: 3rem;
+//   float: right;
+//   opacity: 0;
+//   transition: 1s;
+
+//   h4 {
+//     font-size: 2.2em;
+//     font-weight: 300;
+//     color: $themecolorPink;
+
+//     @media all and(max-width: 380px) {
+//       font-size: 1.7em;
+//     }
+
+//     @media all and (min-width: $sm-min) {
+//       font-size: 2.2em;
+//     }
+
+//     @media all and (min-width: $xl-min) {
+//       font-size: 3em;
+//     }
+//   }
+
+//   p {
+//     color: #fff;
+//     font-weight: 300;
+//     //font-size: 1.3em;
+//   }
+// }
+
+// .message.show {
+//   opacity: 1;
+// }
+
+// .btn-and-message.higher {
+//   height: 140px;
+//   padding: 0.5rem 0;
+// }
 
 //footer
 .footer-section {

@@ -17,6 +17,7 @@ import CatDetails from "./components/Lists/catList/CatDetails";
 import AddCat from "./components/Lists/catList/AddCat";
 import FormValidation from "./components/forms/FormValidation";
 import SpeedGame from "./components/timing/SpeedGame";
+import WaitGame from "./components/timing/WaitGame";
 
 function App() {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
@@ -76,6 +77,9 @@ function App() {
               </Route>
               <Route path="/speedGame">
                 <SpeedGame />
+              </Route>
+              <Route path="/waitGame">
+                <WaitGame />
               </Route>
             </Switch>
           </div>
