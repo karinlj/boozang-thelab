@@ -4,10 +4,9 @@ import { SpeedGameTestInfo } from "../text/TestInfos";
 
 const SpeedGame = () => {
   const [isRunning, setIsRunning] = useState(false);
+  const [count, setCount] = useState(0);
   const [successMessage, setSuccessMessage] = useState("");
   const [timeMessage, setTimeMessage] = useState("");
-  const [count, setCount] = useState(0);
-  const [intervallur, setIntervallur] = useState(null);
 
   const handleStart = () => {
     if (!isRunning) {
@@ -15,10 +14,8 @@ const SpeedGame = () => {
       setSuccessMessage("");
       setTimeMessage("");
       let startCount = Math.floor(Math.random() * 10000) + 1000; //random nr mellan 1000-10000ms
-      console.log("random_startCount: " + startCount);
       //start counting down at randomnr
       setCount(startCount);
-      intervalUpdate();
     }
   };
   const handleStop = () => {
@@ -26,20 +23,22 @@ const SpeedGame = () => {
       setIsRunning(false);
       setSuccessMessage("You are fast!!");
       setTimeMessage(`Your reaction time is ${-count} ms.`);
-      clearInterval(intervallur);
     }
   };
-  const intervalUpdate = () => {
-    let myInterval = setInterval(() => {
-      // count down
-      setCount((count) => count - 100);
-    }, 100);
-    setIntervallur(myInterval);
-  };
   useEffect(() => {
+    let myInterval = null;
+    if (isRunning) {
+      myInterval = setInterval(() => {
+        setCount((count) => count - 100);
+      }, 100);
+    } else if (!isRunning) {
+      clearInterval(myInterval);
+    }
+    return () => clearInterval(myInterval);
     // console.log("isRunning: ", isRunning);
     // console.log("count: ", count);
   }, [isRunning, count]);
+
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6">
