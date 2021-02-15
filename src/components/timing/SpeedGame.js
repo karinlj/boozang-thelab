@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./Timing.scss";
 import { SpeedGameIntro } from "../text/Intros";
 import { SpeedGameTestInfo } from "../text/TestInfos";
 

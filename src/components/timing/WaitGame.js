@@ -1,19 +1,10 @@
 import { useState, useEffect } from "react";
-//import "./Timing.scss";
+import "./Timing.scss";
 //import ReactPlayer from "react-player/lazy";
 import { WaitGameIntro } from "../text/Intros";
 import { WaitGameTestInfo } from "../text/TestInfos";
 
 const WaitGame = () => {
-  //   state = {
-  //     isRunning: false,
-  //     offsetTime: 0,
-  //     stopClass: "button stop-btn",
-  //     message: "",
-  //     messageClass: "message", //invisible
-  //     messageSmall: ""
-  //   };
-
   const [isRunning, setIsRunning] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [timeMessage, setTimeMessage] = useState("");
@@ -24,23 +15,28 @@ const WaitGame = () => {
       setIsRunning(true);
       //tidpunkt för start
       setOffsetTime(Date.now());
+      setSuccessMessage("");
+      setTimeMessage("");
     }
   };
 
+  //tidsskillnad mellan stop o start
   const delta = () => {
     //tidpunkt för stop
     let now = Date.now();
-    //skillnad mellan 2 tidpunkter
     let elapsedTime = now - offsetTime;
     setOffsetTime(now); //new start point?
     return elapsedTime;
   };
 
+  //kolla så är mer än 5s o hur mycket
   const compare = () => {
     const limit = 5000;
     const difference = delta();
     if (difference >= limit) {
       setSuccessMessage("Success!");
+      let overflow = difference - limit;
+      setTimeMessage(`${overflow}ms above 5 seconds.`);
     } else {
       setSuccessMessage("Fail!");
     }
@@ -49,38 +45,9 @@ const WaitGame = () => {
     setIsRunning(false);
     compare();
   };
-  //   delta = () => {
-  //     let now = Date.now();
-  //     let elapsedTime = now - this.state.offsetTime;
-
-  //     this.setState({
-  //       offsetTime: now //new start point?
-  //     });
-  //     return elapsedTime; //passing value from timePassed
-  //   };
-
-  //   compare = () => {
-  //     let delta = this.delta(); //calling delta func with passed value
-  //     // console.log("timePassed is ", delta);
-
-  //     let messageNew = "";
-  //     let limit = 5000;
-  //     let overflow;
-
-  //     if (delta >= limit) {
-  //       messageNew = "Success!"; //need better output
-  //       overflow = delta - limit + " ms above 5 seconds.";
-  //     } else messageNew = "Fail!";
-
-  //     this.setState({
-  //       message: messageNew,
-  //       messageClass: "message show",
-  //       messageSmall: overflow
-  //     });
-  //   };
   useEffect(() => {
-    console.log("isRunning: ", isRunning);
-    console.log("offsetTime: ", offsetTime);
+    // console.log("isRunning: ", isRunning);
+    // console.log("offsetTime: ", offsetTime);
   }, [isRunning]);
   return (
     <div className="row justify-content-between">
@@ -105,7 +72,9 @@ const WaitGame = () => {
             )}
           </div>
           <div className="messages">
-            <div className="success_message">
+            <div
+              className={`success_message ${timeMessage === "" ? "fail" : ""}`}
+            >
               <h4>{successMessage}</h4>
             </div>
 
