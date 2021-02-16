@@ -3,6 +3,7 @@ import "./Lists.scss";
 import { UnsortedListIntro } from "../text/Intros";
 import { UnsortedListTestInfo } from "../text/TestInfos";
 //import ReactPlayer from "react-player/lazy";
+import { UnsortedListVideos } from "../text/videos/VideoSections";
 import TodoList from "./TodoList";
 import AddTodo from "./AddTodo";
 import { getData } from "../fetchFunctions/fetchFunctions";
@@ -69,7 +70,7 @@ const UnsortedList = () => {
       </div>
       <div className="col-12 col-md-5">
         <UnsortedListTestInfo />
-
+        <UnsortedListVideos />
         {/* <div className="video_section">
           <ReactPlayer
             controls

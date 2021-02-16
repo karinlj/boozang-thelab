@@ -64,6 +64,19 @@ h5 {
   // font-weight: 300;
   //font-weight: 500;
 }
+a {
+  color: $linkColor;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+    color: $linkColor;
+    filter: brightness(80%);
+  }
+  &:active {
+    //when click
+    color: $linkColor;
+  }
+}
 
 //buttons
 .button {
@@ -76,15 +89,9 @@ h5 {
   text-transform: uppercase;
   padding: 12px 18px;
   border-radius: $themeBorderRadius;
-  -webkit-border-radius: $themeBorderRadius;
-  -moz-border-radius: $themeBorderRadius;
-  -ms-border-radius: $themeBorderRadius;
-  -o-border-radius: $themeBorderRadius;
-
   &:hover {
     //opacity: 0.9;
   }
-
   @media all and (min-width: $sm-min) {
     font-size: 0.9em;
   }
@@ -150,9 +157,6 @@ h5 {
   img {
     max-width: 130px;
   }
-  a {
-    text-decoration: none;
-  }
 }
 
 //nav
@@ -181,11 +185,7 @@ h5 {
       font-size: 2.2rem;
       line-height: 1;
       a {
-        text-decoration: none;
         color: $themecolor;
-        &:hover {
-          text-decoration: none;
-        }
       }
     }
     @media all and (min-width: $lg-min) {
@@ -207,7 +207,6 @@ h5 {
         font-size: 2.2rem;
         padding-bottom: 0.2rem;
         a {
-          color: $themecolorBlueNew;
           color: $themecolorNewPink;
         }
       }
@@ -220,10 +219,8 @@ h5 {
           margin: 2px 0;
           color: #fff;
           a {
-            color: #fff;
-
+            color: $navLinkColor;
             &:hover {
-              text-decoration: none;
               color: $linkColor;
             }
           }
@@ -232,20 +229,6 @@ h5 {
             li {
               font-size: 0.85rem;
               margin: 1px 14px;
-
-              a {
-                color: $navLinkColor;
-
-                &:hover {
-                  text-decoration: none;
-                  color: $linkColor;
-                }
-
-                &:active {
-                  //when click
-                  color: $linkColor;
-                }
-              }
             }
           }
         }
@@ -386,10 +369,14 @@ h5 {
     color: $themecolorNewPinkLight;
   }
   .video_section {
-    > div {
-      float: right;
-      padding-bottom: 1rem;
+    color: #fff;
+    //color: $themecolorNewPink;
+    h5 {
     }
+    // > div {
+    //   float: right;
+    //   padding-bottom: 1rem;
+    // }
   }
 }
 
@@ -507,10 +494,6 @@ h5 {
         font-weight: 900;
         margin-left: 10px;
       }
-      &:hover {
-        text-decoration: none;
-        filter: brightness(80%);
-      }
     }
   }
   .copy {
@@ -523,7 +506,6 @@ h5 {
     justify-content: flex-end;
     li.social {
       a {
-        text-decoration: none;
         font-size: 0;
         display: inline-block;
         margin-right: 2rem;
@@ -535,9 +517,6 @@ h5 {
           text-align: center;
           border-radius: 50%;
           transition: 1s;
-        }
-        &:hover {
-          filter: brightness(80%);
         }
         &.mail {
           &:after {
@@ -620,4 +599,8 @@ button.formBtn {
 .fas.fa-paw {
   color: $themecolorNewRed;
   margin-right: 0.5rem;
+}
+
+.youtube_logo {
+  max-width: 2.2rem;
 }

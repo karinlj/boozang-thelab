@@ -40,7 +40,7 @@ const SortedList = () => {
       <div className="col-12 col-md-6">
         <div className="todo-section">
           <SortedListIntro />
-          <TodoList TodoList={todos} handleDelete={handleDelete} />
+          <TodoList todos={todos} handleDelete={handleDelete} />
           <AddTodo addTodo={addTodo} />
         </div>
         <SortedListTestInfo />

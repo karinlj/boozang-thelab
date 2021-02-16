@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./Lists.scss";
 import { SortedListIntro } from "../text/Intros";
 import { SortedListTestInfo } from "../text/TestInfos";
+import { SortedListVideos } from "../text/videos/VideoSections";
 //import ReactPlayer from "react-player/youtube";
 //import ReactPlayer from "react-player/lazy";
 import TodoList from "./TodoList";
@@ -64,7 +65,7 @@ const SortedList = () => {
       </div>
       <div className="col-12 col-md-5">
         <SortedListTestInfo />
-
+        <SortedListVideos />
         {/* <div className="video_section">
           <ReactPlayer
             controls
