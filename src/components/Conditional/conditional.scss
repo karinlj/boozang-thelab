@@ -1,0 +1,15 @@
+@import "../../variables.scss";
+.colors_section {
+  .btn_wrapper {
+    display: flex;
+    justify-content: space-between;
+    .blue {
+      background: #198cff;
+      color: #fff;
+    }
+    .pink {
+      background: $themecolorNewPink;
+      color: #fff;
+    }
+  }
+}

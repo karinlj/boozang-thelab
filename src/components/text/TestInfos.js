@@ -90,7 +90,7 @@ export const WaitGameTestInfo = () => {
 export const VisualBugsTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Visual Bugs</h4>
+      <h4>Why learn: Visual Bugs</h4>
       <p>
         Even if test automation can be a very powerful tool, doing certain kinds
         of tasks is best left to the human. An example of this is finding visual
@@ -99,6 +99,21 @@ export const VisualBugsTestInfo = () => {
         systems can be very time-consuming and add unnecessary overhead. Use
         test automation technology and in-browser annotations to partly automate
         this process.
+      </p>
+    </article>
+  );
+};
+//Conditional logic
+export const YellowOrRedTestInfo = () => {
+  return (
+    <article className="comp_test_info">
+      <h4>Why learn: Yellow or Red</h4>
+      <p>
+        In this case, we look at basic condition handling. If something exists,
+        do this, otherwise, do that. This is the fundament on doing tests on top
+        of a system where the initial state isn't known, or a future state
+        cannot be predicted. By using logic like this, we can allow our tests to
+        adapt to how the application behaves.
       </p>
     </article>
   );

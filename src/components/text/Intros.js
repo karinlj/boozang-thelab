@@ -90,3 +90,15 @@ export const VisualBugsIntro = () => {
     </article>
   );
 };
+//Conditional logic
+export const YellowOrRedIntro = () => {
+  return (
+    <article className="comp_intro">
+      <h1>Blue or Pink</h1>
+      <p>
+        Click the Generate color button to display a color with a word and then
+        click the button with the correspondent color.
+      </p>
+    </article>
+  );
+};

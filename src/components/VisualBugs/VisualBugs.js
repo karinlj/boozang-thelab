@@ -57,7 +57,7 @@ const VisualBugs = () => {
             </div>
             <div className="col-2">
               <input
-                type="submit"
+                type="button"
                 value="Next"
                 className="formBtn add"
                 onClick={handleClick}

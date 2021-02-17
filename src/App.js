@@ -19,6 +19,7 @@ import FormValidation from "./components/forms/FormValidation";
 import SpeedGame from "./components/timing/SpeedGame";
 import WaitGame from "./components/timing/WaitGame";
 import VisualBugs from "./components/VisualBugs/VisualBugs";
+import YellowOrRed from "./components/Conditional/YellowOrRed";
 
 function App() {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
@@ -84,6 +85,9 @@ function App() {
               </Route>
               <Route path="/visualBugs">
                 <VisualBugs />
+              </Route>
+              <Route path="/yellowOrRed">
+                <YellowOrRed />
               </Route>
             </Switch>
           </div>

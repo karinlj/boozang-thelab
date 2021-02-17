@@ -201,3 +201,18 @@ export const VisualBugsVideos = () => {
     </div>
   );
 };
+//Conditional logic
+export const YellowOrRedVideos = () => {
+  const videos = [
+    {
+      id: 1,
+      url: "https://youtu.be/_yhTQ_WJc1Q",
+      text: "Conditional Logic",
+    },
+  ];
+  return (
+    <div className="video_section">
+      <VideoList videos={videos} />
+    </div>
+  );
+};
