@@ -60,43 +60,17 @@ const UnsortedList = () => {
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6">
-        <div className="todo-section">
+        <section className="todo-section">
           <UnsortedListIntro />
           {error && <div className="error">{error}</div>}
           {isLoading && <div className="loading">Loading...</div>}
           {todos && <TodoList todos={todos} handleDelete={handleDelete} />}
           <AddTodo addTodo={addTodo} />
-        </div>
+        </section>
       </div>
       <div className="col-12 col-md-5">
         <UnsortedListTestInfo />
         <UnsortedListVideos />
-        {/* <div className="video_section">
-          <ReactPlayer
-            controls
-            url="https://www.youtube.com/embed/Fh1HH-BVJkE"
-            width="280px"
-            height="180px"
-          />
-          <ReactPlayer
-            controls
-            url="https://www.youtube.com/embed/3c4ZX7IESyM"
-            width="280px"
-            height="180px"
-          />
-          <ReactPlayer
-            controls
-            url="https://www.youtube.com/embed/nFzlyKzNHHg"
-            width="280px"
-            height="180px"
-          />
-          <ReactPlayer
-            controls
-            url="https://www.youtube.com/embed/6ZztczG5VCQ"
-            width="280px"
-            height="180px"
-          />
-        </div> */}
       </div>
     </div>
   );

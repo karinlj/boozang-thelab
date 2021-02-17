@@ -53,7 +53,7 @@ const CatShelter = () => {
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6">
-        <div className="catshelter_section">
+        <section className="catshelter_section">
           <CatShelterIntro />
           <header className="cat_shelter_heading">
             {" "}
@@ -64,7 +64,7 @@ const CatShelter = () => {
           {error && <div className="error">{error}</div>}
           {isLoading && <div className="loading">Loading...</div>}
           {cats && <CatList items={cats} togglefoundHome={togglefoundHome} />}
-        </div>
+        </section>
       </div>
       <div className="col-12 col-md-5">
         <CatShelterTestInfo />
