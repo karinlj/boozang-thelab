@@ -18,6 +18,7 @@ import AddCat from "./components/Lists/catList/AddCat";
 import FormValidation from "./components/forms/FormValidation";
 import SpeedGame from "./components/timing/SpeedGame";
 import WaitGame from "./components/timing/WaitGame";
+import VisualBugs from "./components/VisualBugs/VisualBugs";
 
 function App() {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
@@ -80,6 +81,9 @@ function App() {
               </Route>
               <Route path="/waitGame">
                 <WaitGame />
+              </Route>
+              <Route path="/visualBugs">
+                <VisualBugs />
               </Route>
             </Switch>
           </div>

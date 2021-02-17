@@ -83,7 +83,7 @@ const SideDrawer = (props) => {
                 <ul className="sub-list">
                   <li>
                     <NavLink to="/visualBugs">
-                      <div onClick={props.clickLink}>Visual bugs</div>
+                      <div onClick={props.clickLink}>Visual Bugs</div>
                     </NavLink>
                   </li>
                 </ul>

@@ -77,3 +77,16 @@ export const WaitGameIntro = () => {
     </article>
   );
 };
+//Bug reporting
+export const VisualBugsIntro = () => {
+  return (
+    <article className="comp_intro">
+      <h1>Visual Bugs</h1>
+      <p>
+        In this exercise, a city dweller not too familiar with the fauna of
+        Africa was tasked with adding labels to pictures of a series of animals.
+        Find the mistakes that were made.
+      </p>
+    </article>
+  );
+};

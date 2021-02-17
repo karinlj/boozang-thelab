@@ -181,3 +181,23 @@ export const WaitGameVideos = () => {
     </div>
   );
 };
+//Bug reporting
+export const VisualBugsVideos = () => {
+  const videos = [
+    {
+      id: 1,
+      url: "https://youtu.be/Z4Cvpx8aPIE",
+      text: "Using the comment function to annotate bugs",
+    },
+    {
+      id: 2,
+      url: "https://youtu.be/xB3RPQKUNRM",
+      text: "Reporting bugs and team work",
+    },
+  ];
+  return (
+    <div className="video_section">
+      <VideoList videos={videos} />
+    </div>
+  );
+};

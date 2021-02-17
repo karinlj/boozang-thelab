@@ -86,3 +86,20 @@ export const WaitGameTestInfo = () => {
     </article>
   );
 };
+//Bug reporting
+export const VisualBugsTestInfo = () => {
+  return (
+    <article className="comp_test_info">
+      <h4>Visual Bugs</h4>
+      <p>
+        Even if test automation can be a very powerful tool, doing certain kinds
+        of tasks is best left to the human. An example of this is finding visual
+        bugs. Here, you can still use automated bug reporting to help you out.
+        Often writing the steps to reproduce a bug in emails or ticketing
+        systems can be very time-consuming and add unnecessary overhead. Use
+        test automation technology and in-browser annotations to partly automate
+        this process.
+      </p>
+    </article>
+  );
+};

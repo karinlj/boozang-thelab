@@ -67,7 +67,7 @@ const Navbar = ({ handleDrawerClick }) => (
                 Bug reporting
                 <ul className="sub-list">
                   <li>
-                    <NavLink to="/visualBugs">Visual bugs</NavLink>
+                    <NavLink to="/visualBugs">Visual Bugs</NavLink>
                   </li>
                 </ul>
               </li>

@@ -327,7 +327,7 @@ a {
     padding: 0 calc(3.75rem - 15px) 5rem calc(3.75rem - 15px);
   }
 
-  //comp_intro
+  //introductions
   .comp_intro {
     margin-bottom: 2rem;
     color: #fff;
@@ -346,6 +346,7 @@ a {
       }
     }
   }
+  //test info
   .comp_test_info {
     margin-bottom: 2rem;
     min-height: 150px;
@@ -368,6 +369,7 @@ a {
   .error {
     color: $themecolorNewPinkLight;
   }
+  //videos
   .video_section {
     color: #fff;
     li {
