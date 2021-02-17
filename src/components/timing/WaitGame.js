@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Timing.scss";
-//import ReactPlayer from "react-player/lazy";
+import { WaitGameVideos } from "../text/videos/VideoSections";
 import { WaitGameIntro } from "../text/Intros";
 import { WaitGameTestInfo } from "../text/TestInfos";
 
@@ -86,6 +86,7 @@ const WaitGame = () => {
       </div>
       <div className="col-12 col-md-5">
         <WaitGameTestInfo />
+        <WaitGameVideos />
       </div>
     </div>
   );

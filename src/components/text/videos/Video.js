@@ -4,7 +4,7 @@ const Video = ({ video }) => {
     <li>
       <a href={video.url} target="_blank" rel="noopener">
         <img src={youtubeLogo} alt="YouTube logo" className="youtube_logo" />
-        {video.text}
+        <span> {video.text}</span>
       </a>
     </li>
   );

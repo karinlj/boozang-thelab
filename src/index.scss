@@ -370,13 +370,20 @@ a {
   }
   .video_section {
     color: #fff;
-    //color: $themecolorNewPink;
-    h5 {
+    li {
+      margin-bottom: 0.2rem;
     }
-    // > div {
-    //   float: right;
-    //   padding-bottom: 1rem;
-    // }
+    a {
+      display: flex;
+      align-items: center;
+      .youtube_logo {
+        max-width: 2.2rem;
+        max-height: 2rem;
+      }
+      span {
+        line-height: 1.2;
+      }
+    }
   }
 }
 
@@ -599,8 +606,4 @@ button.formBtn {
 .fas.fa-paw {
   color: $themecolorNewRed;
   margin-right: 0.5rem;
-}
-
-.youtube_logo {
-  max-width: 2.2rem;
 }

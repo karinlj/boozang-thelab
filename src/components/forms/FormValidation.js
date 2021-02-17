@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./form.scss";
-//import ReactPlayer from "react-player/lazy";
+import { FormValidationVideos } from "../text/videos/VideoSections";
+
 import { FormValidationIntro } from "../text/Intros";
 import { FormValidationTestInfo } from "../text/TestInfos";
 import { addData } from "../fetchFunctions/fetchFunctions";
@@ -148,39 +149,7 @@ function FormValidation() {
       </div>
       <div className="col-12 col-md-5">
         <FormValidationTestInfo />
-
-        {/* <div className="video_section">
-          <ReactPlayer
-            controls
-            url="https://www.youtube.com/embed/6L6CLCKSf1s"
-            width="280px"
-            height="180px"
-          />
-          <ReactPlayer
-            controls
-            url="https://www.youtube.com/embed/1blw4gEsr9M"
-            width="280px"
-            height="180px"
-          />
-          <ReactPlayer
-            controls
-            url="https://www.youtube.com/embed/xBMvng8KDx0"
-            width="280px"
-            height="180px"
-          />
-          <ReactPlayer
-            controls
-            url="https://www.youtube.com/embed/6fp2SNvSE-g"
-            width="280px"
-            height="180px"
-          />
-          <ReactPlayer
-            controls
-            url="https://www.youtube.com/embed/l3pFnkSVrMs"
-            width="280px"
-            height="180px"
-          />
-        </div> */}
+        <FormValidationVideos />
       </div>
     </div>
   );

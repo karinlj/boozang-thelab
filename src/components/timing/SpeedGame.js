@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Timing.scss";
+import { SpeedGameVideos } from "../text/videos/VideoSections";
 import { SpeedGameIntro } from "../text/Intros";
 import { SpeedGameTestInfo } from "../text/TestInfos";
 
@@ -78,12 +79,7 @@ const SpeedGame = () => {
       </div>
       <div className="col-12 col-md-5">
         <SpeedGameTestInfo />
-        {/* <VideoSidebar
-          src="https://www.youtube.com/embed/92CUwz7s4sM"
-          height="230"
-          width="100%"
-          title="getting-started"
-        /> */}
+        <SpeedGameVideos />
       </div>
     </div>
   );

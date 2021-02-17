@@ -1,7 +1,8 @@
+import { HomeVideos } from "./text/videos/VideoSections";
 const Home = () => {
   return (
     <div className="row justify-content-between">
-      <div className="col-12 col-md-7">
+      <div className="col-12 col-md-6">
         <article className="comp_intro">
           <h1 className="center">Welcome to theLab!</h1>
           <p>Welcome to the Boozang Test Lab!</p>
@@ -44,7 +45,9 @@ const Home = () => {
           </p>
         </article>
       </div>
-      <div className="col-12 col-md-5"></div>
+      <div className="col-12 col-md-5">
+        <HomeVideos />
+      </div>
     </div>
   );
 };

@@ -1,9 +1,8 @@
-//import ReactPlayer from "react-player/lazy";
-
+import { OverviewVideos } from "./text/videos/VideoSections";
 const Overview = () => {
   return (
     <div className="row justify-content-between">
-      <div className="col-12 col-md-7">
+      <div className="col-12 col-md-6">
         <article className="comp_intro">
           <h1 className="center">Overview of the Tool</h1>
           <p>
@@ -32,21 +31,8 @@ const Overview = () => {
         </article>
       </div>
 
-      <div className="col-12 col-md-4">
-        {/* <div className="video_section">
-          <ReactPlayer
-            controls
-            url="https://www.youtube.com/embed/u7HRbyUAFDg"
-            width="280px"
-            height="180px"
-          />
-          <ReactPlayer
-            controls
-            url="https://www.youtube.com/embed/POqOQ-hQuTk"
-            width="280px"
-            height="180px"
-          />
-        </div> */}
+      <div className="col-12 col-md-5">
+        <OverviewVideos />
       </div>
     </div>
   );

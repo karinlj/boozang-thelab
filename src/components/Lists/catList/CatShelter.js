@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "../Lists.scss";
-//import ReactPlayer from "react-player/lazy";
+import { CatShelterVideos } from "../../text/videos/VideoSections";
 import CatList from "./CatList";
 import { getData } from "../../fetchFunctions/fetchFunctions";
 import { updateData } from "../../fetchFunctions/fetchFunctions";
@@ -68,6 +68,7 @@ const CatShelter = () => {
       </div>
       <div className="col-12 col-md-5">
         <CatShelterTestInfo />
+        <CatShelterVideos />
       </div>
     </div>
   );
