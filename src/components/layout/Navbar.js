@@ -28,6 +28,28 @@ const Navbar = ({ handleDrawerClick }) => (
                 </ul>
               </li>
               <li>
+                Timing
+                <ul className="sub-list">
+                  <li>
+                    <NavLink to="/speedGame">Speed Game</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/waitGame">Wait Game</NavLink>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Conditional logic
+                <ul className="sub-list">
+                  <li>
+                    <NavLink to="/yellowOrBlue">Yellow or Blue</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/catOrDog">Cat or dog</NavLink>
+                  </li>
+                </ul>
+              </li>
+              <li>
                 Lists
                 <ul className="sub-list">
                   <li>
@@ -52,34 +74,12 @@ const Navbar = ({ handleDrawerClick }) => (
                   </li>
                 </ul>
               </li>
-              <li>
-                Timing
-                <ul className="sub-list">
-                  <li>
-                    <NavLink to="/speedGame">Speed Game</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/waitGame">Wait Game</NavLink>
-                  </li>
-                </ul>
-              </li>
+
               <li>
                 Bug reporting
                 <ul className="sub-list">
                   <li>
                     <NavLink to="/visualBugs">Visual Bugs</NavLink>
-                  </li>
-                </ul>
-              </li>
-
-              <li>
-                Conditional logic
-                <ul className="sub-list">
-                  <li>
-                    <NavLink to="/orangeOrBlue">Orange or Blue</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/catOrDog">Cat or dog</NavLink>
                   </li>
                 </ul>
               </li>

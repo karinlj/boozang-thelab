@@ -42,11 +42,11 @@ const VisualBugs = () => {
   }, [index]);
   return (
     <div className="row justify-content-between">
-      <div className="col-12 col-md-6">
+      <div className="col-12 col-md-5">
         <section className="visual_bugs_section">
           <VisualBugsIntro />
           <div className="row">
-            <div className="col-md-10 col-xl-8">
+            <div className="col-10">
               <div className="apect-ratio-box">
                 <div className="apect-ratio-inside">{animalImg}</div>
               </div>
@@ -62,11 +62,6 @@ const VisualBugs = () => {
                 className="formBtn add"
                 onClick={handleClick}
               />
-              {/* <i
-                  class="fas fa-chevron-right formBtn add"
-                  onClick={handleClick}
-                  title="Next"
-                ></i> */}
             </div>
           </div>
         </section>

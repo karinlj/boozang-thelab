@@ -32,6 +32,37 @@ const SideDrawer = (props) => {
                   </li>
                 </ul>
               </li>
+              <li>
+                Timing
+                <ul className="sub-list">
+                  <li>
+                    <NavLink to="/speed">
+                      <div onClick={props.clickLink}>Speed</div>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/wait">
+                      <div onClick={props.clickLink}>Wait</div>
+                    </NavLink>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                Conditional logic
+                <ul className="sub-list">
+                  <li>
+                    <NavLink to="/yellowOrBlue">
+                      <div onClick={props.clickLink}>Yellow or Blue</div>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/catOrDog">
+                      <div onClick={props.clickLink}>Cat or dog</div>
+                    </NavLink>
+                  </li>
+                </ul>
+              </li>
 
               <li>
                 Lists, tables and forms
@@ -63,43 +94,13 @@ const SideDrawer = (props) => {
                   </li>
                 </ul>
               </li>
-              <li>
-                Timing
-                <ul className="sub-list">
-                  <li>
-                    <NavLink to="/speed">
-                      <div onClick={props.clickLink}>Speed</div>
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/wait">
-                      <div onClick={props.clickLink}>Wait</div>
-                    </NavLink>
-                  </li>
-                </ul>
-              </li>
+
               <li>
                 Bug reporting
                 <ul className="sub-list">
                   <li>
                     <NavLink to="/visualBugs">
                       <div onClick={props.clickLink}>Visual Bugs</div>
-                    </NavLink>
-                  </li>
-                </ul>
-              </li>
-
-              <li>
-                Conditional logic
-                <ul className="sub-list">
-                  <li>
-                    <NavLink to="/orangeOrBlue">
-                      <div onClick={props.clickLink}>Orange or Blue</div>
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/catOrDog">
-                      <div onClick={props.clickLink}>Cat or dog</div>
                     </NavLink>
                   </li>
                 </ul>

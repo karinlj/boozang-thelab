@@ -1,38 +1,45 @@
 @import "../../variables.scss";
 .colors_section {
-  .btn_wrapper {
+  .wrapper {
+    height: 160px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     .blue {
       background: #198cff;
       color: #fff;
     }
-    .orange {
-      background: $themecolorOrange;
+    .yellow {
+      background: $themecolorYellow;
       color: #fff;
     }
-  }
-  .result_wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 0.5rem;
-    padding: 2rem 0;
-    h5.color {
-      color: $themecolorOrange;
+    h5.state {
+      color: #fff;
       text-transform: uppercase;
       font-weight: 600;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       margin-bottom: 0;
-      &.blue {
-        color: #198cff;
-      }
     }
-    .success_message {
-      margin-bottom: 0;
-      color: $themecolorGreen;
-      &.fail {
-        color: $themecolorNewRed;
+  }
+
+  .lower_section {
+    display: flex;
+    justify-content: space-between;
+    .result_wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-right: 0.5rem;
+
+      .success_message {
+        margin-bottom: 0;
+        color: $themecolorGreen;
+        i {
+          margin-left: 5px;
+        }
+        &.fail {
+          color: $themecolorNewRed;
+        }
       }
     }
   }

@@ -104,10 +104,10 @@ export const VisualBugsTestInfo = () => {
   );
 };
 //Conditional logic
-export const OrangeOrBlueTestInfo = () => {
+export const YellowOrBlueTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Why learn: Orange or Blue</h4>
+      <h4>Why learn: Yellow or Blue</h4>
       <p>
         In this case, we look at basic condition handling. If something exists,
         do this, otherwise, do that. This is the fundament on doing tests on top
