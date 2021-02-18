@@ -202,7 +202,7 @@ export const VisualBugsVideos = () => {
   );
 };
 //Conditional logic
-export const YellowOrRedVideos = () => {
+export const OrangeOrBlueVideos = () => {
   const videos = [
     {
       id: 1,

@@ -7,9 +7,33 @@
       background: #198cff;
       color: #fff;
     }
-    .pink {
-      background: $themecolorNewPink;
+    .orange {
+      background: $themecolorOrange;
       color: #fff;
+    }
+  }
+  .result_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 0.5rem;
+    padding: 2rem 0;
+    h5.color {
+      color: $themecolorOrange;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin-bottom: 0;
+      &.blue {
+        color: #198cff;
+      }
+    }
+    .success_message {
+      margin-bottom: 0;
+      color: $themecolorGreen;
+      &.fail {
+        color: $themecolorNewRed;
+      }
     }
   }
 }

@@ -93,8 +93,8 @@ const SideDrawer = (props) => {
                 Conditional logic
                 <ul className="sub-list">
                   <li>
-                    <NavLink to="/yellowOrRed">
-                      <div onClick={props.clickLink}>Yellow or red</div>
+                    <NavLink to="/orangeOrBlue">
+                      <div onClick={props.clickLink}>Orange or Blue</div>
                     </NavLink>
                   </li>
                   <li>

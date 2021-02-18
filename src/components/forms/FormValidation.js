@@ -5,7 +5,7 @@ import { FormValidationVideos } from "../text/videos/VideoSections";
 import { FormValidationIntro } from "../text/Intros";
 import { FormValidationTestInfo } from "../text/TestInfos";
 import { addData } from "../fetchFunctions/fetchFunctions";
-import { getData } from "../fetchFunctions/fetchFunctions";
+//import { getData } from "../fetchFunctions/fetchFunctions";
 
 function FormValidation() {
   const [error, setError] = useState(null);

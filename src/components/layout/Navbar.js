@@ -76,7 +76,7 @@ const Navbar = ({ handleDrawerClick }) => (
                 Conditional logic
                 <ul className="sub-list">
                   <li>
-                    <NavLink to="/yellowOrRed">Yellow or red</NavLink>
+                    <NavLink to="/orangeOrBlue">Orange or Blue</NavLink>
                   </li>
                   <li>
                     <NavLink to="/catOrDog">Cat or dog</NavLink>

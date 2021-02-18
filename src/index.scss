@@ -585,9 +585,13 @@ button.formBtn {
   line-height: 1.8;
   margin-right: 0.5rem;
   width: auto;
+  box-shadow: $themeBoxShadow;
 
   &:hover {
     filter: brightness(80%);
+  }
+  &:focus {
+    outline: none;
   }
   &.add {
     background: $themecolorGreen;
