@@ -1,7 +1,7 @@
 @import "../../variables.scss";
 .colors_section {
   .wrapper {
-    height: 160px;
+    height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -13,11 +13,11 @@
       background: $themecolorYellow;
       color: #fff;
     }
-    h5.state {
+    h5.color {
       color: #fff;
       text-transform: uppercase;
       font-weight: 600;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       margin-bottom: 0;
     }
   }

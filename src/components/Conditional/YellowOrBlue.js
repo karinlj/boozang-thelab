@@ -40,7 +40,7 @@ const YellowOrBlue = () => {
               className="formBtn add"
               onClick={generateColor}
             />
-            <h5 className="state">{randColor}</h5>
+            <h5 className="color">{randColor}</h5>
             <div className="lower_section">
               {randColor && (
                 <div>

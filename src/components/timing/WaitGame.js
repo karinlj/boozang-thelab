@@ -7,7 +7,7 @@ import { WaitGameTestInfo } from "../text/TestInfos";
 const WaitGame = () => {
   const [isRunning, setIsRunning] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
-  const [timeMessage, setTimeMessage] = useState("");
+  const [subMessage, setSubMessage] = useState("");
   const [offsetTime, setOffsetTime] = useState(0);
 
   const handleStart = () => {
@@ -16,7 +16,7 @@ const WaitGame = () => {
       //tidpunkt för start
       setOffsetTime(Date.now());
       setSuccessMessage("");
-      setTimeMessage("");
+      setSubMessage("");
     }
   };
 
@@ -36,9 +36,10 @@ const WaitGame = () => {
     if (difference >= limit) {
       setSuccessMessage("Success!");
       let overflow = difference - limit;
-      setTimeMessage(`${overflow}ms above 5 seconds.`);
+      setSubMessage(`${overflow} ms above 5 seconds.`);
     } else {
       setSuccessMessage("Fail!");
+      setSubMessage(`You clicked too fast...`);
     }
   };
   const handleStop = () => {
@@ -73,13 +74,14 @@ const WaitGame = () => {
           </div>
           <div className="messages">
             <div
-              className={`success_message ${timeMessage === "" ? "fail" : ""}`}
+              className={`success_message ${
+                successMessage === "Success!" ? "" : "fail"
+              }`}
             >
               <h4>{successMessage}</h4>
             </div>
-
             <div className="time_message">
-              <p>{timeMessage}</p>
+              <p>{subMessage}</p>
             </div>
           </div>
         </section>
