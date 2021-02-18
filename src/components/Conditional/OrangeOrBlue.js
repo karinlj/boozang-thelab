@@ -17,11 +17,12 @@ const OrangeOrBlue = () => {
   };
 
   const checkColor = (color) => {
-    console.log("color", color);
-    if (color === randColor) {
-      setSuccessMessage("Success!");
-    } else {
-      setSuccessMessage("Fail!");
+    if (randColor !== "") {
+      if (color === randColor) {
+        setSuccessMessage("Success!");
+      } else {
+        setSuccessMessage("Fail!");
+      }
     }
   };
 
@@ -70,6 +71,16 @@ const OrangeOrBlue = () => {
               }`}
             >
               {successMessage}
+              {/* {successMessage && (
+                <i
+                  class="fas fa-thumbs-up"
+                  className={
+                    successMessage === "Success"
+                      ? "fas fa-thumbs-up"
+                      : "fas fa-thumbs-down"
+                  }
+                ></i>
+              )} */}
             </h4>
           </div>
         </div>
