@@ -1,24 +1,30 @@
 import { useState, useEffect } from "react";
 import "./conditional.scss";
-import { YellowOrBlueIntro } from "../text/Intros";
-import { YellowOrBlueTestInfo } from "../text/TestInfos";
-import { YellowOrBlueVideos } from "../text/videos/VideoSections";
+import { CatOrDogIntro } from "../text/Intros";
+import { CatOrDogTestInfo } from "../text/TestInfos";
+import { CatOrDogVideos } from "../text/videos/VideoSections";
 
-const YellowOrBlue = () => {
-  const colors = ["yellow", "blue"];
-  const [randColor, setRandColor] = useState("");
+const CatOrDog = () => {
+  const pets = ["cat", "dog"];
+  const [randImage, setRandImage] = useState(null);
   const [successMessage, setSuccessMessage] = useState("");
 
-  const generateColor = () => {
-    setRandColor("");
+  const generateImage = () => {
+    let images = pets.map((pet, i) => {
+      return (
+        <img src={require(`../../img/${pet}.jpg`).default} key={i} alt={pet} />
+      );
+    });
+
+    setRandImage(null);
     const randNumber = Math.floor(Math.random() * 2);
-    setRandColor(colors[randNumber]);
+    setRandImage(images[randNumber]);
     setSuccessMessage("");
   };
 
-  const checkColor = (color) => {
-    if (randColor !== "") {
-      if (color === randColor) {
+  const checkPet = (pet) => {
+    if (randImage) {
+      if (pet === randImage.props.alt) {
         setSuccessMessage("Good job");
       } else {
         setSuccessMessage("Try again");
@@ -26,38 +32,38 @@ const YellowOrBlue = () => {
     }
   };
   useEffect(() => {
-    // console.log("randColor", randColor);
-  }, [randColor]);
+    console.log("randImage", randImage);
+  }, [randImage]);
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-5">
         <div className="conditional_section">
-          <YellowOrBlueIntro />
+          <CatOrDogIntro />
           <div className="wrapper">
             <input
               type="button"
-              value="Generate Color"
+              value="Generate Image"
               className="formBtn add"
-              onClick={generateColor}
+              onClick={generateImage}
             />
-            <h5 className="color">{randColor}</h5>
+            <div className="image">{randImage}</div>
             <div className="lower_section">
-              {randColor && (
+              {randImage && (
                 <div>
                   <input
                     type="button"
-                    value="yellow"
-                    className="formBtn yellow"
+                    value="cat"
+                    className="formBtn pink"
                     onClick={() => {
-                      checkColor("yellow");
+                      checkPet("cat");
                     }}
                   />
                   <input
                     type="button"
-                    value="blue"
-                    className="formBtn blue"
+                    value="dog"
+                    className="formBtn turqoise"
                     onClick={() => {
-                      checkColor("blue");
+                      checkPet("dog");
                     }}
                   />
                 </div>
@@ -85,11 +91,11 @@ const YellowOrBlue = () => {
         </div>
       </div>
       <div className="col-12 col-md-5">
-        <YellowOrBlueTestInfo />
-        <YellowOrBlueVideos />
+        <CatOrDogTestInfo />
+        <CatOrDogVideos />
       </div>
     </div>
   );
 };
 
-export default YellowOrBlue;
+export default CatOrDog;

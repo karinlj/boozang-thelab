@@ -216,3 +216,18 @@ export const YellowOrBlueVideos = () => {
     </div>
   );
 };
+
+export const CatOrDogVideos = () => {
+  const videos = [
+    {
+      id: 1,
+      url: "https://youtu.be/vIcb8hGayGk",
+      text: "Conditional Logic Cat or Dog",
+    },
+  ];
+  return (
+    <div className="video_section">
+      <VideoList videos={videos} />
+    </div>
+  );
+};

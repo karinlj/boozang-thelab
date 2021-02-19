@@ -102,3 +102,14 @@ export const YellowOrBlueIntro = () => {
     </article>
   );
 };
+export const CatOrDogIntro = () => {
+  return (
+    <article className="comp_intro">
+      <h1>Cat or Dog</h1>
+      <p>
+        Click the Generate pet button to display an image and then click the
+        button with the correspondent pet.
+      </p>
+    </article>
+  );
+};

@@ -118,3 +118,20 @@ export const YellowOrBlueTestInfo = () => {
     </article>
   );
 };
+export const CatOrDogTestInfo = () => {
+  return (
+    <article className="comp_test_info">
+      <h4>Why learn: Cat or Dog</h4>
+      <p>
+        Often it's preferred to make all assertions on existance of elements or
+        simple Boolean expressions. There are times in test automation where we
+        need to base our logic on an image.{" "}
+      </p>
+      <p>
+        This can be especially useful when asserting the state of a graphical
+        toggle-button, where the element and text content is the same,
+        regardless of state.
+      </p>
+    </article>
+  );
+};

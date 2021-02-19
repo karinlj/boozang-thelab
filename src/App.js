@@ -20,6 +20,7 @@ import SpeedGame from "./components/timing/SpeedGame";
 import WaitGame from "./components/timing/WaitGame";
 import VisualBugs from "./components/VisualBugs/VisualBugs";
 import YellowOrBlue from "./components/Conditional/YellowOrBlue";
+import CatOrDog from "./components/Conditional/CatOrDog";
 
 function App() {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
@@ -88,6 +89,9 @@ function App() {
               </Route>
               <Route path="/yellowOrBlue">
                 <YellowOrBlue />
+              </Route>
+              <Route path="/catOrDog">
+                <CatOrDog />
               </Route>
             </Switch>
           </div>
