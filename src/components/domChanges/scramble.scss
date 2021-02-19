@@ -2,52 +2,32 @@
 
 .scramble_section {
   input {
+    width: 100%;
     margin-bottom: 1rem;
-    width: 45%;
+    &.green_dark {
+      background: $themecolorGreenDark;
+    }
   }
-  //   .message {
-  //     float: none;
-  //   }
 }
-
 .scramble_text {
   color: #fff;
   padding: 2rem 0;
-  //   height: 150px;
-
-  //   @media all and (min-width: $sm-min) {
-  //     height: 130px;
-  //   }
-
-  //   @media all and (min-width: $xl-min) {
-  //     height: 115px;
-  //   }
 }
-
 .animal_btns {
-  // height: 80px;
+  height: 200px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  background: $themecolorBlueNewDark;
+  box-shadow: $themeBoxShadow;
+  input {
+    width: auto;
+  }
 }
 
 .scramble_btns {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
-  input {
-    width: 100%;
-    @media all and (min-width: $sm-min) {
-      width: 45%;
-    }
-    @media all and (min-width: $md-min) {
-      width: 100%;
-    }
-    @media all and (min-width: $xl-min) {
-      width: 45%;
-    }
-  }
 }
 
 .btn {
@@ -63,7 +43,7 @@
 }
 
 #small {
-  padding: 8px 14px;
+  padding: 0.2rem 0.9rem;
 }
 
 //btn id:s

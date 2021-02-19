@@ -5,16 +5,18 @@ import { ScrambleItemsTestInfo } from "../text/TestInfos";
 import { ScrambleItemsVideos } from "../text/videos/VideoSections";
 
 const ScrambleItems = () => {
+  const [id, setId] = useState("small");
+  const [myClass, setMyClass] = useState("formBtn blue");
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-5">
         <section className="scramble_section">
           <ScrambleItemsIntro />
           <div className="animal_btns">
-            <input type="button" value="elephant" className="formBtn blue" />
+            <input type="button" value="puma" id={id} className={myClass} />
             {/* {this.renderBtns(true)} */}
 
-            <input type="button" value="lion" className="formBtn pink" />
+            <input type="button" value="lion" id={id} className={myClass} />
             {/* {this.renderBtns(false)} */}
           </div>
 
@@ -28,25 +30,31 @@ const ScrambleItems = () => {
             </p>
           </div>
 
-          <div className="scramble_btns">
-            <input type="button" value="Scramble Id" className="formBtn add" />
-
-            <input
-              type="button"
-              value="Scramble Content"
-              className="formBtn add"
-            />
-
-            <input
-              type="button"
-              value="Scramble Class"
-              className="formBtn add"
-            />
-            <input
-              type="button"
-              value="Scramble Order"
-              className="formBtn add"
-            />
+          <div className="row justify-content-between">
+            <div className="col">
+              <input
+                type="button"
+                value="Scramble Id"
+                className="formBtn add"
+              />
+              <input
+                type="button"
+                value="Scramble Class"
+                className="formBtn add"
+              />
+              <input
+                type="button"
+                value="Scramble Content"
+                className="formBtn add"
+              />
+            </div>
+            <div className="col">
+              <input
+                type="button"
+                value="Scramble Order"
+                className="formBtn add green_dark"
+              />
+            </div>
           </div>
         </section>
       </div>
