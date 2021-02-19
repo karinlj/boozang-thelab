@@ -8,19 +8,6 @@
     input {
       // max-width: 200px;
       margin-bottom: 1rem;
-      color: #fff;
-    }
-    .blue {
-      background: #198cff;
-    }
-    .yellow {
-      background: $themecolorYellow;
-    }
-    .pink {
-      background: $themecolorNewPink;
-    }
-    .turqoise {
-      background: $themecolorTurquoise;
     }
     h5.color {
       color: #fff;
@@ -30,8 +17,7 @@
       margin-bottom: 1rem;
     }
     .image {
-      margin-right: 0.5rem;
-      margin-bottom: 1rem;
+      padding: 1rem 0.5rem 2rem 0;
     }
   }
 

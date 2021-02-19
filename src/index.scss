@@ -312,12 +312,12 @@ a {
 .content-section {
   width: 100%;
   min-height: 600px;
-  padding: 0 calc(1.5rem - 15px) 5rem calc(1.5rem - 15px);
+  padding: 0 calc(1.5rem - 15px) 10rem calc(1.5rem - 15px);
   @media all and (min-width: $sm-min) {
-    padding: 0 calc(2.25rem - 15px) 5rem calc(2.25rem - 15px);
+    padding: 0 calc(2.25rem - 15px) 10rem calc(2.25rem - 15px);
   }
   @media all and (min-width: $md-min) {
-    padding: 0 calc(3rem - 15px) 5rem calc(3rem - 15px);
+    padding: 0 calc(3rem - 15px) 10rem calc(3rem - 15px);
   }
   @media all and (min-width: $lg-min) {
     width: 75%;
@@ -326,7 +326,7 @@ a {
   @media all and (min-width: $xl-min) {
     width: 80%;
     margin-left: 20%;
-    padding: 0 calc(3.75rem - 15px) 5rem calc(3.75rem - 15px);
+    padding: 0 calc(3.75rem - 15px) 10rem calc(3.75rem - 15px);
   }
 
   //introductions
@@ -586,7 +586,7 @@ button.formBtn {
   margin-right: 0.5rem;
   width: auto;
   box-shadow: $themeBoxShadow;
-
+  color: #fff;
   &:hover {
     filter: brightness(80%);
   }
@@ -607,6 +607,18 @@ button.formBtn {
   &.delete {
     background: $themecolorNewRed;
     color: #fff;
+  }
+  &.blue {
+    background: #198cff;
+  }
+  &.yellow {
+    background: $themecolorYellow;
+  }
+  &.pink {
+    background: $themecolorNewPink;
+  }
+  &.turqoise {
+    background: $themecolorTurquoise;
   }
 }
 

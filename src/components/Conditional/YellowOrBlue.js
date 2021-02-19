@@ -31,7 +31,7 @@ const YellowOrBlue = () => {
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-5">
-        <div className="conditional_section">
+        <section className="conditional_section">
           <YellowOrBlueIntro />
           <div className="wrapper">
             <input
@@ -82,7 +82,7 @@ const YellowOrBlue = () => {
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
       <div className="col-12 col-md-5">
         <YellowOrBlueTestInfo />

@@ -231,3 +231,18 @@ export const CatOrDogVideos = () => {
     </div>
   );
 };
+//DOM changes
+export const ScrambleItemsVideos = () => {
+  const videos = [
+    {
+      id: 1,
+      url: "https://youtu.be/qDmnE3e6Npc",
+      text: "Robustness of tests and how to use AI repair",
+    },
+  ];
+  return (
+    <div className="video_section">
+      <VideoList videos={videos} />
+    </div>
+  );
+};

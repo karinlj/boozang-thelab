@@ -135,3 +135,19 @@ export const CatOrDogTestInfo = () => {
     </article>
   );
 };
+//DOM changes
+export const ScrambleItemsTestInfo = () => {
+  return (
+    <article className="comp_test_info">
+      <h4>Why learn: Scramble Items</h4>
+      <p>
+        XPath and CSS selectors are notoriously brittle, and often changes to id
+        and class attributes will break test cases.
+      </p>
+      <p>
+        Here you can simulate changes to both id, class, and content to see how
+        your test tool handles the challenge.
+      </p>
+    </article>
+  );
+};

@@ -21,6 +21,7 @@ import WaitGame from "./components/timing/WaitGame";
 import VisualBugs from "./components/VisualBugs/VisualBugs";
 import YellowOrBlue from "./components/Conditional/YellowOrBlue";
 import CatOrDog from "./components/Conditional/CatOrDog";
+import ScrambleItems from "./components/domChanges/ScrambleItems";
 
 function App() {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
@@ -92,6 +93,9 @@ function App() {
               </Route>
               <Route path="/catOrDog">
                 <CatOrDog />
+              </Route>
+              <Route path="/scramble">
+                <ScrambleItems />
               </Route>
             </Switch>
           </div>

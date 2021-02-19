@@ -113,3 +113,19 @@ export const CatOrDogIntro = () => {
     </article>
   );
 };
+//DOM changes
+export const ScrambleItemsIntro = () => {
+  return (
+    <article className="comp_intro">
+      <h1>Scramble Items</h1>
+      <p>
+        This is a super-simple game where simply pressing the right button will
+        result in success. We make the game harder by having buttons that
+        scramble the button id, class, content and order attributes,
+        respectively. This game, which is simple for a human to play, can be
+        surprisingly hard for a machine to play, as they often rely on
+        attributes hidden in the HTML, such as class and id.
+      </p>
+    </article>
+  );
+};

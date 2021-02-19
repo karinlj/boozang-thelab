@@ -1,0 +1,121 @@
+@import "../../variables.scss";
+
+.scramble_section {
+  input {
+    margin-bottom: 1rem;
+    width: 45%;
+  }
+  //   .message {
+  //     float: none;
+  //   }
+}
+
+.scramble_text {
+  color: #fff;
+  padding: 2rem 0;
+  //   height: 150px;
+
+  //   @media all and (min-width: $sm-min) {
+  //     height: 130px;
+  //   }
+
+  //   @media all and (min-width: $xl-min) {
+  //     height: 115px;
+  //   }
+}
+
+.animal_btns {
+  // height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scramble_btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  input {
+    width: 100%;
+    @media all and (min-width: $sm-min) {
+      width: 45%;
+    }
+    @media all and (min-width: $md-min) {
+      width: 100%;
+    }
+    @media all and (min-width: $xl-min) {
+      width: 45%;
+    }
+  }
+}
+
+.btn {
+  box-shadow: $themeBoxShadow;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9em;
+  border: none;
+  transition: 1s;
+  text-transform: uppercase;
+  border-radius: $themeBorderRadius;
+  color: #fff;
+}
+
+#small {
+  padding: 8px 14px;
+}
+
+//btn id:s
+#big {
+  box-shadow: $themeBoxShadow;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9em;
+  border: none;
+  transition: 1s;
+  text-transform: uppercase;
+  border-radius: $themeBorderRadius;
+  padding: 12px 18px;
+}
+
+#bigger {
+  box-shadow: $themeBoxShadow;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9em;
+  border: none;
+  transition: 1s;
+  text-transform: uppercase;
+  border-radius: $themeBorderRadius;
+  padding: 16px 22px;
+}
+
+//scrambleMulti
+.scrambleMulti-section {
+  .scrambleMultiBtns {
+    margin: 3rem 0 1rem 0;
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    .button {
+      display: block;
+      margin-bottom: 1rem;
+      text-decoration: none;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .message {
+    float: none;
+
+    @media all and (min-width: $xl-min) {
+      font-size: 85%;
+    }
+  }
+}
