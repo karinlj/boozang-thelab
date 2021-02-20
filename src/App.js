@@ -22,6 +22,7 @@ import VisualBugs from "./components/VisualBugs/VisualBugs";
 import YellowOrBlue from "./components/Conditional/YellowOrBlue";
 import CatOrDog from "./components/Conditional/CatOrDog";
 import ScrambleItems from "./components/domChanges/ScrambleItems";
+import MultiScramble from "./components/domChanges/MultiScramble";
 
 function App() {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
@@ -96,6 +97,9 @@ function App() {
               </Route>
               <Route path="/scramble">
                 <ScrambleItems />
+              </Route>
+              <Route path="/multiScramble">
+                <MultiScramble />
               </Route>
             </Switch>
           </div>

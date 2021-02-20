@@ -8,82 +8,50 @@
       background: $themecolorGreenDark;
     }
   }
-}
-.scramble_text {
-  color: #fff;
-  padding: 2rem 0;
-  p {
-    margin-bottom: 0;
-    .category {
-      color: $themecolorNewPink;
-    }
-  }
-}
-.animal_btns {
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: $themecolorBlueNewDark;
-  box-shadow: $themeBoxShadow;
-  input {
-    width: auto;
-  }
-}
-
-.scramble_btns {
-  display: flex;
-  justify-content: space-between;
-}
-
-.btn {
-  box-shadow: $themeBoxShadow;
-  color: #fff;
-  cursor: pointer;
-  font-size: 0.9em;
-  border: none;
-  transition: 1s;
-  text-transform: uppercase;
-  border-radius: $themeBorderRadius;
-  color: #fff;
-}
-
-#small {
-  padding: 0.2rem 0.9rem;
-}
-#big {
-  padding: 0.6rem 1.3rem;
-}
-
-#bigger {
-  // padding: 16px 22px;
-}
-
-//scrambleMulti
-.scrambleMulti-section {
-  .scrambleMultiBtns {
-    margin: 3rem 0 1rem 0;
-
-    a:hover {
-      text-decoration: none;
-    }
-
-    .button {
-      display: block;
-      margin-bottom: 1rem;
-      text-decoration: none;
-
-      &:hover {
-        opacity: 0.8;
+  .scramble_text {
+    color: #fff;
+    padding: 2rem 0;
+    p {
+      margin-bottom: 0;
+      .category {
+        color: $themecolorButtonBlue;
       }
     }
   }
+  .animal_btns {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $themecolorBlueNewDark;
+    box-shadow: $themeBoxShadow;
+    input {
+      width: auto;
+    }
+  }
+  .scramble_btns {
+    display: flex;
+    justify-content: space-between;
+  }
 
-  .message {
-    float: none;
-
-    @media all and (min-width: $xl-min) {
-      font-size: 85%;
+  #small {
+    padding: 0.2rem 0.9rem;
+  }
+  #big {
+    padding: 0.6rem 1.3rem;
+  }
+  //multi scramble
+  form {
+    margin-bottom: 2rem;
+  }
+  .multiscramble_btn_section {
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    input[type="text"] {
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }

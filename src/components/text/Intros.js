@@ -129,3 +129,18 @@ export const ScrambleItemsIntro = () => {
     </article>
   );
 };
+export const MultiScrambleIntro = () => {
+  return (
+    <article className="comp_intro">
+      <h1>Multi scramble</h1>
+      <p>
+        This is a simple game where you can change the action labels that
+        manipulate something in your data model. In a typical SaaS application,
+        this could, for example, be Project, User or Bank Account - here
+        represented by Kangaroo, Koala, or Dolphin. The trick is to let your
+        test automation tool still find the buttons even if the wording is
+        changing, but only affecting the appropriate buttons.
+      </p>
+    </article>
+  );
+};

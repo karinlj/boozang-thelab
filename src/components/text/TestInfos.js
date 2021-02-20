@@ -151,3 +151,19 @@ export const ScrambleItemsTestInfo = () => {
     </article>
   );
 };
+export const MultiScrambleTestInfo = () => {
+  return (
+    <article className="comp_test_info">
+      <h4>Why learn: Multi scramble</h4>
+      <p>
+        Keeping your tests stable for code updates are one of the biggest
+        challenges to test automation. Often, technical details like class and
+        id are changing constantly.
+      </p>
+      <p>
+        But even the wording can change for common actions. "Add" gets replaced
+        by "Create", "Delete" get replaced by "Remove".
+      </p>
+    </article>
+  );
+};

@@ -246,3 +246,17 @@ export const ScrambleItemsVideos = () => {
     </div>
   );
 };
+export const MultiScrambleVideos = () => {
+  const videos = [
+    {
+      id: 1,
+      url: "https://youtu.be/Wkterst3HPo",
+      text: "Repairing a multi-action tests using AI",
+    },
+  ];
+  return (
+    <div className="video_section">
+      <VideoList videos={videos} />
+    </div>
+  );
+};
