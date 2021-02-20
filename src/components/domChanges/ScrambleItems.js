@@ -8,6 +8,7 @@ const ScrambleItems = () => {
   const [myId, setMyId] = useState("small");
   const [myClass, setMyClass] = useState("blue");
   const [myContent, setMyContent] = useState("puma");
+  const [styles, setStyles] = useState({});
 
   const toggleId = () => {
     if (myId === "small") {
@@ -30,11 +31,19 @@ const ScrambleItems = () => {
       setMyContent("puma");
     }
   };
+  const scramblePositon = () => {
+    const randomTop = Math.floor(Math.random() * 130 + 1) + "px";
+    const randomLeft = Math.floor(Math.random() * 130 + 1) + "px";
 
+    const style = {
+      top: randomTop,
+      left: randomLeft,
+    };
+    setStyles(style);
+  };
   useEffect(() => {
-    console.log("myId", myId);
-    console.log("myClass", myClass);
-  }, [myClass, myId]);
+    console.log("styles: ", styles);
+  }, [styles]);
 
   return (
     <div className="row justify-content-between">
@@ -47,25 +56,20 @@ const ScrambleItems = () => {
               value={myContent}
               id={myId}
               className={`formBtn ${myClass}`}
+              style={styles}
             />
-            {/* {this.renderBtns(true)} */}
-
             <input type="button" value="lion" className="formBtn pink" />
-            {/* {this.renderBtns(false)} */}
           </div>
-
           <div className="scramble_text">
             <p>
               Current button <strong className="category">id</strong> is:{" "}
               <strong>{myClass}</strong>
             </p>
-
             <p>
               Current button <strong className="category">class</strong> is:{" "}
               <strong>{myId}</strong>
             </p>
           </div>
-
           <div className="row justify-content-between">
             <div className="col">
               <input
@@ -92,6 +96,7 @@ const ScrambleItems = () => {
                 type="button"
                 value="Scramble Order"
                 className="formBtn add green_dark"
+                onClick={scramblePositon}
               />
             </div>
           </div>

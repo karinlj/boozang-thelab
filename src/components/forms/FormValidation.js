@@ -64,7 +64,7 @@ function FormValidation() {
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6">
-        <div className="form_section">
+        <section className="form_section">
           <FormValidationIntro />
           {error && <div className="error">{error}</div>}
           <form className="list_form" onSubmit={handleSubmit}>
@@ -145,7 +145,7 @@ function FormValidation() {
               </div>
             </article>
           )}
-        </div>
+        </section>
       </div>
       <div className="col-12 col-md-5">
         <FormValidationTestInfo />

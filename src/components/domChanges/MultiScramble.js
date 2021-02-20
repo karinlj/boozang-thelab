@@ -7,6 +7,9 @@ import { MultiScrambleVideos } from "../text/videos/VideoSections";
 const MultiScramble = () => {
   const [contentAdd, setContentAdd] = useState("Add");
   const [contentDelete, setContentDelete] = useState("Delete");
+  useEffect(() => {
+    console.log("contentAdd", contentAdd);
+  }, [contentAdd]);
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-5">

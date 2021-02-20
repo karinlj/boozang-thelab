@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import "./Lists.scss";
 import { UnsortedListIntro } from "../text/Intros";
 import { UnsortedListTestInfo } from "../text/TestInfos";
-//import ReactPlayer from "react-player/lazy";
 import { UnsortedListVideos } from "../text/videos/VideoSections";
 import TodoList from "./TodoList";
 import AddTodo from "./AddTodo";

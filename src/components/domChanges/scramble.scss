@@ -19,14 +19,23 @@
     }
   }
   .animal_btns {
+    position: relative;
     height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: $themecolorBlueNewDark;
     box-shadow: $themeBoxShadow;
     input {
       width: auto;
+      margin: 0;
+    }
+    input:not(.pink) {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+    }
+    input.pink {
+      position: absolute;
+      right: 0;
+      bottom: 0;
     }
   }
   .scramble_btns {
@@ -43,6 +52,7 @@
   //multi scramble
   form {
     margin-bottom: 2rem;
+    padding-bottom: 0;
   }
   .multiscramble_btn_section {
     // display: flex;
