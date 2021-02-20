@@ -12,6 +12,12 @@
 .scramble_text {
   color: #fff;
   padding: 2rem 0;
+  p {
+    margin-bottom: 0;
+    .category {
+      color: $themecolorNewPink;
+    }
+  }
 }
 .animal_btns {
   height: 200px;
@@ -45,30 +51,12 @@
 #small {
   padding: 0.2rem 0.9rem;
 }
-
-//btn id:s
 #big {
-  box-shadow: $themeBoxShadow;
-  color: #fff;
-  cursor: pointer;
-  font-size: 0.9em;
-  border: none;
-  transition: 1s;
-  text-transform: uppercase;
-  border-radius: $themeBorderRadius;
-  padding: 12px 18px;
+  padding: 0.6rem 1.3rem;
 }
 
 #bigger {
-  box-shadow: $themeBoxShadow;
-  color: #fff;
-  cursor: pointer;
-  font-size: 0.9em;
-  border: none;
-  transition: 1s;
-  text-transform: uppercase;
-  border-radius: $themeBorderRadius;
-  padding: 16px 22px;
+  // padding: 16px 22px;
 }
 
 //scrambleMulti
