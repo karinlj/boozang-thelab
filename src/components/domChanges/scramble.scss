@@ -23,31 +23,27 @@
     height: 200px;
     background: $themecolorBlueNewDark;
     box-shadow: $themeBoxShadow;
+    border-radius: $themeBorderRadius;
     input {
       width: auto;
       margin: 0;
-    }
-    input:not(.pink) {
       position: absolute;
-      top: 50px;
-      left: 50px;
-    }
-    input.pink {
-      position: absolute;
-      right: 0;
-      bottom: 0;
+      &[name="btnOne"] {
+        top: 0;
+        left: 0;
+      }
+      &[name="btnTwo"] {
+        bottom: 0;
+        right: 0;
+      }
     }
   }
-  .scramble_btns {
-    display: flex;
-    justify-content: space-between;
-  }
-
+  //scramble_btns
   #small {
     padding: 0.2rem 0.9rem;
   }
   #big {
-    padding: 0.6rem 1.3rem;
+    padding: 0.7rem 1.4rem;
   }
   //multi scramble
   form {

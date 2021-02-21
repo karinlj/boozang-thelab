@@ -5,35 +5,91 @@ import { ScrambleItemsTestInfo } from "../text/TestInfos";
 import { ScrambleItemsVideos } from "../text/videos/VideoSections";
 
 const ScrambleItems = () => {
-  const [myId, setMyId] = useState("small");
-  const [myClass, setMyClass] = useState("blue");
-  const [myContent, setMyContent] = useState("puma");
   const [styles, setStyles] = useState({});
 
+  const [message, setMessage] = useState("");
+  const [btnOneAttributes, setBtnOneAttributes] = useState({
+    myId: "small",
+    myClass: "blue",
+    myContent: "puma",
+    styles: {},
+  });
+  const [btnTwoAttributes, setBtnTwoAttributes] = useState({
+    myId: "big",
+    myClass: "pink",
+    myContent: "tiger",
+    styles: {},
+  });
+
   const toggleId = () => {
-    if (myId === "small") {
-      setMyId("big");
+    setMessage("");
+    if (btnOneAttributes.myId === "small") {
+      setBtnOneAttributes({
+        ...btnOneAttributes,
+        myId: "big",
+      });
+      setBtnTwoAttributes({
+        ...btnTwoAttributes,
+        myId: "small",
+      });
     } else {
-      setMyId("small");
+      setBtnOneAttributes({
+        ...btnOneAttributes,
+        myId: "small",
+      });
+      setBtnTwoAttributes({
+        ...btnTwoAttributes,
+        myId: "big",
+      });
     }
   };
   const toggleClass = () => {
-    if (myClass === "blue") {
-      setMyClass("purple");
+    setMessage("");
+    if (btnOneAttributes.myClass === "blue") {
+      setBtnOneAttributes({
+        ...btnOneAttributes,
+        myClass: "pink",
+      });
+      setBtnTwoAttributes({
+        ...btnTwoAttributes,
+        myClass: "blue",
+      });
     } else {
-      setMyClass("blue");
+      setBtnOneAttributes({
+        ...btnOneAttributes,
+        myClass: "blue",
+      });
+      setBtnTwoAttributes({
+        ...btnTwoAttributes,
+        myClass: "pink",
+      });
     }
   };
   const toggleContent = () => {
-    if (myContent === "puma") {
-      setMyContent("tiger");
+    setMessage("");
+    if (btnOneAttributes.myContent === "puma") {
+      setBtnOneAttributes({
+        ...btnOneAttributes,
+        myContent: "tiger",
+      });
+      setBtnTwoAttributes({
+        ...btnTwoAttributes,
+        myContent: "puma",
+      });
     } else {
-      setMyContent("puma");
+      setBtnOneAttributes({
+        ...btnOneAttributes,
+        myContent: "puma",
+      });
+      setBtnTwoAttributes({
+        ...btnTwoAttributes,
+        myContent: "tiger",
+      });
     }
   };
   const scramblePositon = () => {
     const randomTop = Math.floor(Math.random() * 130 + 1) + "px";
-    const randomLeft = Math.floor(Math.random() * 130 + 1) + "px";
+    const randomLeft = Math.floor(Math.random() * 150 + 1) + "px";
 
     const style = {
       top: randomTop,
@@ -41,6 +97,31 @@ const ScrambleItems = () => {
     };
     setStyles(style);
   };
+
+  const handleClick = (e) => {
+    console.log("e: ", e.target.name);
+
+    const { id, className, value } = e.target;
+
+    const message = (e) => {
+      return (
+        <div>
+          <p> Clicked button:</p>
+          <p>
+            id = <strong className="category">{id}</strong>
+          </p>
+          <p>
+            class = <strong className="category">{className}</strong>
+          </p>
+          <p>
+            content = <strong className="category">{value}</strong>
+          </p>
+        </div>
+      );
+    };
+    setMessage(message);
+  };
+
   useEffect(() => {
     console.log("styles: ", styles);
   }, [styles]);
@@ -53,40 +134,51 @@ const ScrambleItems = () => {
           <div className="animal_btns">
             <input
               type="button"
-              value={myContent}
-              id={myId}
-              className={`formBtn ${myClass}`}
+              name="btnOne"
+              value={btnOneAttributes.myContent}
+              id={btnOneAttributes.myId}
+              className={`${btnOneAttributes.myClass}`}
               style={styles}
+              onClick={(e) => handleClick(e)}
             />
-            <input type="button" value="lion" className="formBtn pink" />
+            <input
+              type="button"
+              name="btnTwo"
+              value={btnTwoAttributes.myContent}
+              id={btnTwoAttributes.myId}
+              className={`${btnTwoAttributes.myClass}`}
+              style={styles}
+              onClick={(e) => handleClick(e)}
+            />
           </div>
           <div className="scramble_text">
-            <p>
-              Current button <strong className="category">id</strong> is:{" "}
-              <strong>{myClass}</strong>
-            </p>
-            <p>
+            <div>{message}</div>
+            {/* <p>
               Current button <strong className="category">class</strong> is:{" "}
-              <strong>{myId}</strong>
-            </p>
+              <strong>{message}</strong>
+            </p> */}
+            {/* <p>
+              Current button <strong className="category">id</strong> is:{" "}
+              <strong>{btnOneAttributes.myId}</strong>
+            </p> */}
           </div>
           <div className="row justify-content-between">
             <div className="col">
               <input
                 type="button"
-                value="Scramble Id"
+                value="Swap Id"
                 className="formBtn add"
                 onClick={toggleId}
               />
               <input
                 type="button"
-                value="Scramble Class"
+                value="Swap Class"
                 className="formBtn add"
                 onClick={toggleClass}
               />
               <input
                 type="button"
-                value="Scramble Content"
+                value="Swap Content"
                 className="formBtn add"
                 onClick={toggleContent}
               />
@@ -94,9 +186,14 @@ const ScrambleItems = () => {
             <div className="col">
               <input
                 type="button"
-                value="Scramble Order"
+                value="Random Position"
                 className="formBtn add green_dark"
                 onClick={scramblePositon}
+              />
+              <input
+                type="button"
+                value="Swap Order"
+                className="formBtn add green_dark"
               />
             </div>
           </div>
