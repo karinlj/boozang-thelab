@@ -6,7 +6,6 @@ import { ScrambleItemsVideos } from "../text/videos/VideoSections";
 
 const ScrambleItems = () => {
   const [btnOneFirst, setBtnOneFirst] = useState(true);
-
   const [message, setMessage] = useState("");
   const [btnOneAttributes, setBtnOneAttributes] = useState({
     myId: "small",
@@ -23,25 +22,16 @@ const ScrambleItems = () => {
 
   const toggleId = () => {
     setMessage("");
-    if (btnOneAttributes.myId === "small") {
-      setBtnOneAttributes({
-        ...btnOneAttributes,
-        myId: "big",
-      });
-      setBtnTwoAttributes({
-        ...btnTwoAttributes,
-        myId: "small",
-      });
-    } else {
-      setBtnOneAttributes({
-        ...btnOneAttributes,
-        myId: "small",
-      });
-      setBtnTwoAttributes({
-        ...btnTwoAttributes,
-        myId: "big",
-      });
-    }
+    let tmpId = btnTwoAttributes.myId;
+    console.log("tmpId: ", tmpId);
+    setBtnTwoAttributes({
+      ...btnTwoAttributes,
+      myId: btnOneAttributes.myId,
+    });
+    setBtnOneAttributes({
+      ...btnOneAttributes,
+      myId: tmpId,
+    });
   };
   const toggleClass = () => {
     setMessage("");
@@ -87,25 +77,41 @@ const ScrambleItems = () => {
       });
     }
   };
-  const randomPositon = () => {
-    const randomTop = Math.floor(Math.random() * 130 + 1) + "px";
-    const randomLeft = Math.floor(Math.random() * 150 + 1) + "px";
-    const style = {
-      top: randomTop,
-      left: randomLeft,
-    };
-    return style;
+  const randomPosition = () => {
+    const randomTop = Math.floor(Math.random() * 130 + 1);
+    const randomLeft = Math.floor(Math.random() * 150 + 1);
+    return [randomTop, randomLeft];
   };
   const scramblePositon = () => {
-    const posOne = randomPositon();
-    const posTwo = randomPositon();
+    setMessage("");
+    const [y1, x1] = randomPosition();
+    let [y2, x2] = [0, 0];
+
+    //ge knapp2 ny pos tills den är lillräckligt långt ifrån sin kompis(endast 9 ggr)
+    let i = 0;
+    console.log("blaha");
+    do {
+      [y2, x2] = randomPosition();
+      i++;
+      console.log("pos: ", x1, y1, x2, y2);
+      //slå om tärningen om avståndet är mindre än...
+    } while (i < 10 && Math.abs(y2 - y1) < 40 && Math.abs(x2 - x1) < 70);
+
+    const style1 = {
+      top: y1 + "px",
+      left: x1 + "px",
+    };
+    const style2 = {
+      top: y2 + "px",
+      left: x2 + "px",
+    };
     setBtnOneAttributes({
       ...btnOneAttributes,
-      styles: posOne,
+      styles: style1,
     });
     setBtnTwoAttributes({
       ...btnTwoAttributes,
-      styles: posTwo,
+      styles: style2,
     });
   };
   const DOMorder = () => {
@@ -117,17 +123,11 @@ const ScrambleItems = () => {
     const { id, className, value, name } = e.target;
     const btn = document.querySelector(`#${id}`);
     const elementName = btn.parentNode.firstChild.name;
-    // const parent = btn.parentNode.nodeName;
-
-    let firstBtn;
-    if (name === elementName) {
-      firstBtn = true;
-    } else firstBtn = false;
-
-    // console.log("btn: ", btn);
-    // console.log("parent: ", parent);
-    // console.log("elementName: ", elementName);
-    // console.log("firstBtn: ", firstBtn);
+    //blir true eller false
+    let firstBtn = name === elementName;
+    // if (name === elementName) {
+    //   firstBtn = true;
+    // } else firstBtn = false;
 
     const message = () => {
       return (
@@ -155,8 +155,10 @@ const ScrambleItems = () => {
   };
 
   useEffect(() => {
-    // console.log("btnOneFirst: ", btnOneFirst);
-  }, [btnOneFirst]);
+    setTimeout(() => {
+      scramblePositon();
+    }, 100);
+  }, []);
 
   return (
     <div className="row justify-content-between">
