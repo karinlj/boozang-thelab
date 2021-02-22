@@ -23,6 +23,7 @@ import YellowOrBlue from "./components/Conditional/YellowOrBlue";
 import CatOrDog from "./components/Conditional/CatOrDog";
 import ScrambleItems from "./components/domChanges/ScrambleItems";
 import MultiScramble from "./components/domChanges/MultiScramble";
+import ConcatStrings from "./components/strings/ConcatStrings";
 
 function App() {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
@@ -100,6 +101,9 @@ function App() {
               </Route>
               <Route path="/multiScramble">
                 <MultiScramble />
+              </Route>
+              <Route path="/concatStrings">
+                <ConcatStrings />
               </Route>
             </Switch>
           </div>

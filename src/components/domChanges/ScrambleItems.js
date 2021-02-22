@@ -19,7 +19,6 @@ const ScrambleItems = () => {
     myContent: "tiger",
     styles: {},
   });
-
   const toggleId = () => {
     setMessage("");
     //avoid resetting value-strings

@@ -15,7 +15,6 @@ const CatOrDog = () => {
         <img src={require(`../../img/${pet}.jpg`).default} key={i} alt={pet} />
       );
     });
-
     setRandImage(null);
     const randNumber = Math.floor(Math.random() * 2);
     setRandImage(images[randNumber]);
@@ -32,7 +31,7 @@ const CatOrDog = () => {
     }
   };
   useEffect(() => {
-    console.log("randImage", randImage);
+    //console.log("randImage", randImage);
   }, [randImage]);
   return (
     <div className="row justify-content-between">

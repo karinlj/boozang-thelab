@@ -144,3 +144,15 @@ export const MultiScrambleIntro = () => {
     </article>
   );
 };
+//strings
+export const ConcatStringsIntro = () => {
+  return (
+    <article className="comp_intro">
+      <h1>Concatenate Strings</h1>
+      <p>
+        Click the Generate string button to display two strings and then type in
+        the strings together.
+      </p>
+    </article>
+  );
+};

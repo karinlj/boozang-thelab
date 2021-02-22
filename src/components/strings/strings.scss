@@ -1,0 +1,23 @@
+@import "../../variables.scss";
+
+.strings_section {
+  .output_section {
+    color: #fff;
+    padding: 1rem 0;
+    p {
+      margin: 0;
+    }
+  }
+
+  .success_message {
+    text-align: center;
+    padding-top: 1rem;
+    color: $themecolorGreen;
+    i {
+      margin-left: 5px;
+    }
+    &.fail {
+      color: $themecolorNewRed;
+    }
+  }
+}

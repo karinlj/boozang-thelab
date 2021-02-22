@@ -260,3 +260,18 @@ export const MultiScrambleVideos = () => {
     </div>
   );
 };
+//strings
+export const ConcatStringsVideos = () => {
+  const videos = [
+    {
+      id: 1,
+      url: "https://youtu.be/jd9BEe-6vTg",
+      text: "Extracting and using data from application",
+    },
+  ];
+  return (
+    <div className="video_section">
+      <VideoList videos={videos} />
+    </div>
+  );
+};

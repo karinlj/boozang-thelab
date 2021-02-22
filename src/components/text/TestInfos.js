@@ -167,3 +167,17 @@ export const MultiScrambleTestInfo = () => {
     </article>
   );
 };
+//strings
+export const ConcatStringTestInfo = () => {
+  return (
+    <article className="comp_test_info">
+      <h4>Why learn: Concatenate Strings</h4>
+      <p>
+        Very often in test automation, we need to be able to use the data that
+        the application outputs in a later test step. A good example of this is
+        when doing assertions based on computer-generated id:s or time or date
+        strings.
+      </p>
+    </article>
+  );
+};
