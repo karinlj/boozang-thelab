@@ -5,7 +5,7 @@ import { ScrambleItemsTestInfo } from "../text/TestInfos";
 import { ScrambleItemsVideos } from "../text/videos/VideoSections";
 
 const ScrambleItems = () => {
-  const [styles, setStyles] = useState({});
+  const [btnOneFirst, setBtnOneFirst] = useState(true);
 
   const [message, setMessage] = useState("");
   const [btnOneAttributes, setBtnOneAttributes] = useState({
@@ -87,23 +87,49 @@ const ScrambleItems = () => {
       });
     }
   };
-  const scramblePositon = () => {
+  const randomPositon = () => {
     const randomTop = Math.floor(Math.random() * 130 + 1) + "px";
     const randomLeft = Math.floor(Math.random() * 150 + 1) + "px";
-
     const style = {
       top: randomTop,
       left: randomLeft,
     };
-    setStyles(style);
+    return style;
+  };
+  const scramblePositon = () => {
+    const posOne = randomPositon();
+    const posTwo = randomPositon();
+    setBtnOneAttributes({
+      ...btnOneAttributes,
+      styles: posOne,
+    });
+    setBtnTwoAttributes({
+      ...btnTwoAttributes,
+      styles: posTwo,
+    });
+  };
+  const DOMorder = () => {
+    setMessage("");
+    setBtnOneFirst(!btnOneFirst);
   };
 
   const handleClick = (e) => {
-    console.log("e: ", e.target.name);
+    const { id, className, value, name } = e.target;
+    const btn = document.querySelector(`#${id}`);
+    const elementName = btn.parentNode.firstChild.name;
+    // const parent = btn.parentNode.nodeName;
 
-    const { id, className, value } = e.target;
+    let firstBtn;
+    if (name === elementName) {
+      firstBtn = true;
+    } else firstBtn = false;
 
-    const message = (e) => {
+    // console.log("btn: ", btn);
+    // console.log("parent: ", parent);
+    // console.log("elementName: ", elementName);
+    // console.log("firstBtn: ", firstBtn);
+
+    const message = () => {
       return (
         <div>
           <p> Clicked button:</p>
@@ -116,6 +142,12 @@ const ScrambleItems = () => {
           <p>
             content = <strong className="category">{value}</strong>
           </p>
+          <p>
+            DOM order ={" "}
+            <strong className="category">
+              {firstBtn ? "First button" : "Second button"}
+            </strong>
+          </p>
         </div>
       );
     };
@@ -123,8 +155,8 @@ const ScrambleItems = () => {
   };
 
   useEffect(() => {
-    console.log("styles: ", styles);
-  }, [styles]);
+    // console.log("btnOneFirst: ", btnOneFirst);
+  }, [btnOneFirst]);
 
   return (
     <div className="row justify-content-between">
@@ -132,35 +164,53 @@ const ScrambleItems = () => {
         <section className="scramble_section">
           <ScrambleItemsIntro />
           <div className="animal_btns">
-            <input
-              type="button"
-              name="btnOne"
-              value={btnOneAttributes.myContent}
-              id={btnOneAttributes.myId}
-              className={`${btnOneAttributes.myClass}`}
-              style={styles}
-              onClick={(e) => handleClick(e)}
-            />
-            <input
-              type="button"
-              name="btnTwo"
-              value={btnTwoAttributes.myContent}
-              id={btnTwoAttributes.myId}
-              className={`${btnTwoAttributes.myClass}`}
-              style={styles}
-              onClick={(e) => handleClick(e)}
-            />
+            {btnOneFirst && (
+              <div>
+                <input
+                  type="button"
+                  name="btnOne"
+                  value={btnOneAttributes.myContent}
+                  id={btnOneAttributes.myId}
+                  className={`${btnOneAttributes.myClass}`}
+                  style={btnOneAttributes.styles}
+                  onClick={(e) => handleClick(e)}
+                />
+                <input
+                  type="button"
+                  name="btnTwo"
+                  value={btnTwoAttributes.myContent}
+                  id={btnTwoAttributes.myId}
+                  className={`${btnTwoAttributes.myClass}`}
+                  style={btnTwoAttributes.styles}
+                  onClick={(e) => handleClick(e)}
+                />
+              </div>
+            )}
+            {!btnOneFirst && (
+              <div>
+                <input
+                  type="button"
+                  name="btnTwo"
+                  value={btnTwoAttributes.myContent}
+                  id={btnTwoAttributes.myId}
+                  className={`${btnTwoAttributes.myClass}`}
+                  style={btnTwoAttributes.styles}
+                  onClick={(e) => handleClick(e)}
+                />
+                <input
+                  type="button"
+                  name="btnOne"
+                  value={btnOneAttributes.myContent}
+                  id={btnOneAttributes.myId}
+                  className={`${btnOneAttributes.myClass}`}
+                  style={btnOneAttributes.styles}
+                  onClick={(e) => handleClick(e)}
+                />
+              </div>
+            )}
           </div>
           <div className="scramble_text">
             <div>{message}</div>
-            {/* <p>
-              Current button <strong className="category">class</strong> is:{" "}
-              <strong>{message}</strong>
-            </p> */}
-            {/* <p>
-              Current button <strong className="category">id</strong> is:{" "}
-              <strong>{btnOneAttributes.myId}</strong>
-            </p> */}
           </div>
           <div className="row justify-content-between">
             <div className="col">
@@ -194,6 +244,7 @@ const ScrambleItems = () => {
                 type="button"
                 value="Swap Order"
                 className="formBtn add green_dark"
+                onClick={DOMorder}
               />
             </div>
           </div>
@@ -206,5 +257,4 @@ const ScrambleItems = () => {
     </div>
   );
 };
-
 export default ScrambleItems;
