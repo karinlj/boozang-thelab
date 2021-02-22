@@ -22,8 +22,9 @@ const ScrambleItems = () => {
 
   const toggleId = () => {
     setMessage("");
+    //avoid resetting value-strings
     let tmpId = btnTwoAttributes.myId;
-    console.log("tmpId: ", tmpId);
+    // console.log("tmpId: ", tmpId);
     setBtnTwoAttributes({
       ...btnTwoAttributes,
       myId: btnOneAttributes.myId,
@@ -35,47 +36,27 @@ const ScrambleItems = () => {
   };
   const toggleClass = () => {
     setMessage("");
-    if (btnOneAttributes.myClass === "blue") {
-      setBtnOneAttributes({
-        ...btnOneAttributes,
-        myClass: "pink",
-      });
-      setBtnTwoAttributes({
-        ...btnTwoAttributes,
-        myClass: "blue",
-      });
-    } else {
-      setBtnOneAttributes({
-        ...btnOneAttributes,
-        myClass: "blue",
-      });
-      setBtnTwoAttributes({
-        ...btnTwoAttributes,
-        myClass: "pink",
-      });
-    }
+    let tmpClass = btnTwoAttributes.myClass;
+    setBtnTwoAttributes({
+      ...btnTwoAttributes,
+      myClass: btnOneAttributes.myClass,
+    });
+    setBtnOneAttributes({
+      ...btnOneAttributes,
+      myClass: tmpClass,
+    });
   };
   const toggleContent = () => {
     setMessage("");
-    if (btnOneAttributes.myContent === "puma") {
-      setBtnOneAttributes({
-        ...btnOneAttributes,
-        myContent: "tiger",
-      });
-      setBtnTwoAttributes({
-        ...btnTwoAttributes,
-        myContent: "puma",
-      });
-    } else {
-      setBtnOneAttributes({
-        ...btnOneAttributes,
-        myContent: "puma",
-      });
-      setBtnTwoAttributes({
-        ...btnTwoAttributes,
-        myContent: "tiger",
-      });
-    }
+    let tmpContent = btnTwoAttributes.myContent;
+    setBtnTwoAttributes({
+      ...btnTwoAttributes,
+      myContent: btnOneAttributes.myContent,
+    });
+    setBtnOneAttributes({
+      ...btnOneAttributes,
+      myContent: tmpContent,
+    });
   };
   const randomPosition = () => {
     const randomTop = Math.floor(Math.random() * 130 + 1);
@@ -89,11 +70,11 @@ const ScrambleItems = () => {
 
     //ge knapp2 ny pos tills den är lillräckligt långt ifrån sin kompis(endast 9 ggr)
     let i = 0;
-    console.log("blaha");
+    //console.log("blaha");
     do {
       [y2, x2] = randomPosition();
       i++;
-      console.log("pos: ", x1, y1, x2, y2);
+      // console.log("pos: ", x1, y1, x2, y2);
       //slå om tärningen om avståndet är mindre än...
     } while (i < 10 && Math.abs(y2 - y1) < 40 && Math.abs(x2 - x1) < 70);
 
@@ -125,9 +106,6 @@ const ScrambleItems = () => {
     const elementName = btn.parentNode.firstChild.name;
     //blir true eller false
     let firstBtn = name === elementName;
-    // if (name === elementName) {
-    //   firstBtn = true;
-    // } else firstBtn = false;
 
     const message = () => {
       return (
