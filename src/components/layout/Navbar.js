@@ -116,7 +116,7 @@ const Navbar = ({ handleDrawerClick }) => (
                   </li>
                 </ul>
               </li> */}
-              <li>
+              {/* <li>
                 CI server
                 <ul className="sub-list">
                   <li>
@@ -126,7 +126,7 @@ const Navbar = ({ handleDrawerClick }) => (
                     <NavLink to="/ciIntegration">CI integration</NavLink>
                   </li>
                 </ul>
-              </li>
+              </li> */}
               <li className="games">
                 Games
                 <ul className="sub-list">

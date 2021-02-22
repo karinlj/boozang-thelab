@@ -36,13 +36,13 @@ const SideDrawer = (props) => {
                 Timing
                 <ul className="sub-list">
                   <li>
-                    <NavLink to="/speed">
-                      <div onClick={props.clickLink}>Speed</div>
+                    <NavLink to="/speedGame">
+                      <div onClick={props.clickLink}>Speed Game</div>
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/wait">
-                      <div onClick={props.clickLink}>Wait</div>
+                    <NavLink to="/waitGame">
+                      <div onClick={props.clickLink}>Wait Game</div>
                     </NavLink>
                   </li>
                 </ul>
@@ -63,25 +63,30 @@ const SideDrawer = (props) => {
                   </li>
                 </ul>
               </li>
-
               <li>
-                Lists, tables and forms
+                Lists
                 <ul className="sub-list">
                   <li>
                     <NavLink to="/sortedList">
                       <div onClick={props.clickLink}>Sorted list</div>
-                    </NavLink>
+                    </NavLink>{" "}
                   </li>
                   <li>
                     <NavLink to="/unsortedList">
                       <div onClick={props.clickLink}>Unsorted list</div>
-                    </NavLink>
+                    </NavLink>{" "}
                   </li>
                   <li>
-                    <NavLink to="/tasktracker">
-                      <div onClick={props.clickLink}>Task Tracker</div>
+                    <NavLink to="/catshelter">
+                      <div onClick={props.clickLink}>Cat Shelter</div>
                     </NavLink>
                   </li>
+                </ul>
+              </li>
+
+              <li>
+                Lists, tables and forms
+                <ul className="sub-list">
                   <li>
                     <NavLink to="/formValidation">
                       <div onClick={props.clickLink}>Form validation</div>
@@ -133,7 +138,7 @@ const SideDrawer = (props) => {
                 </ul>
               </li>
 
-              <li>
+              {/* <li>
                 Users and roles
                 <ul className="sub-list">
                   <li>
@@ -147,9 +152,9 @@ const SideDrawer = (props) => {
                     </NavLink>
                   </li>
                 </ul>
-              </li>
+              </li> */}
 
-              <li>
+              {/* <li>
                 CI server
                 <ul className="sub-list">
                   <li>
@@ -163,7 +168,7 @@ const SideDrawer = (props) => {
                     </NavLink>
                   </li>
                 </ul>
-              </li>
+              </li> */}
               <li className="games">
                 Games
                 <ul className="sub-list">
