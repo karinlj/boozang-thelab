@@ -9,13 +9,16 @@
     }
   }
   .scramble_text {
-    color: #fff;
-    padding: 2rem 0;
+    //background: $themecolorBlueNewDarkest;
+    box-shadow: $themeBoxShadow;
+    border-radius: $themeBorderRadius;
+    margin: 2rem 0;
+    padding: 1rem;
     p {
-      margin-bottom: 0;
-      .category {
-        color: $themecolorButtonBlue;
-      }
+      font-family: "Inconsolata", monospace;
+      font-size: 0.9rem;
+      color: $navLinkColor;
+      margin-bottom: 0.5rem;
     }
   }
   .animal_btns {

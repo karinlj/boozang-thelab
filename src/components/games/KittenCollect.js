@@ -5,7 +5,13 @@ import { KittenCollectTestInfo } from "../text/TestInfos";
 import { KittenCollectVideos } from "../text/videos/VideoSections";
 
 const KittenCollect = () => {
+  const [isRunning, setIsRunning] = useState(false);
   const [message, setMessage] = useState("Start collecting kittens!");
+  const [time, setTime] = useState(0);
+  const [points, setPoints] = useState(0);
+  useEffect(() => {
+    console.log("isRunning", isRunning);
+  }, [isRunning]);
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-5">
@@ -14,16 +20,22 @@ const KittenCollect = () => {
           <div className="points_section">
             <div className="counter">
               <h6>
-                Time: <strong>20s</strong>{" "}
+                Time: <strong>{time}</strong>{" "}
                 {/* <span>{Math.floor(time / 10)}</span> */}
               </h6>
             </div>
-            <input type="button" value="Start Game" className="formBtn add" />
+            <input
+              type="button"
+              value="Start Game"
+              className="formBtn add"
+              onClick={() => {
+                setIsRunning(!isRunning);
+              }}
+            />
 
             <div className="points">
               <h6>
-                Points: <strong>11</strong>
-                {/* <span>{points}</span> */}
+                Points: <strong>{points}</strong>
               </h6>
             </div>
           </div>
