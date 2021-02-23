@@ -5,7 +5,8 @@ import { ScrambleItemsTestInfo } from "../text/TestInfos";
 import { ScrambleItemsVideos } from "../text/videos/VideoSections";
 
 const ScrambleItems = () => {
-  const [btnOneFirst, setBtnOneFirst] = useState(true);
+  const [isBtnOneFirst, setIsBtnOneFirst] = useState(true);
+  const [clickedBtn, setClickedBtn] = useState("");
   const [btnOneAttributes, setBtnOneAttributes] = useState({
     myId: "small",
     myClass: "blue",
@@ -27,7 +28,7 @@ const ScrambleItems = () => {
         id={btnOneAttributes.myId}
         className={`${btnOneAttributes.myClass}`}
         style={btnOneAttributes.styles}
-        onClick={(e) => handleClick(e)}
+        onClick={(e) => setClickedBtn(e.target.name)}
       />
     );
   };
@@ -40,12 +41,12 @@ const ScrambleItems = () => {
         id={btnTwoAttributes.myId}
         className={`${btnTwoAttributes.myClass}`}
         style={btnTwoAttributes.styles}
-        onClick={(e) => handleClick(e)}
+        onClick={(e) => setClickedBtn(e.target.name)}
       />
     );
   };
-
   const toggleId = () => {
+    setClickedBtn("");
     //avoid resetting value-strings
     let tmpId = btnTwoAttributes.myId;
     // console.log("tmpId: ", tmpId);
@@ -59,6 +60,7 @@ const ScrambleItems = () => {
     });
   };
   const toggleClass = () => {
+    setClickedBtn("");
     let tmpClass = btnTwoAttributes.myClass;
     setBtnTwoAttributes({
       ...btnTwoAttributes,
@@ -70,6 +72,7 @@ const ScrambleItems = () => {
     });
   };
   const toggleContent = () => {
+    setClickedBtn("");
     let tmpContent = btnTwoAttributes.myContent;
     setBtnTwoAttributes({
       ...btnTwoAttributes,
@@ -86,6 +89,7 @@ const ScrambleItems = () => {
     return [randomTop, randomLeft];
   };
   const scramblePositon = () => {
+    setClickedBtn("");
     const [y1, x1] = randomPosition();
     let [y2, x2] = [0, 0];
 
@@ -116,15 +120,19 @@ const ScrambleItems = () => {
       styles: style2,
     });
   };
-  {
-    /* <input type="button" name="btnOne" id="small" class="blue" value="tiger"> */
-  }
+  const toggleOrder = () => {
+    setClickedBtn("");
+    setIsBtnOneFirst(!isBtnOneFirst);
+  };
+  //parse from jsx to html
   const htmlParse = (comp) => {
     return (
       "<" +
       comp.type +
       " type=" +
       comp.props.type +
+      " name=" +
+      comp.props.name +
       " id=" +
       comp.props.id +
       " class=" +
@@ -134,43 +142,14 @@ const ScrambleItems = () => {
       " />"
     );
   };
-
-  const handleClick = (e) => {
-    const { id, className, value, name } = e.target;
-    const btn = document.querySelector(`#${id}`);
-    const elementName = btn.parentNode.firstChild.name;
-    //blir true eller false
-    //let firstBtn = name === elementName;
-
-    // const message = () => {
-    //   return (
-    //     <div>
-    //       <p> Clicked button:</p>
-    //       <p>
-    //         id = <strong className="category">{id}</strong>
-    //       </p>
-    //       <p>
-    //         class = <strong className="category">{className}</strong>
-    //       </p>
-    //       <p>
-    //         content = <strong className="category">{value}</strong>
-    //       </p>
-    //       <p>
-    //         DOM order ={" "}
-    //         <strong className="category">
-    //           {firstBtn ? "First button" : "Second button"}
-    //         </strong>
-    //       </p>
-    //     </div>
-    //   );
-    // };
-    // setMessage(message);
-  };
   useEffect(() => {
     setTimeout(() => {
       scramblePositon();
     }, 100);
   }, []);
+  useEffect(() => {
+    //  console.log("clickedBtn", clickedBtn);
+  }, [clickedBtn]);
 
   return (
     <div className="row justify-content-between">
@@ -178,31 +157,39 @@ const ScrambleItems = () => {
         <section className="scramble_section">
           <ScrambleItemsIntro />
           <div className="animal_btns">
-            {btnOneFirst && (
+            {isBtnOneFirst && (
               <div>
                 {btnOne()}
                 {btnTwo()}
               </div>
             )}
-            {!btnOneFirst && (
+            {!isBtnOneFirst && (
               <div>
                 {btnTwo()}
                 {btnOne()}
               </div>
             )}
           </div>
-          <div className="scramble_text">
+          <div className="scramble_code">
             <div>
-              {btnOneFirst && (
+              {isBtnOneFirst && (
                 <div>
-                  <p>{htmlParse(btnOne())}</p>
-                  <p>{htmlParse(btnTwo())}</p>
+                  <p className={clickedBtn === "btnOne" ? "clicked_class" : ""}>
+                    {htmlParse(btnOne())}
+                  </p>
+                  <p className={clickedBtn === "btnTwo" ? "clicked_class" : ""}>
+                    {htmlParse(btnTwo())}
+                  </p>
                 </div>
               )}
-              {!btnOneFirst && (
+              {!isBtnOneFirst && (
                 <div>
-                  <p>{htmlParse(btnTwo())}</p>
-                  <p>{htmlParse(btnOne())}</p>
+                  <p className={clickedBtn === "btnTwo" ? "clicked_class" : ""}>
+                    {htmlParse(btnTwo())}
+                  </p>
+                  <p className={clickedBtn === "btnOne" ? "clicked_class" : ""}>
+                    {htmlParse(btnOne())}
+                  </p>
                 </div>
               )}
             </div>
@@ -239,9 +226,7 @@ const ScrambleItems = () => {
                 type="button"
                 value="Swap Order"
                 className="formBtn add green_dark"
-                onClick={() => {
-                  setBtnOneFirst(!btnOneFirst);
-                }}
+                onClick={toggleOrder}
               />
             </div>
           </div>

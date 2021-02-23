@@ -6,8 +6,11 @@ import { KittenCollectVideos } from "../text/videos/VideoSections";
 
 const KittenCollect = () => {
   const [isRunning, setIsRunning] = useState(false);
+  // eslint-disable-next-line
   const [message, setMessage] = useState("Start collecting kittens!");
+  // eslint-disable-next-line
   const [time, setTime] = useState(0);
+  // eslint-disable-next-line
   const [points, setPoints] = useState(0);
   useEffect(() => {
     console.log("isRunning", isRunning);
