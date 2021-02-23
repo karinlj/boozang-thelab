@@ -3,10 +3,12 @@ import "./scramble.scss";
 import { ScrambleItemsIntro } from "../text/Intros";
 import { ScrambleItemsTestInfo } from "../text/TestInfos";
 import { ScrambleItemsVideos } from "../text/videos/VideoSections";
+import parse from "html-react-parser";
 
 const ScrambleItems = () => {
   const [btnOneFirst, setBtnOneFirst] = useState(true);
   const [message, setMessage] = useState("");
+  const [codeBlock, setCodeBlock] = useState("");
   const [btnOneAttributes, setBtnOneAttributes] = useState({
     myId: "small",
     myClass: "blue",
@@ -19,6 +21,33 @@ const ScrambleItems = () => {
     myContent: "tiger",
     styles: {},
   });
+  const btnOne = () => {
+    return (
+      <input
+        type="button"
+        name="btnOne"
+        value={btnOneAttributes.myContent}
+        id={btnOneAttributes.myId}
+        className={`${btnOneAttributes.myClass}`}
+        style={btnOneAttributes.styles}
+        onClick={(e) => handleClick(e)}
+      />
+    );
+  };
+  const btnTwo = () => {
+    return (
+      <input
+        type="button"
+        name="btnTwo"
+        value={btnTwoAttributes.myContent}
+        id={btnTwoAttributes.myId}
+        className={`${btnTwoAttributes.myClass}`}
+        style={btnTwoAttributes.styles}
+        onClick={(e) => handleClick(e)}
+      />
+    );
+  };
+
   const toggleId = () => {
     setMessage("");
     //avoid resetting value-strings
@@ -94,9 +123,14 @@ const ScrambleItems = () => {
       styles: style2,
     });
   };
+
   const DOMorder = () => {
     setMessage("");
     setBtnOneFirst(!btnOneFirst);
+
+    // const code = parse("<p>my p-tag</p>");
+    // const code =
+    //   "<input  type='button' name='btnOne' value={btnOneAttributes.myContent} id={btnOneAttributes.myId} className={`${btnOneAttributes.myClass}`} style={btnOneAttributes.styles} onClick={(e) => handleClick(e)} />";
   };
 
   const handleClick = (e) => {
@@ -130,7 +164,6 @@ const ScrambleItems = () => {
     };
     setMessage(message);
   };
-
   useEffect(() => {
     setTimeout(() => {
       scramblePositon();
@@ -145,51 +178,20 @@ const ScrambleItems = () => {
           <div className="animal_btns">
             {btnOneFirst && (
               <div>
-                <input
-                  type="button"
-                  name="btnOne"
-                  value={btnOneAttributes.myContent}
-                  id={btnOneAttributes.myId}
-                  className={`${btnOneAttributes.myClass}`}
-                  style={btnOneAttributes.styles}
-                  onClick={(e) => handleClick(e)}
-                />
-                <input
-                  type="button"
-                  name="btnTwo"
-                  value={btnTwoAttributes.myContent}
-                  id={btnTwoAttributes.myId}
-                  className={`${btnTwoAttributes.myClass}`}
-                  style={btnTwoAttributes.styles}
-                  onClick={(e) => handleClick(e)}
-                />
+                {btnOne()}
+                {btnTwo()}
               </div>
             )}
             {!btnOneFirst && (
               <div>
-                <input
-                  type="button"
-                  name="btnTwo"
-                  value={btnTwoAttributes.myContent}
-                  id={btnTwoAttributes.myId}
-                  className={`${btnTwoAttributes.myClass}`}
-                  style={btnTwoAttributes.styles}
-                  onClick={(e) => handleClick(e)}
-                />
-                <input
-                  type="button"
-                  name="btnOne"
-                  value={btnOneAttributes.myContent}
-                  id={btnOneAttributes.myId}
-                  className={`${btnOneAttributes.myClass}`}
-                  style={btnOneAttributes.styles}
-                  onClick={(e) => handleClick(e)}
-                />
+                {btnTwo()}
+                {btnOne()}
               </div>
             )}
           </div>
           <div className="scramble_text">
             <div>{message}</div>
+            {/* <div>{codeBlock}</div> */}
           </div>
           <div className="row justify-content-between">
             <div className="col">

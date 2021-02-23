@@ -78,7 +78,7 @@ const ConcatStrings = () => {
               </section>
             </form>
           )}
-          <h5
+          <h4
             className={`success_message ${
               successMessage === "Good job" ? "" : "fail"
             }`}
@@ -93,7 +93,7 @@ const ConcatStrings = () => {
                 }
               ></i>
             )}
-          </h5>
+          </h4>
         </section>
       </div>
       <div className="col-12 col-md-5">
