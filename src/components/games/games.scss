@@ -1,6 +1,40 @@
 @import "../../variables.scss";
 
-.game-section {
+.game_section {
+  .points_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h6 {
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 0;
+      strong {
+        font-size: 1.2rem;
+        color: $themecolorNewPink;
+        text-transform: lowercase;
+      }
+    }
+  }
+  .square {
+    background: $themecolorBlueNewDark;
+    box-shadow: $themeBoxShadow;
+    border-radius: $themeBorderRadius;
+    margin: 1.5rem 0;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .message {
+      max-width: 50%;
+      text-align: center;
+      color: $themecolorBlueNewLightest;
+      h5 {
+        line-height: 1.5;
+        margin-bottom: 0;
+      }
+    }
+  }
   .game-square {
     background: $themecolorLightgrey;
     width: 550px;

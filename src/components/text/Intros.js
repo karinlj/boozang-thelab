@@ -164,7 +164,7 @@ export const KittenCollectIntro = () => {
       <p>
         The kittens have all run away, so it's your job to get them home safe.
         Collect as many kittens as you can by clicking on them, and watch out
-        for the hedgehogs.
+        for the hedgehogs!
       </p>
     </article>
   );
