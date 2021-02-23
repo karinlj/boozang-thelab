@@ -13,15 +13,16 @@
     box-shadow: $themeBoxShadow;
     border-radius: $themeBorderRadius;
     margin: 2rem 0;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem;
     p {
       font-family: "Inconsolata", monospace;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       color: $navLinkColor;
       margin-bottom: 0.5rem;
+      padding: 3px;
     }
     .clicked_class {
-      background: $themecolorBlueNewDark;
+      background: $themecolorBlueNewDarkest;
     }
   }
   .animal_btns {

@@ -3,18 +3,45 @@ import "./games.scss";
 import { KittenCollectIntro } from "../text/Intros";
 import { KittenCollectTestInfo } from "../text/TestInfos";
 import { KittenCollectVideos } from "../text/videos/VideoSections";
+import CatIcon from "../../img/kitten_icon.png";
+import HedgehogIcon from "../../img/hedgehog_icon.png";
 
 const KittenCollect = () => {
   const [isRunning, setIsRunning] = useState(false);
-  // eslint-disable-next-line
   const [message, setMessage] = useState("Start collecting kittens!");
-  // eslint-disable-next-line
   const [time, setTime] = useState(0);
-  // eslint-disable-next-line
+  const [interval, setInterval] = useState(0);
   const [points, setPoints] = useState(0);
   useEffect(() => {
     console.log("isRunning", isRunning);
   }, [isRunning]);
+
+  const tick = () => {
+    //define finish time in ms
+
+    const finishTime = 300;
+    //if < 0.06 drawKitten()
+    if (Math.random() < 0.06) {
+      console.log("drawKitten");
+      //drawKitten();
+    }
+    //if < 0.02 drawHedgehog()
+    if (Math.random() < 0.02) {
+      console.log("drawHedgehog");
+      //drawHedgehog();
+    }
+    //increase time with 1
+    setTime(time + 1);
+
+    //clearInterval() if time===finishTime
+    if (time > finishTime) {
+      clearInterval(interval);
+
+      setIsRunning(false);
+      setMessage("Game Over!");
+    }
+  };
+
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-5">

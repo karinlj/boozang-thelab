@@ -45,6 +45,34 @@ const ScrambleItems = () => {
       />
     );
   };
+  //parse from jsx to html
+  const htmlParse = (comp) => {
+    return (
+      "<" +
+      comp.type +
+      " type=" +
+      '"' +
+      comp.props.type +
+      '"' +
+      " name=" +
+      '"' +
+      comp.props.name +
+      '"' +
+      " id=" +
+      '"' +
+      comp.props.id +
+      '"' +
+      " class=" +
+      '"' +
+      comp.props.className +
+      '"' +
+      " value=" +
+      '"' +
+      comp.props.value +
+      '"' +
+      " />"
+    );
+  };
   const toggleId = () => {
     setClickedBtn("");
     //avoid resetting value-strings
@@ -123,24 +151,6 @@ const ScrambleItems = () => {
   const toggleOrder = () => {
     setClickedBtn("");
     setIsBtnOneFirst(!isBtnOneFirst);
-  };
-  //parse from jsx to html
-  const htmlParse = (comp) => {
-    return (
-      "<" +
-      comp.type +
-      " type=" +
-      comp.props.type +
-      " name=" +
-      comp.props.name +
-      " id=" +
-      comp.props.id +
-      " class=" +
-      comp.props.className +
-      " value=" +
-      comp.props.value +
-      " />"
-    );
   };
   useEffect(() => {
     setTimeout(() => {
