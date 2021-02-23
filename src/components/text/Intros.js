@@ -156,3 +156,16 @@ export const ConcatStringsIntro = () => {
     </article>
   );
 };
+//games
+export const KittenCollectIntro = () => {
+  return (
+    <article className="comp_intro">
+      <h1>Collecting Kittens</h1>
+      <p>
+        The kittens have all run away, so it's your job to get them home safe.
+        Collect as many kittens as you can by clicking on them, and watch out
+        for the hedgehogs.
+      </p>
+    </article>
+  );
+};

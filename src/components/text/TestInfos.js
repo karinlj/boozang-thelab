@@ -181,3 +181,17 @@ export const ConcatStringTestInfo = () => {
     </article>
   );
 };
+//games
+export const KittenCollectTestInfo = () => {
+  return (
+    <article className="comp_test_info">
+      <h4>Why learn: Collecting Kittens</h4>
+      <p>
+        Any web application is a little bit like a game. By automating game play
+        we combine automating actions, conditional logic and handling waits. If
+        you can automate this game, you are far along in handling any scenario
+        that may arise in a SaaS application.
+      </p>
+    </article>
+  );
+};

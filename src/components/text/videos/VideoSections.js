@@ -275,3 +275,23 @@ export const ConcatStringsVideos = () => {
     </div>
   );
 };
+//games
+export const KittenCollectVideos = () => {
+  const videos = [
+    {
+      id: 1,
+      url: "https://youtu.be/1g35EKDY5bo",
+      text: "Playing collecting kittens",
+    },
+    {
+      id: 2,
+      url: "https://youtu.be/ScLjPwMlxe0",
+      text: "Performance tuning of kitten game test",
+    },
+  ];
+  return (
+    <div className="video_section">
+      <VideoList videos={videos} />
+    </div>
+  );
+};

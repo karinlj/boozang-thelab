@@ -24,6 +24,7 @@ import CatOrDog from "./components/Conditional/CatOrDog";
 import ScrambleItems from "./components/domChanges/ScrambleItems";
 import MultiScramble from "./components/domChanges/MultiScramble";
 import ConcatStrings from "./components/strings/ConcatStrings";
+import KittenCollect from "./components/games/KittenCollect";
 
 function App() {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
@@ -104,6 +105,9 @@ function App() {
               </Route>
               <Route path="/concatStrings">
                 <ConcatStrings />
+              </Route>
+              <Route path="/kittenCollect">
+                <KittenCollect />
               </Route>
             </Switch>
           </div>
