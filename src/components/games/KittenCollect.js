@@ -4,63 +4,165 @@ import { KittenCollectIntro } from "../text/Intros";
 import { KittenCollectTestInfo } from "../text/TestInfos";
 import { KittenCollectVideos } from "../text/videos/VideoSections";
 import CatIcon from "../../img/kitten_icon.png";
-import HedgehogIcon from "../../img/hedgehog_icon.png";
+//import HedgehogIcon from "../../img/hedgehog_icon.png";
 
 const KittenCollect = () => {
   const [isRunning, setIsRunning] = useState(false);
-  const [message, setMessage] = useState("Start collecting kittens!");
-  const [time, setTime] = useState(0);
-  const [interval, setInterval] = useState(0);
+  const [myTime, setMyTime] = useState(0);
   const [points, setPoints] = useState(0);
+  const [message, setMessage] = useState("Start collecting kittens!");
+  const [myInterval, setMyInterval] = useState(0);
+  const [kittens, setKittens] = useState(null);
+  //const [hedgehogs, setHedgehogs] = useState(null);
+
+  //const finishTime = 300;
+  const finishTime = 100;
+
+  const startGame = () => {
+    setIsRunning(true);
+
+    //start the game, call on tick() in intervals of 100ms
+    // if (!isRunning) {
+    //   let interval = setInterval(() => {
+    //     tick();
+    //   }, 100);
+    //   setIsRunning(true);
+    //   setMyInterval(interval);
+    //   setMyTime(0);
+    //   setPoints(0);
+    //   setMessage("");
+    // }
+  };
+  const abortGame = () => {
+    setIsRunning(false);
+  };
 
   const tick = () => {
-    console.log("banan");
     //define how often I want to check
     //define finish time in ms
 
-    const finishTime = 300;
     //if < 0.06 drawKitten()
     if (Math.random() < 0.06) {
-      console.log("drawKitten");
+      // console.log("drawKitten");
       //drawKitten();
     }
     //if < 0.02 drawHedgehog()
     if (Math.random() < 0.02) {
-      console.log("drawHedgehog");
+      // console.log("drawHedgehog");
       //drawHedgehog();
     }
     //increase time with 1
-    setTime(time + 1);
+    setMyTime((myTime) => myTime + 1);
 
     //clearInterval() if time===finishTime
-    if (time > finishTime) {
-      clearInterval(interval);
+    // if (myTime > finishTime) {
+    //   console.log("hello");
+    //   clearInterval(myInterval);
 
+    //   setIsRunning(false);
+    //   setMessage("Game Over!");
+    // }
+  };
+  const drawKitten = () => {
+    //new kitten-object with props: id, img, x & y coordinate
+    //fetch randomPos()-values
+    //new kitten-array with spread, add kitten-object
+    //call on hideKitten(kittenTemp.id) after 1s with setTimeout()
+
+    // let randPos = this.randomPos();
+    // let randHeight = randPos[0];
+    // let randWidth = randPos[1];
+
+    //set rand pos
+    const [randTop, randLeft] = randomPosition();
+
+    //make icon
+    const catIcon = <img src={CatIcon} alt="cat" />;
+
+    //make obj
+    const kitten = {
+      id: Math.random(),
+      icon: catIcon,
+      top: randTop,
+      left: randLeft,
+    };
+    console.log("kitten", kitten);
+
+    //set state
+    setKittens({
+      ...kittens,
+      kitten,
+    });
+    //hide kitten
+    setTimeout(() => {
+      hideKitten(kitten.id);
+    }, 1500);
+  };
+
+  const hideKitten = (id) => {
+    const newKittens = kittens.filter((k) => {
+      return k.id !== id;
+    });
+    setKittens(newKittens);
+  };
+
+  const randomPosition = () => {
+    const randomTop = Math.floor(Math.random() * 250 + 1);
+    const randomLeft = Math.floor(Math.random() * 250 + 1);
+    return [randomTop, randomLeft];
+  };
+  useEffect(() => {
+    if (myTime > finishTime) {
+      console.log("hello");
       setIsRunning(false);
       setMessage("Game Over!");
     }
-  };
+  }, [myTime]);
+
+  useEffect(() => {
+    if (isRunning) {
+      let interval = setInterval(() => {
+        tick();
+      }, 100);
+      setMyInterval(interval);
+      setMyTime(0);
+      setPoints(0);
+      setMessage("");
+    } else {
+      clearInterval(myInterval);
+    }
+  }, [isRunning]);
+
   useEffect(() => {
     console.log("isRunning", isRunning);
-  }, [isRunning]);
+    console.log("myTime", myTime);
+    //console.log("isRunning", isRunning);
+  }, [isRunning, myTime]);
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-5">
         <section className="game_section">
           <KittenCollectIntro />
           <div className="points_section">
-            <input
-              type="button"
-              value="Start Game"
-              className="formBtn add"
-              onClick={() => {
-                setIsRunning(!isRunning);
-              }}
-            />
+            {!isRunning && (
+              <input
+                type="button"
+                value="Start Game"
+                className="formBtn add"
+                onClick={startGame}
+              />
+            )}
+            {isRunning && (
+              <input
+                type="button"
+                value="Abort Game"
+                className="formBtn delete"
+                onClick={abortGame}
+              />
+            )}
             <div className="counter">
               <h6>
-                Time: <strong>{time}</strong>{" "}
-                {/* <span>{Math.floor(time / 10)}</span> */}
+                Time: <strong>{Math.floor(myTime / 10)}</strong>{" "}
               </h6>
             </div>
             <div className="points">

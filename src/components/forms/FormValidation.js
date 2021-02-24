@@ -152,10 +152,10 @@ function FormValidation() {
               />
             )}
           </section>
-          {printForm && (
+          {printForm && users && (
             <article className="print_form show">
               <div className="collection">
-                <h6>Users in DB:</h6>
+                {/* <h6>Users in DB:</h6> */}
                 {users.map((user) => {
                   return (
                     <div className="collection-item" key={user.id}>

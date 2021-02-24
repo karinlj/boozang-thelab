@@ -75,6 +75,22 @@
       "email": "truls@gmail.com",
       "password": "alsklingenmin",
       "id": 4
+    },
+    {
+      "firstname": "Filip",
+      "lastname": "Ljunggren",
+      "username": "lukiluki",
+      "email": "filip@gmail.com",
+      "password": "fdfsdfdfsfsfsfsfsfs",
+      "id": 5
+    },
+    {
+      "firstname": "Hugo",
+      "lastname": "Ljunggren",
+      "username": "ottoliten",
+      "email": "hugo@gmail.com",
+      "password": "dfdfsfsfsfsfsfsf",
+      "id": 6
     }
   ]
 }
