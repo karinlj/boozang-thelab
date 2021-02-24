@@ -12,11 +12,10 @@ const KittenCollect = () => {
   const [time, setTime] = useState(0);
   const [interval, setInterval] = useState(0);
   const [points, setPoints] = useState(0);
-  useEffect(() => {
-    console.log("isRunning", isRunning);
-  }, [isRunning]);
 
   const tick = () => {
+    console.log("banan");
+    //define how often I want to check
     //define finish time in ms
 
     const finishTime = 300;
@@ -41,19 +40,15 @@ const KittenCollect = () => {
       setMessage("Game Over!");
     }
   };
-
+  useEffect(() => {
+    console.log("isRunning", isRunning);
+  }, [isRunning]);
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-5">
         <section className="game_section">
           <KittenCollectIntro />
           <div className="points_section">
-            <div className="counter">
-              <h6>
-                Time: <strong>{time}</strong>{" "}
-                {/* <span>{Math.floor(time / 10)}</span> */}
-              </h6>
-            </div>
             <input
               type="button"
               value="Start Game"
@@ -62,7 +57,12 @@ const KittenCollect = () => {
                 setIsRunning(!isRunning);
               }}
             />
-
+            <div className="counter">
+              <h6>
+                Time: <strong>{time}</strong>{" "}
+                {/* <span>{Math.floor(time / 10)}</span> */}
+              </h6>
+            </div>
             <div className="points">
               <h6>
                 Points: <strong>{points}</strong>

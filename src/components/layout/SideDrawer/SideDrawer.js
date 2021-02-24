@@ -19,7 +19,7 @@ const SideDrawer = (props) => {
             <ul className="links">
               <li>
                 Getting started
-                <ul className="sub-list">
+                <ul className="sub_list">
                   <li>
                     <NavLink to="/introduction">
                       <div onClick={props.clickLink}>Introduction</div>
@@ -34,7 +34,7 @@ const SideDrawer = (props) => {
               </li>
               <li>
                 Timing
-                <ul className="sub-list">
+                <ul className="sub_list">
                   <li>
                     <NavLink to="/speedGame">
                       <div onClick={props.clickLink}>Speed Game</div>
@@ -50,7 +50,7 @@ const SideDrawer = (props) => {
 
               <li>
                 Conditional logic
-                <ul className="sub-list">
+                <ul className="sub_list">
                   <li>
                     <NavLink to="/yellowOrBlue">
                       <div onClick={props.clickLink}>Yellow or Blue</div>
@@ -65,7 +65,7 @@ const SideDrawer = (props) => {
               </li>
               <li>
                 Lists
-                <ul className="sub-list">
+                <ul className="sub_list">
                   <li>
                     <NavLink to="/sortedList">
                       <div onClick={props.clickLink}>Sorted list</div>
@@ -86,7 +86,7 @@ const SideDrawer = (props) => {
 
               <li>
                 Lists, tables and forms
-                <ul className="sub-list">
+                <ul className="sub_list">
                   <li>
                     <NavLink to="/formValidation">
                       <div onClick={props.clickLink}>Form validation</div>
@@ -102,7 +102,7 @@ const SideDrawer = (props) => {
 
               <li>
                 Bug reporting
-                <ul className="sub-list">
+                <ul className="sub_list">
                   <li>
                     <NavLink to="/visualBugs">
                       <div onClick={props.clickLink}>Visual Bugs</div>
@@ -113,7 +113,7 @@ const SideDrawer = (props) => {
 
               <li>
                 DOM changes
-                <ul className="sub-list">
+                <ul className="sub_list">
                   <li>
                     <NavLink to="/scramble">
                       <div onClick={props.clickLink}>Scramble items</div>
@@ -129,7 +129,7 @@ const SideDrawer = (props) => {
 
               <li>
                 Using data
-                <ul className="sub-list">
+                <ul className="sub_list">
                   <li>
                     <NavLink to="/concatStrings">
                       <div onClick={props.clickLink}>Concat strings</div>
@@ -140,7 +140,7 @@ const SideDrawer = (props) => {
 
               {/* <li>
                 Users and roles
-                <ul className="sub-list">
+                <ul className="sub_list">
                   <li>
                     <NavLink to="/randomLogin">
                       <div onClick={props.clickLink}>Random login</div>
@@ -156,7 +156,7 @@ const SideDrawer = (props) => {
 
               {/* <li>
                 CI server
-                <ul className="sub-list">
+                <ul className="sub_list">
                   <li>
                     <NavLink to="/runningCli">
                       <div onClick={props.clickLink}>Running from CLI</div>
@@ -171,7 +171,7 @@ const SideDrawer = (props) => {
               </li> */}
               <li className="games">
                 Games
-                <ul className="sub-list">
+                <ul className="sub_list">
                   <li>
                     <NavLink to="/kittenCollect">
                       <div onClick={props.clickLink}>Collecting kittens</div>

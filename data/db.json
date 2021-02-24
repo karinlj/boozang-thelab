@@ -51,6 +51,14 @@
       "email": "kaljunggren@gmail.com",
       "password": "sdsdsdsdsdsd",
       "id": 1
+    },
+    {
+      "firstname": "Karin",
+      "lastname": "Ljunggren",
+      "username": "Corri",
+      "email": "kaljunggren@gmail.com",
+      "password": "Jg5sHn@TaRAwhsi",
+      "id": 2
     }
   ]
 }

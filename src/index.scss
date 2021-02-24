@@ -222,14 +222,22 @@ a {
           font-size: 0.85rem;
           margin: 2px 0;
           color: #fff;
-          a {
+          a.link {
             color: $navLinkColor;
             &:hover {
               color: $linkColor;
             }
+            &:active,
+            visited {
+              color: $linkColor;
+            }
+            &.current {
+              color: $linkColor;
+              // border-bottom: 2px solid $linkColor;
+            }
           }
 
-          ul.sub-list {
+          ul.sub_list {
             li {
               font-size: 0.85rem;
               margin: 1px 14px;
@@ -244,71 +252,6 @@ a {
     }
   }
 }
-
-//blog
-.blog-section {
-  .post {
-    overflow: hidden;
-    padding-left: 80px;
-    margin-bottom: 2rem;
-
-    img {
-      position: absolute;
-      top: 20px;
-      left: -100px;
-      opacity: 0.6;
-    }
-  }
-}
-
-//sidebar
-// .sidebar-section {
-//   font-size: 0.95em;
-//   margin-top: 5rem;
-//   margin-bottom: 2rem;
-//   min-height: 150px;
-//   // border: 1px solid #333;
-//   background: $themecolorLightgrey;
-//   color: $themecolor;
-//   padding: 1.5rem 2rem;
-//   border-radius: $themeBorderRadius;
-//   box-shadow: $themeBoxShadow;
-//   @media all and (min-width: $md-min) {
-//     margin-top: 0;
-//   }
-//   h4 {
-//     margin-bottom: 0.8rem;
-//     color: $themecolorBlueNew;
-//   }
-//   p {
-//     font-size: 1em;
-//     line-height: 1.7;
-//     white-space: pre-line;
-//   }
-// }
-
-//home tec
-// .textComp-section {
-//   h1 {
-//     margin-bottom: 2rem;
-//   }
-
-//   .card {
-//     min-height: 150px;
-//     padding: 0 0.75rem;
-
-//     @media all and (min-width: $xl-min) {
-//       padding: 0.5rem 1rem;
-//     }
-//   }
-//   ul._list {
-//     list-style: circle;
-//     padding: 1rem 0 0 1rem;
-//     li {
-//       font-size: 0.9rem;
-//     }
-//   }
-// }
 
 //content
 .content-section {

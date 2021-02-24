@@ -18,96 +18,186 @@ const Navbar = ({ handleDrawerClick }) => (
             <ul className="links">
               <li>
                 Getting started
-                <ul className="sub-list">
+                <ul className="sub_list">
                   <li>
-                    <NavLink to="/introduction">Introduction</NavLink>
+                    <NavLink
+                      to="/introduction"
+                      className="link"
+                      activeClassName="current"
+                    >
+                      Introduction
+                    </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/overview">Overview of the tool</NavLink>
+                    <NavLink
+                      to="/overview"
+                      className="link"
+                      activeClassName="current"
+                    >
+                      Overview of the tool
+                    </NavLink>
                   </li>
                 </ul>
               </li>
               <li>
                 Timing
-                <ul className="sub-list">
+                <ul className="sub_list">
                   <li>
-                    <NavLink to="/speedGame">Speed Game</NavLink>
+                    <NavLink
+                      to="/speedGame"
+                      className="link"
+                      activeClassName="current"
+                    >
+                      Speed Game
+                    </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/waitGame">Wait Game</NavLink>
+                    <NavLink
+                      to="/waitGame"
+                      className="link"
+                      activeClassName="current"
+                    >
+                      Wait Game
+                    </NavLink>
                   </li>
                 </ul>
               </li>
               <li>
                 Conditional logic
-                <ul className="sub-list">
+                <ul className="sub_list">
                   <li>
-                    <NavLink to="/yellowOrBlue">Yellow or Blue</NavLink>
+                    <NavLink
+                      to="/yellowOrBlue"
+                      className="link"
+                      activeClassName="current"
+                    >
+                      Yellow or Blue
+                    </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/catOrDog">Cat or dog</NavLink>
+                    <NavLink
+                      to="/catOrDog"
+                      className="link"
+                      activeClassName="current"
+                    >
+                      Cat or dog
+                    </NavLink>
                   </li>
                 </ul>
               </li>
               <li>
                 Lists
-                <ul className="sub-list">
+                <ul className="sub_list">
                   <li>
-                    <NavLink to="/sortedList">Sorted list</NavLink>
+                    <NavLink
+                      to="/sortedList"
+                      className="link"
+                      activeClassName="current"
+                    >
+                      Sorted list
+                    </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/unsortedList">Unsorted list</NavLink>
+                    <NavLink
+                      to="/unsortedList"
+                      className="link"
+                      activeClassName="current"
+                    >
+                      Unsorted list
+                    </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/catshelter">Cat Shelter</NavLink>
+                    <NavLink
+                      to="/catshelter"
+                      className="link"
+                      activeClassName="current"
+                    >
+                      Cat Shelter
+                    </NavLink>
                   </li>
                 </ul>
               </li>
               <li>
                 Forms and tables
-                <ul className="sub-list">
+                <ul className="sub_list">
                   <li>
-                    <NavLink to="/formValidation">Form validation</NavLink>
+                    <NavLink
+                      to="/formValidation"
+                      className="link"
+                      activeClassName="current"
+                    >
+                      Form validation
+                    </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/Tables">Tables</NavLink>
+                    <NavLink
+                      to="/Tables"
+                      className="link"
+                      activeClassName="current"
+                    >
+                      Tables
+                    </NavLink>
                   </li>
                 </ul>
               </li>
 
               <li>
                 Bug reporting
-                <ul className="sub-list">
+                <ul className="sub_list">
                   <li>
-                    <NavLink to="/visualBugs">Visual Bugs</NavLink>
+                    <NavLink
+                      to="/visualBugs"
+                      className="link"
+                      activeClassName="current"
+                    >
+                      Visual Bugs
+                    </NavLink>
                   </li>
                 </ul>
               </li>
 
               <li>
                 DOM changes
-                <ul className="sub-list">
+                <ul className="sub_list">
                   <li>
-                    <NavLink to="/scramble">Scramble items</NavLink>
+                    <NavLink
+                      to="/scramble"
+                      className="link"
+                      activeClassName="current"
+                    >
+                      Scramble items
+                    </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/multiScramble">Multi-scramble</NavLink>
+                    <NavLink
+                      to="/multiScramble"
+                      className="link"
+                      activeClassName="current"
+                    >
+                      Multi-scramble
+                    </NavLink>
                   </li>
                 </ul>
               </li>
 
               <li>
                 Using data
-                <ul className="sub-list">
+                <ul className="sub_list">
                   <li>
-                    <NavLink to="/concatStrings">Concat strings</NavLink>
+                    <NavLink
+                      to="/concatStrings"
+                      className="link"
+                      activeClassName="current"
+                    >
+                      Concat strings
+                    </NavLink>
                   </li>
                 </ul>
               </li>
               {/* 
               <li>
                 Users and roles
-                <ul className="sub-list">
+                <ul className="sub_list">
                   <li>
                     <NavLink to="/randomLogin">Random login</NavLink>
                   </li>
@@ -118,7 +208,7 @@ const Navbar = ({ handleDrawerClick }) => (
               </li> */}
               {/* <li>
                 CI server
-                <ul className="sub-list">
+                <ul className="sub_list">
                   <li>
                     <NavLink to="/runningCli">Running from CLI</NavLink>
                   </li>
@@ -129,9 +219,15 @@ const Navbar = ({ handleDrawerClick }) => (
               </li> */}
               <li className="games">
                 Games
-                <ul className="sub-list">
+                <ul className="sub_list">
                   <li>
-                    <NavLink to="/kittenCollect">Collecting kittens</NavLink>
+                    <NavLink
+                      to="/kittenCollect"
+                      className="link"
+                      activeClassName="current"
+                    >
+                      Collecting kittens
+                    </NavLink>
                   </li>
                 </ul>
               </li>
