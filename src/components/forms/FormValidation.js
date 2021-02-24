@@ -5,9 +5,10 @@ import { FormValidationVideos } from "../text/videos/VideoSections";
 import { FormValidationIntro } from "../text/Intros";
 import { FormValidationTestInfo } from "../text/TestInfos";
 import { addData } from "../fetchFunctions/fetchFunctions";
-//import { getData } from "../fetchFunctions/fetchFunctions";
+import { getData } from "../fetchFunctions/fetchFunctions";
 
 function FormValidation() {
+  const [users, setUsers] = useState(null);
   const [error, setError] = useState(null);
   const [printForm, setPrintForm] = useState(false);
   const [formData, setFormData] = useState({
@@ -18,6 +19,19 @@ function FormValidation() {
     password: "",
   });
   const usersUrl = "http://localhost:9000/users/";
+
+  const getUsers = async () => {
+    console.log("hej");
+    const usersFromServer = await getData(usersUrl);
+    //setting Gui state
+    setUsers(usersFromServer);
+    if (usersFromServer) {
+      setError(null);
+    } else {
+      setError("Ooops!! Could not fetch data...");
+    }
+    setPrintForm(true);
+  };
 
   const handleChange = (e) => {
     //console.log("hej", e.target.value);
@@ -56,11 +70,11 @@ function FormValidation() {
       setError("Ooops!! Could not add data...");
       return;
     }
-    setPrintForm(true);
+    // setPrintForm(true);
   };
   useEffect(() => {
-    //console.log("formData", formData);
-  }, [formData]);
+    console.log("users", users);
+  }, [users]);
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6">
@@ -110,21 +124,52 @@ function FormValidation() {
             />
             <section className="btn_section">
               <div className="text-center">
-                <input type="submit" value="Save" className="formBtn add" />
+                <input
+                  type="submit"
+                  value="Save to db"
+                  className="formBtn add"
+                />
               </div>
             </section>
           </form>
 
+          <section className="get_from_db">
+            {!printForm && (
+              <input
+                type="button"
+                value="Show users in db"
+                className="formBtn add"
+                onClick={getUsers}
+              />
+            )}
+            {printForm && (
+              <input
+                type="button"
+                value="Hide users in db"
+                className="formBtn orange"
+                onClick={() => {
+                  setPrintForm(false);
+                }}
+              />
+            )}
+          </section>
+
           {printForm && (
             <article className="print_form show">
-              <div className="card">
-                <div className="card-body">
-                  <ul>
-                    <li>
-                      <strong>Name: &nbsp;</strong>
-                      {formData.firstname}
-                    </li>
-                    <li>
+              <div className="collection">
+                <h6>Users in DB:</h6>
+                {users.map((user) => {
+                  return (
+                    <div className="collection-item" key={user.id}>
+                      <p>
+                        {user.firstname} {user.lastname}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* <li>
                       <strong>Lastname: &nbsp;</strong>
                       {formData.lastname}
                     </li>
@@ -139,10 +184,7 @@ function FormValidation() {
                     <li>
                       <strong>Password: &nbsp;</strong>
                       {formData.password}
-                    </li>
-                  </ul>
-                </div>
-              </div>
+                    </li> */}
             </article>
           )}
         </section>

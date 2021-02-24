@@ -59,6 +59,22 @@
       "email": "kaljunggren@gmail.com",
       "password": "Jg5sHn@TaRAwhsi",
       "id": 2
+    },
+    {
+      "firstname": "Lukas",
+      "lastname": "Ljunggren",
+      "username": "lukiluk",
+      "email": "luki@gmail.com",
+      "password": "karinljunggrne",
+      "id": 3
+    },
+    {
+      "firstname": "Truls",
+      "lastname": "Ljunggren",
+      "username": "trulsis",
+      "email": "truls@gmail.com",
+      "password": "alsklingenmin",
+      "id": 4
     }
   ]
 }
