@@ -45,52 +45,46 @@
   ],
   "users": [
     {
-      "firstname": "Karin",
+      "firstname": "Filip",
       "lastname": "Ljunggren",
-      "username": "dsds",
-      "email": "kaljunggren@gmail.com",
-      "password": "sdsdsdsdsdsd",
-      "id": 1
-    },
-    {
-      "firstname": "Karin",
-      "lastname": "Ljunggren",
-      "username": "Corri",
-      "email": "kaljunggren@gmail.com",
+      "email": "filip@gmail.com",
       "password": "Jg5sHn@TaRAwhsi",
       "id": 2
     },
     {
-      "firstname": "Lukas",
+      "firstname": "Truls",
       "lastname": "Ljunggren",
-      "username": "lukiluk",
-      "email": "luki@gmail.com",
-      "password": "karinljunggrne",
+      "email": "truls@gmail.com",
+      "password": "Jg5sHn@TaRAwhsi",
       "id": 3
     },
     {
-      "firstname": "Truls",
+      "firstname": "Karin",
       "lastname": "Ljunggren",
-      "username": "trulsis",
-      "email": "truls@gmail.com",
-      "password": "alsklingenmin",
+      "email": "kaljunggren@gmail.com",
+      "password": "Jg5sHn@TaRAwhsi",
       "id": 4
     },
     {
-      "firstname": "Filip",
+      "firstname": "Lukas",
       "lastname": "Ljunggren",
-      "username": "lukiluki",
-      "email": "filip@gmail.com",
-      "password": "fdfsdfdfsfsfsfsfsfs",
+      "email": "luki@gmail.com",
+      "password": "Jg5sHn@TaRAwhsidfd",
       "id": 5
     },
     {
       "firstname": "Hugo",
       "lastname": "Ljunggren",
-      "username": "ottoliten",
       "email": "hugo@gmail.com",
-      "password": "dfdfsfsfsfsfsfsf",
+      "password": "Jg5sHn@TaRAwhsidfd",
       "id": 6
+    },
+    {
+      "firstname": "Tessa",
+      "lastname": "Ljunggren",
+      "email": "tessa@gmail.com",
+      "password": "Jg5sHn@TaRAwhsi",
+      "id": 7
     }
   ]
 }

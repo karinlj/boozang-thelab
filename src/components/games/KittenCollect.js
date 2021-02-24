@@ -113,7 +113,7 @@ const KittenCollect = () => {
   };
   useEffect(() => {
     if (myTime > finishTime) {
-      console.log("hello");
+      // console.log("hello");
       setIsRunning(false);
       setMessage("Game Over!");
     }
@@ -134,8 +134,8 @@ const KittenCollect = () => {
   }, [isRunning]);
 
   useEffect(() => {
-    console.log("isRunning", isRunning);
-    console.log("myTime", myTime);
+    // console.log("isRunning", isRunning);
+    // console.log("myTime", myTime);
     //console.log("isRunning", isRunning);
   }, [isRunning, myTime]);
   return (

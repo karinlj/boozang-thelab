@@ -4,33 +4,68 @@
 .form_section {
   form {
     margin-bottom: 2rem;
+    .btn_section {
+      justify-content: space-between;
+      align-items: center;
+      .save_message {
+        color: $themecolorGreen;
+        margin-bottom: 0;
+        font-size: 0.9rem;
+        opacity: 0;
+        transition: 0.5s all ease-in;
+        &.show {
+          opacity: 1;
+        }
+      }
+    }
   }
   .print_form {
     color: #fff;
     //background: $themecolorBlueNewDark;
     border-radius: $themeBorderRadius;
     box-shadow: $themeBoxShadow;
-    padding: 0.9rem 1.4rem;
+    padding: 0.9rem 0.65rem;
     margin-top: 1rem;
     opacity: 0;
-    transition: 1s all ease-in;
+    transition: 0.5s all ease-in;
     &.show {
       opacity: 1;
     }
+
+    .table {
+      overflow-x: scroll;
+
+      thead {
+        th {
+          color: #fff;
+          border: none;
+          font-size: 0.9rem;
+          padding: 0.6rem 0.75rem;
+        }
+      }
+      tbody {
+        td {
+          color: #fff;
+          margin-bottom: 0;
+          font-size: 0.8rem;
+          margin-right: 1rem;
+          border-color: #3c3a92;
+          padding: 0.6rem 0.75rem;
+        }
+      }
+    }
     .collection-item {
+      justify-content: flex-start;
+
       background: inherit;
       padding: 0.4rem 0;
       color: #fff;
       border-bottom: 1px solid #3c3a92;
-      h6 {
-        color: #fff;
-        font-weight: 600;
-        font-size: 0.9rem;
-        margin-bottom: 0.3rem;
-      }
+
       p {
-        margin-bottom: 5px;
-        font-size: 0.9rem;
+        margin-bottom: 0;
+        font-size: 0.8rem;
+        margin-right: 1rem;
       }
     }
   }

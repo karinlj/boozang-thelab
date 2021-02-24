@@ -10,11 +10,11 @@ import { getData } from "../fetchFunctions/fetchFunctions";
 function FormValidation() {
   const [users, setUsers] = useState(null);
   const [error, setError] = useState(null);
+  const [saveMessage, setSaveMessage] = useState(false);
   const [printForm, setPrintForm] = useState(false);
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
-    username: "",
     email: "",
     password: "",
   });
@@ -24,13 +24,14 @@ function FormValidation() {
     console.log("hej");
     const usersFromServer = await getData(usersUrl);
     //setting Gui state
-    setUsers(usersFromServer);
+    setUsers(usersFromServer.reverse());
     if (usersFromServer) {
       setError(null);
     } else {
       setError("Ooops!! Could not fetch data...");
     }
     setPrintForm(true);
+    setSaveMessage(false);
   };
 
   const handleChange = (e) => {
@@ -44,9 +45,7 @@ function FormValidation() {
   //hantera fel i formuläret
   const validate = (data) => {
     let status = 0;
-    if (data.username.length < 4) {
-      return [status, "Username needs to be al least 4 characters."];
-    } else if (data.password.length < 6) {
+    if (data.password.length < 6) {
       return [status, "Password needs to be al least 6 characters."];
     } else {
       return [1, "ok"];
@@ -70,7 +69,14 @@ function FormValidation() {
       setError("Ooops!! Could not add data...");
       return;
     }
-    // setPrintForm(true);
+    setSaveMessage(true);
+    setFormData({
+      firstname: "",
+      lastname: "",
+      email: "",
+      password: "",
+    });
+    setPrintForm(false);
   };
   useEffect(() => {
     console.log("users", users);
@@ -82,7 +88,7 @@ function FormValidation() {
           <FormValidationIntro />
           {error && <div className="error">{error}</div>}
           <form className="list_form" onSubmit={handleSubmit}>
-            <label htmlFor="name">Name: </label>
+            <label htmlFor="name">First name: </label>
             <input
               type="text"
               name="firstname"
@@ -96,14 +102,6 @@ function FormValidation() {
               name="lastname"
               required
               value={formData.lastname}
-              onChange={(e) => handleChange(e)}
-            />
-            <label htmlFor="name">User name: </label>
-            <input
-              name="username"
-              type="text"
-              required
-              value={formData.username}
               onChange={(e) => handleChange(e)}
             />
             <label htmlFor="name">Email: </label>
@@ -123,13 +121,10 @@ function FormValidation() {
               onChange={(e) => handleChange(e)}
             />
             <section className="btn_section">
-              <div className="text-center">
-                <input
-                  type="submit"
-                  value="Save to db"
-                  className="formBtn add"
-                />
-              </div>
+              <input type="submit" value="Save to db" className="formBtn add" />
+              <h6 className={`save_message ${saveMessage ? "show" : ""}`}>
+                Data saved to DB
+              </h6>
             </section>
           </form>
           <section className="get_from_db">
@@ -137,7 +132,7 @@ function FormValidation() {
               <input
                 type="button"
                 value="Show users in db"
-                className="formBtn add"
+                className="formBtn orange"
                 onClick={getUsers}
               />
             )}
@@ -152,37 +147,42 @@ function FormValidation() {
               />
             )}
           </section>
-          {printForm && users && (
-            <article className="print_form show">
-              <div className="collection">
-                {/* <h6>Users in DB:</h6> */}
+
+          {users && (
+            <article className={`print_form ${printForm ? "show" : ""}`}>
+              {/* <div className="collection">
                 {users.map((user) => {
                   return (
                     <div className="collection-item" key={user.id}>
                       <p>
                         {user.firstname} {user.lastname}
                       </p>
+                      <p>{user.email}</p>
                     </div>
                   );
                 })}
-              </div>
-
-              {/* <li>
-                      <strong>Lastname: &nbsp;</strong>
-                      {formData.lastname}
-                    </li>
-                    <li>
-                      <strong>Username: &nbsp;</strong>
-                      {formData.username}
-                    </li>
-                    <li>
-                      <strong>Email: &nbsp;</strong>
-                      {formData.email}
-                    </li>
-                    <li>
-                      <strong>Password: &nbsp;</strong>
-                      {formData.password}
-                    </li> */}
+              </div> */}
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {users.map((user) => {
+                    return (
+                      <tr key={user.id}>
+                        <td>
+                          {user.firstname} {user.lastname}
+                        </td>
+                        <td>{user.email}</td>
+                        <td className="delIconBtn ">x</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
             </article>
           )}
         </section>
