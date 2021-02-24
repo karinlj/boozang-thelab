@@ -132,7 +132,6 @@ function FormValidation() {
               </div>
             </section>
           </form>
-
           <section className="get_from_db">
             {!printForm && (
               <input
@@ -153,7 +152,6 @@ function FormValidation() {
               />
             )}
           </section>
-
           {printForm && (
             <article className="print_form show">
               <div className="collection">

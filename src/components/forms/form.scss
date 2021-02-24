@@ -7,7 +7,7 @@
   }
   .print_form {
     color: #fff;
-    background: $themecolorBlueNewDark;
+    //background: $themecolorBlueNewDark;
     border-radius: $themeBorderRadius;
     box-shadow: $themeBoxShadow;
     padding: 0.9rem 1.4rem;
@@ -18,19 +18,10 @@
       opacity: 1;
     }
     .collection-item {
-      // display: flex;
-      // justify-content: space-between;
-      // align-items: center;
-      // background-color: #fff;
-      line-height: 1.5rem;
-      // padding: 15px 20px;
       background: inherit;
       padding: 0.4rem 0;
       color: #fff;
-      margin: 0;
-      border-bottom: 1px solid #354e97;
-      //color: #222;
-
+      border-bottom: 1px solid #3c3a92;
       h6 {
         color: #fff;
         font-weight: 600;
