@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import "./form.scss";
 import { FormValidationVideos } from "../text/videos/VideoSections";
-
 import { FormValidationIntro } from "../text/Intros";
 import { FormValidationTestInfo } from "../text/TestInfos";
 import { addData } from "../fetchFunctions/fetchFunctions";
 import { getData } from "../fetchFunctions/fetchFunctions";
+import { deleteData } from "../fetchFunctions/fetchFunctions";
 
 function FormValidation() {
   const [users, setUsers] = useState(null);
@@ -21,7 +21,6 @@ function FormValidation() {
   const usersUrl = "http://localhost:9000/users/";
 
   const getUsers = async () => {
-    console.log("hej");
     const usersFromServer = await getData(usersUrl);
     //setting Gui state
     setUsers(usersFromServer.reverse());
@@ -35,7 +34,6 @@ function FormValidation() {
   };
 
   const handleChange = (e) => {
-    //console.log("hej", e.target.value);
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -78,8 +76,16 @@ function FormValidation() {
     });
     setPrintForm(false);
   };
+  const deleteUser = async (id) => {
+    await deleteData(usersUrl, id);
+    setUsers(
+      users.filter((user) => {
+        return user.id !== id;
+      })
+    );
+  };
   useEffect(() => {
-    console.log("users", users);
+    //console.log("users", users);
   }, [users]);
   return (
     <div className="row justify-content-between">
@@ -150,19 +156,7 @@ function FormValidation() {
 
           {users && (
             <article className={`print_form ${printForm ? "show" : ""}`}>
-              {/* <div className="collection">
-                {users.map((user) => {
-                  return (
-                    <div className="collection-item" key={user.id}>
-                      <p>
-                        {user.firstname} {user.lastname}
-                      </p>
-                      <p>{user.email}</p>
-                    </div>
-                  );
-                })}
-              </div> */}
-              <table class="table">
+              <table className="table">
                 <thead>
                   <tr>
                     <th scope="col">Name</th>
@@ -177,7 +171,15 @@ function FormValidation() {
                           {user.firstname} {user.lastname}
                         </td>
                         <td>{user.email}</td>
-                        <td className="delIconBtn ">x</td>
+                        <td
+                          className="delIconBtn"
+                          title="Delete"
+                          onClick={() => {
+                            deleteUser(user.id);
+                          }}
+                        >
+                          x
+                        </td>
                       </tr>
                     );
                   })}
@@ -194,5 +196,4 @@ function FormValidation() {
     </div>
   );
 }
-
 export default FormValidation;
