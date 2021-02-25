@@ -36,7 +36,9 @@ const SpeedGame = () => {
     } else if (!isRunning) {
       clearInterval(myInterval);
     }
+    //cleanup
     return () => clearInterval(myInterval);
+
     // console.log("isRunning: ", isRunning);
     // console.log("count: ", count);
   }, [isRunning, count]);
