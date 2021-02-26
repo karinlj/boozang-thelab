@@ -3,7 +3,7 @@ import "./games.scss";
 import { KittenCollectIntro } from "../text/Intros";
 import { KittenCollectTestInfo } from "../text/TestInfos";
 import { KittenCollectVideos } from "../text/videos/VideoSections";
-//import CatIcon from "../../img/kitten_icon.png";
+import CatIcon from "../../img/kitten_icon.png";
 //import HedgehogIcon from "../../img/hedgehog_icon.png";
 
 const KittenCollect = () => {
@@ -12,20 +12,22 @@ const KittenCollect = () => {
   //   const [points, setPoints] = useState(0);
   const [message, setMessage] = useState("Start collecting kittens!");
   //  const [myInterval, setMyInterval] = useState(0);
-  // const [kittens, setKittens] = useState([]);
+  const [kittens, setKittens] = useState([]);
   //const [hedgehogs, setHedgehogs] = useState(null);
 
-  const finishTime = 50; //300;
+  const finishTime = 100; //300;
 
   const startGame = () => {
     setCount(0);
     setIsRunning(true);
     setMessage("");
+    setKittens([]);
   };
 
   const abortGame = () => {
     setIsRunning(false);
     setMessage("Game Aborted!");
+    setKittens([]);
   };
 
   const tick = () => {
@@ -38,6 +40,47 @@ const KittenCollect = () => {
       setIsRunning(false);
       setMessage("Game Over!");
     }
+
+    if (Math.random() < 0.06) {
+      // console.log("drawKitten");
+      drawKitten();
+    }
+  };
+
+  const drawKitten = () => {
+    const [randTop, randLeft] = randomPosition();
+    const catIcon = <img src={CatIcon} alt="cat" />;
+
+    //make obj
+    const newKitten = {
+      id: Math.random(),
+      icon: catIcon,
+      top: randTop,
+      left: randLeft,
+    };
+    console.log("drawKitten_newKitten", newKitten);
+
+    setKittens([...kittens, newKitten]);
+    // setKittens((kittens) => {
+    //   return [...kittens, newKitten];
+    // });
+
+    //hide kitten
+    setTimeout(() => {
+      hideKitten(newKitten.id);
+      console.log("hideKitten_newKitten", newKitten);
+    }, 1500);
+  };
+  const hideKitten = (id) => {
+    const newKittens = kittens.filter((kitten) => {
+      return kitten.id !== id;
+    });
+    setKittens(newKittens);
+  };
+  const randomPosition = () => {
+    const randomTop = Math.floor(Math.random() * 250 + 1);
+    const randomLeft = Math.floor(Math.random() * 250 + 1);
+    return [randomTop, randomLeft];
   };
 
   //   useEffect(() => {
@@ -48,8 +91,8 @@ const KittenCollect = () => {
   //   }, [input])
 
   useEffect(() => {
-    console.log("count: ", count);
-  }, [count]);
+    console.log("kittens: ", kittens);
+  }, [kittens]);
 
   useEffect(() => {
     if (isRunning) {
