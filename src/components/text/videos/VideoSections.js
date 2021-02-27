@@ -117,7 +117,7 @@ export const CatShelterVideos = () => {
   );
 };
 //Forms
-export const FormValidationVideos = () => {
+export const FormFillVideos = () => {
   const videos = [
     {
       id: 1,

@@ -39,10 +39,10 @@ export const CatShelterIntro = () => {
   );
 };
 //Forms
-export const FormValidationIntro = () => {
+export const FormFillIntro = () => {
   return (
     <article className="comp_intro">
-      <h1>Form validation</h1>
+      <h1>Form Fill</h1>
       <p>
         Many applications use forms to submit data. Here you can submit a form
         and the contents of the form will be displayed below.

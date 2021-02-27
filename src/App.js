@@ -15,7 +15,7 @@ import UnsortedList from "./components/Lists/UnsortedList";
 import CatShelter from "./components/Lists/catList/CatShelter";
 import CatDetails from "./components/Lists/catList/CatDetails";
 import AddCat from "./components/Lists/catList/AddCat";
-import FormValidation from "./components/forms/FormValidation";
+import FormFill from "./components/forms/FormFill";
 import SpeedGame from "./components/timing/SpeedGame";
 import WaitGame from "./components/timing/WaitGame";
 import VisualBugs from "./components/VisualBugs/VisualBugs";
@@ -79,8 +79,8 @@ function App() {
               <Route path="/cats/:cat_id">
                 <CatDetails />
               </Route>
-              <Route path="/formValidation">
-                <FormValidation />
+              <Route path="/formFill">
+                <FormFill />
               </Route>
               <Route path="/speedGame">
                 <SpeedGame />

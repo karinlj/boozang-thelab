@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import "./form.scss";
-import { FormValidationVideos } from "../text/videos/VideoSections";
-import { FormValidationIntro } from "../text/Intros";
-import { FormValidationTestInfo } from "../text/TestInfos";
+import { FormFillVideos } from "../text/videos/VideoSections";
+import { FormFillIntro } from "../text/Intros";
+import { FormFillTestInfo } from "../text/TestInfos";
 import { addData } from "../fetchFunctions/fetchFunctions";
 import { getData } from "../fetchFunctions/fetchFunctions";
 import { deleteData } from "../fetchFunctions/fetchFunctions";
 import Form from "./Form";
 import PrintForm from "./PrintForm";
 
-function FormValidation() {
+function FormFill() {
   const [users, setUsers] = useState(null);
   const [error, setError] = useState(null);
   const [saveMessage, setSaveMessage] = useState(false);
@@ -93,7 +93,7 @@ function FormValidation() {
     <div className="row justify-content-between">
       <div className="col-12 col-md-6">
         <section className="form_section">
-          <FormValidationIntro />
+          <FormFillIntro />
           {error && <div className="error">{error}</div>}
           <Form
             formData={formData}
@@ -133,10 +133,10 @@ function FormValidation() {
         </section>
       </div>
       <div className="col-12 col-md-5">
-        <FormValidationTestInfo />
-        <FormValidationVideos />
+        <FormFillTestInfo />
+        <FormFillVideos />
       </div>
     </div>
   );
 }
-export default FormValidation;
+export default FormFill;

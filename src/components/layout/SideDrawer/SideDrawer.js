@@ -125,11 +125,11 @@ const SideDrawer = (props) => {
                 <ul className="sub_list">
                   <li>
                     <NavLink
-                      to="/formValidation"
+                      to="/formFill"
                       className="link"
                       activeClassName="current"
                     >
-                      <div onClick={props.clickLink}>Form validation</div>
+                      <div onClick={props.clickLink}> Form Fill</div>
                     </NavLink>
                   </li>
                   <li>

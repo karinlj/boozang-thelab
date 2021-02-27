@@ -122,11 +122,11 @@ const Navbar = ({ handleDrawerClick }) => (
                 <ul className="sub_list">
                   <li>
                     <NavLink
-                      to="/formValidation"
+                      to="/formFill"
                       className="link"
                       activeClassName="current"
                     >
-                      Form validation
+                      Form Fill
                     </NavLink>
                   </li>
                   <li>

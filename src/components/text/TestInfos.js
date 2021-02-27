@@ -41,10 +41,10 @@ export const CatShelterTestInfo = () => {
   );
 };
 //Forms
-export const FormValidationTestInfo = () => {
+export const FormFillTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Why learn: Form validation?</h4>
+      <h4>Why learn: Form Fill?</h4>
       <p>
         In test automation, it's important not to not hard-code information
         entered in forms, as this information will often change. A common
