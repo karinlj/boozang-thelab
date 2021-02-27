@@ -4,71 +4,74 @@ import { KittenCollectIntro } from "../text/Intros";
 import { KittenCollectTestInfo } from "../text/TestInfos";
 import { KittenCollectVideos } from "../text/videos/VideoSections";
 import CatIcon from "../../img/kitten_icon.png";
-//import HedgehogIcon from "../../img/hedgehog_icon.png";
+import HedgehogIcon from "../../img/hedgehog_icon.png";
+import Kittens from "./Kittens";
+import Hedgehogs from "./Hedgehogs";
 
 const KittenCollect = () => {
   const [isRunning, setIsRunning] = useState(false);
   const [count, setCount] = useState(0);
-  //   const [points, setPoints] = useState(0);
+  const [points, setPoints] = useState(0);
   const [message, setMessage] = useState("Start collecting kittens!");
   //  const [myInterval, setMyInterval] = useState(0);
   const [kittens, setKittens] = useState([]);
-  //const [hedgehogs, setHedgehogs] = useState(null);
+  const [hedgehogs, setHedgehogs] = useState([]);
 
   const finishTime = 100; //300;
 
   const startGame = () => {
     setCount(0);
     setIsRunning(true);
-    setMessage("");
     setKittens([]);
+    setPoints(0);
+    setMessage("");
   };
 
   const abortGame = () => {
     setIsRunning(false);
+    //  setKittens([]);
     setMessage("Game Aborted!");
-    setKittens([]);
   };
 
   const tick = () => {
+    // setCount((prevCount) => prevCount + 1);
     // setCount((count) => count + 1);
     setCount(count + 1);
-    // setCount((prevCount) => prevCount + 1);
 
     if (count > finishTime) {
-      console.log("count > finishTime");
       setIsRunning(false);
       setMessage("Game Over!");
     }
-
     if (Math.random() < 0.06) {
-      // console.log("drawKitten");
       drawKitten();
     }
+    if (Math.random() < 0.02) {
+      drawHedgehog();
+    }
   };
-
+  //kitten
   const drawKitten = () => {
     const [randTop, randLeft] = randomPosition();
-    const catIcon = <img src={CatIcon} alt="cat" />;
+    const catIcon = <img src={CatIcon} alt="Cat" />;
 
-    //make obj
+    //create new
     const newKitten = {
       id: Math.random(),
       icon: catIcon,
       top: randTop,
       left: randLeft,
     };
-    console.log("drawKitten_newKitten", newKitten);
-
+    //console.log("drawKitten_newKitten", newKitten);
+    //add to array
     setKittens([...kittens, newKitten]);
     // setKittens((kittens) => {
     //   return [...kittens, newKitten];
     // });
 
-    //hide kitten
+    //hide again
     setTimeout(() => {
       hideKitten(newKitten.id);
-      console.log("hideKitten_newKitten", newKitten);
+      //console.log("hideKitten_newKitten", newKitten);
     }, 1500);
   };
   const hideKitten = (id) => {
@@ -77,23 +80,50 @@ const KittenCollect = () => {
     });
     setKittens(newKittens);
   };
-  const randomPosition = () => {
-    const randomTop = Math.floor(Math.random() * 250 + 1);
-    const randomLeft = Math.floor(Math.random() * 250 + 1);
-    return [randomTop, randomLeft];
+  const kittenClick = (id) => {
+    hideKitten(id);
+    //console.log("kittenClick_newKitten", id);
+    setPoints(points + 1);
   };
 
-  //   useEffect(() => {
-  //       effect
-  //       return () => {
-  //           cleanup
-  //       }
-  //   }, [input])
+  //hedgehog
+  const drawHedgehog = () => {
+    const [randTop, randLeft] = randomPosition();
+    const hedgehogIcon = <img src={HedgehogIcon} alt="Hedgehog" />;
+    //create new
+    const newHedgehog = {
+      id: Math.random(),
+      icon: hedgehogIcon,
+      top: randTop,
+      left: randLeft,
+    };
+    console.log("drawHedgehog_newHedgehog", newHedgehog);
 
-  useEffect(() => {
-    console.log("kittens: ", kittens);
-  }, [kittens]);
+    //add to array
+    setHedgehogs([...hedgehogs, newHedgehog]);
 
+    //hide again
+    setTimeout(() => {
+      hideHedgehog(newHedgehog.id);
+    }, 1800);
+  };
+  const hideHedgehog = (id) => {
+    const newHedgehogs = hedgehogs.filter((hedgehog) => {
+      return hedgehog.id !== id;
+    });
+    setHedgehogs(newHedgehogs);
+  };
+  const hedgehogClick = (id) => {
+    console.log("hedgehogClick", id);
+    setIsRunning(false);
+    setMessage("Game Over!");
+  };
+
+  const randomPosition = () => {
+    const randomTop = Math.floor(Math.random() * 250 + 1);
+    const randomLeft = Math.floor(Math.random() * 300 + 1);
+    return [randomTop, randomLeft];
+  };
   useEffect(() => {
     if (isRunning) {
       const myInterval = setInterval(() => {
@@ -104,6 +134,14 @@ const KittenCollect = () => {
     }
     console.log("isRunning: ", isRunning);
   }, [isRunning, count]);
+
+  useEffect(() => {
+    //console.log("kittens: ", kittens);
+  }, [kittens]);
+
+  useEffect(() => {
+    console.log("hedgehogs: ", hedgehogs);
+  }, [hedgehogs]);
 
   return (
     <div className="row justify-content-between">
@@ -139,19 +177,15 @@ const KittenCollect = () => {
               </h6>
             </div>
             <div className="points">
-              {/* <h6>
+              <h6>
                 Points: <strong>{points}</strong>
-              </h6> */}
+              </h6>
             </div>
           </div>
 
           <div className="square">
-            {/* <Kitten kittens={kittens} onKittenClick={this.kittenClick} /> */}
-
-            {/* <Hedgehogs
-              hedgehogs={hedgehogs}
-              onHedgehogsClick={this.hedgehogClick}
-            /> */}
+            <Kittens kittens={kittens} handleClick={kittenClick} />
+            <Hedgehogs hedgehogs={hedgehogs} handleClick={hedgehogClick} />
             <div className="message">
               <h5>{message}</h5>
             </div>

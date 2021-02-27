@@ -18,6 +18,7 @@
     }
   }
   .square {
+    position: relative;
     background: $themecolorBlueNewDark;
     box-shadow: $themeBoxShadow;
     border-radius: $themeBorderRadius;
@@ -33,6 +34,16 @@
       h5 {
         line-height: 1.5;
         margin-bottom: 0;
+      }
+    }
+    .kitten,
+    .hedgehog {
+      cursor: pointer;
+      position: absolute;
+      padding: 8px;
+      margin-bottom: 0;
+      img {
+        max-width: 30px;
       }
     }
   }
