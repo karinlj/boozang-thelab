@@ -13,6 +13,7 @@ const KittenCollect = () => {
   const [count, setCount] = useState(0);
   const [points, setPoints] = useState(0);
   const [message, setMessage] = useState("Start collecting kittens!");
+  const [pointsMessage, setPointsMessage] = useState("");
   //  const [myInterval, setMyInterval] = useState(0);
   const [kittens, setKittens] = useState([]);
   const [hedgehogs, setHedgehogs] = useState([]);
@@ -23,8 +24,10 @@ const KittenCollect = () => {
     setCount(0);
     setIsRunning(true);
     setKittens([]);
+    setHedgehogs([]);
     setPoints(0);
     setMessage("");
+    setPointsMessage("");
   };
 
   const abortGame = () => {
@@ -41,6 +44,7 @@ const KittenCollect = () => {
     if (count > finishTime) {
       setIsRunning(false);
       setMessage("Game Over!");
+      setPointsMessage("You got " + points + " Points!");
     }
     if (Math.random() < 0.06) {
       drawKitten();
@@ -97,7 +101,7 @@ const KittenCollect = () => {
       top: randTop,
       left: randLeft,
     };
-    console.log("drawHedgehog_newHedgehog", newHedgehog);
+    // console.log("drawHedgehog_newHedgehog", newHedgehog);
 
     //add to array
     setHedgehogs([...hedgehogs, newHedgehog]);
@@ -114,7 +118,7 @@ const KittenCollect = () => {
     setHedgehogs(newHedgehogs);
   };
   const hedgehogClick = (id) => {
-    console.log("hedgehogClick", id);
+    //console.log("hedgehogClick", id);
     setIsRunning(false);
     setMessage("Game Over!");
   };
@@ -125,27 +129,30 @@ const KittenCollect = () => {
     return [randomTop, randomLeft];
   };
   useEffect(() => {
+    let myInterval;
     if (isRunning) {
-      const myInterval = setInterval(() => {
+      myInterval = setInterval(() => {
         tick();
       }, 100);
-      //cleanup = componentWillUnmount or when isRunning is changing
+      // } else {
+      //   clearInterval(myInterval);
       return () => clearInterval(myInterval);
     }
+    //cleanup = componentWillUnmount or when isRunning is changing
     console.log("isRunning: ", isRunning);
   }, [isRunning, count]);
 
   useEffect(() => {
-    //console.log("kittens: ", kittens);
+    console.log("kittens: ", kittens);
   }, [kittens]);
 
   useEffect(() => {
-    console.log("hedgehogs: ", hedgehogs);
+    // console.log("hedgehogs: ", hedgehogs);
   }, [hedgehogs]);
 
   return (
     <div className="row justify-content-between">
-      <div className="col-12 col-md-5">
+      <div className="col-12 col-md-6 col-xl-5">
         <section className="game_section">
           <KittenCollectIntro />
           <div className="points_section">
@@ -188,6 +195,7 @@ const KittenCollect = () => {
             <Hedgehogs hedgehogs={hedgehogs} handleClick={hedgehogClick} />
             <div className="message">
               <h5>{message}</h5>
+              <h5>{pointsMessage}</h5>
             </div>
           </div>
         </section>

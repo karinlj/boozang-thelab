@@ -39,7 +39,7 @@ const WaitGame = () => {
       setSubMessage(`${overflow} ms above 5 seconds.`);
     } else {
       setSuccessMessage("Fail!");
-      setSubMessage(`You clicked too fast...`);
+      setSubMessage(`You clicked too fast...Try again.`);
     }
   };
   const handleStop = () => {
@@ -52,7 +52,7 @@ const WaitGame = () => {
   }, [isRunning]);
   return (
     <div className="row justify-content-between">
-      <div className="col-12 col-md-6">
+      <div className="col-12 col-md-6 col-xl-5">
         <section className="timing_section">
           <WaitGameIntro />
           <div>
@@ -73,14 +73,20 @@ const WaitGame = () => {
             )}
           </div>
           <div className="messages">
-            <div
+            {successMessage === "Success!" && (
+              <div className={`success_message  ${!isRunning ? "show" : ""}`}>
+                <h4>{successMessage}</h4>
+              </div>
+            )}
+
+            {/* <div
               className={`success_message ${
                 successMessage === "Success!" ? "" : "fail"
               }`}
             >
               <h4>{successMessage}</h4>
-            </div>
-            <div className="time_message">
+            </div> */}
+            <div className={`time_message  ${!isRunning ? "show" : ""}`}>
               <p>{subMessage}</p>
             </div>
           </div>

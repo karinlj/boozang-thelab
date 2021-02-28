@@ -163,7 +163,7 @@ const ScrambleItems = () => {
 
   return (
     <div className="row justify-content-between">
-      <div className="col-12 col-md-5">
+      <div className="col-12 col-md-6 col-xl-5">
         <section className="scramble_section">
           <ScrambleItemsIntro />
           <div className="animal_btns">
@@ -234,7 +234,7 @@ const ScrambleItems = () => {
               />
               <input
                 type="button"
-                value="Swap Order"
+                value="Swap DOM Order"
                 className="formBtn add green_dark"
                 onClick={toggleOrder}
               />

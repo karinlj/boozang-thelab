@@ -12,7 +12,7 @@ const MultiScramble = () => {
   }, [contentAdd]);
   return (
     <div className="row justify-content-between">
-      <div className="col-12 col-md-5">
+      <div className="col-12 col-md-6 col-xl-5">
         <section className="scramble_section">
           <MultiScrambleIntro />
           <form className="list_form">

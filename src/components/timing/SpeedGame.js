@@ -45,7 +45,7 @@ const SpeedGame = () => {
 
   return (
     <div className="row justify-content-between">
-      <div className="col-12 col-md-6">
+      <div className="col-12 col-md-6 col-xl-5">
         <section className="timing_section">
           <SpeedGameIntro />
           <div>
@@ -66,16 +66,12 @@ const SpeedGame = () => {
           </div>
 
           <div className="messages">
-            {!isRunning && (
-              <div className="success_message">
-                <h4>{successMessage}</h4>
-              </div>
-            )}
-            {!isRunning && (
-              <div className="time_message">
-                <p>{timeMessage}</p>
-              </div>
-            )}
+            <div className={`success_message  ${!isRunning ? "show" : ""}`}>
+              <h4>{successMessage}</h4>
+            </div>
+            <div className={`time_message  ${!isRunning ? "show" : ""}`}>
+              <p>{timeMessage}</p>
+            </div>
           </div>
         </section>
       </div>

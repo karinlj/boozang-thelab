@@ -15,9 +15,9 @@ export const HomeVideos = () => {
     },
   ];
   return (
-    <div className="video_section">
+    <section className="video_section">
       <VideoList videos={videos} />
-    </div>
+    </section>
   );
 };
 export const IntroductionVideos = () => {
@@ -34,9 +34,9 @@ export const IntroductionVideos = () => {
     },
   ];
   return (
-    <div className="video_section">
+    <section className="video_section">
       <VideoList videos={videos} />
-    </div>
+    </section>
   );
 };
 export const OverviewVideos = () => {
@@ -53,9 +53,9 @@ export const OverviewVideos = () => {
     },
   ];
   return (
-    <div className="video_section">
+    <section className="video_section">
       <VideoList videos={videos} />
-    </div>
+    </section>
   );
 };
 //Lists
@@ -73,9 +73,9 @@ export const SortedListVideos = () => {
     },
   ];
   return (
-    <div className="video_section">
+    <section className="video_section">
       <VideoList videos={videos} />
-    </div>
+    </section>
   );
 };
 
@@ -103,17 +103,17 @@ export const UnsortedListVideos = () => {
     },
   ];
   return (
-    <div className="video_section">
+    <section className="video_section">
       <VideoList videos={videos} />
-    </div>
+    </section>
   );
 };
 export const CatShelterVideos = () => {
   const videos = [];
   return (
-    <div className="video_section">
+    <section className="video_section">
       <VideoList videos={videos} />
-    </div>
+    </section>
   );
 };
 //Forms
@@ -146,9 +146,9 @@ export const FormFillVideos = () => {
     },
   ];
   return (
-    <div className="video_section">
+    <section className="video_section">
       <VideoList videos={videos} />
-    </div>
+    </section>
   );
 };
 
@@ -162,9 +162,9 @@ export const SpeedGameVideos = () => {
     },
   ];
   return (
-    <div className="video_section">
+    <section className="video_section">
       <VideoList videos={videos} />
-    </div>
+    </section>
   );
 };
 export const WaitGameVideos = () => {
@@ -176,9 +176,9 @@ export const WaitGameVideos = () => {
     },
   ];
   return (
-    <div className="video_section">
+    <section className="video_section">
       <VideoList videos={videos} />
-    </div>
+    </section>
   );
 };
 //Bug reporting
@@ -196,9 +196,9 @@ export const VisualBugsVideos = () => {
     },
   ];
   return (
-    <div className="video_section">
+    <section className="video_section">
       <VideoList videos={videos} />
-    </div>
+    </section>
   );
 };
 //Conditional logic
@@ -211,9 +211,9 @@ export const YellowOrBlueVideos = () => {
     },
   ];
   return (
-    <div className="video_section">
+    <section className="video_section">
       <VideoList videos={videos} />
-    </div>
+    </section>
   );
 };
 
@@ -226,9 +226,9 @@ export const CatOrDogVideos = () => {
     },
   ];
   return (
-    <div className="video_section">
+    <section className="video_section">
       <VideoList videos={videos} />
-    </div>
+    </section>
   );
 };
 //DOM changes
@@ -241,9 +241,9 @@ export const ScrambleItemsVideos = () => {
     },
   ];
   return (
-    <div className="video_section">
+    <section className="video_section">
       <VideoList videos={videos} />
-    </div>
+    </section>
   );
 };
 export const MultiScrambleVideos = () => {
@@ -255,9 +255,9 @@ export const MultiScrambleVideos = () => {
     },
   ];
   return (
-    <div className="video_section">
+    <section className="video_section">
       <VideoList videos={videos} />
-    </div>
+    </section>
   );
 };
 //strings
@@ -270,9 +270,9 @@ export const ConcatStringsVideos = () => {
     },
   ];
   return (
-    <div className="video_section">
+    <section className="video_section">
       <VideoList videos={videos} />
-    </div>
+    </section>
   );
 };
 //games
@@ -290,8 +290,8 @@ export const KittenCollectVideos = () => {
     },
   ];
   return (
-    <div className="video_section">
+    <section className="video_section">
       <VideoList videos={videos} />
-    </div>
+    </section>
   );
 };

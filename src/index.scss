@@ -274,6 +274,12 @@ a {
     padding: 0 calc(3.75rem - 15px) 10rem calc(3.75rem - 15px);
   }
 
+  .video_section {
+    margin-top: 3rem;
+    @media all and (min-width: $md-min) {
+      margin-top: 0;
+    }
+  }
   //introductions
   .comp_intro {
     margin-bottom: 2rem;

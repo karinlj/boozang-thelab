@@ -2,7 +2,7 @@ import Video from "./Video";
 
 const VideoList = ({ videos }) => {
   return (
-    <div className="video_section">
+    <div className="">
       {videos.length > 0 && (
         <div>
           <h5>Related videos on YouTube</h5>

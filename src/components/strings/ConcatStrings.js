@@ -47,7 +47,7 @@ const ConcatStrings = () => {
   }, [inputStr]);
   return (
     <div className="row justify-content-between">
-      <div className="col-12 col-md-5">
+      <div className="col-12 col-md-6 col-xl-5">
         <section className="strings_section">
           <ConcatStringsIntro />
           <input
