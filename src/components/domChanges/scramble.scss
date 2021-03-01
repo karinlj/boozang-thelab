@@ -9,7 +9,7 @@
     }
   }
   .scramble_code {
-    //background: $themecolorBlueNewDarkest;
+    //background: $themecolorLilaDarkest;
     box-shadow: $themeBoxShadow;
     border-radius: $themeBorderRadius;
     margin: 2rem 0;
@@ -22,13 +22,13 @@
       padding: 3px;
     }
     .clicked_class {
-      background: $themecolorBlueNewDarkest;
+      background: $themecolorLilaDarkest;
     }
   }
   .animal_btns {
     position: relative;
     height: 200px;
-    background: $themecolorBlueNewDark;
+    background: $themecolorLilaDark;
     box-shadow: $themeBoxShadow;
     border-radius: $themeBorderRadius;
     input {
