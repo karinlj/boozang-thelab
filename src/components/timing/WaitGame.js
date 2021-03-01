@@ -72,21 +72,11 @@ const WaitGame = () => {
             )}
           </div>
           <ResultMessages
-            openWrapper={isRunning}
+            openWrapper={!isRunning}
             successMessage={successMessage}
             subMessage={subMessage}
             messageString={"Success!"}
           />
-          {/* <div className={`result_wrapper ${!isRunning ? "show" : ""}`}>
-            <h4
-              className={`success_message ${
-                successMessage === "Success!" ? "" : "fail"
-              }`}
-            >
-              {successMessage}
-            </h4>
-            <p className="sub_message">{subMessage}</p>
-          </div> */}
         </section>
       </div>
       <div className="col-12 col-md-5">

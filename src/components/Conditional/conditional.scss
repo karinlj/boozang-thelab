@@ -34,18 +34,9 @@
           margin-bottom: 0;
         }
         .result_wrapper {
-          opacity: 0;
-          transition: 0.5s all ease-in;
-          &.show {
-            opacity: 1;
-          }
+          margin-top: 0;
           .success_message {
-            margin-bottom: 0;
             margin-left: 1rem;
-            color: $themecolorGreen;
-            &.fail {
-              color: $themecolorNewRed;
-            }
           }
         }
       }

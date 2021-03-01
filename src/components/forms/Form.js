@@ -1,4 +1,4 @@
-const Form = ({ formData, handleChange, saveMessage, handleSubmit }) => {
+const Form = ({ handleChange, formData, saveMessage, handleSubmit }) => {
   return (
     <form className="list_form" onSubmit={handleSubmit}>
       <label htmlFor="name">First name: </label>

@@ -3,6 +3,7 @@ import "./strings.scss";
 import { ConcatStringsIntro } from "../text/Intros";
 import { ConcatStringTestInfo } from "../text/TestInfos";
 import { ConcatStringsVideos } from "../text/videos/VideoSections";
+import ResultMessages from "../compMessages/ResultMessages";
 
 const ConcatStrings = () => {
   const [successMessage, setSuccessMessage] = useState("");
@@ -78,15 +79,11 @@ const ConcatStrings = () => {
               </section>
             </form>
 
-            <div className={`result_wrapper ${concatStr ? "show" : ""}`}>
-              <h4
-                className={`success_message ${
-                  successMessage === "Success!" ? "" : "fail"
-                }`}
-              >
-                {successMessage}
-              </h4>
-            </div>
+            <ResultMessages
+              openWrapper={concatStr}
+              successMessage={successMessage}
+              messageString={"Success!"}
+            />
           </section>
         </section>
       </div>

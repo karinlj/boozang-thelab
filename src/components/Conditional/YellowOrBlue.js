@@ -3,6 +3,7 @@ import "./conditional.scss";
 import { YellowOrBlueIntro } from "../text/Intros";
 import { YellowOrBlueTestInfo } from "../text/TestInfos";
 import { YellowOrBlueVideos } from "../text/videos/VideoSections";
+import ResultMessages from "../compMessages/ResultMessages";
 
 const YellowOrBlue = () => {
   const colors = ["yellow", "blue"];
@@ -63,17 +64,11 @@ const YellowOrBlue = () => {
                     />
                   </div>
                 )}
-                <div
-                  className={`result_wrapper ${successMessage ? "show" : ""}`}
-                >
-                  <h4
-                    className={`success_message ${
-                      successMessage === "Success!" ? "" : "fail"
-                    }`}
-                  >
-                    {successMessage}
-                  </h4>
-                </div>
+                <ResultMessages
+                  openWrapper={successMessage}
+                  successMessage={successMessage}
+                  messageString={"Success!"}
+                />
               </div>
             </section>
           </div>

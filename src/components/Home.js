@@ -41,7 +41,7 @@ const Home = () => {
           </p>
           <p>
             There will also be a Udemy course shortly that will take you through
-            each tak with a solution.
+            each task with a solution.
           </p>
         </article>
       </div>

@@ -15,18 +15,4 @@
       }
     }
   }
-  .result_wrapper {
-    margin-top: 2rem;
-    opacity: 0;
-    transition: 0.5s all ease-in;
-    &.show {
-      opacity: 1;
-    }
-    .success_message {
-      color: $themecolorGreen;
-      &.fail {
-        color: $themecolorNewRed;
-      }
-    }
-  }
 }

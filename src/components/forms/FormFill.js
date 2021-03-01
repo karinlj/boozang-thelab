@@ -42,6 +42,7 @@ function FormFill() {
       [name]: value,
     });
   };
+
   //hantera fel i formuläret
   const validate = (data) => {
     let status = 0;
@@ -51,6 +52,7 @@ function FormFill() {
       return [1, "ok"];
     }
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newUser = {

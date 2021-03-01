@@ -39,9 +39,6 @@ const SpeedGame = () => {
     }
     //cleanup
     return () => clearInterval(myInterval);
-
-    // console.log("isRunning: ", isRunning);
-    // console.log("count: ", count);
   }, [isRunning, count]);
 
   return (
@@ -66,21 +63,11 @@ const SpeedGame = () => {
             )}
           </div>
           <ResultMessages
-            openWrapper={isRunning}
+            openWrapper={!isRunning}
             successMessage={successMessage}
             subMessage={timeMessage}
             messageString={"You are fast!!"}
           />
-          {/* <div className={`result_wrapper ${!isRunning ? "show" : ""}`}>
-            <h4
-              className={`success_message ${
-                successMessage === "Success!" ? "" : "fail"
-              }`}
-            >
-              {successMessage}
-            </h4>
-            <p className="sub_message">{timeMessage}</p>
-          </div> */}
         </section>
       </div>
       <div className="col-12 col-md-5">

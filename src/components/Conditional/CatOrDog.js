@@ -3,6 +3,7 @@ import "./conditional.scss";
 import { CatOrDogIntro } from "../text/Intros";
 import { CatOrDogTestInfo } from "../text/TestInfos";
 import { CatOrDogVideos } from "../text/videos/VideoSections";
+import ResultMessages from "../compMessages/ResultMessages";
 
 const CatOrDog = () => {
   const pets = ["cat", "dog"];
@@ -67,7 +68,12 @@ const CatOrDog = () => {
                     />
                   </div>
                 )}
-                <div
+                <ResultMessages
+                  openWrapper={successMessage}
+                  successMessage={successMessage}
+                  messageString={"Success!"}
+                />
+                {/* <div
                   className={`result_wrapper ${successMessage ? "show" : ""}`}
                 >
                   <h4
@@ -77,7 +83,7 @@ const CatOrDog = () => {
                   >
                     {successMessage}
                   </h4>
-                </div>
+                </div> */}
               </div>
             </section>
           </div>

@@ -6,7 +6,7 @@ const ResultMessages = ({
   messageString,
 }) => {
   return (
-    <div className={`result_wrapper ${!openWrapper ? "show" : ""}`}>
+    <div className={`result_wrapper ${openWrapper ? "show" : ""}`}>
       <h4
         className={`success_message ${
           successMessage === messageString ? "" : "fail"
@@ -14,7 +14,7 @@ const ResultMessages = ({
       >
         {successMessage}
       </h4>
-      <p className="sub_message">{subMessage}</p>
+      {subMessage && <p className="sub_message">{subMessage}</p>}
     </div>
   );
 };
