@@ -15,8 +15,7 @@ const VisualBugs = () => {
     "elephant",
     "leopard",
   ];
-
-  let images = animals.map((animal, i) => {
+  const images = animals.map((animal, i) => {
     return (
       <img
         src={require(`../../img/${animal}.jpg`).default}
@@ -25,8 +24,8 @@ const VisualBugs = () => {
       />
     );
   });
-  let animalImg = images[index];
-  let animalLabel = animals[index];
+  const animalImg = images[index];
+  const animalLabel = animals[index];
 
   const handleClick = () => {
     //7 images: if index < 6 (0-5), add 1
@@ -38,7 +37,6 @@ const VisualBugs = () => {
   };
   useEffect(() => {
     // console.log("index: ", index);
-    // console.log("animalLabel: ", animalLabel);
   }, [index]);
   return (
     <div className="row justify-content-between">
@@ -50,7 +48,6 @@ const VisualBugs = () => {
               <div className="apect-ratio-box">
                 <div className="apect-ratio-inside">{animalImg}</div>
               </div>
-
               <div className="label_wrapper">
                 <h6>{animalLabel}</h6>
               </div>

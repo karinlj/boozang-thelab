@@ -11,27 +11,27 @@ const ConcatStrings = () => {
   const [concatStr, setConcatStr] = useState("");
   const [inputStr, setInputStr] = useState("");
 
-  const generateStrings = () => {
-    setSuccessMessage("");
-    setInputStr("");
-    let strings = [
-      "bear",
-      "elefant",
-      "bunny",
-      "horse",
-      "cow",
-      "tiger",
-      "lion",
-      "mouse",
-      "bird",
-      "turtle",
-    ];
-    let randStr1 = strings[Math.floor(Math.random() * strings.length)];
-    let randStr2 = strings[Math.floor(Math.random() * strings.length)];
+  const strings = [
+    "bear",
+    "elephant",
+    "bunny",
+    "horse",
+    "cow",
+    "tiger",
+    "lion",
+    "mouse",
+    "bird",
+    "turtle",
+  ];
 
+  const generateStrings = () => {
+    const randStr1 = strings[Math.floor(Math.random() * strings.length)];
+    const randStr2 = strings[Math.floor(Math.random() * strings.length)];
     setStringOne(randStr1);
     setStringTwo(randStr2);
     setConcatStr(randStr1 + randStr2);
+    setSuccessMessage("");
+    setInputStr("");
   };
 
   const handleSubmit = (e) => {
@@ -43,8 +43,9 @@ const ConcatStrings = () => {
     }
   };
   useEffect(() => {
-    // console.log("inputStr", inputStr);
-  }, [inputStr]);
+    console.log("concatStr: ", concatStr);
+  }, [concatStr]);
+
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6 col-xl-5">
@@ -56,12 +57,11 @@ const ConcatStrings = () => {
             className="formBtn add"
             onClick={generateStrings}
           />
-          <div className="output_section">
-            <p>{stringOne}</p>
-            <p>{stringTwo}</p>
-          </div>
-
-          {concatStr && (
+          <section className={`output_section ${stringOne ? "show" : ""}`}>
+            <div className="strings">
+              <p>{stringOne}</p>
+              <p>{stringTwo}</p>
+            </div>
             <form className="list_form" onSubmit={handleSubmit}>
               <label htmlFor="name">Strings put together: </label>
               <input
@@ -77,23 +77,23 @@ const ConcatStrings = () => {
                 </div>
               </section>
             </form>
-          )}
-          <h4
-            className={`success_message ${
-              successMessage === "Good job" ? "" : "fail"
-            }`}
-          >
-            {successMessage}
-            {successMessage && (
-              <i
-                className={
-                  successMessage === "Good job"
-                    ? "fas fa-thumbs-up"
-                    : "fas fa-thumbs-down"
-                }
-              ></i>
-            )}
-          </h4>
+            <h4
+              className={`success_message ${
+                successMessage === "Good job" ? "" : "fail"
+              }`}
+            >
+              {successMessage}
+              {successMessage && (
+                <i
+                  className={
+                    successMessage === "Good job"
+                      ? "fas fa-thumbs-up"
+                      : "fas fa-thumbs-down"
+                  }
+                ></i>
+              )}
+            </h4>
+          </section>
         </section>
       </div>
       <div className="col-12 col-md-5">

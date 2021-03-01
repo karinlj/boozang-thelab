@@ -2,10 +2,17 @@
 
 .strings_section {
   .output_section {
-    color: #fff;
-    padding: 1rem 0;
-    p {
-      margin: 0;
+    opacity: 0;
+    transition: 0.5s all ease-in;
+    &.show {
+      opacity: 1;
+    }
+    .strings {
+      color: #fff;
+      padding: 1rem 0;
+      p {
+        margin: 0;
+      }
     }
   }
 
