@@ -375,16 +375,22 @@ a {
   }
   .udemy_link {
     img {
-      max-width: 30px;
+      max-width: 25px;
       margin-right: 3px;
+      @media all and (min-width: $md-min) {
+        max-width: 30px;
+      }
     }
     a {
       color: #020c70;
       color: #fff;
       font-weight: 500;
-      font-size: 1.1rem;
+      font-size: 1rem;
       display: inline-block;
       position: relative;
+      @media all and (min-width: $md-min) {
+        font-size: 1.1rem;
+      }
       &::before {
         opacity: 0.4;
         position: absolute;
@@ -413,7 +419,11 @@ a {
   }
   ul.social_icons_list {
     display: flex;
-    justify-content: flex-end;
+    padding: 2rem 0;
+    @media all and (min-width: $md-min) {
+      justify-content: flex-end;
+      padding: 0;
+    }
     li.social {
       a {
         font-size: 0;
