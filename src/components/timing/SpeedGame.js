@@ -3,6 +3,7 @@ import "./Timing.scss";
 import { SpeedGameVideos } from "../text/videos/VideoSections";
 import { SpeedGameIntro } from "../text/Intros";
 import { SpeedGameTestInfo } from "../text/TestInfos";
+import ResultMessages from "../compMessages/ResultMessages";
 
 const SpeedGame = () => {
   const [isRunning, setIsRunning] = useState(false);
@@ -64,15 +65,22 @@ const SpeedGame = () => {
               />
             )}
           </div>
-
-          <div className="messages">
-            <div className={`success_message  ${!isRunning ? "show" : ""}`}>
-              <h4>{successMessage}</h4>
-            </div>
-            <div className={`time_message  ${!isRunning ? "show" : ""}`}>
-              <p>{timeMessage}</p>
-            </div>
-          </div>
+          <ResultMessages
+            openWrapper={isRunning}
+            successMessage={successMessage}
+            subMessage={timeMessage}
+            messageString={"You are fast!!"}
+          />
+          {/* <div className={`result_wrapper ${!isRunning ? "show" : ""}`}>
+            <h4
+              className={`success_message ${
+                successMessage === "Success!" ? "" : "fail"
+              }`}
+            >
+              {successMessage}
+            </h4>
+            <p className="sub_message">{timeMessage}</p>
+          </div> */}
         </section>
       </div>
       <div className="col-12 col-md-5">

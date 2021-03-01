@@ -19,9 +19,9 @@ const YellowOrBlue = () => {
   const checkColor = (color) => {
     if (randColor !== "") {
       if (color === randColor) {
-        setSuccessMessage("Good job");
+        setSuccessMessage("Success!");
       } else {
-        setSuccessMessage("Try again");
+        setSuccessMessage("Try again!");
       }
     }
   };
@@ -40,47 +40,42 @@ const YellowOrBlue = () => {
               className="formBtn add"
               onClick={generateColor}
             />
-            <h5 className="color">{randColor}</h5>
-            <div className="lower_section">
-              {randColor && (
-                <div>
-                  <input
-                    type="button"
-                    value="yellow"
-                    className="formBtn yellow"
-                    onClick={() => {
-                      checkColor("yellow");
-                    }}
-                  />
-                  <input
-                    type="button"
-                    value="blue"
-                    className="formBtn blue"
-                    onClick={() => {
-                      checkColor("blue");
-                    }}
-                  />
-                </div>
-              )}
-              <div className="result_wrapper">
-                <h4
-                  className={`success_message ${
-                    successMessage === "Good job" ? "" : "fail"
-                  }`}
+            <section className={`output_section ${randColor ? "show" : ""}`}>
+              <h5 className="color">{randColor}</h5>
+              <div className="btn_section">
+                {randColor && (
+                  <div>
+                    <input
+                      type="button"
+                      value="yellow"
+                      className="formBtn yellow"
+                      onClick={() => {
+                        checkColor("yellow");
+                      }}
+                    />
+                    <input
+                      type="button"
+                      value="blue"
+                      className="formBtn blue"
+                      onClick={() => {
+                        checkColor("blue");
+                      }}
+                    />
+                  </div>
+                )}
+                <div
+                  className={`result_wrapper ${successMessage ? "show" : ""}`}
                 >
-                  {successMessage}
-                  {successMessage && (
-                    <i
-                      className={
-                        successMessage === "Good job"
-                          ? "fas fa-thumbs-up"
-                          : "fas fa-thumbs-down"
-                      }
-                    ></i>
-                  )}
-                </h4>
+                  <h4
+                    className={`success_message ${
+                      successMessage === "Success!" ? "" : "fail"
+                    }`}
+                  >
+                    {successMessage}
+                  </h4>
+                </div>
               </div>
-            </div>
+            </section>
           </div>
         </section>
       </div>

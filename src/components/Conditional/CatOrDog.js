@@ -15,24 +15,23 @@ const CatOrDog = () => {
         <img src={require(`../../img/${pet}.jpg`).default} key={i} alt={pet} />
       );
     });
-    setRandImage(null);
+    //setRandImage(null);
     const randNumber = Math.floor(Math.random() * 2);
     setRandImage(images[randNumber]);
     setSuccessMessage("");
   };
-
   const checkPet = (pet) => {
     if (randImage) {
       if (pet === randImage.props.alt) {
-        setSuccessMessage("Good job");
+        setSuccessMessage("Success!");
       } else {
-        setSuccessMessage("Try again");
+        setSuccessMessage("Try again!");
       }
     }
   };
   useEffect(() => {
-    //console.log("randImage", randImage);
-  }, [randImage]);
+    console.log("successMessage", successMessage);
+  }, [successMessage]);
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6 col-xl-5">
@@ -45,47 +44,42 @@ const CatOrDog = () => {
               className="formBtn add"
               onClick={generateImage}
             />
-            <div className="image">{randImage}</div>
-            <div className="lower_section">
-              {randImage && (
-                <div>
-                  <input
-                    type="button"
-                    value="cat"
-                    className="formBtn pink"
-                    onClick={() => {
-                      checkPet("cat");
-                    }}
-                  />
-                  <input
-                    type="button"
-                    value="dog"
-                    className="formBtn turqoise"
-                    onClick={() => {
-                      checkPet("dog");
-                    }}
-                  />
-                </div>
-              )}
-              <div className="result_wrapper">
-                <h4
-                  className={`success_message ${
-                    successMessage === "Good job" ? "" : "fail"
-                  }`}
+            <section className={`output_section ${randImage ? "show" : ""}`}>
+              <div className="image">{randImage}</div>
+              <div className="btn_section">
+                {randImage && (
+                  <div>
+                    <input
+                      type="button"
+                      value="cat"
+                      className="formBtn pink"
+                      onClick={() => {
+                        checkPet("cat");
+                      }}
+                    />
+                    <input
+                      type="button"
+                      value="dog"
+                      className="formBtn turqoise"
+                      onClick={() => {
+                        checkPet("dog");
+                      }}
+                    />
+                  </div>
+                )}
+                <div
+                  className={`result_wrapper ${successMessage ? "show" : ""}`}
                 >
-                  {successMessage}
-                  {successMessage && (
-                    <i
-                      className={
-                        successMessage === "Good job"
-                          ? "fas fa-thumbs-up"
-                          : "fas fa-thumbs-down"
-                      }
-                    ></i>
-                  )}
-                </h4>
+                  <h4
+                    className={`success_message ${
+                      successMessage === "Success!" ? "" : "fail"
+                    }`}
+                  >
+                    {successMessage}
+                  </h4>
+                </div>
               </div>
-            </div>
+            </section>
           </div>
         </section>
       </div>

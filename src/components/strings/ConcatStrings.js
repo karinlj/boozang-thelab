@@ -37,9 +37,9 @@ const ConcatStrings = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (concatStr === inputStr) {
-      setSuccessMessage("Good job");
+      setSuccessMessage("Success!");
     } else {
-      setSuccessMessage("Try again");
+      setSuccessMessage("Try again!");
     }
   };
   useEffect(() => {
@@ -77,22 +77,16 @@ const ConcatStrings = () => {
                 </div>
               </section>
             </form>
-            <h4
-              className={`success_message ${
-                successMessage === "Good job" ? "" : "fail"
-              }`}
-            >
-              {successMessage}
-              {successMessage && (
-                <i
-                  className={
-                    successMessage === "Good job"
-                      ? "fas fa-thumbs-up"
-                      : "fas fa-thumbs-down"
-                  }
-                ></i>
-              )}
-            </h4>
+
+            <div className={`result_wrapper ${concatStr ? "show" : ""}`}>
+              <h4
+                className={`success_message ${
+                  successMessage === "Success!" ? "" : "fail"
+                }`}
+              >
+                {successMessage}
+              </h4>
+            </div>
           </section>
         </section>
       </div>

@@ -2,6 +2,7 @@
 
 //TodoList
 .collection {
+  box-shadow: $themeBoxShadow;
   .collection-item {
     display: flex;
     justify-content: space-between;

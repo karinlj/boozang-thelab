@@ -3,6 +3,7 @@ import "./Timing.scss";
 import { WaitGameVideos } from "../text/videos/VideoSections";
 import { WaitGameIntro } from "../text/Intros";
 import { WaitGameTestInfo } from "../text/TestInfos";
+import ResultMessages from "../compMessages/ResultMessages";
 
 const WaitGame = () => {
   const [isRunning, setIsRunning] = useState(false);
@@ -38,8 +39,7 @@ const WaitGame = () => {
       let overflow = difference - limit;
       setSubMessage(`${overflow} ms above 5 seconds.`);
     } else {
-      setSuccessMessage("Fail!");
-      setSubMessage(`You clicked too fast...Try again.`);
+      setSuccessMessage("Try again!");
     }
   };
   const handleStop = () => {
@@ -48,7 +48,6 @@ const WaitGame = () => {
   };
   useEffect(() => {
     // console.log("isRunning: ", isRunning);
-    // console.log("offsetTime: ", offsetTime);
   }, [isRunning]);
   return (
     <div className="row justify-content-between">
@@ -72,24 +71,22 @@ const WaitGame = () => {
               />
             )}
           </div>
-          <div className="messages">
-            {successMessage === "Success!" && (
-              <div className={`success_message  ${!isRunning ? "show" : ""}`}>
-                <h4>{successMessage}</h4>
-              </div>
-            )}
-
-            {/* <div
+          <ResultMessages
+            openWrapper={isRunning}
+            successMessage={successMessage}
+            subMessage={subMessage}
+            messageString={"Success!"}
+          />
+          {/* <div className={`result_wrapper ${!isRunning ? "show" : ""}`}>
+            <h4
               className={`success_message ${
                 successMessage === "Success!" ? "" : "fail"
               }`}
             >
-              <h4>{successMessage}</h4>
-            </div> */}
-            <div className={`time_message  ${!isRunning ? "show" : ""}`}>
-              <p>{subMessage}</p>
-            </div>
-          </div>
+              {successMessage}
+            </h4>
+            <p className="sub_message">{subMessage}</p>
+          </div> */}
         </section>
       </div>
       <div className="col-12 col-md-5">
