@@ -164,91 +164,62 @@ a {
 }
 
 //nav
-.navigation {
-  .nav {
-    width: 100%;
+.nav {
+  width: 100%;
+  display: flex;
+  padding: 1.8rem calc(1.5rem - 15px);
+  @media all and (min-width: $sm-min) {
+    padding: 1.8rem calc(2.25rem - 15px);
+  }
+  @media all and (min-width: $md-min) {
+    padding: 1.8rem calc(3rem - 15px);
+  }
+  .col {
     display: flex;
-    padding: 1.8rem calc(1.5rem - 15px);
-    @media all and (min-width: $sm-min) {
-      padding: 1.8rem calc(2.25rem - 15px);
+    align-items: center;
+  }
+  ul.links {
+    display: none;
+  }
+  h2 {
+    margin-bottom: 0;
+    margin-left: 1rem;
+    font-size: 2.2rem;
+    line-height: 1;
+    a {
+      color: $themecolorNewPink;
     }
-    @media all and (min-width: $md-min) {
-      padding: 1.8rem calc(3rem - 15px);
-    }
+  }
+  @media all and (min-width: $lg-min) {
+    padding: 2rem calc(1.75rem - 15px) 1rem calc(3.75rem - 15px);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 25%;
+    position: fixed;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: $themecolorLilaDarkest;
     .col {
-      display: flex;
-      align-items: center;
-    }
-    ul.links {
-      display: none;
+      display: block;
     }
     h2 {
-      margin-bottom: 0;
-      margin-left: 1rem;
+      margin-left: 0;
       font-size: 2.2rem;
-      line-height: 1;
+      padding-bottom: 0.2rem;
       a {
         color: $themecolorNewPink;
       }
     }
-    @media all and (min-width: $lg-min) {
-      padding: 2rem calc(1.75rem - 15px) 1rem calc(3.75rem - 15px);
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      width: 25%;
-      position: fixed;
-      height: 100%;
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      background: $themecolorLilaDarkest;
-      .col {
-        display: block;
-      }
-      h2 {
-        margin-left: 0;
-        font-size: 2.2rem;
-        padding-bottom: 0.2rem;
-        a {
-          color: $themecolorNewPink;
-        }
-      }
-      ul.links {
-        display: block;
-        margin-top: 0;
-        li {
-          display: block;
-          font-size: 0.85rem;
-          margin: 2px 0;
-          color: #fff;
-          a.link {
-            color: $navLinkColor;
-            &:hover {
-              color: $linkColor;
-            }
-            &:active,
-            visited {
-              color: $linkColor;
-            }
-            &.current {
-              color: $linkColor;
-              border-bottom: 1px solid $linkColor;
-            }
-          }
-
-          ul.sub_list {
-            li {
-              font-size: 0.85rem;
-              margin: 1px 14px;
-            }
-          }
-        }
-      }
+    ul.links {
+      display: block;
     }
-    @media all and (min-width: $xl-min) {
-      width: 20%;
-      padding: 2rem calc(1.75rem - 15px) 2rem calc(3.75rem - 15px);
-    }
+    //linkstyle in navbarLinks component
+  }
+  @media all and (min-width: $xl-min) {
+    width: 20%;
+    padding: 2rem calc(1.75rem - 15px) 2rem calc(3.75rem - 15px);
   }
 }
 

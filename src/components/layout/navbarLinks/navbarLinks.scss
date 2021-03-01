@@ -1,0 +1,31 @@
+@import "../../../variables.scss";
+ul.links {
+  display: block;
+  margin-top: 0;
+  li {
+    display: block;
+    font-size: 0.85rem;
+    margin: 2px 0;
+    color: #fff;
+    a.link {
+      color: $navLinkColor;
+      &:hover {
+        color: $linkColor;
+      }
+      &:active,
+      visited {
+        color: $linkColor;
+      }
+      &.current {
+        color: $linkColor;
+        border-bottom: 1px solid $linkColor;
+      }
+    }
+    ul.sub_list {
+      li {
+        font-size: 0.85rem;
+        margin: 1px 14px;
+      }
+    }
+  }
+}

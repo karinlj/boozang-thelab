@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "../Lists.scss";
+import "../lists.scss";
 import { CatShelterVideos } from "../../text/videos/VideoSections";
 import CatList from "./CatList";
 import { getData } from "../../fetchFunctions/fetchFunctions";

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./Lists.scss";
+import "./lists.scss";
 import { UnsortedListIntro } from "../text/Intros";
 import { UnsortedListTestInfo } from "../text/TestInfos";
 import { UnsortedListVideos } from "../text/videos/VideoSections";

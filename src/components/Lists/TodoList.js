@@ -1,4 +1,4 @@
-import "./Lists.scss";
+import "./lists.scss";
 import Todo from "./Todo";
 
 const TodoList = ({ todos, handleDelete }) => {

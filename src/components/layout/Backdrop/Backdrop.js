@@ -1,7 +1,7 @@
-import "./Backdrop.scss";
+import "./backdrop.scss";
 
-const Backdrop = ({ clickBackdrop }) => {
-  return <div className="backdrop" onClick={clickBackdrop} />;
+const Backdrop = ({ handleClick }) => {
+  return <div className="backdrop" onClick={handleClick} />;
 };
 
 export default Backdrop;

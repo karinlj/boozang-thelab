@@ -1,26 +1,25 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Navbar from "./components/layout/Navbar";
-import SideDrawer from "./components/layout/SideDrawer/SideDrawer";
-//import Backdrop from "./components/layout/Backdrop/Backdrop";
-
+import SideDrawer from "./components/layout/sideDrawer/SideDrawer";
+import Backdrop from "./components/layout/backdrop/Backdrop";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Home from "./components/Home";
 import Introduction from "./components/Introduction";
 import Overview from "./components/Overview";
-import SortedList from "./components/Lists/SortedList";
-import UnsortedList from "./components/Lists/UnsortedList";
-import CatShelter from "./components/Lists/catList/CatShelter";
-import CatDetails from "./components/Lists/catList/CatDetails";
-import AddCat from "./components/Lists/catList/AddCat";
+import SortedList from "./components/lists/SortedList";
+import UnsortedList from "./components/lists/UnsortedList";
+import CatShelter from "./components/lists/catList/CatShelter";
+import CatDetails from "./components/lists/catList/CatDetails";
+import AddCat from "./components/lists/catList/AddCat";
 import FormFill from "./components/forms/FormFill";
 import SpeedGame from "./components/timing/SpeedGame";
 import WaitGame from "./components/timing/WaitGame";
-import VisualBugs from "./components/VisualBugs/VisualBugs";
-import YellowOrBlue from "./components/Conditional/YellowOrBlue";
-import CatOrDog from "./components/Conditional/CatOrDog";
+import VisualBugs from "./components/visualBugs/VisualBugs";
+import YellowOrBlue from "./components/conditional/YellowOrBlue";
+import CatOrDog from "./components/conditional/CatOrDog";
 import ScrambleItems from "./components/domChanges/ScrambleItems";
 import MultiScramble from "./components/domChanges/MultiScramble";
 import ConcatStrings from "./components/strings/ConcatStrings";
@@ -30,27 +29,26 @@ function App() {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
 
   const handleToggle = () => {
-    console.log("handleToggle");
-    // this.setState(prevState => {
-    //   //passing func to setState
-    //   //if close it will open and viceversa
-    //   return { sideDrawerOpen: !prevState.sideDrawerOpen }; //set the opposite
-    // });
+    setSideDrawerOpen(!sideDrawerOpen);
   };
-
   const handleBackdropAndLinkClick = () => {
     setSideDrawerOpen(false);
     //this.setState({ sideDrawerOpen: false });
   };
-
+  useEffect(() => {
+    // console.log("sideDrawerOpen: ", sideDrawerOpen);
+  }, [sideDrawerOpen]);
   return (
     <Router>
       <div className="App" style={{ height: "100%" }}>
-        <Navbar handleDrawerClick={handleToggle} />
+        <Navbar handleClick={handleToggle} />
         <SideDrawer
           show={sideDrawerOpen}
-          clickLink={handleBackdropAndLinkClick}
+          handleClickLink={handleBackdropAndLinkClick}
         />
+        {sideDrawerOpen && (
+          <Backdrop handleClick={handleBackdropAndLinkClick} />
+        )}
         <Header className="header" />
         <div className="content-section">
           <div className="container">
