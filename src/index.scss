@@ -18,15 +18,10 @@ body {
   height: 100%;
   font-family: "Quicksand";
   background: $themecolorLila;
-  // background: #f9f9f9;
 }
 #root {
   height: 100%;
   //position: relative !important;
-}
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
 .container {
   max-width: 1280px;
@@ -44,29 +39,27 @@ ul {
   padding: 0;
 }
 
-iframe {
-  border: none;
-  box-shadow: $themeBoxShadow;
-}
-
 //typgrafi
 h1 {
-  color: #fff;
-  @media all and (max-width: $xs-max) {
+  font-size: 1.8em;
+  @media all and (min-width: $md-min) {
     font-size: 2em;
+  }
+  @media all and (min-width: $lg-min) {
+    font-size: 2.5em;
   }
 }
 p {
-  font-size: 0.95rem;
   font-size: 1rem;
 }
 h1,
 h2,
 h3,
 h4,
-h5 {
-  // font-weight: 300;
-  //font-weight: 500;
+h5,
+p,
+div {
+  color: #fff;
 }
 a {
   color: $linkColor;
@@ -80,60 +73,6 @@ a {
     //when click
     color: $linkColor;
   }
-}
-
-//buttons
-.button {
-  box-shadow: $themeBoxShadow;
-  color: #fff;
-  cursor: pointer;
-  font-size: 0.8em;
-  border: none;
-  transition: 1s;
-  text-transform: uppercase;
-  padding: 12px 18px;
-  border-radius: $themeBorderRadius;
-  &:hover {
-    //opacity: 0.9;
-  }
-  @media all and (min-width: $sm-min) {
-    font-size: 0.9em;
-  }
-}
-
-.btn-submit {
-  background-color: $themecolorGreen;
-  color: #fff;
-  margin-top: 1rem;
-}
-
-.yellow-btn {
-  background: $themecolorYellow;
-  color: #fff;
-}
-
-.green-btn {
-  background: $themecolorGreen;
-  margin-right: 1rem;
-}
-
-.yellow-btn {
-  background: $themecolorYellow;
-  margin-right: 1rem;
-}
-
-.red-btn {
-  background: $themecolorNewRed;
-}
-
-.turquoise-btn {
-  background: $themecolorTurquoise;
-  margin-right: 1rem;
-}
-
-.pink-btn {
-  background: $themecolorNewPink;
-  margin-right: 1rem;
 }
 
 //header
@@ -163,7 +102,7 @@ a {
   }
 }
 
-//nav
+//main navigation
 .nav {
   width: 100%;
   display: flex;
@@ -253,9 +192,7 @@ a {
   //introductions
   .comp_intro {
     margin-bottom: 2rem;
-    color: #fff;
     p {
-      font-size: 1rem;
       white-space: pre-line;
     }
     a {
@@ -269,7 +206,7 @@ a {
       }
     }
   }
-  //test info
+  //test info box
   .comp_test_info {
     margin-bottom: 2rem;
     min-height: 150px;
@@ -286,15 +223,12 @@ a {
       color: $themecolorDarker;
     }
   }
-  .loading {
-    color: #fff;
-  }
+
   .error {
     color: $themecolorNewPinkLight;
   }
-  //videos
+  //video links
   .video_section {
-    color: #fff;
     li {
       margin-bottom: 0.2rem;
     }
@@ -323,8 +257,6 @@ a {
   flex-direction: column;
   justify-content: space-between;
   background: $themecolorLilaDark;
-
-  color: #fff;
   width: 100%;
   min-height: 10rem;
   padding: 2rem calc(1.5rem - 15px) 1rem calc(1.5rem - 15px);
@@ -352,7 +284,6 @@ a {
       }
     }
     a {
-      color: #020c70;
       color: #fff;
       font-weight: 500;
       font-size: 1rem;
@@ -384,8 +315,6 @@ a {
   }
   .copy {
     font-size: 0.8rem;
-    color: #020c70;
-    color: #fff;
   }
   ul.social_icons_list {
     display: flex;
@@ -402,7 +331,6 @@ a {
         &:after {
           font-weight: 900;
           font-size: 1.2rem;
-          color: #020c70;
           color: #fff;
           text-align: center;
           border-radius: 50%;
@@ -474,7 +402,6 @@ button.formBtn {
   }
   &.add {
     background: $themecolorGreen;
-    color: #fff;
   }
   &.adding {
     opacity: 0.5;
@@ -485,7 +412,6 @@ button.formBtn {
   }
   &.delete {
     background: $themecolorNewRed;
-    color: #fff;
   }
   &.blue {
     background: $themecolorButtonBlue;
