@@ -44,7 +44,7 @@ const VisualBugs = () => {
         <section className="visual_bugs_section">
           <VisualBugsIntro />
           <div className="row">
-            <div className="col-10">
+            <div className="col-12 col-sm-10">
               <div className="apect-ratio-box">
                 <div className="apect-ratio-inside">{animalImg}</div>
               </div>
@@ -52,7 +52,7 @@ const VisualBugs = () => {
                 <h6>{animalLabel}</h6>
               </div>
             </div>
-            <div className="col-2">
+            <div className="col-12 col-sm-2">
               <input
                 type="button"
                 value="Next"

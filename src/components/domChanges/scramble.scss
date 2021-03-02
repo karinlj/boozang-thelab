@@ -9,18 +9,11 @@
     }
   }
   .scramble_code {
-    //background: $themecolorLilaDarkest;
     box-shadow: $themeBoxShadow;
     border-radius: $themeBorderRadius;
     margin: 2rem 0;
     padding: 0.8rem;
-    p {
-      font-family: "Inconsolata", monospace;
-      font-size: 0.8rem;
-      color: $navLinkColor;
-      margin-bottom: 0.5rem;
-      padding: 3px;
-    }
+    // .code style: index.scss
     .clicked_class {
       background: $themecolorLilaDarkest;
     }
@@ -58,9 +51,6 @@
     padding-bottom: 0;
   }
   .multiscramble_btn_section {
-    // display: flex;
-    // justify-content: space-between;
-    // align-items: center;
     input[type="text"] {
       &:last-child {
         margin-bottom: 0;

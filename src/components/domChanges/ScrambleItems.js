@@ -184,20 +184,36 @@ const ScrambleItems = () => {
             <div>
               {isBtnOneFirst && (
                 <div>
-                  <p className={clickedBtn === "btnOne" ? "clicked_class" : ""}>
+                  <p
+                    className={`code ${
+                      clickedBtn === "btnOne" ? "clicked_class" : ""
+                    }`}
+                  >
                     {htmlParse(btnOne())}
                   </p>
-                  <p className={clickedBtn === "btnTwo" ? "clicked_class" : ""}>
+                  <p
+                    className={`code ${
+                      clickedBtn === "btnTwo" ? "clicked_class" : ""
+                    }`}
+                  >
                     {htmlParse(btnTwo())}
                   </p>
                 </div>
               )}
               {!isBtnOneFirst && (
                 <div>
-                  <p className={clickedBtn === "btnTwo" ? "clicked_class" : ""}>
+                  <p
+                    className={`code ${
+                      clickedBtn === "btnTwo" ? "clicked_class" : ""
+                    }`}
+                  >
                     {htmlParse(btnTwo())}
                   </p>
-                  <p className={clickedBtn === "btnOne" ? "clicked_class" : ""}>
+                  <p
+                    className={`code ${
+                      clickedBtn === "btnOne" ? "clicked_class" : ""
+                    }`}
+                  >
                     {htmlParse(btnOne())}
                   </p>
                 </div>

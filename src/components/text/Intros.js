@@ -1,3 +1,5 @@
+import "./text.scss";
+
 //Lists
 export const SortedListIntro = () => {
   return (

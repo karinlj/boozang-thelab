@@ -39,7 +39,7 @@
       "name": "Theo",
       "description": "Big, fine cat",
       "inOrOutside": "outside",
-      "foundHome": false,
+      "foundHome": true,
       "id": 11
     }
   ],

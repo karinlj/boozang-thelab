@@ -19,7 +19,6 @@
     }
   }
   .print_form {
-    color: #fff;
     border-radius: $themeBorderRadius;
     box-shadow: $themeBoxShadow;
     padding: 0.2rem 0.65rem;
@@ -34,7 +33,6 @@
 
       thead {
         th {
-          color: #fff;
           border: none;
           font-size: 0.8rem;
           padding: 0.6rem 0.75rem;
@@ -42,7 +40,6 @@
       }
       tbody {
         td {
-          color: #fff;
           margin-bottom: 0;
           font-size: 0.8rem;
           margin-right: 1rem;

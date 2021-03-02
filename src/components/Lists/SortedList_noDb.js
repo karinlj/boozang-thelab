@@ -38,7 +38,7 @@ const SortedList = () => {
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6">
-        <div className="todo-section">
+        <div className="list_section">
           <SortedListIntro />
           <TodoList todos={todos} handleDelete={handleDelete} />
           <AddTodo addTodo={addTodo} />

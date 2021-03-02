@@ -50,7 +50,7 @@ function App() {
           <Backdrop handleClick={handleBackdropAndLinkClick} />
         )}
         <Header className="header" />
-        <div className="content-section">
+        <div className="content_section">
           <div className="container">
             <Switch>
               <Route exact path="/">

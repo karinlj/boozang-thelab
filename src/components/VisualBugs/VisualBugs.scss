@@ -26,10 +26,18 @@
     h6 {
       font-weight: 600;
       text-align: center;
-      color: #fff;
       text-transform: uppercase;
       font-size: 0.8rem;
       margin-bottom: 0;
+    }
+  }
+  input {
+    float: right;
+    margin-top: 1rem;
+
+    @media all and (min-width: $sm-min) {
+      float: none;
+      margin-top: 0;
     }
   }
 }

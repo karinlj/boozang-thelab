@@ -54,7 +54,7 @@ const WaitGame = () => {
       <div className="col-12 col-md-6 col-xl-5">
         <section className="timing_section">
           <WaitGameIntro />
-          <div>
+          <div className="game_space">
             <input
               type="button"
               value="Start Game"
@@ -70,13 +70,14 @@ const WaitGame = () => {
                 onClick={handleStop}
               />
             )}
+
+            <ResultMessages
+              openWrapper={!isRunning}
+              successMessage={successMessage}
+              subMessage={subMessage}
+              messageString={"Success!"}
+            />
           </div>
-          <ResultMessages
-            openWrapper={!isRunning}
-            successMessage={successMessage}
-            subMessage={subMessage}
-            messageString={"Success!"}
-          />
         </section>
       </div>
       <div className="col-12 col-md-5">

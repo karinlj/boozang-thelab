@@ -40,13 +40,29 @@ ul {
 }
 
 //typgrafi
+
 h1 {
   font-size: 1.8em;
   @media all and (min-width: $md-min) {
     font-size: 2em;
   }
+  @media all and (min-width: $xl-min) {
+    font-size: 2.5rem;
+  }
+}
+h2 {
+  font-size: 1.6rem;
+  @media all and (min-width: $md-min) {
+    font-size: 1.8rem;
+  }
   @media all and (min-width: $lg-min) {
-    font-size: 2.5em;
+    font-size: 2rem;
+  }
+}
+h4 {
+  font-size: 1.4rem;
+  @media all and (min-width: $lg-min) {
+    font-size: 1.5rem;
   }
 }
 p {
@@ -57,10 +73,20 @@ h2,
 h3,
 h4,
 h5,
+h6,
 p,
-div {
+th,
+td {
   color: #fff;
 }
+.code {
+  font-family: "Inconsolata", monospace;
+  font-size: 0.8rem;
+  color: $navLinkColor;
+  margin-bottom: 0.5rem;
+  padding: 3px;
+}
+
 a {
   color: $linkColor;
   cursor: pointer;
@@ -163,7 +189,7 @@ a {
 }
 
 //content
-.content-section {
+.content_section {
   width: 100%;
   min-height: 600px;
   padding: 0 calc(1.5rem - 15px) 10rem calc(1.5rem - 15px);
@@ -183,72 +209,12 @@ a {
     padding: 0 calc(3.75rem - 15px) 10rem calc(3.75rem - 15px);
   }
 
-  .video_section {
-    margin-top: 3rem;
-    @media all and (min-width: $md-min) {
-      margin-top: 0;
-    }
-  }
-  //introductions
-  .comp_intro {
-    margin-bottom: 2rem;
-    p {
-      white-space: pre-line;
-    }
-    a {
-      color: $linkColor;
-    }
-    ul._list {
-      list-style-type: square;
-      padding: 0 0 0 1rem;
-      li {
-        font-size: 0.9rem;
-      }
-    }
-  }
-  //test info box
-  .comp_test_info {
-    margin-bottom: 2rem;
-    min-height: 150px;
-    background: $themecolorBlueNewLightest;
-    padding: 1.5rem 2rem;
-    border-radius: $themeBorderRadius;
-    box-shadow: $themeBoxShadow;
-    margin-top: 3rem;
-    h4 {
-      color: $themecolorLilaDark;
-    }
-    p {
-      white-space: pre-line;
-      color: $themecolorDarker;
-    }
-  }
-
   .error {
     color: $themecolorNewPinkLight;
   }
-  //video links
-  .video_section {
-    li {
-      margin-bottom: 0.2rem;
-    }
-    a {
-      display: flex;
-      align-items: center;
-      .youtube_logo {
-        max-width: 2.2rem;
-        max-height: 2rem;
-      }
-      span {
-        line-height: 1.2;
-      }
-    }
+  .card {
+    border-radius: $themeBorderRadius;
   }
-}
-
-//card
-.card {
-  border-radius: $themeBorderRadius;
 }
 
 //footer

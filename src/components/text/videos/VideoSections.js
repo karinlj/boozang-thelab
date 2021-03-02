@@ -1,4 +1,5 @@
 import VideoList from "./VideoList";
+import "../text.scss";
 
 //Home, overview, intro
 export const HomeVideos = () => {

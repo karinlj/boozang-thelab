@@ -46,7 +46,7 @@ const SpeedGame = () => {
       <div className="col-12 col-md-6 col-xl-5">
         <section className="timing_section">
           <SpeedGameIntro />
-          <div>
+          <div className="game_space">
             <input
               type="button"
               value="Start Game"
@@ -61,13 +61,14 @@ const SpeedGame = () => {
                 onClick={handleStop}
               />
             )}
+
+            <ResultMessages
+              openWrapper={!isRunning}
+              successMessage={successMessage}
+              subMessage={timeMessage}
+              messageString={"You are fast!!"}
+            />
           </div>
-          <ResultMessages
-            openWrapper={!isRunning}
-            successMessage={successMessage}
-            subMessage={timeMessage}
-            messageString={"You are fast!!"}
-          />
         </section>
       </div>
       <div className="col-12 col-md-5">
