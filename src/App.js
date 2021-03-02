@@ -29,13 +29,11 @@ import NotFound from "./components/NotFound";
 
 function App() {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
-
   const handleToggle = () => {
     setSideDrawerOpen(!sideDrawerOpen);
   };
   const handleBackdropAndLinkClick = () => {
     setSideDrawerOpen(false);
-    //this.setState({ sideDrawerOpen: false });
   };
   useEffect(() => {
     // console.log("sideDrawerOpen: ", sideDrawerOpen);

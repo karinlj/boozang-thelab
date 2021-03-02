@@ -29,13 +29,11 @@ const KittenCollect = () => {
     setMessage("");
     setPointsMessage("");
   };
-
   const abortGame = () => {
     setIsRunning(false);
     //  setKittens([]);
     setMessage("Game Aborted!");
   };
-
   const tick = () => {
     // setCount((prevCount) => prevCount + 1);
     // setCount((count) => count + 1);
@@ -118,7 +116,6 @@ const KittenCollect = () => {
     setHedgehogs(newHedgehogs);
   };
   const hedgehogClick = (id) => {
-    //console.log("hedgehogClick", id);
     setIsRunning(false);
     setMessage("Game Over!");
   };
@@ -161,9 +158,6 @@ const KittenCollect = () => {
                 type="button"
                 value="Start Game"
                 className="formBtn add"
-                // onClick={() => {
-                //   setIsRunning(true);
-                // }}
                 onClick={startGame}
               />
             )}
@@ -172,9 +166,6 @@ const KittenCollect = () => {
                 type="button"
                 value="Abort Game"
                 className="formBtn delete"
-                // onClick={() => {
-                //   setIsRunning(false);
-                // }}
                 onClick={abortGame}
               />
             )}
@@ -207,5 +198,4 @@ const KittenCollect = () => {
     </div>
   );
 };
-
 export default KittenCollect;
