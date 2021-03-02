@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./Timing.scss";
+import "./timing.scss";
 import { WaitGameVideos } from "../text/videos/VideoSections";
 import { WaitGameIntro } from "../text/Intros";
 import { WaitGameTestInfo } from "../text/TestInfos";

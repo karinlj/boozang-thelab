@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import TodoList from "./TodoList";
 import AddTodo from "./AddTodo_noDb";
-import "./Lists.scss";
+import "./lists.scss";
 import { SortedListIntro } from "./text/SortedListIntro";
 import { SortedListTestInfo } from "./text/SortedListTestInfo";
 //import ReactPlayer from "react-player/youtube";

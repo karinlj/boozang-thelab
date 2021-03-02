@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./VisualBugs.scss";
+import "./visualBugs.scss";
 import { VisualBugsVideos } from "../text/videos/VideoSections";
 import { VisualBugsIntro } from "../text/Intros";
 import { VisualBugsTestInfo } from "../text/TestInfos";
