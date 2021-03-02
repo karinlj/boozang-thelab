@@ -197,3 +197,16 @@ export const KittenCollectTestInfo = () => {
     </article>
   );
 };
+export const CatsOnCanvasTestInfo = () => {
+  return (
+    <article className="comp_test_info">
+      <h4>Why learn: Cats On Canvas</h4>
+      <p>
+        Missing until dinner time destroy the blinds lay on arms while you're
+        using the keyboard or i cry and cry and cry unless you pet me, and then
+        maybe i cry just for fun. Hit you unexpectedly who's the baby, for head
+        nudges stare out the window.
+      </p>
+    </article>
+  );
+};

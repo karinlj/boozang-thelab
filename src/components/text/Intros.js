@@ -171,3 +171,16 @@ export const KittenCollectIntro = () => {
     </article>
   );
 };
+export const CatsOnCanvasIntro = () => {
+  return (
+    <article className="comp_intro">
+      <h1>Cats On Canvas</h1>
+      <p>
+        Lick human with sandpaper tongue purr like an angel stare at guinea pigs
+        for go into a room to decide you didn't want to be in there anyway sit
+        by the fire or making sure that fluff gets into the owner's eyes fat
+        baby cat best buddy little guy.
+      </p>
+    </article>
+  );
+};

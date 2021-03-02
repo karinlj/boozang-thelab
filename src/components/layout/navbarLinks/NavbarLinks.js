@@ -163,6 +163,15 @@ const NavbarLinks = ({ handleClickLink }) => {
               <div onClick={handleClickLink}>Collecting kittens</div>
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/catsOnCanvas"
+              className="link"
+              activeClassName="current"
+            >
+              <div onClick={handleClickLink}>Cats On Canvas</div>
+            </NavLink>
+          </li>
         </ul>
       </li>
     </ul>

@@ -24,6 +24,8 @@ import ScrambleItems from "./components/domChanges/ScrambleItems";
 import MultiScramble from "./components/domChanges/MultiScramble";
 import ConcatStrings from "./components/strings/ConcatStrings";
 import KittenCollect from "./components/games/KittenCollect";
+import CatsOnCanvas from "./components/games/CatsOnCanvas";
+import NotFound from "./components/NotFound";
 
 function App() {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
@@ -107,17 +109,17 @@ function App() {
               <Route path="/kittenCollect">
                 <KittenCollect />
               </Route>
+              <Route path="/catsOnCanvas">
+                <CatsOnCanvas />
+              </Route>
+              <Route path="*">
+                <NotFound />
+              </Route>
             </Switch>
           </div>
         </div>
         <Footer />
       </div>
-
-      {/*   <Switch>
-            <Route path="*">
-              <NotFound />
-            </Route>
-          </Switch> */}
     </Router>
   );
 }

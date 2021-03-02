@@ -296,3 +296,11 @@ export const KittenCollectVideos = () => {
     </section>
   );
 };
+export const CatsOnCanvasVideos = () => {
+  const videos = [];
+  return (
+    <section className="video_section">
+      <VideoList videos={videos} />
+    </section>
+  );
+};

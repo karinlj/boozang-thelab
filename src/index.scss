@@ -404,3 +404,12 @@ button.formBtn {
   color: $themecolorNewRed;
   margin-right: 0.5rem;
 }
+.not_found {
+  img {
+    max-width: 130px;
+    padding: 0.5rem;
+    @media all and (min-width: $sm-min) {
+      max-width: 190px;
+    }
+  }
+}

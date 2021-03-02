@@ -11,6 +11,10 @@
     {
       "title": "Do the dishes",
       "id": 5
+    },
+    {
+      "title": "Walk with cats",
+      "id": 6
     }
   ],
   "cats": [
