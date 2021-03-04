@@ -5,7 +5,7 @@ import { CatsOnCanvasIntro } from "../text/Intros";
 import { CatsOnCanvasTestInfo } from "../text/TestInfos";
 //import ResultMessages from "../compMessages/ResultMessages";
 //import cat from "../../img/cat_icon.png";
-import { useCanvas } from "../../customHooks/useCanvas";
+//import { useCanvas } from "../../customHooks/useCanvas_old";
 
 const CatsOnCanvas = () => {
   //Using the useCanvas() Hook:

@@ -5,52 +5,46 @@ import { CatsOnCanvasIntro } from "../text/Intros";
 import { CatsOnCanvasTestInfo } from "../text/TestInfos";
 //import ResultMessages from "../compMessages/ResultMessages";
 import cat from "../../img/cat_icon.png";
-//import { useCanvas } from "../../customHooks/useCanvas";
 
 const CatsOnCanvas = () => {
-  //   const canvasRef = useRef(null);
-  //   const canvasObj = canvasRef.current;
-  //   const ctx = canvasObj.getContext("2d");
+  const canvasRef = useRef(null);
+  //What to Draw:
+  const heartSVG =
+    "M0 200 v-200 h200 a100,100 90 0,1 0,200 a100,100 90 0,1 -200,0 z";
+  const SVG_PATH = new Path2D(heartSVG);
 
-  // const canvas = document.getElementById("canvas");
-  //   const canvas = (
-  //     <canvas className="canvas" width="400" height="400" id="canvas" />
-  //   );
+  //const catImage = <img src={cat} alt="Cat" />
 
-  //   const ctx = canvas.getContext("2d");
+  const drawRectangle = (ctx) => {
+    ctx.fillStyle = "red";
+    ctx.fillRect(20, 20, 150, 100);
+    ctx.fillStyle = "blue";
+    ctx.fillRect(200, 20, 150, 100);
+  };
 
-  const catImage = <img src={cat} alt="Cat" className="image" />;
+  const player = {
+    w: 50,
+    h: 70,
+    x: 20,
+    y: 200,
+    speed: 10,
+    dx: 0,
+    dy: 0,
+  };
 
-  //   const player = {
-  //     w: 50,
-  //     h: 70,
-  //     x: 20,
-  //     y: 200,
-  //     speed: 10,
-  //     dx: 0,
-  //     dy: 0,
-  //   };
+  function drawPlayer(ctx) {
+    ctx.fillStyle = "red";
+    ctx.fill(SVG_PATH);
+    //ctx.drawImage(catImage, player.x, player.y, player.w, player.h);
+  }
 
-  //   const drawPlayer = () => {
-  //     ctx.drawImage(catImage, player.x, player.y, player.w, player.h);
-  //   };
-
-  //   const update = () => {
-  //     drawPlayer();
-  //   };
-
-  //   update();
-
+  // Similar to componentDidMount and componentDidUpdate:
+  //Giving it an empty array acts like componentDidMount as in, it only runs once.
+  //Giving it no second argument acts as both componentDidMount and componentDidUpdate, as in it runs first on mount and then on every re-render.
   useEffect(() => {
-    // const canvasObj = canvasRef.current;
-    // //Referencing Context 2D:
-    // const ctx = canvasObj.getContext("2d");
-    // // clear the canvas area before rendering the coordinates held in state
-    // ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-    // // draw all coordinates held in state
-    // coordinates.forEach((coordinate) => {
-    //   draw(ctx, coordinate);
-    // });
+    const canvasObj = canvasRef.current;
+    const ctx = canvasObj.getContext("2d");
+    drawPlayer(ctx);
   }, []);
 
   return (
@@ -58,10 +52,13 @@ const CatsOnCanvas = () => {
       <div className="col-12 col-md-6 col-xl-5">
         <section className="game_section">
           <CatsOnCanvasIntro />
-
-          {/* <canvas className="canvas" width="400" height="400" id="canvas" /> */}
-          {/* {canvas} */}
-          {catImage}
+          <canvas
+            className="canvas"
+            width="400"
+            height="400"
+            id="canvas"
+            ref={canvasRef}
+          />
         </section>
       </div>
       <div className="col-12 col-md-5">
