@@ -11,7 +11,7 @@ const AddCat = () => {
     inOrOutside: "",
   });
 
-  const catsUrl = "http://localhost:9000/dogs/";
+  const catsUrl = "http://localhost:9000/cats/";
   const history = useHistory();
 
   const handleChange = (e) => {
@@ -43,7 +43,7 @@ const AddCat = () => {
     history.push("/catshelter");
   };
   useEffect(() => {
-    // console.log("newValues.inOrOutside", newValues.inOrOutside);
+    //  console.log("newValues", newValues);
   }, [newValues]);
 
   return (

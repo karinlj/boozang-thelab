@@ -12,34 +12,34 @@ const CatsOnCanvas = () => {
   //   const canvasObj = canvasRef.current;
   //   const ctx = canvasObj.getContext("2d");
 
-  const canvas = document.getElementById("canvas");
+  // const canvas = document.getElementById("canvas");
   //   const canvas = (
-  //     <canvas className="canvas" width="500" height="400" id="canvas" />
+  //     <canvas className="canvas" width="400" height="400" id="canvas" />
   //   );
 
-  const ctx = canvas.getContext("2d");
+  //   const ctx = canvas.getContext("2d");
 
   const catImage = <img src={cat} alt="Cat" className="image" />;
 
-  const player = {
-    w: 50,
-    h: 70,
-    x: 20,
-    y: 200,
-    speed: 10,
-    dx: 0,
-    dy: 0,
-  };
+  //   const player = {
+  //     w: 50,
+  //     h: 70,
+  //     x: 20,
+  //     y: 200,
+  //     speed: 10,
+  //     dx: 0,
+  //     dy: 0,
+  //   };
 
-  const drawPlayer = () => {
-    ctx.drawImage(catImage, player.x, player.y, player.w, player.h);
-  };
+  //   const drawPlayer = () => {
+  //     ctx.drawImage(catImage, player.x, player.y, player.w, player.h);
+  //   };
 
-  const update = () => {
-    drawPlayer();
-  };
+  //   const update = () => {
+  //     drawPlayer();
+  //   };
 
-  update();
+  //   update();
 
   useEffect(() => {
     // const canvasObj = canvasRef.current;
@@ -59,7 +59,7 @@ const CatsOnCanvas = () => {
         <section className="game_section">
           <CatsOnCanvasIntro />
 
-          <canvas className="canvas" width="500" height="400" id="canvas" />
+          {/* <canvas className="canvas" width="400" height="400" id="canvas" /> */}
           {/* {canvas} */}
           {catImage}
         </section>

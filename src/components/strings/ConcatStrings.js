@@ -44,7 +44,7 @@ const ConcatStrings = () => {
     }
   };
   useEffect(() => {
-    console.log("concatStr: ", concatStr);
+    // console.log("concatStr: ", concatStr);
   }, [concatStr]);
 
   return (
@@ -60,8 +60,8 @@ const ConcatStrings = () => {
           />
           <section className={`output_section ${stringOne ? "show" : ""}`}>
             <div className="strings">
-              <p>{stringOne}</p>
-              <p>{stringTwo}</p>
+              <p className="string1">{stringOne}</p>
+              <p className="string2">{stringTwo}</p>
             </div>
             <form className="list_form" onSubmit={handleSubmit}>
               <label htmlFor="name">Strings put together: </label>

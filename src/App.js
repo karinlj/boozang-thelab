@@ -24,7 +24,7 @@ import ScrambleItems from "./components/domChanges/ScrambleItems";
 //import MultiScramble from "./components/domChanges/MultiScramble";
 import ConcatStrings from "./components/strings/ConcatStrings";
 import KittenCollect from "./components/games/KittenCollect";
-//import CatsOnCanvas from "./components/games/CatsOnCanvas";
+import CatsOnCanvas from "./components/games/CatsOnCanvas";
 import NotFound from "./components/NotFound";
 
 function App() {
