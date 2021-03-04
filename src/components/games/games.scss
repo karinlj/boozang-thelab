@@ -47,4 +47,14 @@
       }
     }
   }
+
+  .image {
+    max-width: 30px;
+    display: none;
+  }
+  .canvas {
+    background: $themecolorLilaDark;
+    box-shadow: $themeBoxShadow;
+    border-radius: $themeBorderRadius;
+  }
 }

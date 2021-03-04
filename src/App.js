@@ -21,10 +21,10 @@ import VisualBugs from "./components/visualBugs/VisualBugs";
 import YellowOrBlue from "./components/conditional/YellowOrBlue";
 import CatOrDog from "./components/conditional/CatOrDog";
 import ScrambleItems from "./components/domChanges/ScrambleItems";
-import MultiScramble from "./components/domChanges/MultiScramble";
+//import MultiScramble from "./components/domChanges/MultiScramble";
 import ConcatStrings from "./components/strings/ConcatStrings";
 import KittenCollect from "./components/games/KittenCollect";
-import CatsOnCanvas from "./components/games/CatsOnCanvas";
+//import CatsOnCanvas from "./components/games/CatsOnCanvas";
 import NotFound from "./components/NotFound";
 
 function App() {
@@ -98,18 +98,18 @@ function App() {
               <Route path="/scramble">
                 <ScrambleItems />
               </Route>
-              <Route path="/multiScramble">
+              {/* <Route path="/multiScramble">
                 <MultiScramble />
-              </Route>
+              </Route> */}
               <Route path="/concatStrings">
                 <ConcatStrings />
               </Route>
               <Route path="/kittenCollect">
                 <KittenCollect />
               </Route>
-              <Route path="/catsOnCanvas">
+              {/* <Route path="/catsOnCanvas">
                 <CatsOnCanvas />
-              </Route>
+              </Route> */}
               <Route path="*">
                 <NotFound />
               </Route>
