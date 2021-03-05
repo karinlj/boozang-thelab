@@ -43,6 +43,9 @@ const CatsOnCanvas = () => {
     ctx.beginPath();
     ctx.arc(50, 100, 20, 0, 2 * Math.PI);
     ctx.fill();
+    ctx.beginPath();
+    ctx.arc(150, 80, 30, 0, 2 * Math.PI);
+    ctx.fill();
   };
 
   //Empty array acts like componentDidMount, so it only runs once.

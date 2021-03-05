@@ -4,6 +4,8 @@
 
 Frontend platform built with React.js for learning test automation and the Boozang tool. Mock backend with json-server. Version 2.
 
+![Screenshot](/src/assets/screenshot.jpg?raw=true "Screenshot")
+
 ## Installation
 
 To install
@@ -39,4 +41,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 - Mosh Hamedani: https://codewithmosh.com/
-- The Net Ninja: The Net Ninja - [The Net Ninja](https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg)
+- The Net Ninja: [The Net Ninja](https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg)
+- Traversy Media [Traversy Media](https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA)
