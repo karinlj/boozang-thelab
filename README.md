@@ -6,6 +6,8 @@ Frontend platform built with React.js for learning test automation and the Booza
 
 ![Screenshot](/src/assets/screenshot.jpg?raw=true "Screenshot")
 
+##### Url: http://thelab.boozang.com//
+
 ## Installation
 
 To install
