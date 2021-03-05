@@ -38,27 +38,28 @@ const CatsOnCanvas = () => {
     //ctx.drawImage(catImage, player.x, player.y, player.w, player.h);
   }
 
-  // Similar to componentDidMount and componentDidUpdate:
-  //Giving it an empty array acts like componentDidMount as in, it only runs once.
-  //Giving it no second argument acts as both componentDidMount and componentDidUpdate, as in it runs first on mount and then on every re-render.
+  const draw = (ctx) => {
+    ctx.fillStyle = "#000000";
+    ctx.beginPath();
+    ctx.arc(50, 100, 20, 0, 2 * Math.PI);
+    ctx.fill();
+  };
+
+  //Empty array acts like componentDidMount, so it only runs once.
+  //No second argument acts as both componentDidMount and componentDidUpdate, so it runs first on mount and then on every re-render.
   useEffect(() => {
     const canvasObj = canvasRef.current;
     const ctx = canvasObj.getContext("2d");
-    drawPlayer(ctx);
-  }, []);
+    // drawPlayer(ctx);
+    draw(ctx);
+  }, [draw]);
 
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6 col-xl-5">
         <section className="game_section">
           <CatsOnCanvasIntro />
-          <canvas
-            className="canvas"
-            width="400"
-            height="400"
-            id="canvas"
-            ref={canvasRef}
-          />
+          <canvas className="canvas" width="400" height="400" ref={canvasRef} />
         </section>
       </div>
       <div className="col-12 col-md-5">

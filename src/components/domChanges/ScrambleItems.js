@@ -123,7 +123,7 @@ const ScrambleItems = () => {
 
     //ge knapp2 ny pos tills den är lillräckligt långt ifrån sin kompis(endast 9 ggr)
     let i = 0;
-    //console.log("blaha");
+    //console.log("hello");
     do {
       [y2, x2] = randomPosition();
       i++;

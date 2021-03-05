@@ -78,15 +78,6 @@ const NavbarLinks = ({ handleClickLink }) => {
               <div onClick={handleClickLink}>Unsorted list</div>
             </NavLink>{" "}
           </li>
-          <li>
-            <NavLink
-              to="/catshelter"
-              className="link"
-              activeClassName="current"
-            >
-              <div onClick={handleClickLink}>Cat Shelter</div>
-            </NavLink>
-          </li>
         </ul>
       </li>
       <li>
@@ -95,6 +86,15 @@ const NavbarLinks = ({ handleClickLink }) => {
           <li>
             <NavLink to="/formFill" className="link" activeClassName="current">
               <div onClick={handleClickLink}> Form Fill</div>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/catshelter"
+              className="link"
+              activeClassName="current"
+            >
+              <div onClick={handleClickLink}>Cat Shelter</div>
             </NavLink>
           </li>
           <li>
