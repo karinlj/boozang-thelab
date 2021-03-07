@@ -9,6 +9,7 @@ const useCanvas = (draw) => {
   useEffect(() => {
     const canvasObj = canvasRef.current;
     const ctx = canvasObj.getContext("2d");
+    //skickar ctx uppåt
     draw(ctx);
     // let frameCount = 0;
     // let animationFrameId;

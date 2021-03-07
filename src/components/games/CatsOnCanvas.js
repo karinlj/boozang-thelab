@@ -3,33 +3,53 @@ import "./games.scss";
 import { CatsOnCanvasVideos } from "../text/videos/VideoSections";
 import { CatsOnCanvasIntro } from "../text/Intros";
 import { CatsOnCanvasTestInfo } from "../text/TestInfos";
-import useCanvas from "./useCanvas";
-//import ResultMessages from "../compMessages/ResultMessages";
-//import cat from "../../img/cat_icon.png";
-import Canvas from "./Canvas";
+import cat from "../../img/cat_icon.png";
 
 const CatsOnCanvas = () => {
-  // const canvasRef = useCanvas();
+  const canvasRef = useRef(null);
+  const imgRef = useRef(null);
 
-  const draw = (ctx, frameCount) => {
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    ctx.fillStyle = "#000000";
-    ctx.beginPath();
-    // ctx.arc(50, 100, 20 * Math.sin(frameCount * 0.05) ** 2, 0, 2 * Math.PI);
-    ctx.arc(50, 100, 40, 0, 2 * Math.PI);
-    ctx.fill();
+  //   function draw(ctx) {
+  //     ctx.beginPath();
+  //     ctx.rect(50, 50, 50, 50);
+  //     ctx.fillStyle = "hotpink";
+  //     ctx.fill();
+  //   }
+
+  const player = {
+    w: 40,
+    h: 40,
+    x: 20,
+    y: 200,
+    speed: 10,
+    dx: 0,
+    dy: 0,
   };
 
-  useEffect(() => {
-    // console.log("draw", draw);
-  }, []);
+  function drawPlayer(ctx, imgObj) {
+    ctx.drawImage(imgObj, player.x, player.y, player.w, player.h);
+  }
 
+  useEffect(() => {
+    //finding the <canvas> element and saving it to a variable.
+    const canvasObj = canvasRef.current;
+    //creating a drawing object for our canvas and saving it to a variable
+    const ctx = canvasObj.getContext("2d");
+    const imgObj = imgRef.current;
+
+    drawPlayer(ctx, imgObj);
+
+    // draw(ctx);
+
+    //console.log("CatsOnCanvas_draw", draw);
+  }, [drawPlayer]);
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6 col-xl-5">
         <section className="game_section">
           <CatsOnCanvasIntro />
-          <Canvas draw={draw} />
+          <canvas ref={canvasRef} width="400" height="400" className="canvas" />
+          <img ref={imgRef} src={cat} className="hidden" />
         </section>
       </div>
       <div className="col-12 col-md-5">
