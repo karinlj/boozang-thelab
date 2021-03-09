@@ -31,7 +31,7 @@ const CatOrDog = () => {
     }
   };
   useEffect(() => {
-    console.log("successMessage", successMessage);
+    // console.log("successMessage", successMessage);
   }, [successMessage]);
   return (
     <div className="row justify-content-between">

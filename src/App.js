@@ -106,10 +106,10 @@ function App() {
               </Route>
               <Route path="/kittenCollect">
                 <KittenCollect />
-              </Route>
+              {/* </Route>
               <Route path="/catsOnCanvas">
                 <CatsOnCanvas />
-              </Route>
+              </Route> */}
               <Route path="*">
                 <NotFound />
               </Route>
