@@ -54,7 +54,7 @@ const KittenCollect = () => {
   //kitten
   const drawKitten = () => {
     const [randTop, randLeft] = randomPosition();
-    const catIcon = <img src={CatIcon} alt="Cat" />;
+    const catIcon = <img src={CatIcon} alt="Cat" id="cat" />;
 
     //create new
     const newKitten = {

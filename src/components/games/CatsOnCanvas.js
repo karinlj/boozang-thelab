@@ -4,111 +4,97 @@ import { CatsOnCanvasVideos } from "../text/videos/VideoSections";
 import { CatsOnCanvasIntro } from "../text/Intros";
 import { CatsOnCanvasTestInfo } from "../text/TestInfos";
 import catOne from "../../img/cat_one.svg";
-import catTwo from "../../img/cat_two.svg";
-import catThree from "../../img/cat_three.svg";
 import housePink from "../../img/house_pink.svg";
-import houseGreen from "../../img/house_green.svg";
-import houseBlue from "../../img/house_blue.svg";
 
 const CatsOnCanvas = () => {
   const canvasRef = useRef(null);
   const houseOneImgRef = useRef(null);
-  const houseTwoImgRef = useRef(null);
-  const houseThreeImgRef = useRef(null);
   const catOneImgRef = useRef(null);
-  const catTwoImgRef = useRef(null);
-  const catThreeImgRef = useRef(null);
-
-  // const w = 500;
-  // const h = 500;
-  // const centerX = w / 2;
-  // const centerY = h / 2;
-
-  const drawHouses = (ctx, houseOneObj, houseTwoObj, houseThreeObj) => {
-    houseOneObj.onload = function () {
-      ctx.drawImage(houseOneObj, 50, 50, 100, 100);
-    };
-    // houseTwoObj.onload = function () {
-    //   ctx.drawImage(houseTwoObj, 100, 400, 100, 100);
-    // };
-    // houseThreeObj.onload = function () {
-    //   ctx.drawImage(houseThreeObj, 350, 150, 100, 100);
-    // };
-  };
 
   const cat = {
     w: 50,
     h: 60,
-    x: 300,
-    y: 300,
-    speed: 10,
-    dx: 0,
-    dy: 0,
+    x: 50,
+    y: 50,
+    dx: 0.5, //increment
+    dy: 0.5,
   };
 
-  const drawPlayer = (ctx, catOneObj, catTwoObj, catThreeObj) => {
+  const drawHouses = (ctx, houseOneObj) => {
+    houseOneObj.onload = function () {
+      ctx.drawImage(houseOneObj, 300, 300, 100, 100);
+    };
+  };
+
+  const drawCircle = (ctx) => {
+    ctx.beginPath();
+    ctx.arc(cat.x, cat.y, cat.w, 0, Math.PI * 2);
+    ctx.fillStyle = "pink";
+    ctx.fill();
+  };
+
+  const drawCat = (ctx, catOneObj) => {
     catOneObj.onload = function () {
       ctx.drawImage(catOneObj, cat.x, cat.y, cat.w, cat.h);
+      console.log("drawCat: ", cat.x);
     };
-    // catTwoObj.onload = function () {
-    //   ctx.drawImage(
-    //     catTwoObj,
-    //     Math.round(Math.random() * 400),
-    //     Math.round(Math.random() * 400),
-    //     50,
-    //     60
-    //   );
-    // };
-    // catThreeObj.onload = function () {
-    //   ctx.drawImage(
-    //     catThreeObj,
-    //     Math.round(Math.random() * 400),
-    //     Math.round(Math.random() * 400),
-    //     50,
-    //     50
-    //   );
-    //};
   };
 
-  // function clear() {
-  //   ctx.clearRect(0, 0, canvasObj.width, canvasObj.height);
-  // }
+  //change position, append dx
+  const newPos = () => {
+    cat.x += cat.dx;
+    console.log("cat.x: ", cat.x);
+  };
+
+  const clear = (ctx, canvasObj) => {
+    ctx.clearRect(0, 0, canvasObj.width, canvasObj.height);
+  };
 
   useEffect(() => {
     //finding the <canvas> element and saving it to a variable.
     const canvasObj = canvasRef.current;
     //creating a drawing object for our canvas and saving it to a variable
     const ctx = canvasObj.getContext("2d");
-
-    const houseOneObj = houseOneImgRef.current;
-    const houseTwoObj = houseTwoImgRef.current;
-    const houseThreeObj = houseThreeImgRef.current;
-
-    const catOneObj = catOneImgRef.current;
-    const catTwoObj = catTwoImgRef.current;
-    const catThreeObj = catThreeImgRef.current;
-
     canvasObj.width = 500;
     canvasObj.height = 500;
+    const houseOneObj = houseOneImgRef.current;
 
-    drawPlayer(ctx, catOneObj, catTwoObj, catThreeObj);
-    drawHouses(ctx, houseOneObj, houseTwoObj, houseThreeObj);
+    const catOneObj = catOneImgRef.current;
 
-    //console.log("CatsOnCanvas_draw", draw);
-  }, [drawPlayer]);
+    let requestId;
+    const update = () => {
+      cat.x += 0.5;
+      console.log("x : ", cat.x);
+
+      clear(ctx, canvasObj);
+      // drawCircle(ctx);
+      drawCat(ctx, catOneObj);
+      drawHouses(ctx, houseOneObj);
+      // newPos();
+
+      //requestId = requestAnimationFrame(update);
+    };
+    update();
+    return () => {
+      cancelAnimationFrame(requestId);
+    };
+
+    //drawHouses(ctx, houseOneObj);
+    // });
+  }, [drawCat]);
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6 col-xl-5">
         <section className="game_section">
           <CatsOnCanvasIntro />
           <canvas ref={canvasRef} className="canvas" />
-          <img src={housePink} ref={houseOneImgRef} className="icon" />
-          <img src={houseGreen} ref={houseTwoImgRef} className="icon" />
-          <img src={houseBlue} ref={houseThreeImgRef} className="icon" />
-
-          <img src={catOne} ref={catOneImgRef} className="icon" />
-          <img src={catTwo} ref={catTwoImgRef} className="icon" />
-          <img src={catThree} ref={catThreeImgRef} className="icon" />
+          <img
+            src={housePink}
+            ref={houseOneImgRef}
+            className="icon"
+            alt="house"
+          />
+          <img src={catOne} ref={catOneImgRef} className="icon" alt="cat" />
         </section>
       </div>
       <div className="col-12 col-md-5">
