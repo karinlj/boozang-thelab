@@ -3,98 +3,201 @@ import "./games.scss";
 import { CatsOnCanvasVideos } from "../text/videos/VideoSections";
 import { CatsOnCanvasIntro } from "../text/Intros";
 import { CatsOnCanvasTestInfo } from "../text/TestInfos";
-import catOne from "../../img/cat_one.svg";
-import housePink from "../../img/house_pink.svg";
+import box from "../../img/box.svg";
 
 const CatsOnCanvas = () => {
   const canvasRef = useRef(null);
-  const houseOneImgRef = useRef(null);
-  const catOneImgRef = useRef(null);
+  const boxRef = useRef(null);
+  const [dragOk, setDragOk] = useState(false);
+  const [startX, setStartX] = useState(null);
+  const [startY, setStartY] = useState(null);
+  const [offsetX, setOffsetX] = useState(null);
+  const [offsetY, setOffsetY] = useState(null);
 
-  const cat = {
-    w: 50,
-    h: 60,
+  const [ball, setBall] = useState({
     x: 50,
     y: 50,
-    dx: 0.5, //increment
-    dy: 0.5,
-  };
+    radius: 20,
+    isDragging: false,
+  });
+  const WIDTH = 450;
+  const HEIGHT = 450;
 
-  const drawHouses = (ctx, houseOneObj) => {
-    houseOneObj.onload = function () {
-      ctx.drawImage(houseOneObj, 300, 300, 100, 100);
-    };
-  };
-
-  const drawCircle = (ctx) => {
+  //   const drawBox = (ctx, boxObject) => {
+  //     boxObject.onload = function () {
+  //       ctx.drawImage(boxObject, 280, 320, 130, 170);
+  //     };
+  //   };
+  const drawBox = (ctx) => {
     ctx.beginPath();
-    ctx.arc(cat.x, cat.y, cat.w, 0, Math.PI * 2);
-    ctx.fillStyle = "pink";
+    ctx.lineWidth = 3;
+    ctx.moveTo(290, 340);
+    ctx.lineTo(310, 330);
+    ctx.lineTo(310, 400);
+    ctx.lineTo(400, 400);
+    ctx.lineTo(400, 330);
+    ctx.lineTo(420, 340);
+    ctx.strokeStyle = "#f24d7f";
+    ctx.stroke();
+  };
+
+  const drawBall = (ctx) => {
+    ctx.beginPath();
+    ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+    ctx.fillStyle = "#f24d7f";
     ctx.fill();
   };
 
-  const drawCat = (ctx, catOneObj) => {
-    catOneObj.onload = function () {
-      ctx.drawImage(catOneObj, cat.x, cat.y, cat.w, cat.h);
-      console.log("drawCat: ", cat.x);
-    };
-  };
+  // handle mousedown events
+  function myDown(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log("myDown_clientX: ", e.clientX);
+    // console.log("myDown_clientY: ", e.clientY);
 
-  //change position, append dx
-  const newPos = () => {
-    cat.x += cat.dx;
-    console.log("cat.x: ", cat.x);
-  };
+    // get the current mouse position
+    let mx = parseInt(e.clientX - offsetX);
+    let my = parseInt(e.clientY - offsetY);
 
-  const clear = (ctx, canvasObj) => {
-    ctx.clearRect(0, 0, canvasObj.width, canvasObj.height);
+    // test each ball to see if mouse is inside
+    setDragOk(false);
+
+    if (
+      mx > ball.x - ball.radius &&
+      mx < ball.x + ball.radius &&
+      my > ball.y - ball.radius &&
+      my < ball.y + ball.radius
+    ) {
+      // if yes, set that rects isDragging=true
+      setDragOk(true);
+      setBall({
+        ...ball,
+        isDragging: true,
+      });
+    }
+    // save the current mouse position
+    setStartX(mx);
+    setStartY(my);
+  }
+
+  // handle mouseup events
+  function myUp(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log("myUp: ");
+
+    // clear all the dragging flags
+    setDragOk(false);
+    setBall({
+      ...ball,
+      isDragging: false,
+    });
+  }
+
+  // handle mouse moves
+  function myMove(e) {
+    // console.log("myMove_clientX: ", e.clientX);
+    // console.log("myMove_clientY: ", e.clientY);
+
+    // if we're dragging anything...
+    if (dragOk) {
+      // tell the browser we're handling this mouse event
+      e.preventDefault();
+      e.stopPropagation();
+
+      // get the current mouse position
+      let mx = parseInt(e.clientX - offsetX);
+      let my = parseInt(e.clientY - offsetY);
+
+      // calculate the distance the mouse has moved
+      // since the last mousemove
+      let dx = mx - startX;
+      let dy = my - startY;
+
+      // move each ball that isDragging
+      // by the distance the mouse has moved
+      // since the last mousemove
+      if (ball.isDragging) {
+        setBall({
+          ...ball,
+          x: ball.x + dx,
+          y: ball.y + dy,
+        });
+
+        // setCount((count) => count - 100);
+        // ball.x += dx;
+        // ball.y += dy;
+      }
+
+      // redraw the scene with the new rect positions
+      // drawScene(ctx);
+
+      // reset the starting mouse position for the next mousemove
+      setStartX(mx);
+      setStartY(my);
+    }
+  }
+  // redraw the scene
+  function drawScene(ctx) {
+    clear(ctx);
+    drawBall(ctx);
+  }
+
+  const clear = (ctx) => {
+    ctx.clearRect(0, 0, WIDTH, HEIGHT);
   };
 
   useEffect(() => {
-    //finding the <canvas> element and saving it to a variable.
+    // console.log("dragOk: ", dragOk);
+  }, [dragOk]);
+
+  useEffect(() => {
+    console.log("ball: ", ball);
+    //finding the <canvas> element
     const canvasObj = canvasRef.current;
-    //creating a drawing object for our canvas and saving it to a variable
+    //creating a drawing object for our canvas
     const ctx = canvasObj.getContext("2d");
-    canvasObj.width = 500;
-    canvasObj.height = 500;
-    const houseOneObj = houseOneImgRef.current;
+    const BB = canvasObj.getBoundingClientRect();
+    const boxObject = boxRef.current;
+    canvasObj.width = WIDTH;
+    canvasObj.height = HEIGHT;
+    clear(ctx);
+    setOffsetX(BB.left);
+    setOffsetY(BB.top);
+    //drawBox(ctx, boxObject);
+    drawBox(ctx);
+    drawBall(ctx);
+    //drawScene(ctx);
 
-    const catOneObj = catOneImgRef.current;
-
-    let requestId;
-    const update = () => {
-      cat.x += 0.5;
-      console.log("x : ", cat.x);
-
-      clear(ctx, canvasObj);
-      // drawCircle(ctx);
-      drawCat(ctx, catOneObj);
-      drawHouses(ctx, houseOneObj);
-      // newPos();
-
-      //requestId = requestAnimationFrame(update);
-    };
-    update();
-    return () => {
-      cancelAnimationFrame(requestId);
-    };
-
-    //drawHouses(ctx, houseOneObj);
-    // });
-  }, [drawCat]);
+    //     let requestId;
+    //     const update = () => {
+    //       console.log("updating");
+    //       clear(ctx, canvasObj);
+    //       drawBall(ctx);
+    //       //requestId = requestAnimationFrame(update);
+    //     };
+    //     update();
+    //     return () => {
+    //       cancelAnimationFrame(requestId);
+    //     };
+    //   });
+  }, [ball]);
+  //The standard way of animating an HTML5 canvas is using
+  //the requestAnimationFrame function to repeatedly call a function that
+  // renders our scene. Before we do that, we need to refactor our circle drawing code into a render function
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6 col-xl-5">
         <section className="game_section">
           <CatsOnCanvasIntro />
-          <canvas ref={canvasRef} className="canvas" />
-          <img
-            src={housePink}
-            ref={houseOneImgRef}
-            className="icon"
-            alt="house"
+          <canvas
+            ref={canvasRef}
+            className="canvas"
+            onMouseDown={(e) => myDown(e)}
+            onMouseUp={(e) => myUp(e)}
+            onMouseMove={(e) => myMove(e)}
           />
-          <img src={catOne} ref={catOneImgRef} className="icon" alt="cat" />
+          <img src={box} ref={boxRef} alt="box" className="box" />
         </section>
       </div>
       <div className="col-12 col-md-5">
@@ -103,51 +206,6 @@ const CatsOnCanvas = () => {
       </div>
     </div>
   );
-  // ctx.beginPath();
-  // //ctx.lineWidth = 2;
-  // // ctx.strokeStyle = "deeppink";
-  // ctx.rect(centerX - 165, 120, 90, 60);
-  // ctx.rect(centerX - 45, 70, 90, 60);
-  // ctx.rect(centerX + 75, 120, 90, 60);
-  // ctx.fillStyle = "	#3399ff";
-  // ctx.fill();
-  // //ctx.strokeRect(centerX + 75, 120, 90, 60);
-
-  // ctx.beginPath();
-  // ctx.moveTo(centerX - 165, 120);
-  // ctx.lineTo(80, 100);
-  // ctx.lineTo(125, 120);
-  // //ctx.stroke();
-  // ctx.fillStyle = "deeppink";
-  // ctx.fill();
-
-  // ctx.beginPath();
-  // ctx.moveTo(centerX - 45, 70);
-  // ctx.lineTo(200, 50);
-  // ctx.lineTo(245, 70);
-  // ctx.fillStyle = "purple";
-  // ctx.fill();
-
-  // ctx.beginPath();
-  // ctx.moveTo(centerX + 65, 130);
-  // ctx.lineTo(320, 100);
-  // ctx.lineTo(365, 120);
-  // ctx.fillStyle = "hotpink";
-  // ctx.fill();
-
-  // ctx.closePath();
-  // var img3 = new Image();
-  // img3.onload = function () {
-  //   ctx.drawImage(
-  //     img3,
-  //     Math.round(Math.random() * 400),
-  //     Math.round(Math.random() * 400),
-  //     40,
-  //     40
-  //   );
-  // };
-  // img3.src =
-  //   "http://upload.wikimedia.org/wikipedia/commons/d/d2/Svg_example_square.svg";
 };
 
 export default CatsOnCanvas;
