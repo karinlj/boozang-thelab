@@ -71,19 +71,8 @@ const CatOrDog = () => {
                 <ResultMessages
                   openWrapper={successMessage}
                   successMessage={successMessage}
-                  messageString={"Success!"}
+                  messageString="Success!"
                 />
-                {/* <div
-                  className={`result_wrapper ${successMessage ? "show" : ""}`}
-                >
-                  <h4
-                    className={`success_message ${
-                      successMessage === "Success!" ? "" : "fail"
-                    }`}
-                  >
-                    {successMessage}
-                  </h4>
-                </div> */}
               </div>
             </section>
           </div>

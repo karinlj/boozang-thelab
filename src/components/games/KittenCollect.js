@@ -149,7 +149,10 @@ const KittenCollect = () => {
 
   return (
     <div className="row justify-content-between">
-      <div className="col-12 col-md-6 col-xl-5">
+      <div className="col-12 col-md-8 col-lg-12 col-xl-5">
+        <section className="mobile_game_section">
+          <h5>This game is only available on larger display size...</h5>
+        </section>
         <section className="game_section">
           <KittenCollectIntro />
           <div className="points_section">
@@ -191,7 +194,7 @@ const KittenCollect = () => {
           </div>
         </section>
       </div>
-      <div className="col-12 col-md-5">
+      <div className="col-12 col-md-4 col-lg-12 col-xl-5">
         <KittenCollectTestInfo />
         <KittenCollectVideos />
       </div>
