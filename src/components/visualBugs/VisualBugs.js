@@ -10,7 +10,7 @@ const VisualBugs = () => {
     "zebra",
     "cheetah",
     "lion",
-    "giraf",
+    "giraffe",
     "meerkat",
     "elephant",
     "leopard",
