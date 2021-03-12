@@ -18,7 +18,7 @@ const KittenCollect = () => {
   const [kittens, setKittens] = useState([]);
   const [hedgehogs, setHedgehogs] = useState([]);
 
-  const finishTime = 100; //300;
+  const finishTime = 300;
 
   const startGame = () => {
     setCount(0);
