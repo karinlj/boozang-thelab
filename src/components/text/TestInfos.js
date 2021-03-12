@@ -35,7 +35,7 @@ export const CatShelterTestInfo = () => {
       <h4>Why learn: Cat Shelter?</h4>
       <p>
         In this exercise, we expand on form testing. Cat Shelters contains multiple 
-        views and the form contains radio buttons as well as regular inputs. Try and
+        views and the form contains radio buttons as well as regular inputs. Try to
         add a list of cats based on an external data source, like a CSV file.
       </p>
     </article>
