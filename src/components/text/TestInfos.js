@@ -199,12 +199,12 @@ export const KittenCollectTestInfo = () => {
 export const CatsOnCanvasTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Why learn: Cats On Canvas</h4>
+      <h4>Why learn: Ball of Yarn</h4>
       <p>
-        Missing until dinner time destroy the blinds lay on arms while you're
-        using the keyboard or i cry and cry and cry unless you pet me, and then
-        maybe i cry just for fun. Hit you unexpectedly who's the baby, for head
-        nudges stare out the window.
+        This exercise contains two challenging obstacles. The most challenging is that playing field
+        is an HTML canvas, which is a single HTML element. This means typical test automation element locators 
+        will be useless, and one is usually forces to hard-code events using coordinates (x,y). The second 
+        challenge is that we need to automate dran and drop, which forces us to simulate multiple events.
       </p>
     </article>
   );
