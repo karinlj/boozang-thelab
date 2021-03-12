@@ -32,10 +32,9 @@ export const CatShelterIntro = () => {
     <article className="comp_intro">
       <h1>Cat shelter</h1>
       <p>
-        Lick human with sandpaper tongue purr like an angel stare at guinea pigs
-        for go into a room to decide you didn't want to be in there anyway sit
-        by the fire or making sure that fluff gets into the owner's eyes fat
-        baby cat best buddy little guy.
+        View the current inhabitants in the Cat Shelter below. If the house icon is enabled,
+        the cat has found a home. You can add a cat to the shelter using the "Add" button, and
+        edit a cat by clicking the cat name.
       </p>
     </article>
   );
