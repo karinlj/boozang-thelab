@@ -2,6 +2,7 @@
 
 .game_section {
   .points_section {
+    width: 450px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,7 +23,8 @@
     box-shadow: $themeBoxShadow;
     border-radius: $themeBorderRadius;
     margin: 1.5rem 0;
-    height: 300px;
+    width: 450px;
+    height: 450px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,6 +51,23 @@
   }
 
   //canvas
+  .top_section {
+    width: 450px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+
+    .result_wrapper {
+      margin-top: 0;
+      .success_message {
+        &.fail {
+          color: $themecolorButtonBlue;
+        }
+      }
+    }
+  }
+
   .box {
     display: none;
   }
@@ -56,5 +75,15 @@
     background: $themecolorLilaDark;
     box-shadow: $themeBoxShadow;
     border-radius: $themeBorderRadius;
+  }
+  display: none;
+  @media all and (min-width: $sm-min) {
+    display: block;
+  }
+}
+.mobile_game_section {
+  display: block;
+  @media all and (min-width: $sm-min) {
+    display: none;
   }
 }

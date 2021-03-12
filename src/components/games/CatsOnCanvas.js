@@ -4,6 +4,7 @@ import { CatsOnCanvasVideos } from "../text/videos/VideoSections";
 import { CatsOnCanvasIntro } from "../text/Intros";
 import { CatsOnCanvasTestInfo } from "../text/TestInfos";
 import box from "../../img/box.svg";
+import ResultMessages from "../compMessages/ResultMessages";
 
 const CatsOnCanvas = () => {
   const canvasRef = useRef(null);
@@ -13,6 +14,7 @@ const CatsOnCanvas = () => {
   const [startY, setStartY] = useState(null);
   const [offsetX, setOffsetX] = useState(null);
   const [offsetY, setOffsetY] = useState(null);
+  const [successMessage, setSuccessMessage] = useState("");
 
   const [ball, setBall] = useState({
     x: 50,
@@ -48,8 +50,27 @@ const CatsOnCanvas = () => {
     ctx.fill();
   };
 
+  const ballInbox = () => {
+    console.log("successMessage", successMessage);
+    let boxXMIn = 310;
+    let boxXMax = 420;
+    let boxYMIn = 330;
+    let boxYMax = 400;
+
+    if (
+      ball.x > boxXMIn &&
+      ball.x < boxXMax &&
+      ball.y > boxYMIn &&
+      ball.y < boxYMax
+    ) {
+      setSuccessMessage("Success!");
+      // console.log("isBallInbox", isBallInbox);
+    } else {
+      setSuccessMessage("Put ball in box...");
+    }
+  };
   // handle mousedown events
-  function myDown(e) {
+  const myDown = (e) => {
     e.preventDefault();
     e.stopPropagation();
     console.log("myDown_clientX: ", e.clientX);
@@ -78,10 +99,10 @@ const CatsOnCanvas = () => {
     // save the current mouse position
     setStartX(mx);
     setStartY(my);
-  }
+  };
 
   // handle mouseup events
-  function myUp(e) {
+  const myUp = (e) => {
     e.preventDefault();
     e.stopPropagation();
     console.log("myUp: ");
@@ -92,10 +113,10 @@ const CatsOnCanvas = () => {
       ...ball,
       isDragging: false,
     });
-  }
+  };
 
   // handle mouse moves
-  function myMove(e) {
+  const myMove = (e) => {
     // console.log("myMove_clientX: ", e.clientX);
     // console.log("myMove_clientY: ", e.clientY);
 
@@ -136,15 +157,25 @@ const CatsOnCanvas = () => {
       setStartX(mx);
       setStartY(my);
     }
-  }
+  };
   // redraw the scene
-  function drawScene(ctx) {
+  const drawScene = (ctx) => {
     clear(ctx);
     drawBall(ctx);
-  }
+  };
 
   const clear = (ctx) => {
     ctx.clearRect(0, 0, WIDTH, HEIGHT);
+    console.log("reset");
+  };
+  const reset = () => {
+    console.log("reset");
+
+    setBall({
+      ...ball,
+      x: 50,
+      y: 50,
+    });
   };
 
   useEffect(() => {
@@ -161,12 +192,12 @@ const CatsOnCanvas = () => {
     const boxObject = boxRef.current;
     canvasObj.width = WIDTH;
     canvasObj.height = HEIGHT;
-    clear(ctx);
+    // clear(ctx);
     setOffsetX(BB.left);
     setOffsetY(BB.top);
-    //drawBox(ctx, boxObject);
     drawBox(ctx);
     drawBall(ctx);
+    ballInbox();
     //drawScene(ctx);
 
     //     let requestId;
@@ -187,9 +218,25 @@ const CatsOnCanvas = () => {
   // renders our scene. Before we do that, we need to refactor our circle drawing code into a render function
   return (
     <div className="row justify-content-between">
-      <div className="col-12 col-md-6 col-xl-5">
+      <div className="col-12 col-md-8 col-lg-12 col-xl-5">
+        <section className="mobile_game_section">
+          <h5>This game is only available on larger display size...</h5>
+        </section>
         <section className="game_section">
           <CatsOnCanvasIntro />
+          <div className="top_section">
+            <input
+              type="button"
+              value="Reset"
+              className="formBtn purple"
+              onClick={reset}
+            />
+            <ResultMessages
+              openWrapper={successMessage}
+              successMessage={successMessage}
+              messageString="Success!"
+            />
+          </div>
           <canvas
             ref={canvasRef}
             className="canvas"
@@ -200,7 +247,7 @@ const CatsOnCanvas = () => {
           <img src={box} ref={boxRef} alt="box" className="box" />
         </section>
       </div>
-      <div className="col-12 col-md-5">
+      <div className="col-12 col-md-4 col-lg-12 col-xl-5">
         <CatsOnCanvasTestInfo />
         <CatsOnCanvasVideos />
       </div>
