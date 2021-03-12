@@ -34,10 +34,9 @@ export const CatShelterTestInfo = () => {
     <article className="comp_test_info">
       <h4>Why learn: Cat Shelter?</h4>
       <p>
-        Missing until dinner time destroy the blinds lay on arms while you're
-        using the keyboard or i cry and cry and cry unless you pet me, and then
-        maybe i cry just for fun. Hit you unexpectedly who's the baby, for head
-        nudges stare out the window.
+        In this exercise, we expand on form testing. Cat Shelters contains multiple 
+        views and the form contains radio buttons as well as regular inputs. Try to
+        add a list of cats based on an external data source, like a CSV file.
       </p>
     </article>
   );
