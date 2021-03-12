@@ -204,7 +204,7 @@ export const CatsOnCanvasTestInfo = () => {
         This exercise contains two challenging obstacles. The most challenging is that playing field
         is an HTML canvas, which is a single HTML element. This means typical test automation element locators 
         will be useless, and one is usually forces to hard-code events using coordinates (x,y). The second 
-        challenge is that we need to automate dran and drop, which forces us to simulate multiple events.
+        challenge is that we need to automate drag and drop, which forces us to simulate multiple events.
       </p>
     </article>
   );
