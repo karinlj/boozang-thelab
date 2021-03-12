@@ -21,9 +21,11 @@ const CatsOnCanvasAnimation = () => {
   };
 
   const drawHouses = (ctx, houseOneObj) => {
-    houseOneObj.onload = function () {
-      ctx.drawImage(houseOneObj, 300, 300, 100, 100);
-    };
+    ctx.drawImage(houseOneObj, 300, 300, 100, 100);
+
+    // houseOneObj.onload = function () {
+
+    // };
   };
 
   const drawCircle = (ctx) => {
@@ -63,24 +65,23 @@ const CatsOnCanvasAnimation = () => {
     let requestId;
     const update = () => {
       cat.x += 0.5;
-      // console.log("x : ", cat.x);
+      console.log("x : ", cat.x);
 
       clear(ctx, canvasObj);
       // drawCircle(ctx);
       drawCat(ctx, catOneObj);
       drawHouses(ctx, houseOneObj);
       // newPos();
-
-      //requestId = requestAnimationFrame(update);
+      requestId = requestAnimationFrame(update);
     };
-    update();
+    houseOneObj.onload = function () {
+      update();
+    };
     return () => {
       cancelAnimationFrame(requestId);
     };
-
-    //drawHouses(ctx, houseOneObj);
-    // });
-  }, [drawCat]);
+  });
+  //}, [drawCat]);
   //The standard way of animating an HTML5 canvas is using
   //the requestAnimationFrame function to repeatedly call a function that
   // renders our scene. Before we do that, we need to refactor our circle drawing code into a render function

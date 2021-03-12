@@ -26,9 +26,8 @@ const CatsOnCanvas = () => {
   const HEIGHT = 450;
 
   //   const drawBox = (ctx, boxObject) => {
-  //     boxObject.onload = function () {
-  //       ctx.drawImage(boxObject, 280, 320, 130, 170);
-  //     };
+  //     ctx.drawImage(boxObject, 280, 320, 130, 170);
+  //     //console.log("drawBox");
   //   };
   const drawBox = (ctx) => {
     ctx.beginPath();
@@ -51,7 +50,7 @@ const CatsOnCanvas = () => {
   };
 
   const ballInbox = () => {
-    console.log("successMessage", successMessage);
+    // console.log("successMessage", successMessage);
     let boxXMIn = 310;
     let boxXMax = 420;
     let boxYMIn = 330;
@@ -132,6 +131,7 @@ const CatsOnCanvas = () => {
 
       // calculate the distance the mouse has moved
       // since the last mousemove
+      //increase
       let dx = mx - startX;
       let dy = my - startY;
 
@@ -144,12 +144,7 @@ const CatsOnCanvas = () => {
           x: ball.x + dx,
           y: ball.y + dy,
         });
-
-        // setCount((count) => count - 100);
-        // ball.x += dx;
-        // ball.y += dy;
       }
-
       // redraw the scene with the new rect positions
       // drawScene(ctx);
 
@@ -159,15 +154,15 @@ const CatsOnCanvas = () => {
     }
   };
   // redraw the scene
-  const drawScene = (ctx) => {
-    clear(ctx);
-    drawBall(ctx);
-  };
+  //   const drawScene = (ctx) => {
+  //     clear(ctx);
+  //     drawBall(ctx);
+  //   };
 
-  const clear = (ctx) => {
-    ctx.clearRect(0, 0, WIDTH, HEIGHT);
-    console.log("reset");
-  };
+  //   const clear = (ctx) => {
+  //     ctx.clearRect(0, 0, WIDTH, HEIGHT);
+  //     console.log("clear");
+  //   };
   const reset = () => {
     console.log("reset");
 
@@ -192,7 +187,6 @@ const CatsOnCanvas = () => {
     const boxObject = boxRef.current;
     canvasObj.width = WIDTH;
     canvasObj.height = HEIGHT;
-    // clear(ctx);
     setOffsetX(BB.left);
     setOffsetY(BB.top);
     drawBox(ctx);
@@ -200,19 +194,27 @@ const CatsOnCanvas = () => {
     ballInbox();
     //drawScene(ctx);
 
-    //     let requestId;
-    //     const update = () => {
-    //       console.log("updating");
-    //       clear(ctx, canvasObj);
-    //       drawBall(ctx);
-    //       //requestId = requestAnimationFrame(update);
-    //     };
-    //     update();
-    //     return () => {
-    //       cancelAnimationFrame(requestId);
-    //     };
-    //   });
+    // let requestId;
+    // const update = () => {
+    //   // ball.x += 0.5;
+    //   console.log("updating", ball.x);
+    //   clear(ctx, canvasObj);
+    //   drawBall(ctx);
+    //   console.log("ball", ball.isDragging);
+    //   drawBox(ctx, boxObject);
+    //   ballInbox();
+    //   //requestId = requestAnimationFrame(update);
+    // };
+
+    // boxObject.onload = function () {
+    //   update();
+    // };
+
+    // return () => {
+    //   cancelAnimationFrame(requestId);
+    // };
   }, [ball]);
+
   //The standard way of animating an HTML5 canvas is using
   //the requestAnimationFrame function to repeatedly call a function that
   // renders our scene. Before we do that, we need to refactor our circle drawing code into a render function
