@@ -108,9 +108,9 @@ function App() {
               <Route path="/kittenCollect">
                 <KittenCollect />
               </Route>
-              <Route path="/catsOnCanvas">
+              {/* <Route path="/catsOnCanvas">
                 <CatsOnCanvas />
-              </Route>
+              </Route> */}
               <Route path="*">
                 <NotFound />
               </Route>
