@@ -14,10 +14,27 @@ const KittenCollect = () => {
   const [points, setPoints] = useState(0);
   const [message, setMessage] = useState("Start collecting kittens!");
   const [pointsMessage, setPointsMessage] = useState("");
-  //  const [myInterval, setMyInterval] = useState(0);
   const [kittens, setKittens] = useState([]);
   const [hedgehogs, setHedgehogs] = useState([]);
 
+  //lions
+  const [lions, setLions] = useState([]);
+  const drawLion = () => {
+    const newLion = {
+      id: Math.random(),
+    };
+    console.log("drawLion_newLion", newLion);
+
+    setLions([...lions, newLion]);
+  };
+  const hideLion = (id) => {
+    setLions(
+      lions.filter((lion) => {
+        return lion.id !== id;
+      })
+    );
+  };
+  ///////////////////////////
   const finishTime = 300;
 
   const startGame = () => {
@@ -66,9 +83,6 @@ const KittenCollect = () => {
     //console.log("drawKitten_newKitten", newKitten);
     //add to array
     setKittens([...kittens, newKitten]);
-    // setKittens((kittens) => {
-    //   return [...kittens, newKitten];
-    // });
 
     //hide again
     setTimeout(() => {
@@ -77,10 +91,11 @@ const KittenCollect = () => {
     }, 1500);
   };
   const hideKitten = (id) => {
-    const newKittens = kittens.filter((kitten) => {
-      return kitten.id !== id;
-    });
-    setKittens(newKittens);
+    setKittens(
+      kittens.filter((kitten) => {
+        return kitten.id !== id;
+      })
+    );
   };
   const kittenClick = (id) => {
     hideKitten(id);
@@ -99,7 +114,7 @@ const KittenCollect = () => {
       top: randTop,
       left: randLeft,
     };
-    // console.log("drawHedgehog_newHedgehog", newHedgehog);
+    console.log("drawHedgehog_newHedgehog", newHedgehog.id);
 
     //add to array
     setHedgehogs([...hedgehogs, newHedgehog]);
@@ -109,22 +124,28 @@ const KittenCollect = () => {
       hideHedgehog(newHedgehog.id);
     }, 1800);
   };
+
   const hideHedgehog = (id) => {
-    const newHedgehogs = hedgehogs.filter((hedgehog) => {
-      return hedgehog.id !== id;
-    });
-    setHedgehogs(newHedgehogs);
+    console.log("hideHedgehog", id);
+    setHedgehogs(
+      hedgehogs.filter((hedgehog) => {
+        return hedgehog.id !== id;
+      })
+    );
   };
-  const hedgehogClick = (id) => {
+  const hedgehogClick = () => {
     setIsRunning(false);
     setMessage("Game Over!");
   };
 
   const randomPosition = () => {
-    const randomTop = Math.floor(Math.random() * 250 + 1);
-    const randomLeft = Math.floor(Math.random() * 300 + 1);
+    const height = "450";
+    const width = "450";
+    const randomTop = Math.floor(Math.random() * (height - 50) + 1);
+    const randomLeft = Math.floor(Math.random() * (width - 50) + 1);
     return [randomTop, randomLeft];
   };
+
   useEffect(() => {
     let myInterval;
     if (isRunning) {
@@ -136,16 +157,26 @@ const KittenCollect = () => {
       return () => clearInterval(myInterval);
     }
     //cleanup = componentWillUnmount or when isRunning is changing
-    console.log("isRunning: ", isRunning);
+    //console.log("isRunning: ", isRunning);
   }, [isRunning, count]);
 
   useEffect(() => {
-    console.log("kittens: ", kittens);
+    // console.log("kittens: ", kittens);
   }, [kittens]);
 
   useEffect(() => {
-    // console.log("hedgehogs: ", hedgehogs);
+    //console.log("hedgehogs: ", hedgehogs);
   }, [hedgehogs]);
+
+  useEffect(() => {
+    // let myInterval;
+    // myInterval = setInterval(() => {
+    //   drawLion();
+    // }, 5000);
+
+    console.log("lions: ", lions);
+    //return () => clearInterval(myInterval);
+  }, [lions]);
 
   return (
     <div className="row justify-content-between">
@@ -155,6 +186,7 @@ const KittenCollect = () => {
         </section>
         <section className="game_section">
           <KittenCollectIntro />
+
           <div className="points_section">
             {!isRunning && (
               <input
@@ -193,6 +225,24 @@ const KittenCollect = () => {
             </div>
           </div>
         </section>
+        <input
+          type="button"
+          value="Draw lion"
+          className="formBtn orange"
+          onClick={drawLion}
+        />
+        {lions &&
+          lions.map((lion) => (
+            <div className="lion_item" key={lion.id}>
+              <p>{lion.id}</p>
+              <input
+                type="button"
+                value="Hide lion"
+                className="formBtn blue"
+                onClick={() => hideLion(lion.id)}
+              />
+            </div>
+          ))}
       </div>
       <div className="col-12 col-md-4 col-lg-12 col-xl-5">
         <KittenCollectTestInfo />

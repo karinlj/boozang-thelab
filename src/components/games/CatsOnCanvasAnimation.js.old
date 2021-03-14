@@ -74,6 +74,7 @@ const CatsOnCanvasAnimation = () => {
       // newPos();
       requestId = requestAnimationFrame(update);
     };
+
     houseOneObj.onload = function () {
       update();
     };

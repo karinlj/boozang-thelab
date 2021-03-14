@@ -1,5 +1,12 @@
 @import "../../variables.scss";
 
+.lion_item {
+  padding-bottom: 2rem;
+  p {
+    margin-bottom: 0;
+  }
+}
+
 .game_section {
   .points_section {
     width: 450px;

@@ -3,7 +3,6 @@ import "./games.scss";
 import { CatsOnCanvasVideos } from "../text/videos/VideoSections";
 import { CatsOnCanvasIntro } from "../text/Intros";
 import { CatsOnCanvasTestInfo } from "../text/TestInfos";
-import box from "../../img/box.svg";
 import ResultMessages from "../compMessages/ResultMessages";
 
 const CatsOnCanvas = () => {
@@ -25,19 +24,15 @@ const CatsOnCanvas = () => {
   const WIDTH = 450;
   const HEIGHT = 450;
 
-  //   const drawBox = (ctx, boxObject) => {
-  //     ctx.drawImage(boxObject, 280, 320, 130, 170);
-  //     //console.log("drawBox");
-  //   };
   const drawBox = (ctx) => {
     ctx.beginPath();
     ctx.lineWidth = 3;
-    ctx.moveTo(290, 340);
-    ctx.lineTo(310, 330);
-    ctx.lineTo(310, 400);
-    ctx.lineTo(400, 400);
-    ctx.lineTo(400, 330);
-    ctx.lineTo(420, 340);
+    ctx.moveTo(250, 340);
+    ctx.lineTo(270, 330);
+    ctx.lineTo(270, 390);
+    ctx.lineTo(360, 390);
+    ctx.lineTo(360, 330);
+    ctx.lineTo(380, 340);
     ctx.strokeStyle = "#f24d7f";
     ctx.stroke();
   };
@@ -50,7 +45,6 @@ const CatsOnCanvas = () => {
   };
 
   const ballInbox = () => {
-    // console.log("successMessage", successMessage);
     let boxXMIn = 310;
     let boxXMax = 420;
     let boxYMIn = 330;
@@ -63,17 +57,14 @@ const CatsOnCanvas = () => {
       ball.y < boxYMax
     ) {
       setSuccessMessage("Success!");
-      // console.log("isBallInbox", isBallInbox);
     } else {
-      setSuccessMessage("Put ball in box...");
+      setSuccessMessage("Drag ball into the box...");
     }
   };
   // handle mousedown events
   const myDown = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log("myDown_clientX: ", e.clientX);
-    // console.log("myDown_clientY: ", e.clientY);
 
     // get the current mouse position
     let mx = parseInt(e.clientX - offsetX);
@@ -81,7 +72,6 @@ const CatsOnCanvas = () => {
 
     // test each ball to see if mouse is inside
     setDragOk(false);
-
     if (
       mx > ball.x - ball.radius &&
       mx < ball.x + ball.radius &&
@@ -104,7 +94,6 @@ const CatsOnCanvas = () => {
   const myUp = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log("myUp: ");
 
     // clear all the dragging flags
     setDragOk(false);
@@ -116,9 +105,6 @@ const CatsOnCanvas = () => {
 
   // handle mouse moves
   const myMove = (e) => {
-    // console.log("myMove_clientX: ", e.clientX);
-    // console.log("myMove_clientY: ", e.clientY);
-
     // if we're dragging anything...
     if (dragOk) {
       // tell the browser we're handling this mouse event
@@ -145,27 +131,12 @@ const CatsOnCanvas = () => {
           y: ball.y + dy,
         });
       }
-      // redraw the scene with the new rect positions
-      // drawScene(ctx);
-
       // reset the starting mouse position for the next mousemove
       setStartX(mx);
       setStartY(my);
     }
   };
-  // redraw the scene
-  //   const drawScene = (ctx) => {
-  //     clear(ctx);
-  //     drawBall(ctx);
-  //   };
-
-  //   const clear = (ctx) => {
-  //     ctx.clearRect(0, 0, WIDTH, HEIGHT);
-  //     console.log("clear");
-  //   };
   const reset = () => {
-    console.log("reset");
-
     setBall({
       ...ball,
       x: 50,
@@ -174,11 +145,7 @@ const CatsOnCanvas = () => {
   };
 
   useEffect(() => {
-    // console.log("dragOk: ", dragOk);
-  }, [dragOk]);
-
-  useEffect(() => {
-    console.log("ball: ", ball);
+    // console.log("ball: ", ball);
     //finding the <canvas> element
     const canvasObj = canvasRef.current;
     //creating a drawing object for our canvas
@@ -189,35 +156,10 @@ const CatsOnCanvas = () => {
     canvasObj.height = HEIGHT;
     setOffsetX(BB.left);
     setOffsetY(BB.top);
-    drawBox(ctx);
     drawBall(ctx);
+    drawBox(ctx);
     ballInbox();
-    //drawScene(ctx);
-
-    // let requestId;
-    // const update = () => {
-    //   // ball.x += 0.5;
-    //   console.log("updating", ball.x);
-    //   clear(ctx, canvasObj);
-    //   drawBall(ctx);
-    //   console.log("ball", ball.isDragging);
-    //   drawBox(ctx, boxObject);
-    //   ballInbox();
-    //   //requestId = requestAnimationFrame(update);
-    // };
-
-    // boxObject.onload = function () {
-    //   update();
-    // };
-
-    // return () => {
-    //   cancelAnimationFrame(requestId);
-    // };
   }, [ball]);
-
-  //The standard way of animating an HTML5 canvas is using
-  //the requestAnimationFrame function to repeatedly call a function that
-  // renders our scene. Before we do that, we need to refactor our circle drawing code into a render function
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-8 col-lg-12 col-xl-5">
@@ -246,7 +188,6 @@ const CatsOnCanvas = () => {
             onMouseUp={(e) => myUp(e)}
             onMouseMove={(e) => myMove(e)}
           />
-          <img src={box} ref={boxRef} alt="box" className="box" />
         </section>
       </div>
       <div className="col-12 col-md-4 col-lg-12 col-xl-5">
