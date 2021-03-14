@@ -17,24 +17,6 @@ const KittenCollect = () => {
   const [kittens, setKittens] = useState([]);
   const [hedgehogs, setHedgehogs] = useState([]);
 
-  //lions
-  const [lions, setLions] = useState([]);
-  const drawLion = () => {
-    const newLion = {
-      id: Math.random(),
-    };
-    console.log("drawLion_newLion", newLion);
-
-    setLions([...lions, newLion]);
-  };
-  const hideLion = (id) => {
-    setLions(
-      lions.filter((lion) => {
-        return lion.id !== id;
-      })
-    );
-  };
-  ///////////////////////////
   const finishTime = 300;
 
   const startGame = () => {
@@ -52,8 +34,15 @@ const KittenCollect = () => {
     setMessage("Game Aborted!");
   };
   const tick = () => {
-    // setCount((prevCount) => prevCount + 1);
-    // setCount((count) => count + 1);
+    if (kittens.length && Math.random() < 0.05) {
+      const id = kittens[0].id;
+      hideKitten(id);
+    }
+    if (hedgehogs.length && Math.random() < 0.05) {
+      const id = hedgehogs[0].id;
+      hideHedgehog(id);
+    }
+
     setCount(count + 1);
 
     if (count > finishTime) {
@@ -79,16 +68,10 @@ const KittenCollect = () => {
       icon: catIcon,
       top: randTop,
       left: randLeft,
+      age: 25,
     };
-    //console.log("drawKitten_newKitten", newKitten);
     //add to array
     setKittens([...kittens, newKitten]);
-
-    //hide again
-    setTimeout(() => {
-      hideKitten(newKitten.id);
-      //console.log("hideKitten_newKitten", newKitten);
-    }, 1500);
   };
   const hideKitten = (id) => {
     setKittens(
@@ -99,7 +82,6 @@ const KittenCollect = () => {
   };
   const kittenClick = (id) => {
     hideKitten(id);
-    //console.log("kittenClick_newKitten", id);
     setPoints(points + 1);
   };
 
@@ -114,15 +96,8 @@ const KittenCollect = () => {
       top: randTop,
       left: randLeft,
     };
-    console.log("drawHedgehog_newHedgehog", newHedgehog.id);
-
     //add to array
     setHedgehogs([...hedgehogs, newHedgehog]);
-
-    //hide again
-    setTimeout(() => {
-      hideHedgehog(newHedgehog.id);
-    }, 1800);
   };
 
   const hideHedgehog = (id) => {
@@ -152,31 +127,13 @@ const KittenCollect = () => {
       myInterval = setInterval(() => {
         tick();
       }, 100);
-      // } else {
-      //   clearInterval(myInterval);
       return () => clearInterval(myInterval);
     }
-    //cleanup = componentWillUnmount or when isRunning is changing
-    //console.log("isRunning: ", isRunning);
   }, [isRunning, count]);
 
   useEffect(() => {
     // console.log("kittens: ", kittens);
   }, [kittens]);
-
-  useEffect(() => {
-    //console.log("hedgehogs: ", hedgehogs);
-  }, [hedgehogs]);
-
-  useEffect(() => {
-    // let myInterval;
-    // myInterval = setInterval(() => {
-    //   drawLion();
-    // }, 5000);
-
-    console.log("lions: ", lions);
-    //return () => clearInterval(myInterval);
-  }, [lions]);
 
   return (
     <div className="row justify-content-between">
@@ -225,24 +182,6 @@ const KittenCollect = () => {
             </div>
           </div>
         </section>
-        <input
-          type="button"
-          value="Draw lion"
-          className="formBtn orange"
-          onClick={drawLion}
-        />
-        {lions &&
-          lions.map((lion) => (
-            <div className="lion_item" key={lion.id}>
-              <p>{lion.id}</p>
-              <input
-                type="button"
-                value="Hide lion"
-                className="formBtn blue"
-                onClick={() => hideLion(lion.id)}
-              />
-            </div>
-          ))}
       </div>
       <div className="col-12 col-md-4 col-lg-12 col-xl-5">
         <KittenCollectTestInfo />
