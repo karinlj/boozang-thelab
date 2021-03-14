@@ -30,7 +30,8 @@ const KittenCollect = () => {
   };
   const abortGame = () => {
     setIsRunning(false);
-    //  setKittens([]);
+    setKittens([]);
+    setHedgehogs([]);
     setMessage("Game Aborted!");
   };
   const tick = () => {
@@ -101,7 +102,6 @@ const KittenCollect = () => {
   };
 
   const hideHedgehog = (id) => {
-    console.log("hideHedgehog", id);
     setHedgehogs(
       hedgehogs.filter((hedgehog) => {
         return hedgehog.id !== id;

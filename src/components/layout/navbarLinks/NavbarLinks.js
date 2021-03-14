@@ -165,11 +165,11 @@ const NavbarLinks = ({ handleClickLink }) => {
           </li>
           <li>
             <NavLink
-              to="/catsOnCanvas"
+              to="/canvasGame"
               className="link"
               activeClassName="current"
             >
-              <div onClick={handleClickLink}>Cats On Canvas</div>
+              <div onClick={handleClickLink}>Canvas Game</div>
             </NavLink>
           </li>
         </ul>

@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import "./games.scss";
-import { CatsOnCanvasVideos } from "../text/videos/VideoSections";
-import { CatsOnCanvasIntro } from "../text/Intros";
-import { CatsOnCanvasTestInfo } from "../text/TestInfos";
+import { CanvasGameVideos } from "../text/videos/VideoSections";
+import { CanvasGameIntro } from "../text/Intros";
+import { CanvasGameTestInfo } from "../text/TestInfos";
 import ResultMessages from "../compMessages/ResultMessages";
 
-const CatsOnCanvas = () => {
+const CanvasGame = () => {
   const canvasRef = useRef(null);
   const boxRef = useRef(null);
   const [dragOk, setDragOk] = useState(false);
@@ -45,10 +45,10 @@ const CatsOnCanvas = () => {
   };
 
   const ballInbox = () => {
-    let boxXMIn = 310;
-    let boxXMax = 420;
+    let boxXMIn = 270;
+    let boxXMax = 360;
     let boxYMIn = 330;
-    let boxYMax = 400;
+    let boxYMax = 390;
 
     if (
       ball.x > boxXMIn &&
@@ -151,7 +151,6 @@ const CatsOnCanvas = () => {
     //creating a drawing object for our canvas
     const ctx = canvasObj.getContext("2d");
     const BB = canvasObj.getBoundingClientRect();
-    const boxObject = boxRef.current;
     canvasObj.width = WIDTH;
     canvasObj.height = HEIGHT;
     setOffsetX(BB.left);
@@ -167,7 +166,7 @@ const CatsOnCanvas = () => {
           <h5>This game is only available on larger display size...</h5>
         </section>
         <section className="game_section">
-          <CatsOnCanvasIntro />
+          <CanvasGameIntro />
           <div className="top_section">
             <input
               type="button"
@@ -191,11 +190,11 @@ const CatsOnCanvas = () => {
         </section>
       </div>
       <div className="col-12 col-md-4 col-lg-12 col-xl-5">
-        <CatsOnCanvasTestInfo />
-        <CatsOnCanvasVideos />
+        <CanvasGameTestInfo />
+        <CanvasGameVideos />
       </div>
     </div>
   );
 };
 
-export default CatsOnCanvas;
+export default CanvasGame;

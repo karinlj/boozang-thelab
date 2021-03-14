@@ -32,9 +32,9 @@ export const CatShelterIntro = () => {
     <article className="comp_intro">
       <h1>Cat shelter</h1>
       <p>
-        View the current inhabitants in the Cat Shelter below. If the house icon is enabled,
-        the cat has found a home. You can add a cat to the shelter using the "Add" button, and
-        edit a cat by clicking the cat name.
+        View the current inhabitants in the Cat Shelter below. If the house icon
+        is enabled, the cat has found a home. You can add a cat to the shelter
+        using the "Add" button, and edit a cat by clicking the cat name.
       </p>
     </article>
   );
@@ -170,14 +170,11 @@ export const KittenCollectIntro = () => {
     </article>
   );
 };
-export const CatsOnCanvasIntro = () => {
+export const CanvasGameIntro = () => {
   return (
     <article className="comp_intro">
-      <h1>Ball of Yarn</h1>
-      <p>
-        The cat want his ball of yarn to play. Use drag and drop to give the cat
-        his ball, and you will see a happy cat.
-      </p>
+      <h1>Canvas Game</h1>
+      <p>Cat ipsum....</p>
     </article>
   );
 };

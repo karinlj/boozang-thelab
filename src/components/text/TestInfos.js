@@ -34,9 +34,10 @@ export const CatShelterTestInfo = () => {
     <article className="comp_test_info">
       <h4>Why learn: Cat Shelter?</h4>
       <p>
-        In this exercise, we expand on form testing. Cat Shelters contains multiple 
-        views and the form contains radio buttons as well as regular inputs. Try to
-        add a list of cats based on an external data source, like a CSV file.
+        In this exercise, we expand on form testing. Cat Shelters contains
+        multiple views and the form contains radio buttons as well as regular
+        inputs. Try to add a list of cats based on an external data source, like
+        a CSV file.
       </p>
     </article>
   );
@@ -196,15 +197,17 @@ export const KittenCollectTestInfo = () => {
     </article>
   );
 };
-export const CatsOnCanvasTestInfo = () => {
+export const CanvasGameTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Why learn: Ball of Yarn</h4>
+      <h4>Why learn: Canvas Game</h4>
       <p>
-        This exercise contains two challenging obstacles. The most challenging is that playing field
-        is an HTML canvas, which is a single HTML element. This means typical test automation element locators 
-        will be useless, and one is usually forces to hard-code events using coordinates (x,y). The second 
-        challenge is that we need to automate drag and drop, which forces us to simulate multiple events.
+        This exercise contains two challenging obstacles. The most challenging
+        is that playing field is an HTML canvas, which is a single HTML element.
+        This means typical test automation element locators will be useless, and
+        one is usually forces to hard-code events using coordinates (x,y). The
+        second challenge is that we need to automate drag and drop, which forces
+        us to simulate multiple events.
       </p>
     </article>
   );

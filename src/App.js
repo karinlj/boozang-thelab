@@ -24,8 +24,7 @@ import ScrambleItems from "./components/domChanges/ScrambleItems";
 //import MultiScramble from "./components/domChanges/MultiScramble";
 import ConcatStrings from "./components/strings/ConcatStrings";
 import KittenCollect from "./components/games/KittenCollect";
-import CatsOnCanvas from "./components/games/CatsOnCanvas.js";
-//import CatsOnCanvasAnimation from "./components/games/CatsOnCanvasAnimation.js";
+import CanvasGame from "./components/games/CanvasGame.js";
 import NotFound from "./components/NotFound";
 
 function App() {
@@ -108,8 +107,8 @@ function App() {
               <Route path="/kittenCollect">
                 <KittenCollect />
               </Route>
-              <Route path="/catsOnCanvas">
-                <CatsOnCanvas />
+              <Route path="/canvasGame">
+                <CanvasGame />
               </Route>
               <Route path="*">
                 <NotFound />
