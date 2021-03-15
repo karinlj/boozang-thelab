@@ -1,6 +1,6 @@
 import "./text.scss";
 
-//Lists
+//Lists and Tables
 export const SortedListIntro = () => {
   return (
     <article className="comp_intro">
@@ -39,6 +39,20 @@ export const CatShelterIntro = () => {
     </article>
   );
 };
+export const TablesIntro = () => {
+  return (
+    <article className="comp_intro">
+      <h1>Tables</h1>
+      <p>
+        Below you'll see a table of animals from the savannah. The animal can be
+        filtered by species, and sorted by different attributes, such as name,
+        shoesize and hairdo. You can also perform different operations on each
+        row, where an animal can be liked, unliked and deleted.
+      </p>
+    </article>
+  );
+};
+
 //Forms
 export const FormFillIntro = () => {
   return (

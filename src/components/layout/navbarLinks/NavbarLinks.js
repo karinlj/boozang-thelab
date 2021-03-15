@@ -98,7 +98,7 @@ const NavbarLinks = ({ handleClickLink }) => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/Tables" className="link" activeClassName="current">
+            <NavLink to="/Table" className="link" activeClassName="current">
               <div onClick={handleClickLink}>Tables</div>
             </NavLink>
           </li>

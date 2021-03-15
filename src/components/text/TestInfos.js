@@ -1,6 +1,6 @@
 import "./text.scss";
 
-//Lists
+//Lists and Tables
 export const SortedListTestInfo = () => {
   return (
     <article className="comp_test_info">
@@ -42,6 +42,19 @@ export const CatShelterTestInfo = () => {
     </article>
   );
 };
+export const TablesTestInfo = () => {
+  return (
+    <article className="comp_test_info">
+      <h4>Why learn: Tables?</h4>
+      <p>
+        Tables are common in SaaS application, but present a number of
+        challenges when automating. It's often useful to make sure the elements
+        are sorted in a certain way before selecting the elements.
+      </p>
+    </article>
+  );
+};
+
 //Forms
 export const FormFillTestInfo = () => {
   return (

@@ -15,6 +15,7 @@ import CatShelter from "./components/lists/catList/CatShelter";
 import CatDetails from "./components/lists/catList/CatDetails";
 import AddCat from "./components/lists/catList/AddCat";
 import FormFill from "./components/forms/FormFill";
+import Table from "./components/tables/Table";
 import SpeedGame from "./components/timing/SpeedGame";
 import WaitGame from "./components/timing/WaitGame";
 import VisualBugs from "./components/visualBugs/VisualBugs";
@@ -80,6 +81,9 @@ function App() {
               <Route path="/formFill">
                 <FormFill />
               </Route>
+              {/* <Route path="/Table">
+                <Table />
+              </Route> */}
               <Route path="/speedGame">
                 <SpeedGame />
               </Route>

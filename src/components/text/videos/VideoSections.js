@@ -68,7 +68,7 @@ export const OverviewVideos = () => {
     </section>
   );
 };
-//Lists
+//Lists and tables
 export const SortedListVideos = () => {
   const videos = [
     {
@@ -143,6 +143,20 @@ export const CatShelterVideos = () => {
       url:
         "https://www.youtube.com/watch?v=pLbc77EC9hw&list=PLhdB7gylbUzpRBVLjpi4KI-g2j7U0y9Qr&index=21",
       text: "Provision a list of cats using a CSV loop",
+    },
+  ];
+  return (
+    <section className="video_section">
+      <VideoList videos={videos} />
+    </section>
+  );
+};
+export const TablesVideos = () => {
+  const videos = [
+    {
+      id: 1,
+      url: "",
+      text: "",
     },
   ];
   return (

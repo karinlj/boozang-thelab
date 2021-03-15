@@ -3,7 +3,7 @@ import ToggleBtn from "./sideDrawer/ToggleBtn";
 import NavbarLinks from "./navbarLinks/NavbarLinks";
 
 const Navbar = ({ handleClick }) => (
-  <nav className="nav">
+  <nav className="lab_nav">
     <div className="container">
       <div className="row">
         <div className="col">
