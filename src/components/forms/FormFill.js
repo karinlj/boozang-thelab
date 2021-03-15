@@ -8,6 +8,7 @@ import { getData } from "../fetchFunctions/fetchFunctions";
 import { deleteData } from "../fetchFunctions/fetchFunctions";
 import Form from "./Form";
 import PrintForm from "./PrintForm";
+import { UsersDb } from "../text/DbInfo";
 
 function FormFill() {
   const [users, setUsers] = useState(null);
@@ -136,6 +137,7 @@ function FormFill() {
       </div>
       <div className="col-12 col-md-5">
         <FormFillTestInfo />
+        <UsersDb />
         <FormFillVideos />
       </div>
     </div>

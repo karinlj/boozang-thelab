@@ -58,7 +58,7 @@ const CanvasGame = () => {
     ) {
       setSuccessMessage("Success!");
     } else {
-      setSuccessMessage("Drag ball into the box...");
+      setSuccessMessage("Drag ball into box...");
     }
   };
   // handle mousedown events

@@ -1,5 +1,18 @@
 @import "../../variables.scss";
 
+//db info section
+.db_info_section {
+  background: $themecolorLilaDark;
+  padding: 0.8rem 1.8rem;
+  border-radius: $themeBorderRadius;
+  margin-bottom: 2rem;
+  p {
+    margin: 0;
+  }
+  h6 {
+    font-weight: 600;
+  }
+}
 //video_section
 .video_section {
   margin-top: 3rem;
@@ -44,7 +57,7 @@
   margin-bottom: 2rem;
   min-height: 150px;
   background: $themecolorBlueNewLightest;
-  padding: 1.5rem 2rem;
+  padding: 1.3rem 1.8rem;
   border-radius: $themeBorderRadius;
   box-shadow: $themeBoxShadow;
   margin-top: 6rem;

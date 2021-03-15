@@ -7,6 +7,7 @@ import TodoList from "./TodoList";
 import AddTodo from "./AddTodo";
 import { getData } from "../fetchFunctions/fetchFunctions";
 import { deleteData } from "../fetchFunctions/fetchFunctions";
+import { TodosDb } from "../text/DbInfo";
 
 const SortedList = () => {
   const [todos, setTodos] = useState(null);
@@ -63,6 +64,7 @@ const SortedList = () => {
       </div>
       <div className="col-12 col-md-5">
         <SortedListTestInfo />
+        <TodosDb />
         <SortedListVideos />
       </div>
     </div>
