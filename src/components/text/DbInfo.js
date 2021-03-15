@@ -7,41 +7,30 @@ const todosUrl = "http://localhost:9000/todos/";
 export const UsersDb = () => {
   return (
     <section className="db_info_section">
-      <h6>Database url: </h6>
-      {/* <Link to={usersUrl} target="_blank">
+      <h6>JSON Server url: </h6>
+      <a href={usersUrl} target="_blank">
         {usersUrl}
-      </Link> */}
-      <p>{usersUrl}</p>
+      </a>
     </section>
   );
 };
 export const TodosDb = () => {
   return (
     <section className="db_info_section">
-      <h6>Database url: </h6>
-      <p>{todosUrl}</p>
+      <h6>JSON Server url: </h6>
+      <a href={todosUrl} target="_blank">
+        {todosUrl}
+      </a>
     </section>
   );
 };
 export const CatsDb = () => {
   return (
     <section className="db_info_section">
-      <h6>Database url: </h6>
-      <p>{catsUrl}</p>
+      <h6>JSON Server url: </h6>
+      <a href={catsUrl} target="_blank">
+        {catsUrl}
+      </a>
     </section>
   );
 };
-// const DbInfo = (props) => {
-//   const { children } = props;
-//   return (
-//     <section className="db_info_section">
-//       <h6>Database url: </h6>
-
-//       {/* <Link to={usersUrl} target="_blank">
-//         {usersUrl}
-//       </Link> */}
-//       <p>{children}</p>
-//     </section>
-//   );
-// };
-// export default DbInfo;
