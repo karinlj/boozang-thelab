@@ -81,7 +81,7 @@ const NavbarLinks = ({ handleClickLink }) => {
         </ul>
       </li>
       <li>
-        Lists, tables and forms
+        Forms and Tables
         <ul className="sub_list">
           <li>
             <NavLink to="/formFill" className="link" activeClassName="current">
