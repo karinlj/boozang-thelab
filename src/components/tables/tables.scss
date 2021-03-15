@@ -50,8 +50,8 @@
         &:checked {
           ~ .checkmark {
             // background-color: #2196f3;
-            border: 1px solid #2e9ce6;
-            background-color: #2e9ce6;
+            border: 1px solid $themecolorButtonBlue;
+            background-color: $themecolorButtonBlue;
             /* Show the checkmark when checked */
             &:after {
               display: block;

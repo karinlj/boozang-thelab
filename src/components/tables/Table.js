@@ -6,7 +6,38 @@ import { TablesTestInfo } from "../text/TestInfos";
 //import { Link } from "react-router-dom";
 
 const Table = () => {
-  const handleChange = () => {};
+  const [filter, setFilter] = useState([
+    { id: 1, name: "lion", isChecked: true },
+    { id: 2, name: "elephant", isChecked: true },
+    { id: 3, name: "zebra", isChecked: false },
+  ]);
+
+  const animals = [
+    { name: "Oscar", species: "lion" },
+    { name: "Trudy", species: "elephant" },
+    { name: "Miles", species: "zebra" },
+    { name: "Theo", species: "lion" },
+  ];
+
+  const handleChange = (event) => {
+    console.log("event.currentTarget", event.currentTarget);
+    console.log("handleChange_checked", event.target.checked);
+    console.log("handleChange_id", event.target.id);
+    let updatedFilter = [...filter];
+    //sets chosen input to checked/unchecked
+    updatedFilter.map((item) => {
+      if ("" + item.id === event.target.id) {
+        item.isChecked = event.target.checked;
+      }
+      return item;
+    });
+    //set state
+    setFilter(updatedFilter);
+  };
+
+  useEffect(() => {
+    console.log("filter", filter);
+  }, [filter]);
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-8 col-lg-12 col-xl-5">
@@ -15,42 +46,7 @@ const Table = () => {
 
           <div className="filter_options">
             {/* looping through filters from 'big' component */}
-
-            <label className="option" htmlFor="react" key="">
-              Lions
-              <input
-                type="checkbox"
-                id=""
-                name=""
-                checked="checked"
-                onChange={handleChange}
-              />
-              <span className="checkmark"></span>
-            </label>
-            <label className="option" htmlFor="react" key="">
-              Zebras
-              <input
-                type="checkbox"
-                id=""
-                name=""
-                checked="checked"
-                onChange={handleChange}
-              />
-              <span className="checkmark"></span>
-            </label>
-            <label className="option" htmlFor="react" key="">
-              Elephants
-              <input
-                type="checkbox"
-                id=""
-                name=""
-                checked="checked"
-                onChange={handleChange}
-              />
-              <span className="checkmark"></span>
-            </label>
-
-            {/* {filter.map((item, index) => {
+            {filter.map((item, index) => {
               return (
                 <label className="option" htmlFor="react" key={index}>
                   {item.name}
@@ -64,27 +60,31 @@ const Table = () => {
                   <span className="checkmark"></span>
                 </label>
               );
-            })} */}
+            })}
           </div>
 
           <table id="animalTable" className="table">
             <thead>
               <tr>
                 <th></th>
-                <th>name</th>
-                <th>species</th>
-                <th>hairdo</th>
+                <th>Name</th>
+                <th>Species</th>
+                <th>Hairdo</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>image</td>
-                <td>Simba</td>
-                <td>Lion</td>
-                <td>Mohawk</td>
-                <td>Like</td>
-              </tr>
+              {animals.map((animal, index) => {
+                return (
+                  <tr key={index}>
+                    <td>image</td>
+                    <td>{animal.name}</td>
+                    <td>{animal.species}</td>
+                    <td>Mohawk</td>
+                    <td>Like</td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </section>

@@ -7,7 +7,6 @@ import ResultMessages from "../compMessages/ResultMessages";
 
 const CanvasGame = () => {
   const canvasRef = useRef(null);
-  const boxRef = useRef(null);
   const [dragOk, setDragOk] = useState(false);
   const [startX, setStartX] = useState(null);
   const [startY, setStartY] = useState(null);
