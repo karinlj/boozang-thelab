@@ -81,9 +81,9 @@ function App() {
               <Route path="/formFill">
                 <FormFill />
               </Route>
-              <Route path="/Table">
+              {/* <Route path="/Table">
                 <Table />
-              </Route>
+              </Route> */}
               <Route path="/speedGame">
                 <SpeedGame />
               </Route>
