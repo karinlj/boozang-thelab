@@ -3,41 +3,62 @@ import "./tables.scss";
 //import { TablesVideos } from "../text/videos/VideoSections";
 import { TablesIntro } from "../text/Intros";
 import { TablesTestInfo } from "../text/TestInfos";
-//import { Link } from "react-router-dom";
+//import { intersection } from "../../HelpFunctions";
 
 const Table = () => {
-  const [filter, setFilter] = useState([
-    { id: 1, name: "lion", isChecked: true },
-    { id: 2, name: "elephant", isChecked: true },
-    { id: 3, name: "zebra", isChecked: false },
-  ]);
-
   const animals = [
     { name: "Oscar", species: "lion" },
     { name: "Trudy", species: "elephant" },
     { name: "Miles", species: "zebra" },
     { name: "Theo", species: "lion" },
   ];
+  const [myFilter, setMyFilter] = useState([
+    { id: 1, species: "lion", isChecked: true },
+    { id: 2, species: "elephant", isChecked: true },
+    { id: 3, species: "zebra", isChecked: false },
+  ]);
+  const [checkedAnimalSpecies, setCheckedAnimalSpecies] = useState([]);
 
   const handleChange = (event) => {
-    console.log("event.currentTarget", event.currentTarget);
-    console.log("handleChange_checked", event.target.checked);
-    console.log("handleChange_id", event.target.id);
-    let updatedFilter = [...filter];
-    //sets chosen input to checked/unchecked
+    let updatedFilter = [...myFilter];
+    //sets chosen input to checked/unchecked controlled input
     updatedFilter.map((item) => {
+      //""=type checking
       if ("" + item.id === event.target.id) {
         item.isChecked = event.target.checked;
       }
       return item;
     });
-    //set state
-    setFilter(updatedFilter);
+    setMyFilter(updatedFilter);
   };
 
   useEffect(() => {
-    console.log("filter", filter);
-  }, [filter]);
+    //names of checked items
+    const checkedItemSpecies = myFilter
+      .filter((item) => {
+        return item.isChecked;
+      })
+      .map((item) => {
+        return item.species;
+      });
+    setCheckedAnimalSpecies(checkedItemSpecies);
+    //without {} and return
+    // const checkedItemNames = myFilter
+    //   .filter((item) => item.isChecked)
+    //   .map((item) => item.name);
+
+    //reduce
+    // const checkedItemNames = myFilter.reduce(
+    //   (result, { name, isChecked }) => [
+    //     ...result,
+    //     ...(isChecked ? [name] : []),
+    //   ],
+    //   []
+    // );
+
+    console.log("animals", animals);
+    console.log("checkedAnimalSpecies", checkedAnimalSpecies);
+  }, [myFilter]);
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-8 col-lg-12 col-xl-5">
@@ -45,8 +66,8 @@ const Table = () => {
           <TablesIntro />
 
           <div className="filter_options">
-            {/* looping through filters from 'big' component */}
-            {filter.map((item, index) => {
+            {/* looping through myFilters from 'big' component */}
+            {myFilter.map((item, index) => {
               return (
                 <label className="option" htmlFor="react" key={index}>
                   {item.name}
@@ -62,7 +83,6 @@ const Table = () => {
               );
             })}
           </div>
-
           <table id="animalTable" className="table">
             <thead>
               <tr>
@@ -75,7 +95,7 @@ const Table = () => {
             </thead>
             <tbody>
               {animals.map((animal, index) => {
-                return (
+                return checkedAnimalSpecies.includes(animal.species) ? (
                   <tr key={index}>
                     <td>image</td>
                     <td>{animal.name}</td>
@@ -83,6 +103,8 @@ const Table = () => {
                     <td>Mohawk</td>
                     <td>Like</td>
                   </tr>
+                ) : (
+                  <tr key={index}></tr>
                 );
               })}
             </tbody>

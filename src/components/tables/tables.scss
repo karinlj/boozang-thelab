@@ -67,8 +67,8 @@
         left: 0;
         height: 19px;
         width: 19px;
-        background-color: #eee;
-        border: 1px solid #737373;
+        background-color: $themecolorButtonBlue;
+        border: 1px solid $themecolorButtonBlue;
         @media all and (min-width: $md-min) {
           height: 21px;
           width: 21px;
