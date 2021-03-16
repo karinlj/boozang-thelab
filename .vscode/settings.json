@@ -1,0 +1,5 @@
+{
+    "html.format.wrapLineLength": 50,
+    "prettier.printWidth": 120,
+    "php.validate.executablePath": ""
+}

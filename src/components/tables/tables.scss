@@ -1,8 +1,7 @@
 @import "../../variables.scss";
 .tables_section {
   tr {
-    border-bottom: 1px solid #ddd;
-
+    border-bottom: 1px solid $themecolorLilaDark;
     td,
     th {
       padding: 0.4rem;
@@ -20,11 +19,19 @@
       }
       .fa.fa-heart {
         cursor: pointer;
+        color: $themecolorLilaDark;
+        transition:  all 0.3s ease-in-out;
         &.red {
+          color: $themecolorNewRed;
+        }
+        &:hover{
           color: $themecolorNewRed;
         }
       }
     }
+    // th {
+    //   font-size: 0.8rem;
+    // }
   }
 
   div.filter_options {
@@ -125,5 +132,23 @@
         }
       }
     }
+  }
+  .pagination{
+    float: right;
+    margin-bottom: 5rem;
+ 
+      margin-left: 1rem;
+      button{
+        margin-left: 1rem;
+        color: #75bff0;
+        background: inherit;
+        padding: 0;
+        box-shadow: none;
+        border: none;
+        &:hover {
+          filter: brightness(80%);
+        }
+      }
+    
   }
 }

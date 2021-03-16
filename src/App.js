@@ -43,13 +43,8 @@ function App() {
     <Router>
       <div className="App" style={{ height: "100%" }}>
         <Navbar handleClick={handleToggle} />
-        <SideDrawer
-          show={sideDrawerOpen}
-          handleClickLink={handleBackdropAndLinkClick}
-        />
-        {sideDrawerOpen && (
-          <Backdrop handleClick={handleBackdropAndLinkClick} />
-        )}
+        <SideDrawer show={sideDrawerOpen} handleClickLink={handleBackdropAndLinkClick} />
+        {sideDrawerOpen && <Backdrop handleClick={handleBackdropAndLinkClick} />}
         <Header className="header" />
         <div className="content_section">
           <div className="container">
@@ -81,9 +76,9 @@ function App() {
               <Route path="/formFill">
                 <FormFill />
               </Route>
-              <Route path="/Table">
+              {/* <Route path="/Table">
                 <Table />
-              </Route>
+              </Route> */}
               <Route path="/speedGame">
                 <SpeedGame />
               </Route>
