@@ -18,6 +18,12 @@
         //     display: none;
         //   }
       }
+      .fa.fa-heart {
+        cursor: pointer;
+        &.red {
+          color: $themecolorNewRed;
+        }
+      }
     }
   }
 

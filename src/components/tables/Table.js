@@ -7,16 +7,16 @@ import { TablesTestInfo } from "../text/TestInfos";
 
 const Table = () => {
   const animals = [
-    { name: "Arthur", species: "zebra" },
-    { name: "Oscar", species: "lion" },
-    { name: "Trudy", species: "elephant" },
-    { name: "Miles", species: "zebra" },
-    { name: "Millie", species: "lion" },
-    { name: "Theo", species: "zebra" },
-    { name: "Dandy", species: "elephant" },
-    { name: "Sally", species: "zebra" },
-    { name: "Ruby", species: "elephant" },
-    { name: "Charlie", species: "lion" },
+    { id: 1, name: "Arthur", species: "zebra", isLiked: false },
+    { id: 2, name: "Oscar", species: "lion", isLiked: true },
+    { id: 3, name: "Trudy", species: "elephant", isLiked: true },
+    { id: 4, name: "Miles", species: "zebra", isLiked: true },
+    { id: 5, name: "Millie", species: "lion", isLiked: true },
+    { id: 6, name: "Theo", species: "zebra", isLiked: true },
+    { id: 7, name: "Dandy", species: "elephant", isLiked: true },
+    { id: 8, name: "Sally", species: "zebra", isLiked: true },
+    { id: 9, name: "Ruby", species: "elephant", isLiked: true },
+    { id: 10, name: "Charlie", species: "lion", isLiked: true },
   ];
   const [myFilter, setMyFilter] = useState([
     { id: 1, species: "lion", isChecked: true },
@@ -37,7 +37,11 @@ const Table = () => {
     });
     setMyFilter(updatedFilter);
   };
-
+  const toggleLike = (animal) => {
+    animal.isLiked = !animal.isLiked;
+    console.log("animal: ", animal);
+    console.log("isLiked: ", animal.isLiked);
+  };
   useEffect(() => {
     //names of checked items
     const checkedItemSpecies = myFilter
@@ -62,8 +66,8 @@ const Table = () => {
     //   []
     // );
 
-    console.log("animals", animals);
-    console.log("checkedAnimalSpecies", checkedAnimalSpecies);
+    // console.log("animals", animals);
+    // console.log("checkedAnimalSpecies", checkedAnimalSpecies);
   }, [myFilter]);
   return (
     <div className="row justify-content-between">
@@ -115,7 +119,14 @@ const Table = () => {
                     <td>{animal.name}</td>
                     <td>{animal.species}</td>
                     <td>Mohawk</td>
-                    <td>Like</td>
+                    <td>
+                      <i
+                        className={`fa fa-heart ${animal.isLiked ? "red" : ""}`}
+                        onClick={() => toggleLike(animal)}
+                      />
+
+                      {/* <div className={`btn-group pull-right ${this.props.showBulkActions ? 'shown' : 'hidden'}`}> */}
+                    </td>
                   </tr>
                 ) : (
                   <tr key={index}></tr>
