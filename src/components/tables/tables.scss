@@ -2,8 +2,22 @@
 .tables_section {
   tr {
     border-bottom: 1px solid #ddd;
+
+    td,
     th {
+      padding: 0.4rem;
+      vertical-align: middle;
       border: none;
+      font-size: 0.9rem;
+      img {
+        display: block;
+        margin-right: 0;
+        max-width: 40px;
+        border-radius: 50%;
+        //   @media all and (max-width: $sm-max) {
+        //     display: none;
+        //   }
+      }
     }
   }
 
@@ -50,7 +64,7 @@
         &:checked {
           ~ .checkmark {
             // background-color: #2196f3;
-            border: 1px solid $themecolorButtonBlue;
+            border: 2px solid $themecolorButtonBlue;
             background-color: $themecolorButtonBlue;
             /* Show the checkmark when checked */
             &:after {
@@ -67,8 +81,8 @@
         left: 0;
         height: 19px;
         width: 19px;
-        background-color: $themecolorButtonBlue;
-        border: 1px solid $themecolorButtonBlue;
+        background-color: $themecolorLila;
+        border: 2px solid $themecolorButtonBlue;
         @media all and (min-width: $md-min) {
           height: 21px;
           width: 21px;

@@ -7,15 +7,21 @@ import { TablesTestInfo } from "../text/TestInfos";
 
 const Table = () => {
   const animals = [
+    { name: "Arthur", species: "zebra" },
     { name: "Oscar", species: "lion" },
     { name: "Trudy", species: "elephant" },
     { name: "Miles", species: "zebra" },
-    { name: "Theo", species: "lion" },
+    { name: "Millie", species: "lion" },
+    { name: "Theo", species: "zebra" },
+    { name: "Dandy", species: "elephant" },
+    { name: "Sally", species: "zebra" },
+    { name: "Ruby", species: "elephant" },
+    { name: "Charlie", species: "lion" },
   ];
   const [myFilter, setMyFilter] = useState([
     { id: 1, species: "lion", isChecked: true },
     { id: 2, species: "elephant", isChecked: true },
-    { id: 3, species: "zebra", isChecked: false },
+    { id: 3, species: "zebra", isChecked: true },
   ]);
   const [checkedAnimalSpecies, setCheckedAnimalSpecies] = useState([]);
 
@@ -70,11 +76,11 @@ const Table = () => {
             {myFilter.map((item, index) => {
               return (
                 <label className="option" htmlFor="react" key={index}>
-                  {item.name}
+                  {item.species}s
                   <input
                     type="checkbox"
                     id={item.id}
-                    name={item.name}
+                    name={item.species}
                     checked={item.isChecked}
                     onChange={handleChange}
                   />
@@ -97,7 +103,15 @@ const Table = () => {
               {animals.map((animal, index) => {
                 return checkedAnimalSpecies.includes(animal.species) ? (
                   <tr key={index}>
-                    <td>image</td>
+                    <td>
+                      <img
+                        src={
+                          require(`../../img/tableImg/${animal.name}.jpg`)
+                            .default
+                        }
+                        alt={animal}
+                      />
+                    </td>
                     <td>{animal.name}</td>
                     <td>{animal.species}</td>
                     <td>Mohawk</td>
