@@ -3,45 +3,11 @@ import "./tables.scss";
 //import { TablesVideos } from "../text/videos/VideoSections";
 import { TablesIntro } from "../text/Intros";
 import { TablesTestInfo } from "../text/TestInfos";
-//import { intersection } from "../../HelpFunctions";
+import { animalList } from "./animalList";
 
 const Table = () => {
-  const [animals, setAnimals] = useState([
-    {
-      id: 1,
-      name: "Arthur",
-      species: "zebra",
-      hairdo: "mohawk",
-      isLiked: false,
-    },
-    { id: 2, name: "Oscar", species: "lion", hairdo: "mohawk", isLiked: false },
-    {
-      id: 3,
-      name: "Trudy",
-      species: "elephant",
-      hairdo: "bald",
-      isLiked: true,
-    },
-    { id: 4, name: "Miles", species: "zebra", hairdo: "mohawk", isLiked: true },
-    { id: 5, name: "Millie", species: "lion", hairdo: "short", isLiked: true },
-    { id: 6, name: "Theo", species: "zebra", hairdo: "mohawk", isLiked: true },
-    {
-      id: 7,
-      name: "Dandy",
-      species: "elephant",
-      hairdo: "bald",
-      isLiked: true,
-    },
-    { id: 8, name: "Sally", species: "zebra", hairdo: "mohawk", isLiked: true },
-    { id: 9, name: "Ruby", species: "elephant", hairdo: "bald", isLiked: true },
-    {
-      id: 10,
-      name: "Charlie",
-      species: "lion",
-      hairdo: "short",
-      isLiked: true,
-    },
-  ]);
+  const [animals, setAnimals] = useState(animalList);
+
   const [myFilter, setMyFilter] = useState([
     { id: 1, species: "lion", isChecked: true },
     { id: 2, species: "elephant", isChecked: true },
@@ -49,8 +15,8 @@ const Table = () => {
   ]);
   //set to all from start
   const [filteredAnimals, setFilteredAnimals] = useState(animals);
+  const [startPageIndex, setStartPageIndex] = useState(0);
   const itemsPerPage = 4;
-  const [startPageIndex, setStartPageIndex] = useState(4);
 
   const handleChange = (event) => {
     let updatedFilter = [...myFilter];
@@ -68,25 +34,16 @@ const Table = () => {
   const toggleLike = (animal) => {
     setAnimals([...animals, (animal.isLiked = !animal.isLiked)]);
   };
-
   const nextPage = (e) => {
     e.preventDefault();
     setStartPageIndex((startPageIndex) => startPageIndex + itemsPerPage);
   };
-
   const prevPage = (e) => {
     e.preventDefault();
-    setStartPageIndex((startPageIndex) => (startPageIndex -= itemsPerPage));
+    setStartPageIndex((startPageIndex) => startPageIndex - itemsPerPage);
   };
 
   useEffect(() => {
-    console.log("startPageIndex", startPageIndex);
-  }, [startPageIndex]);
-
-  useEffect(() => {
-    //const currentPosts = books.fliter(book => book.title.includes(keyword)).slice(indexOfFirstBook, indexOfLastBook);
-    // filteredAnimals.slice(startPageIndex, startPageIndex+itemsPerPage)
-
     //checked items species
     const checkedItemSpecies = myFilter
       .filter((item) => {
@@ -101,10 +58,8 @@ const Table = () => {
     });
     //sätter filtered animals
     setFilteredAnimals(temp);
-    const temp2 = temp.slice(startPageIndex, startPageIndex + itemsPerPage);
 
-    console.log("myFilter", myFilter);
-    console.log("filteredAnimals", filteredAnimals);
+    // console.log("filteredAnimals", filteredAnimals);
   }, [myFilter]);
   return (
     <div className="row justify-content-between">
@@ -142,9 +97,8 @@ const Table = () => {
             <tbody>
               {filteredAnimals &&
                 filteredAnimals.map((animal, index) => {
-                  if (index < startPageIndex) {
+                  if (index < itemsPerPage + startPageIndex && index > startPageIndex) {
                     return (
-                      // filteredAnimals.slice(startPageIndex, startPageIndex+itemsPerPage)
                       <tr key={index}>
                         <td>
                           {" "}
@@ -167,15 +121,15 @@ const Table = () => {
             </tbody>
           </table>
           <div className="pagination">
-            {startPageIndex > 4 && (
+            {startPageIndex != 0 && (
               <button onClick={prevPage}>
                 <i className="fas fa-angle-double-left"></i>
-                &nbsp; See less
+                &nbsp; Previous
               </button>
             )}
-            {startPageIndex < animals.length && (
+            {animals && startPageIndex < animals.length - itemsPerPage && (
               <button onClick={nextPage}>
-                See more &nbsp;
+                Next &nbsp;
                 <i className="fas fa-angle-double-right"></i>
               </button>
             )}
