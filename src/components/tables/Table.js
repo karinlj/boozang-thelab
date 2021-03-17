@@ -16,7 +16,7 @@ const Table = () => {
   //set to all from start
   const [filteredAnimals, setFilteredAnimals] = useState(animals);
   const [startPageIndex, setStartPageIndex] = useState(0);
-  const itemsPerPage = 4;
+  const itemsPerPage = 6;
 
   const handleChange = (event) => {
     let updatedFilter = [...myFilter];
