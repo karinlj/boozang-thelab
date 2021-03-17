@@ -19,13 +19,13 @@
       }
       .fa.fa-heart {
         cursor: pointer;
-        color: $themecolorLilaDark;
-        transition:  all 0.3s ease-in-out;
+        color: #354e97;
+        transition:  all 0.3s ease;
         &.red {
           color: $themecolorNewRed;
         }
-        &:hover{
-          color: $themecolorNewRed;
+        &:hover {
+          color: $themecolorNewPinkLight
         }
       }
     }

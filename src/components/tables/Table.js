@@ -49,8 +49,8 @@ const Table = () => {
   ]);
   //set to all from start
   const [filteredAnimals, setFilteredAnimals] = useState(animals);
-  const [startPageIndex, setStartPageIndex] = useState(0);
   const itemsPerPage = 4;
+  const [startPageIndex, setStartPageIndex] = useState(4);
 
   const handleChange = (event) => {
     let updatedFilter = [...myFilter];
@@ -62,9 +62,9 @@ const Table = () => {
       }
       return item;
     });
+    //sätter checked till true/false
     setMyFilter(updatedFilter);
   };
-
   const toggleLike = (animal) => {
     setAnimals([...animals, (animal.isLiked = !animal.isLiked)]);
   };
@@ -76,7 +76,7 @@ const Table = () => {
 
   const prevPage = (e) => {
     e.preventDefault();
-    setStartPageIndex((startPageIndex) => startPageIndex - itemsPerPage);
+    setStartPageIndex((startPageIndex) => (startPageIndex -= itemsPerPage));
   };
 
   useEffect(() => {
@@ -84,6 +84,9 @@ const Table = () => {
   }, [startPageIndex]);
 
   useEffect(() => {
+    //const currentPosts = books.fliter(book => book.title.includes(keyword)).slice(indexOfFirstBook, indexOfLastBook);
+    // filteredAnimals.slice(startPageIndex, startPageIndex+itemsPerPage)
+
     //checked items species
     const checkedItemSpecies = myFilter
       .filter((item) => {
@@ -96,10 +99,13 @@ const Table = () => {
     const temp = animals.filter((animal) => {
       return checkedItemSpecies.includes(animal.species);
     });
+    //sätter filtered animals
     setFilteredAnimals(temp);
+    const temp2 = temp.slice(startPageIndex, startPageIndex + itemsPerPage);
 
-    //console.log("filteredAnimals", filteredAnimals);
-  }, [myFilter, animals]);
+    console.log("myFilter", myFilter);
+    console.log("filteredAnimals", filteredAnimals);
+  }, [myFilter]);
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-8 col-lg-12 col-xl-6">
@@ -136,8 +142,9 @@ const Table = () => {
             <tbody>
               {filteredAnimals &&
                 filteredAnimals.map((animal, index) => {
-                  if (index < itemsPerPage) {
+                  if (index < startPageIndex) {
                     return (
+                      // filteredAnimals.slice(startPageIndex, startPageIndex+itemsPerPage)
                       <tr key={index}>
                         <td>
                           {" "}
@@ -159,18 +166,16 @@ const Table = () => {
                 })}
             </tbody>
           </table>
-
           <div className="pagination">
-            {startPageIndex > 0 && (
+            {startPageIndex > 4 && (
               <button onClick={prevPage}>
                 <i className="fas fa-angle-double-left"></i>
-                &nbsp; Previous
+                &nbsp; See less
               </button>
             )}
-
             {startPageIndex < animals.length && (
               <button onClick={nextPage}>
-                Next &nbsp;
+                See more &nbsp;
                 <i className="fas fa-angle-double-right"></i>
               </button>
             )}
