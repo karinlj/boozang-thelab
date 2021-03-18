@@ -76,7 +76,7 @@ function App() {
               <Route path="/formFill">
                 <FormFill />
               </Route>
-              <Route path="/Table">
+              <Route path="/tables">
                 <Table />
               </Route>
               <Route path="/speedGame">

@@ -8,11 +8,7 @@ const NavbarLinks = ({ handleClickLink }) => {
         Getting started
         <ul className="sub_list">
           <li>
-            <NavLink
-              to="/introduction"
-              className="link"
-              activeClassName="current"
-            >
+            <NavLink to="/introduction" className="link" activeClassName="current">
               <div onClick={handleClickLink}>Introduction</div>
             </NavLink>
           </li>
@@ -42,11 +38,7 @@ const NavbarLinks = ({ handleClickLink }) => {
         Conditional logic
         <ul className="sub_list">
           <li>
-            <NavLink
-              to="/yellowOrBlue"
-              className="link"
-              activeClassName="current"
-            >
+            <NavLink to="/yellowOrBlue" className="link" activeClassName="current">
               <div onClick={handleClickLink}>Yellow or Blue</div>
             </NavLink>
           </li>
@@ -61,20 +53,12 @@ const NavbarLinks = ({ handleClickLink }) => {
         Lists
         <ul className="sub_list">
           <li>
-            <NavLink
-              to="/sortedList"
-              className="link"
-              activeClassName="current"
-            >
+            <NavLink to="/sortedList" className="link" activeClassName="current">
               <div onClick={handleClickLink}>Sorted list</div>
             </NavLink>{" "}
           </li>
           <li>
-            <NavLink
-              to="/unsortedList"
-              className="link"
-              activeClassName="current"
-            >
+            <NavLink to="/unsortedList" className="link" activeClassName="current">
               <div onClick={handleClickLink}>Unsorted list</div>
             </NavLink>{" "}
           </li>
@@ -89,16 +73,12 @@ const NavbarLinks = ({ handleClickLink }) => {
             </NavLink>
           </li>
           <li>
-            <NavLink
-              to="/catshelter"
-              className="link"
-              activeClassName="current"
-            >
+            <NavLink to="/catshelter" className="link" activeClassName="current">
               <div onClick={handleClickLink}>Cat Shelter</div>
             </NavLink>
           </li>
           <li>
-            <NavLink to="/Table" className="link" activeClassName="current">
+            <NavLink to="/tables" className="link" activeClassName="current">
               <div onClick={handleClickLink}>Tables</div>
             </NavLink>
           </li>
@@ -108,11 +88,7 @@ const NavbarLinks = ({ handleClickLink }) => {
         Bug reporting
         <ul className="sub_list">
           <li>
-            <NavLink
-              to="/visualBugs"
-              className="link"
-              activeClassName="current"
-            >
+            <NavLink to="/visualBugs" className="link" activeClassName="current">
               <div onClick={handleClickLink}>Visual Bugs</div>
             </NavLink>
           </li>
@@ -127,11 +103,7 @@ const NavbarLinks = ({ handleClickLink }) => {
             </NavLink>
           </li>
           <li>
-            <NavLink
-              to="/multiScramble"
-              className="link"
-              activeClassName="current"
-            >
+            <NavLink to="/multiScramble" className="link" activeClassName="current">
               <div onClick={handleClickLink}>Multi-scramble</div>
             </NavLink>
           </li>
@@ -141,11 +113,7 @@ const NavbarLinks = ({ handleClickLink }) => {
         Using data
         <ul className="sub_list">
           <li>
-            <NavLink
-              to="/concatStrings"
-              className="link"
-              activeClassName="current"
-            >
+            <NavLink to="/concatStrings" className="link" activeClassName="current">
               <div onClick={handleClickLink}>Concat strings</div>
             </NavLink>
           </li>
@@ -155,20 +123,12 @@ const NavbarLinks = ({ handleClickLink }) => {
         Games
         <ul className="sub_list">
           <li>
-            <NavLink
-              to="/kittenCollect"
-              className="link"
-              activeClassName="current"
-            >
+            <NavLink to="/kittenCollect" className="link" activeClassName="current">
               <div onClick={handleClickLink}>Collecting kittens</div>
             </NavLink>
           </li>
           <li>
-            <NavLink
-              to="/canvasGame"
-              className="link"
-              activeClassName="current"
-            >
+            <NavLink to="/canvasGame" className="link" activeClassName="current">
               <div onClick={handleClickLink}>Canvas Game</div>
             </NavLink>
           </li>
