@@ -60,7 +60,7 @@ const Table = () => {
     setFilteredAnimals(temp);
 
     // console.log("filteredAnimals", filteredAnimals);
-  }, [myFilter]);
+  }, [myFilter, animals]);
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-8 col-lg-12 col-xl-6">
@@ -97,31 +97,33 @@ const Table = () => {
             <tbody>
               {filteredAnimals &&
                 filteredAnimals.map((animal, index) => {
-                  if (index < itemsPerPage + startPageIndex && index > startPageIndex) {
-                    return (
-                      <tr key={index}>
-                        <td>
-                          {" "}
-                          <img src={require(`../../img/tableImg/${animal.name}.jpg`).default} alt={animal} />{" "}
-                        </td>
-                        <td>{animal.name}</td>
-                        <td>{animal.species}</td>
-                        <td>{animal.hairdo}</td>
-                        <td>
-                          <i
-                            className={`fa fa-heart ${animal.isLiked ? "red" : ""}`}
-                            onClick={() => toggleLike(animal)}
-                            title="like"
-                          />
-                        </td>
-                      </tr>
-                    );
-                  }
+                  //slice(startPageIndex, startPageIndex + itemsPerPage);
+
+                  return index > startPageIndex && index < startPageIndex + itemsPerPage ? (
+                    <tr key={index}>
+                      <td>
+                        {" "}
+                        <img src={require(`../../img/tableImg/${animal.name}.jpg`).default} alt={animal} />{" "}
+                      </td>
+                      <td>{animal.name}</td>
+                      <td>{animal.species}</td>
+                      <td>{animal.hairdo}</td>
+                      <td>
+                        <i
+                          className={`fa fa-heart ${animal.isLiked ? "red" : ""}`}
+                          onClick={() => toggleLike(animal)}
+                          title="like"
+                        />
+                      </td>
+                    </tr>
+                  ) : (
+                    <tr key={index}></tr>
+                  );
                 })}
             </tbody>
           </table>
           <div className="pagination">
-            {startPageIndex != 0 && (
+            {startPageIndex !== 0 && (
               <button onClick={prevPage}>
                 <i className="fas fa-angle-double-left"></i>
                 &nbsp; Previous
