@@ -1,0 +1,26 @@
+@ConcatStrings
+
+Feature: Concat Strings
+
+Add two strings read from the application
+
+Scenario: Add two strings
+"""
+Add two strings read from the application
+"""
+
+Given I am on the concat string page
+When I click Generate strings
+Then two strings should be shown
+When I enter the concatenated string
+Then I should get a success message
+ 
+
+Scenario: Add two strings negative test
+"""
+Random input
+"""
+
+Given I click generate strings
+When I type a random string
+Then I should get an error message

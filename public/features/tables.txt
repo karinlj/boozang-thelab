@@ -1,0 +1,30 @@
+@Tables
+
+Feature: Tables
+
+Validate all filters
+
+Scenario: Validate empty filter
+"""
+Validate that the empty filters are working
+"""
+
+Given I am have unselected all filters
+When I do nothing
+Then the table should be empty
+
+Scenario Outline: Validate table filters
+"""
+Validate that the filters are working
+"""
+
+Given I am have unselected all filters
+When I select <filter>
+Then the list should show only animals of type <filter>
+
+Examples:
+
+|filter   |animal  |
+|lions    |lion    |
+|elephants|elephant|
+|zebras   |zebra   |
