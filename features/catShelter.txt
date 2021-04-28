@@ -1,0 +1,33 @@
+@CatShelter
+Feature: Form Fill
+
+Check all CRUD tests
+
+Scenario: Add cat to shelter
+"""
+Validate that a cat can be added to the shelter
+"""
+
+Given I am on the cat shelter main page
+When I add a cat
+Then the cat should be added to the shelter dashboard
+
+
+Scenario: Edit cat in shelter
+"""
+Validate that a cat can be removed from the shelter
+"""
+
+Given I have added a cat to the shelter
+When I edit the cat name
+Then the cat should be renamed in the shelter dashboard
+
+
+Scenario: Remove cat from shelter
+"""
+Validate that a cat can be removed from the shelter
+"""
+
+Given I have added a cat to the shelter
+When I delete the cat
+Then the cat should be removed from the shelter dashboard
