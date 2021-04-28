@@ -1,0 +1,16 @@
+@CatOrDog
+Feature: Cat or Dog
+
+Check that the right messages are shown. 
+
+Scenario: Message shown on hitting button
+"""
+Check that a success message is shown when hitting the right button, 
+and an error message is show when hitting the wrong button
+"""
+
+Given I have started the game
+When I hit the right button
+Then a success message should be shown
+and When I hit the wrong button
+Then an error message should be shown

@@ -1,0 +1,19 @@
+@FormFill
+Feature: Form Fill
+
+Check the add function
+
+Scenario Outline: Add item via form
+"""
+Validate that an item can be added via the form
+"""
+
+Given I have an empty list
+When I add an a user with <firstName>, <lastName>, <email>, and <password>,
+Then the user with <firstName> and <lastName> should be added
+
+Examples:
+
+|firstName|lastName |email                 |password |
+|Jane     |Doe      |jane.doe@boozang.com  |secret123|
+|James    |Dean     |james.dean@boozang.com|secret123|
