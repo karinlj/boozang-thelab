@@ -49,7 +49,7 @@ const SortedList = () => {
     setTodos([...todos, newTodo]);
   };
   useEffect(() => {
-    // console.log("todos:", todos);
+    console.log("todos:", todos);
   }, [todos]);
 
   return (
@@ -60,7 +60,7 @@ const SortedList = () => {
           {error && <div className="error">{error}</div>}
           {isLoading && <div className="loading">Loading...</div>}
           {todos && <TodoList todos={todos} handleDelete={handleDelete} />}
-          <AddTodo addTodo={addTodo} />
+          <AddTodo addTodo={addTodo} todos={todos} />
         </section>
       </div>
       <div className="col-12 col-md-5">

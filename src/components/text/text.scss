@@ -74,7 +74,9 @@
     padding-left: 1rem;
     li {
       list-style-type: disc;
-      color: $navLinkColor;
+      // color: $navLinkColor;
+      color: #fff;
+      margin-bottom: 0.5rem;
     }
   }
 

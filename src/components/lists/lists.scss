@@ -53,6 +53,12 @@
     border: none;
     border-bottom: 1px solid $themeBorderColor;
   }
+  .error {
+    color: $themecolorNewRed;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
 }
 
 //cat shelter
