@@ -19,5 +19,6 @@ test("should output matching result", () => {
 });
 
 test("3 plus 5 is 8", () => {
-  expect(sum(3, 5)).toBe(8);
+  const mySum = sum(3,5)
+  expect(mySum).toBe(8);
 });

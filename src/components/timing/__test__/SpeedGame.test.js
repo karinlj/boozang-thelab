@@ -20,8 +20,9 @@ afterEach(() => {
 test("resultMessage should have correct classname when click on Start", () => {
   //   const { debug } = render(<SpeedGame />);
   //   debug();
-  const { getByTestId } = render(<SpeedGame />);
+  const { getByTestId } = render(<SpeedGame test="0" />);
   const startBtnElement = getByTestId("startBtn");
+
   const resultMessage = getByTestId("result");
 
   fireEvent.click(startBtnElement);

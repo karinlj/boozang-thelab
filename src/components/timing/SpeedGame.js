@@ -11,6 +11,7 @@ const SpeedGame = () => {
   const [count, setCount] = useState(0);
   const [successMessage, setSuccessMessage] = useState("");
   const [timeMessage, setTimeMessage] = useState("");
+  const test = 1;
 
   const handleStart = () => {
     if (!isRunning) {
@@ -19,7 +20,7 @@ const SpeedGame = () => {
       setTimeMessage("");
       let startCount = Math.floor(Math.random() * 10000) + 1000; //random nr mellan 1000-10000ms
       //start counting down at randomnr
-      setCount(startCount);
+      setCount(startCount * test);
     }
   };
   const handleStop = () => {
