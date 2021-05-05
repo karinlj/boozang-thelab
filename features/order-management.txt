@@ -1,0 +1,45 @@
+@Order @Brewer
+Feature: Order Management
+
+This feature covers the basic order scenarios, using implicit calculations.  
+
+@Smoke
+Scenario: Order product
+"""
+Orders generic product
+"""
+
+Given I am a brewer
+and I add a product
+and I set the inventory
+and I set the price
+When I order product 
+Then the order list should include product
+and the order details should be right
+
+@Smoke
+Scenario Outline: Order product mixed
+"""
+Orders generic product mixed dd
+"""
+
+Given I am a brewer
+and I add a product <product> with <format>
+and I set the inventory
+and I set the price <price>
+When I order product <quantity>
+Then the order list should include product
+and the order details should be <subtotal>, <gst>, <qst>, <total_deposits>, and <total>
+
+Examples:
+
+|product        |format          |price|quantity|subtotal|gst  |qst   |total_deposits|total  |
+|beer           |375mL x 12      |74.99|14      |1049.86 |52.49|104.72|16.80         |1223.87| 
+|coffee         |500 g x 1       |74.99|14      |1049.86 |52.49|104.72|              |1207.07|
+|tea            |500 g x 1       |74.99|14      |1049.86 |52.49|104.72|              |1207.07|
+|cider          |Cider 375mL x 12|74.99|14      |1049.86 |52.49|104.72|              |1207.07| 
+|wine           |750mL x 12      |74.99|14      |1049.86 |52.49|104.72|50.4          |1257.47| 
+|kombucha       |375mL x 12      |74.99|14      |1049.86 |52.49|104.72|16.80         |1223.87| 
+|coffee_beverage|can 355mL x 12  |74.99|14      |1049.86 |52.49|104.72|8.40          |1215.47| 
+|other_beverage |375mL x 12      |74.99|14      |1049.86 |52.49|104.72|16.80         |1223.87| 
+|merchandise    |bz-skip         |74.99|14      |1049.86 |52.49|104.72|              |1207.07|
