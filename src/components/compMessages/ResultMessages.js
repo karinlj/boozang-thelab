@@ -1,19 +1,8 @@
 import "./messages.scss";
-const ResultMessages = ({
-  openWrapper,
-  successMessage,
-  subMessage,
-  messageString,
-}) => {
+const ResultMessages = ({ openWrapper, successMessage, subMessage, messageString }) => {
   return (
-    <div className={`result_wrapper ${openWrapper ? "show" : ""}`}>
-      <h4
-        className={`success_message ${
-          successMessage === messageString ? "" : "fail"
-        }`}
-      >
-        {successMessage}
-      </h4>
+    <div className={`result_wrapper ${openWrapper ? "show" : ""}`} data-testid="result">
+      <h4 className={`success_message ${successMessage === messageString ? "" : "fail"}`}>{successMessage}</h4>
       {subMessage && <p className="sub_message">{subMessage}</p>}
     </div>
   );

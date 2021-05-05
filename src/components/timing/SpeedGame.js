@@ -42,7 +42,7 @@ const SpeedGame = () => {
   }, [isRunning, count]);
 
   return (
-    <div className="row justify-content-between">
+    <div className="row justify-content-between" data-testid="SpeedGame">
       <div className="col-12 col-md-6 col-xl-5">
         <section className="timing_section">
           <SpeedGameIntro />
@@ -52,6 +52,7 @@ const SpeedGame = () => {
               value="Start Game"
               className="formBtn add"
               onClick={handleStart}
+              data-testid="startBtn"
             />
             {count < 0 && (
               <input
@@ -59,9 +60,9 @@ const SpeedGame = () => {
                 value="End Game"
                 className="formBtn delete"
                 onClick={handleStop}
+                data-testid="stopBtn"
               />
             )}
-
             <ResultMessages
               openWrapper={!isRunning}
               successMessage={successMessage}

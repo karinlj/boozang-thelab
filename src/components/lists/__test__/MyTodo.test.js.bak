@@ -1,0 +1,26 @@
+import MyTestingTodo from "../MyTestingTodo";
+import { render, screen, cleanup } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
+
+afterEach(() => {
+  cleanup();
+});
+test("render non completed todo", () => {
+  const todo = { id: 1, title: "walk cats", completed: false };
+
+  render(<MyTestingTodo todo={todo} />);
+  const myTodoElement = screen.getByTestId("myTodo-1");
+  expect(myTodoElement).toBeInTheDocument;
+  expect(myTodoElement).toHaveTextContent("walk cats");
+  expect(myTodoElement).not.toContainHTML("<strike>");
+});
+
+test("render completed todo", () => {
+  const todo = { id: 2, title: "feed cats", completed: true };
+
+  render(<MyTestingTodo todo={todo} />);
+  const myTodoElement = screen.getByTestId("myTodo-2");
+  expect(myTodoElement).toBeInTheDocument;
+  expect(myTodoElement).toHaveTextContent("feed cats");
+  expect(myTodoElement).toContainHTML("<strike>");
+});

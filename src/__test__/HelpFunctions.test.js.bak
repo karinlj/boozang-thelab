@@ -1,0 +1,23 @@
+import { generateText } from "../HelpFunctions";
+import { intersection } from "../HelpFunctions";
+import { sum } from "../HelpFunctions";
+
+//test() by testrunner
+//expect() by assertion library
+//here both from jest
+
+test("should output name and age", () => {
+  const text = generateText("Karin", 48);
+  expect(text).toBe("Karin (48 years old)");
+});
+
+test("should output matching result", () => {
+  const array1 = ["banan", "truls", "apelsin"];
+  const array2 = ["hugo", "filip", "truls"];
+  const match = intersection(array1, array2);
+  expect(match).toEqual(["truls"]);
+});
+
+test("3 plus 5 is 8", () => {
+  expect(sum(3, 5)).toBe(8);
+});

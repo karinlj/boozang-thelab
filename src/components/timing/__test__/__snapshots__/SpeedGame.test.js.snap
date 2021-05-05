@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render SpeedGame component 1`] = `
+<div
+  className="row justify-content-between"
+  data-testid="SpeedGame"
+>
+  <div
+    className="col-12 col-md-6 col-xl-5"
+  >
+    <section
+      className="timing_section"
+    >
+      <article
+        className="comp_intro"
+      >
+        <h1>
+          Speed Game
+        </h1>
+        <p>
+          This game tests the user reaction time. This is also useful to show-case test automation render waits. where x is a random time between 1 and 10 seconds. The hit the button as fast as you can. The smaller the number of milliseconds above, the better.
+        </p>
+      </article>
+      <div
+        className="game_space"
+      >
+        <input
+          className="formBtn add"
+          onClick={[Function]}
+          type="button"
+          value="Start Game"
+        />
+        <div
+          className="result_wrapper show"
+        >
+          <h4
+            className="success_message fail"
+          >
+            
+          </h4>
+          
+        </div>
+      </div>
+    </section>
+  </div>
+  <div
+    className="col-12 col-md-5"
+  >
+    <article
+      className="comp_test_info"
+    >
+      <h4>
+        Why learn: Speed Game
+      </h4>
+      <p>
+        A classic problem in test automation is handling render waits. If certain elements are taking longer to render, the test might fail. On the other hand, if we create long delays the overall test takes too long to run. Best if is we can wait until an element appears, but then click it as fast as we can.
+      </p>
+    </article>
+    <section
+      className="video_section"
+    >
+      <div
+        className=""
+      >
+        <div>
+          <h5>
+            Related videos on YouTube
+          </h5>
+          <ul>
+            <li>
+              <a
+                href="https://www.youtube.com/watch?v=cex5hf5ui6M&list=PLhdB7gylbUzpRBVLjpi4KI-g2j7U0y9Qr&index=5"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <img
+                  alt="YouTube logo"
+                  className="youtube_logo"
+                  src="youtube_logo.png"
+                />
+                <span>
+                   
+                  Speed
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+`;

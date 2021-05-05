@@ -4,3 +4,11 @@ export const intersection = (array1, array2) => {
     return array2.includes(element);
   });
 };
+
+export const generateText = (name, age) => {
+  return `${name} (${age} years old)`;
+};
+
+export const sum = (a, b) => {
+  return a + b;
+};
