@@ -3,6 +3,7 @@ import "./tables.scss";
 //import { TablesVideos } from "../text/videos/VideoSections";
 import { TablesIntro } from "../text/Intros";
 import { TablesTestInfo } from "../text/TestInfos";
+import { TablesWhatToTest } from "../text/WhatToTest";
 import { animalList } from "./animalList";
 
 const Table = () => {
@@ -140,6 +141,7 @@ const Table = () => {
       </div>
       <div className="col-12 col-md-4 col-lg-12 col-xl-5">
         <TablesTestInfo />
+        <TablesWhatToTest />
         {/* <TablesVideos /> */}
       </div>
     </div>

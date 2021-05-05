@@ -6,6 +6,7 @@ import { getData } from "../../fetchFunctions/fetchFunctions";
 import { updateData } from "../../fetchFunctions/fetchFunctions";
 import { CatShelterIntro } from "../../text/Intros";
 import { CatShelterTestInfo } from "../../text/TestInfos";
+import { CatShelterWhatToTest } from "../../text/WhatToTest";
 import { Link } from "react-router-dom";
 import { CatsDb } from "../../text/DbInfo";
 
@@ -45,9 +46,7 @@ const CatShelter = () => {
     //set Gui state
     setCats(
       cats.map((cat) => {
-        return cat.id === id
-          ? { ...cat, foundHome: catFromServer.foundHome }
-          : cat;
+        return cat.id === id ? { ...cat, foundHome: catFromServer.foundHome } : cat;
       })
     );
   };
@@ -69,6 +68,7 @@ const CatShelter = () => {
       </div>
       <div className="col-12 col-md-5">
         <CatShelterTestInfo />
+        <CatShelterWhatToTest />
         <CatsDb />
         <CatShelterVideos />
       </div>

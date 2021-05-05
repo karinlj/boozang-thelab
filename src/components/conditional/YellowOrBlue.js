@@ -3,6 +3,7 @@ import "./conditional.scss";
 import { YellowOrBlueIntro } from "../text/Intros";
 import { YellowOrBlueTestInfo } from "../text/TestInfos";
 import { YellowOrBlueVideos } from "../text/videos/VideoSections";
+import { YellowOrBlueWhatToTest } from "../text/WhatToTest";
 import ResultMessages from "../compMessages/ResultMessages";
 
 const YellowOrBlue = () => {
@@ -35,12 +36,7 @@ const YellowOrBlue = () => {
         <section className="conditional_section">
           <YellowOrBlueIntro />
           <div className="wrapper">
-            <input
-              type="button"
-              value="Generate Color"
-              className="formBtn add"
-              onClick={generateColor}
-            />
+            <input type="button" value="Generate Color" className="formBtn add" onClick={generateColor} />
             <section className={`output_section ${randColor ? "show" : ""}`}>
               <h5 className="color">{randColor}</h5>
               <div className="btn_section">
@@ -76,6 +72,7 @@ const YellowOrBlue = () => {
       </div>
       <div className="col-12 col-md-5">
         <YellowOrBlueTestInfo />
+        <YellowOrBlueWhatToTest />
         <YellowOrBlueVideos />
       </div>
     </div>

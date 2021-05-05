@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./strings.scss";
 import { ConcatStringsIntro } from "../text/Intros";
 import { ConcatStringTestInfo } from "../text/TestInfos";
+import { ConcatStringsWhatToTest } from "../text/WhatToTest";
 import { ConcatStringsVideos } from "../text/videos/VideoSections";
 import ResultMessages from "../compMessages/ResultMessages";
 
@@ -12,18 +13,7 @@ const ConcatStrings = () => {
   const [concatStr, setConcatStr] = useState("");
   const [inputStr, setInputStr] = useState("");
 
-  const strings = [
-    "bear",
-    "elephant",
-    "bunny",
-    "horse",
-    "cow",
-    "tiger",
-    "lion",
-    "mouse",
-    "bird",
-    "turtle",
-  ];
+  const strings = ["bear", "elephant", "bunny", "horse", "cow", "tiger", "lion", "mouse", "bird", "turtle"];
 
   const generateStrings = () => {
     const randStr1 = strings[Math.floor(Math.random() * strings.length)];
@@ -52,12 +42,7 @@ const ConcatStrings = () => {
       <div className="col-12 col-md-6 col-xl-5">
         <section className="strings_section">
           <ConcatStringsIntro />
-          <input
-            type="button"
-            value="Generate strings"
-            className="formBtn add"
-            onClick={generateStrings}
-          />
+          <input type="button" value="Generate strings" className="formBtn add" onClick={generateStrings} />
           <section className={`output_section ${stringOne ? "show" : ""}`}>
             <div className="strings">
               <p className="string1">{stringOne}</p>
@@ -79,16 +64,13 @@ const ConcatStrings = () => {
               </section>
             </form>
 
-            <ResultMessages
-              openWrapper={concatStr}
-              successMessage={successMessage}
-              messageString={"Success!"}
-            />
+            <ResultMessages openWrapper={concatStr} successMessage={successMessage} messageString={"Success!"} />
           </section>
         </section>
       </div>
       <div className="col-12 col-md-5">
         <ConcatStringTestInfo />
+        <ConcatStringsWhatToTest />
         <ConcatStringsVideos />
       </div>
     </div>

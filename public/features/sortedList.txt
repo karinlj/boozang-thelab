@@ -14,7 +14,7 @@ Then the item should be shown in the list
 
 Scenario: Maximum items in list
 """
-Validate that maximukm 5 items can be added to the list
+Validate that maximum 5 items can be added to the list
 """
 
 Given I have an empty list

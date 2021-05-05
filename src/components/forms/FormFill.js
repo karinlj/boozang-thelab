@@ -3,6 +3,7 @@ import "./form.scss";
 import { FormFillVideos } from "../text/videos/VideoSections";
 import { FormFillIntro } from "../text/Intros";
 import { FormFillTestInfo } from "../text/TestInfos";
+import { FormFillWhatToTest } from "../text/WhatToTest";
 import { addData } from "../fetchFunctions/fetchFunctions";
 import { getData } from "../fetchFunctions/fetchFunctions";
 import { deleteData } from "../fetchFunctions/fetchFunctions";
@@ -98,21 +99,11 @@ function FormFill() {
         <section className="form_section">
           <FormFillIntro />
           {error && <div className="error">{error}</div>}
-          <Form
-            formData={formData}
-            handleChange={handleChange}
-            saveMessage={saveMessage}
-            handleSubmit={handleSubmit}
-          />
+          <Form formData={formData} handleChange={handleChange} saveMessage={saveMessage} handleSubmit={handleSubmit} />
 
           <section className="get_from_db">
             {!printForm && (
-              <input
-                type="button"
-                value="Show users in db"
-                className="formBtn orange"
-                onClick={getUsers}
-              />
+              <input type="button" value="Show users in db" className="formBtn orange" onClick={getUsers} />
             )}
             {printForm && (
               <input
@@ -126,17 +117,12 @@ function FormFill() {
             )}
           </section>
 
-          {users && (
-            <PrintForm
-              printForm={printForm}
-              users={users}
-              deleteUser={deleteUser}
-            />
-          )}
+          {users && <PrintForm printForm={printForm} users={users} deleteUser={deleteUser} />}
         </section>
       </div>
       <div className="col-12 col-md-5">
         <FormFillTestInfo />
+        <FormFillWhatToTest />
         <UsersDb />
         <FormFillVideos />
       </div>

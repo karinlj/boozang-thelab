@@ -3,6 +3,7 @@ import "./lists.scss";
 import { SortedListIntro } from "../text/Intros";
 import { SortedListTestInfo } from "../text/TestInfos";
 import { SortedListVideos } from "../text/videos/VideoSections";
+import { SortedListWhatToTest } from "../text/WhatToTest";
 import TodoList from "./TodoList";
 import AddTodo from "./AddTodo";
 import { getData } from "../fetchFunctions/fetchFunctions";
@@ -64,6 +65,7 @@ const SortedList = () => {
       </div>
       <div className="col-12 col-md-5">
         <SortedListTestInfo />
+        <SortedListWhatToTest />
         <TodosDb />
         <SortedListVideos />
       </div>

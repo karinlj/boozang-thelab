@@ -3,6 +3,7 @@ import "./timing.scss";
 import { SpeedGameVideos } from "../text/videos/VideoSections";
 import { SpeedGameIntro } from "../text/Intros";
 import { SpeedGameTestInfo } from "../text/TestInfos";
+import { SpeedGameWhatToTest } from "../text/WhatToTest";
 import ResultMessages from "../compMessages/ResultMessages";
 
 const SpeedGame = () => {
@@ -74,6 +75,7 @@ const SpeedGame = () => {
       </div>
       <div className="col-12 col-md-5">
         <SpeedGameTestInfo />
+        <SpeedGameWhatToTest />
         <SpeedGameVideos />
       </div>
     </div>

@@ -3,6 +3,7 @@ import "./timing.scss";
 import { WaitGameVideos } from "../text/videos/VideoSections";
 import { WaitGameIntro } from "../text/Intros";
 import { WaitGameTestInfo } from "../text/TestInfos";
+import { WaitGameWhatToTest } from "../text/WhatToTest";
 import ResultMessages from "../compMessages/ResultMessages";
 
 const WaitGame = () => {
@@ -55,22 +56,9 @@ const WaitGame = () => {
         <section className="timing_section">
           <WaitGameIntro />
           <div className="game_space">
-            <input
-              type="button"
-              value="Start Game"
-              className="formBtn add"
-              onClick={handleStart}
-            />
+            <input type="button" value="Start Game" className="formBtn add" onClick={handleStart} />
 
-            {isRunning && (
-              <input
-                type="button"
-                value="End Game"
-                className="formBtn delete"
-                onClick={handleStop}
-              />
-            )}
-
+            {isRunning && <input type="button" value="End Game" className="formBtn delete" onClick={handleStop} />}
             <ResultMessages
               openWrapper={!isRunning}
               successMessage={successMessage}
@@ -82,6 +70,7 @@ const WaitGame = () => {
       </div>
       <div className="col-12 col-md-5">
         <WaitGameTestInfo />
+        <WaitGameWhatToTest />
         <WaitGameVideos />
       </div>
     </div>

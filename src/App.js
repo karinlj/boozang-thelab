@@ -10,7 +10,7 @@ import Home from "./components/Home";
 import Introduction from "./components/Introduction";
 import Overview from "./components/Overview";
 import SortedList from "./components/lists/SortedList";
-import UnsortedList from "./components/lists/UnsortedList";
+//import UnsortedList from "./components/lists/UnsortedList";
 import CatShelter from "./components/lists/catList/CatShelter";
 import CatDetails from "./components/lists/catList/CatDetails";
 import AddCat from "./components/lists/catList/AddCat";
@@ -61,9 +61,9 @@ function App() {
               <Route path="/sortedList">
                 <SortedList />
               </Route>
-              <Route path="/unsortedList">
+              {/* <Route path="/unsortedList">
                 <UnsortedList />
-              </Route>
+              </Route> */}
               <Route path="/catshelter">
                 <CatShelter />
               </Route>

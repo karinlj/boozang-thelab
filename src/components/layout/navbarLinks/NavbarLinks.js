@@ -50,7 +50,7 @@ const NavbarLinks = ({ handleClickLink }) => {
         </ul>
       </li>
       <li>
-        Lists
+        {/* Lists
         <ul className="sub_list">
           <li>
             <NavLink to="/sortedList" className="link" activeClassName="current">
@@ -62,11 +62,16 @@ const NavbarLinks = ({ handleClickLink }) => {
               <div onClick={handleClickLink}>Unsorted list</div>
             </NavLink>{" "}
           </li>
-        </ul>
+        </ul> */}
       </li>
       <li>
-        Forms and Tables
+        Lists, Forms and Tables
         <ul className="sub_list">
+          <li>
+            <NavLink to="/sortedList" className="link" activeClassName="current">
+              <div onClick={handleClickLink}>Sorted list</div>
+            </NavLink>{" "}
+          </li>
           <li>
             <NavLink to="/formFill" className="link" activeClassName="current">
               <div onClick={handleClickLink}> Form Fill</div>
@@ -102,11 +107,11 @@ const NavbarLinks = ({ handleClickLink }) => {
               <div onClick={handleClickLink}>Scramble items</div>
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink to="/multiScramble" className="link" activeClassName="current">
               <div onClick={handleClickLink}>Multi-scramble</div>
             </NavLink>
-          </li>
+          </li> */}
         </ul>
       </li>
       <li>

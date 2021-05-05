@@ -3,6 +3,7 @@ import "./conditional.scss";
 import { CatOrDogIntro } from "../text/Intros";
 import { CatOrDogTestInfo } from "../text/TestInfos";
 import { CatOrDogVideos } from "../text/videos/VideoSections";
+import { CatOrDogWhatToTest } from "../text/WhatToTest";
 import ResultMessages from "../compMessages/ResultMessages";
 
 const CatOrDog = () => {
@@ -12,9 +13,7 @@ const CatOrDog = () => {
 
   const generateImage = () => {
     let images = pets.map((pet, i) => {
-      return (
-        <img src={require(`../../img/${pet}.jpg`).default} key={i} alt={pet} />
-      );
+      return <img src={require(`../../img/${pet}.jpg`).default} key={i} alt={pet} />;
     });
     //setRandImage(null);
     const randNumber = Math.floor(Math.random() * 2);
@@ -39,12 +38,7 @@ const CatOrDog = () => {
         <section className="conditional_section">
           <CatOrDogIntro />
           <div className="wrapper">
-            <input
-              type="button"
-              value="Generate Image"
-              className="formBtn add"
-              onClick={generateImage}
-            />
+            <input type="button" value="Generate Image" className="formBtn add" onClick={generateImage} />
             <section className={`output_section ${randImage ? "show" : ""}`}>
               <div className="image">{randImage}</div>
               <div className="btn_section">
@@ -68,11 +62,7 @@ const CatOrDog = () => {
                     />
                   </div>
                 )}
-                <ResultMessages
-                  openWrapper={successMessage}
-                  successMessage={successMessage}
-                  messageString="Success!"
-                />
+                <ResultMessages openWrapper={successMessage} successMessage={successMessage} messageString="Success!" />
               </div>
             </section>
           </div>
@@ -80,6 +70,7 @@ const CatOrDog = () => {
       </div>
       <div className="col-12 col-md-5">
         <CatOrDogTestInfo />
+        <CatOrDogWhatToTest />
         <CatOrDogVideos />
       </div>
     </div>
