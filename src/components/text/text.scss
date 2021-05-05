@@ -64,8 +64,10 @@
   }
 }
 .comp_what_to_test {
+  // background: #fff;
+  // background: $themecolorLilaDark;
   h4 {
-    color: #fff;
+    color: $themecolorNewPink;
   }
   ul {
     margin-bottom: 1rem;

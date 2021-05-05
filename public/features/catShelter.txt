@@ -15,7 +15,7 @@ Then the cat should be added to the shelter dashboard
 
 Scenario: Edit cat in shelter
 """
-Validate that a cat can be removed from the shelter
+Validate that a cat can be renamed
 """
 
 Given I have added a cat to the shelter

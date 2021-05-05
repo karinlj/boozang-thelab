@@ -76,7 +76,7 @@ export const CatShelterWhatToTest = () => {
       <h4>What to test?</h4>
       <ul>
         <li>Validate that a cat can be added to the shelter.</li>
-        <li> Validate that a cat can be removed from the shelter.</li>
+        <li>Validate that a cat can be renamed.</li>
         <li>Validate that a cat can be removed from the shelter.</li>
       </ul>
       <button className="linkBtn">
