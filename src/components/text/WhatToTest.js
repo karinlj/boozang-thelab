@@ -44,7 +44,7 @@ export const YellowOrBlueWhatToTest = () => {
         </li>
       </ul>
       <button className="linkBtn">
-        <a href="/features/speedGame.txt" target="_blank" rel="noopener noreferrer">
+        <a href="/features/yellowOrBlue.txt" target="_blank" rel="noopener noreferrer">
           <span>Cucumber specification</span>
         </a>
       </button>
@@ -62,7 +62,7 @@ export const CatOrDogWhatToTest = () => {
         </li>
       </ul>
       <button className="linkBtn">
-        <a href="/features/speedGame.txt" target="_blank" rel="noopener noreferrer">
+        <a href="/features/catOrDog.txt" target="_blank" rel="noopener noreferrer">
           <span>Cucumber specification</span>
         </a>
       </button>
