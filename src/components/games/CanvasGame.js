@@ -12,7 +12,11 @@ const CanvasGame = () => {
   const [startY, setStartY] = useState(null);
   const [offsetX, setOffsetX] = useState(null);
   const [offsetY, setOffsetY] = useState(null);
-  const [successMessage, setSuccessMessage] = useState("");
+  const [messageData, setMessageData] = useState({
+    isOpenWrapper: false,
+    resultMessage: "",
+    isSuccess: true,
+  });
 
   const [ball, setBall] = useState({
     x: 50,
@@ -49,15 +53,20 @@ const CanvasGame = () => {
     let boxYMIn = 330;
     let boxYMax = 390;
 
-    if (
-      ball.x > boxXMIn &&
-      ball.x < boxXMax &&
-      ball.y > boxYMIn &&
-      ball.y < boxYMax
-    ) {
-      setSuccessMessage("Success!");
+    if (ball.x > boxXMIn && ball.x < boxXMax && ball.y > boxYMIn && ball.y < boxYMax) {
+      setMessageData({
+        ...messageData,
+        isOpenWrapper: true,
+        resultMessage: "Success!",
+        isSuccess: true,
+      });
     } else {
-      setSuccessMessage("Drag ball into box...");
+      setMessageData({
+        ...messageData,
+        isOpenWrapper: true,
+        resultMessage: "Drag ball into box...",
+        isSuccess: false,
+      });
     }
   };
   // handle mousedown events
@@ -167,17 +176,8 @@ const CanvasGame = () => {
         <section className="game_section">
           <CanvasGameIntro />
           <div className="top_section">
-            <input
-              type="button"
-              value="Reset"
-              className="formBtn purple"
-              onClick={reset}
-            />
-            <ResultMessages
-              openWrapper={successMessage}
-              successMessage={successMessage}
-              messageString="Success!"
-            />
+            <input type="button" value="Reset" className="formBtn purple" onClick={reset} />
+            <ResultMessages messageData={messageData} />
           </div>
           <canvas
             ref={canvasRef}

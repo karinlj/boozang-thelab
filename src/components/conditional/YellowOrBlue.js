@@ -9,27 +9,48 @@ import ResultMessages from "../compMessages/ResultMessages";
 const YellowOrBlue = () => {
   const colors = ["yellow", "blue"];
   const [randColor, setRandColor] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
+  const [messageData, setMessageData] = useState({
+    isOpenWrapper: false,
+    resultMessage: "",
+    isSuccess: true,
+  });
 
   const generateColor = () => {
     setRandColor("");
     const randNumber = Math.floor(Math.random() * 2);
     setRandColor(colors[randNumber]);
-    setSuccessMessage("");
+    setMessageData({
+      ...messageData,
+      isOpenWrapper: false,
+    });
   };
 
   const checkColor = (color) => {
     if (randColor !== "") {
       if (color === randColor) {
-        setSuccessMessage("Success!");
+        setMessageData({
+          ...messageData,
+          isOpenWrapper: true,
+          resultMessage: "Success!",
+          isSuccess: true,
+        });
       } else {
-        setSuccessMessage("Try again!");
+        setMessageData({
+          ...messageData,
+          isOpenWrapper: true,
+          resultMessage: "Try again!",
+          isSuccess: false,
+        });
       }
     }
   };
   useEffect(() => {
     // console.log("randColor", randColor);
   }, [randColor]);
+  useEffect(() => {
+    // console.log("messageData", messageData);
+  }, [messageData]);
+
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6 col-xl-5">
@@ -60,11 +81,7 @@ const YellowOrBlue = () => {
                     />
                   </div>
                 )}
-                <ResultMessages
-                  openWrapper={successMessage}
-                  successMessage={successMessage}
-                  messageString={"Success!"}
-                />
+                <ResultMessages messageData={messageData} />
               </div>
             </section>
           </div>

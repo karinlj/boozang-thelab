@@ -8,21 +8,26 @@ import ResultMessages from "../compMessages/ResultMessages";
 
 const WaitGame = () => {
   const [isRunning, setIsRunning] = useState(false);
-  const [resultMessage, setResultMessage] = useState("");
-  const [subMessage, setSubMessage] = useState("");
   const [offsetTime, setOffsetTime] = useState(0);
-  const [isSuccess, setIsSuccess] = useState(true);
-
+  const [messageData, setMessageData] = useState({
+    isOpenWrapper: false,
+    resultMessage: "",
+    subMessage: "",
+    isSuccess: true,
+  });
   const handleStart = () => {
     if (!isRunning) {
       setIsRunning(true);
       //tidpunkt för start
       setOffsetTime(Date.now());
-      setResultMessage("");
-      setSubMessage("");
+      setMessageData({
+        ...messageData,
+        isOpenWrapper: false,
+        resultMessage: "",
+        subMessage: "",
+      });
     }
   };
-
   //tidsskillnad mellan stop o start
   const delta = () => {
     //tidpunkt för stop
@@ -37,22 +42,33 @@ const WaitGame = () => {
     const limit = 5000;
     const difference = delta();
     if (difference >= limit) {
-      setResultMessage("Success!");
       let overflow = difference - limit;
-      setIsSuccess(true);
-      setSubMessage(`${overflow} ms above 5 seconds.`);
+      setMessageData({
+        isOpenWrapper: true,
+        resultMessage: "Success!",
+        subMessage: `${overflow} ms above 5 seconds.`,
+        isSuccess: true,
+      });
     } else {
-      setIsSuccess(false);
-      setResultMessage("Try again!");
+      setMessageData({
+        ...messageData,
+        isOpenWrapper: true,
+        resultMessage: "Try again!",
+        isSuccess: false,
+      });
     }
   };
   const handleStop = () => {
     setIsRunning(false);
+    // setMessageData({
+
+    // });
     compare();
   };
   useEffect(() => {
-    // console.log("isRunning: ", isRunning);
+    console.log("isRunning: ", isRunning);
   }, [isRunning]);
+
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6 col-xl-5">
@@ -62,12 +78,7 @@ const WaitGame = () => {
             <input type="button" value="Start Game" className="formBtn add" onClick={handleStart} />
 
             {isRunning && <input type="button" value="End Game" className="formBtn delete" onClick={handleStop} />}
-            <ResultMessages
-              openWrapper={!isRunning}
-              message={resultMessage}
-              subMessage={subMessage}
-              isSuccess={isSuccess}
-            />
+            <ResultMessages messageData={messageData} />
           </div>
         </section>
       </div>

@@ -10,7 +10,7 @@ const SpeedGame = () => {
   const [isRunning, setIsRunning] = useState(false);
   const [count, setCount] = useState(0);
   const [messageData, setMessageData] = useState({
-    isOpenWrapper: !isRunning,
+    isOpenWrapper: false,
     resultMessage: "",
     subMessage: "",
     isSuccess: true,
@@ -34,6 +34,7 @@ const SpeedGame = () => {
       setIsRunning(false);
       setMessageData({
         ...messageData,
+        isOpenWrapper: true,
         resultMessage: "You are fast!!",
         subMessage: `Your reaction time is ${-count} ms.`,
       });
@@ -51,6 +52,10 @@ const SpeedGame = () => {
     //cleanup
     return () => clearInterval(myInterval);
   }, [isRunning, count]);
+
+  useEffect(() => {
+    console.log("isRunning: ", isRunning);
+  }, [isRunning]);
 
   useEffect(() => {
     console.log("messageData", messageData);

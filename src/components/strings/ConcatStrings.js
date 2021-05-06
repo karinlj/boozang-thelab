@@ -7,11 +7,15 @@ import { ConcatStringsVideos } from "../text/videos/VideoSections";
 import ResultMessages from "../compMessages/ResultMessages";
 
 const ConcatStrings = () => {
-  const [successMessage, setSuccessMessage] = useState("");
   const [stringOne, setStringOne] = useState("");
   const [stringTwo, setStringTwo] = useState("");
   const [concatStr, setConcatStr] = useState("");
   const [inputStr, setInputStr] = useState("");
+  const [messageData, setMessageData] = useState({
+    isOpenWrapper: false,
+    resultMessage: "",
+    isSuccess: true,
+  });
 
   const strings = ["bear", "elephant", "bunny", "horse", "cow", "tiger", "lion", "mouse", "bird", "turtle"];
 
@@ -21,21 +25,39 @@ const ConcatStrings = () => {
     setStringOne(randStr1);
     setStringTwo(randStr2);
     setConcatStr(randStr1 + randStr2);
-    setSuccessMessage("");
+    // setSuccessMessage("");
+    setMessageData({
+      ...messageData,
+      isOpenWrapper: false,
+      isSuccess: true,
+    });
     setInputStr("");
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (concatStr === inputStr) {
-      setSuccessMessage("Success!");
+      setMessageData({
+        ...messageData,
+        isOpenWrapper: true,
+        resultMessage: "Success!",
+      });
     } else {
-      setSuccessMessage("Try again!");
+      setMessageData({
+        ...messageData,
+        isOpenWrapper: true,
+        resultMessage: "Try again!",
+        isSuccess: false,
+      });
     }
   };
   useEffect(() => {
-    // console.log("concatStr: ", concatStr);
+    console.log("concatStr: ", concatStr);
   }, [concatStr]);
+
+  useEffect(() => {
+    console.log("messageData", messageData);
+  }, [messageData]);
 
   return (
     <div className="row justify-content-between">
@@ -63,8 +85,7 @@ const ConcatStrings = () => {
                 </div>
               </section>
             </form>
-
-            <ResultMessages openWrapper={concatStr} successMessage={successMessage} messageString={"Success!"} />
+            <ResultMessages messageData={messageData} />
           </section>
         </section>
       </div>

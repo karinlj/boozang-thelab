@@ -9,7 +9,11 @@ import ResultMessages from "../compMessages/ResultMessages";
 const CatOrDog = () => {
   const pets = ["cat", "dog"];
   const [randImage, setRandImage] = useState(null);
-  const [successMessage, setSuccessMessage] = useState("");
+  const [messageData, setMessageData] = useState({
+    isOpenWrapper: false,
+    resultMessage: "",
+    isSuccess: true,
+  });
 
   const generateImage = () => {
     let images = pets.map((pet, i) => {
@@ -18,20 +22,31 @@ const CatOrDog = () => {
     //setRandImage(null);
     const randNumber = Math.floor(Math.random() * 2);
     setRandImage(images[randNumber]);
-    setSuccessMessage("");
+    setMessageData({
+      ...messageData,
+      isOpenWrapper: false,
+    });
   };
   const checkPet = (pet) => {
     if (randImage) {
       if (pet === randImage.props.alt) {
-        setSuccessMessage("Success!");
+        setMessageData({
+          ...messageData,
+          isOpenWrapper: true,
+          resultMessage: "Success!",
+          isSuccess: true,
+        });
       } else {
-        setSuccessMessage("Try again!");
+        setMessageData({
+          ...messageData,
+          isOpenWrapper: true,
+          resultMessage: "Try again!",
+          isSuccess: false,
+        });
       }
     }
   };
-  useEffect(() => {
-    // console.log("successMessage", successMessage);
-  }, [successMessage]);
+
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6 col-xl-5">
@@ -62,7 +77,7 @@ const CatOrDog = () => {
                     />
                   </div>
                 )}
-                <ResultMessages openWrapper={successMessage} successMessage={successMessage} messageString="Success!" />
+                <ResultMessages messageData={messageData} />
               </div>
             </section>
           </div>
