@@ -25,7 +25,6 @@ const ConcatStrings = () => {
     setStringOne(randStr1);
     setStringTwo(randStr2);
     setConcatStr(randStr1 + randStr2);
-    // setSuccessMessage("");
     setMessageData({
       ...messageData,
       isOpenWrapper: false,
@@ -56,7 +55,7 @@ const ConcatStrings = () => {
   }, [concatStr]);
 
   useEffect(() => {
-    console.log("messageData", messageData);
+    //console.log("messageData", messageData);
   }, [messageData]);
 
   return (

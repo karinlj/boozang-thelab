@@ -1,7 +1,6 @@
 import ResultMessages from "../ResultMessages";
 import { render, fireEvent, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import renderer from "react-test-renderer";
 
 test("testing ResultMessages textcontent and class", () => {
   //   const { debug } = render(<ResultMessages />);
