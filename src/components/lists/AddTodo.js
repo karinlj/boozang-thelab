@@ -4,7 +4,6 @@ import { addData } from "../fetchFunctions/fetchFunctions";
 const AddTodo = ({ addTodo, todos }) => {
   const [title, setTitle] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
 
   const totalTodos = todos;
   const todosUrl = "http://localhost:9000/todos/";
@@ -16,26 +15,23 @@ const AddTodo = ({ addTodo, todos }) => {
     const todo = { title: title };
     setIsLoading(true);
 
-    if (totalTodos.length <= 4) {
+    if (totalTodos.length < 5) {
       const data = await addData(todosUrl, todo);
       addTodo(data);
-      setIsLoading(false);
       //reset
       setTitle("");
-    } else {
-      setErrorMessage("Your schedule is full!");
-      setIsLoading(false);
     }
+    setIsLoading(false);
   };
 
   useEffect(() => {
-    console.log("errorMessage:", errorMessage);
-  }, [errorMessage]);
+    console.log("totalTodos:", totalTodos);
+  }, [totalTodos]);
 
   return (
     <div>
       <form className="list_form" onSubmit={handleSubmit}>
-        {errorMessage && totalTodos.length >= 5 && <h5 className="error">{errorMessage}</h5>}
+        {totalTodos && totalTodos.length >= 5 && <h5 className="error">Your schedule is full!</h5>}
         <label htmlFor="">Add new Todo:</label>
         <br />
         <input type="text" required value={title} onChange={(e) => setTitle(e.target.value)} />

@@ -49,7 +49,7 @@ const SortedList = () => {
     setTodos([...todos, newTodo]);
   };
   useEffect(() => {
-    console.log("todos:", todos);
+    console.log("todos_sortedList:", todos);
   }, [todos]);
 
   return (
