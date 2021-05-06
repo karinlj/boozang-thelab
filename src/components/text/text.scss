@@ -65,8 +65,8 @@
 }
 .comp_what_to_test {
   h4 {
-    color: $themecolorButtonBlue;
-    //color: $themecolorNewPink;
+    //color: $themecolorButtonBlue;
+    color: $themecolorNewPink;
   }
   ul {
     margin-bottom: 1rem;
@@ -80,8 +80,8 @@
   }
 
   .linkBtn {
-    background: $themecolorButtonBlue;
-    //background: $themecolorNewPink;
+    // background: $themecolorButtonBlue;
+    background: $themecolorNewPink;
     a {
       color: #fff;
     }
