@@ -25,7 +25,7 @@ const AddTodo = ({ addTodo, todos }) => {
   };
 
   useEffect(() => {
-    console.log("totalTodos:", totalTodos);
+    //console.log("totalTodos:", totalTodos);
   }, [totalTodos]);
 
   return (

@@ -64,9 +64,8 @@
   }
 }
 .comp_what_to_test {
-  // background: #fff;
-  // background: $themecolorLilaDark;
   h4 {
+    color: $themecolorButtonBlue;
     color: $themecolorNewPink;
   }
   ul {
@@ -81,6 +80,7 @@
   }
 
   .linkBtn {
+    background: $themecolorButtonBlue;
     background: $themecolorNewPink;
     a {
       color: #fff;

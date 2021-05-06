@@ -8,16 +8,17 @@ import ResultMessages from "../compMessages/ResultMessages";
 
 const WaitGame = () => {
   const [isRunning, setIsRunning] = useState(false);
-  const [successMessage, setSuccessMessage] = useState("");
+  const [resultMessage, setResultMessage] = useState("");
   const [subMessage, setSubMessage] = useState("");
   const [offsetTime, setOffsetTime] = useState(0);
+  const [isSuccess, setIsSuccess] = useState(true);
 
   const handleStart = () => {
     if (!isRunning) {
       setIsRunning(true);
       //tidpunkt för start
       setOffsetTime(Date.now());
-      setSuccessMessage("");
+      setResultMessage("");
       setSubMessage("");
     }
   };
@@ -36,11 +37,13 @@ const WaitGame = () => {
     const limit = 5000;
     const difference = delta();
     if (difference >= limit) {
-      setSuccessMessage("Success!");
+      setResultMessage("Success!");
       let overflow = difference - limit;
+      setIsSuccess(true);
       setSubMessage(`${overflow} ms above 5 seconds.`);
     } else {
-      setSuccessMessage("Try again!");
+      setIsSuccess(false);
+      setResultMessage("Try again!");
     }
   };
   const handleStop = () => {
@@ -61,9 +64,9 @@ const WaitGame = () => {
             {isRunning && <input type="button" value="End Game" className="formBtn delete" onClick={handleStop} />}
             <ResultMessages
               openWrapper={!isRunning}
-              successMessage={successMessage}
+              message={resultMessage}
               subMessage={subMessage}
-              messageString={"Success!"}
+              isSuccess={isSuccess}
             />
           </div>
         </section>

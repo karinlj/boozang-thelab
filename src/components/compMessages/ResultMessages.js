@@ -1,9 +1,13 @@
 import "./messages.scss";
-const ResultMessages = ({ openWrapper, successMessage, subMessage, messageString }) => {
+const ResultMessages = ({ messageData }) => {
   return (
-    <div className={`result_wrapper ${openWrapper ? "show" : ""}`} data-testid="result">
-      <h4 className={`success_message ${successMessage === messageString ? "" : "fail"}`}>{successMessage}</h4>
-      {subMessage && <p className="sub_message">{subMessage}</p>}
+    // toggle between opacity:0 and 1
+    <div className={`result_wrapper ${messageData.isOpenWrapper ? "show" : ""}`} data-testid="result">
+      {/* toggle between green or red message */}
+      <h4 className={`success_message ${messageData.isSuccess ? "" : "fail"}`} data-testid="message">
+        {messageData.resultMessage}
+      </h4>
+      {messageData.subMessage && <p className="sub_message">{messageData.subMessage}</p>}
     </div>
   );
 };

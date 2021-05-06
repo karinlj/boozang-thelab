@@ -1,30 +1,26 @@
 import ResultMessages from "../ResultMessages";
-import { render, fireEvent, screen, cleanup } from "@testing-library/react";
+import { render, fireEvent, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import renderer from "react-test-renderer";
 
-test("hej", () => {
-  const openWrapper = true;
-  const successMessage = "hej";
-  const subMessage = "hejdo";
-  const messageString = "You are fast!!";
+test("testing ResultMessages textcontent and class", () => {
+  //   const { debug } = render(<ResultMessages />);
+  //   debug();
+  //mock
+  const messageData = {
+    isOpenWrapper: true,
+    resultMessage: "Success",
+    subMessage: "5 seconds",
+    isSuccess: true,
+  };
 
-  const { getByTestId } = render(
-    <ResultMessages
-      openWrapper={openWrapper}
-      successMessage={successMessage}
-      subMessage={subMessage}
-      messageString={messageString}
-    />
-  );
+  //extracting the getByTestId() from render()
+  const { getByTestId } = render(<ResultMessages messageData={messageData} />);
+  const resultMessage = getByTestId("result");
+  const message = getByTestId("message");
 
-  //   const resultMessage = getByTestId("result");
-
-  //   expect(resultMessage).toHaveClass("result_wrapper");
-  //   expect(resultMessage).toHaveTextContent(successMessage);
-  //   expect(resultMessage).toHaveTextContent(subMessage);
-  //   expect(resultMessage).toHaveTextContent(messageString);
-
-  const { debug } = render(<ResultMessages />);
-  debug();
+  expect(resultMessage).toHaveClass("result_wrapper show");
+  expect(resultMessage).toHaveTextContent(messageData.resultMessage);
+  expect(resultMessage).toHaveTextContent(messageData.subMessage);
+  expect(message).toHaveClass("success_message");
 });

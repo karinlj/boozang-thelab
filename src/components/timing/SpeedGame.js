@@ -9,25 +9,34 @@ import ResultMessages from "../compMessages/ResultMessages";
 const SpeedGame = () => {
   const [isRunning, setIsRunning] = useState(false);
   const [count, setCount] = useState(0);
-  const [successMessage, setSuccessMessage] = useState("");
-  const [timeMessage, setTimeMessage] = useState("");
-  const test = 1;
+  const [messageData, setMessageData] = useState({
+    isOpenWrapper: !isRunning,
+    resultMessage: "",
+    subMessage: "",
+    isSuccess: true,
+  });
 
   const handleStart = () => {
     if (!isRunning) {
       setIsRunning(true);
-      setSuccessMessage("");
-      setTimeMessage("");
+      setMessageData({
+        ...messageData,
+        resultMessage: "",
+        subMessage: "",
+      });
       let startCount = Math.floor(Math.random() * 10000) + 1000; //random nr mellan 1000-10000ms
       //start counting down at randomnr
-      setCount(startCount * test);
+      setCount(startCount);
     }
   };
   const handleStop = () => {
     if (isRunning) {
       setIsRunning(false);
-      setSuccessMessage("You are fast!!");
-      setTimeMessage(`Your reaction time is ${-count} ms.`);
+      setMessageData({
+        ...messageData,
+        resultMessage: "You are fast!!",
+        subMessage: `Your reaction time is ${-count} ms.`,
+      });
     }
   };
   useEffect(() => {
@@ -42,6 +51,10 @@ const SpeedGame = () => {
     //cleanup
     return () => clearInterval(myInterval);
   }, [isRunning, count]);
+
+  useEffect(() => {
+    console.log("messageData", messageData);
+  }, [messageData]);
 
   return (
     <div className="row justify-content-between" data-testid="SpeedGame">
@@ -65,12 +78,7 @@ const SpeedGame = () => {
                 data-testid="stopBtn"
               />
             )}
-            <ResultMessages
-              openWrapper={!isRunning}
-              successMessage={successMessage}
-              subMessage={timeMessage}
-              messageString={"You are fast!!"}
-            />
+            <ResultMessages messageData={messageData} />
           </div>
         </section>
       </div>
