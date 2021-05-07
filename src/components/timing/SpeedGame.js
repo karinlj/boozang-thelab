@@ -54,12 +54,8 @@ const SpeedGame = () => {
   }, [isRunning, count]);
 
   useEffect(() => {
-    console.log("isRunning: ", isRunning);
+    // console.log("isRunning: ", isRunning);
   }, [isRunning]);
-
-  useEffect(() => {
-    console.log("messageData", messageData);
-  }, [messageData]);
 
   return (
     <div className="row justify-content-between" data-testid="SpeedGame">
@@ -74,15 +70,7 @@ const SpeedGame = () => {
               onClick={handleStart}
               data-testid="startBtn"
             />
-            {count < 0 && (
-              <input
-                type="button"
-                value="End Game"
-                className="formBtn delete"
-                onClick={handleStop}
-                data-testid="stopBtn"
-              />
-            )}
+            {count < 0 && <input type="button" value="End Game" className="formBtn delete" onClick={handleStop} />}
             <ResultMessages messageData={messageData} />
           </div>
         </section>

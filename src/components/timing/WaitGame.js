@@ -60,13 +60,10 @@ const WaitGame = () => {
   };
   const handleStop = () => {
     setIsRunning(false);
-    // setMessageData({
-
-    // });
     compare();
   };
   useEffect(() => {
-    console.log("isRunning: ", isRunning);
+    // console.log("isRunning: ", isRunning);
   }, [isRunning]);
 
   return (

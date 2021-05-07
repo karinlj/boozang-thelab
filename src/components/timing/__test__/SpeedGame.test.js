@@ -1,40 +1,35 @@
 import SpeedGame from "../SpeedGame";
-import { render, fireEvent, screen, cleanup } from "@testing-library/react";
+import { render, fireEvent, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import renderer from "react-test-renderer";
+//import renderer from "react-test-renderer";
 
-afterEach(() => {
-  cleanup();
-});
-// test("should render SpeedGame component", () => {
+// test("render speedgame component", () => {
 //   render(<SpeedGame />);
-//   const SpeedGameElement = screen.getByTestId("SpeedGame");
-//   expect(SpeedGameElement).toBeInTheDocument();
+//   screen.debug();
 // });
 
-// test("should render SpeedGame component", () => {
-//   const tree = renderer.create(<SpeedGame />).toJSON();
-//   expect(tree).toMatchSnapshot();
-// });
+//getByText()
+test("render speedgame heading", () => {
+  render(<SpeedGame />);
+  expect(screen.getByText("Speed Game")).toBeInTheDocument();
+});
 
+//getByTestId()
+test("render speedgame startBtn", () => {
+  render(<SpeedGame />);
+  const startBtn = screen.getByTestId("startBtn");
+  expect(startBtn).toBeInTheDocument();
+});
+
+// fireEvent.click()
 test("resultMessage should have correct classname when click on Start", () => {
-  //   const { debug } = render(<SpeedGame />);
-  //   debug();
-  const { getByTestId } = render(<SpeedGame />);
-  const startBtnElement = getByTestId("startBtn");
+  render(<SpeedGame />);
+  const startBtn = screen.getByTestId("startBtn");
+  const resultMessage = screen.getByTestId("result");
 
-  const resultMessage = getByTestId("result");
-
-  fireEvent.click(startBtnElement);
-
+  fireEvent.click(startBtn);
   expect(resultMessage).toHaveClass("result_wrapper");
 });
-
-// test("function handleStart should be called when click on startBtn", () => {
-//mock a function
-//   const handleStart = jest.fn();
-//   const { getByTestId } = render(<SpeedGame />);
-// });
 
 // test("test", () => {
 //   expect(true).toBe(true);
