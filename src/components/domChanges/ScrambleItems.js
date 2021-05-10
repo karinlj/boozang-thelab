@@ -184,62 +184,25 @@ const ScrambleItems = () => {
             <div>
               {isBtnOneFirst && (
                 <div>
-                  <p
-                    className={`code ${
-                      clickedBtn === "btnOne" ? "clicked_class" : ""
-                    }`}
-                  >
+                  <p className={`code ${clickedBtn === "btnOne" ? "clicked_class" : ""}`} data-testid="btnOne">
                     {htmlParse(btnOne())}
                   </p>
-                  <p
-                    className={`code ${
-                      clickedBtn === "btnTwo" ? "clicked_class" : ""
-                    }`}
-                  >
-                    {htmlParse(btnTwo())}
-                  </p>
+                  <p className={`code ${clickedBtn === "btnTwo" ? "clicked_class" : ""}`}>{htmlParse(btnTwo())}</p>
                 </div>
               )}
               {!isBtnOneFirst && (
                 <div>
-                  <p
-                    className={`code ${
-                      clickedBtn === "btnTwo" ? "clicked_class" : ""
-                    }`}
-                  >
-                    {htmlParse(btnTwo())}
-                  </p>
-                  <p
-                    className={`code ${
-                      clickedBtn === "btnOne" ? "clicked_class" : ""
-                    }`}
-                  >
-                    {htmlParse(btnOne())}
-                  </p>
+                  <p className={`code ${clickedBtn === "btnTwo" ? "clicked_class" : ""}`}>{htmlParse(btnTwo())}</p>
+                  <p className={`code ${clickedBtn === "btnOne" ? "clicked_class" : ""}`}>{htmlParse(btnOne())}</p>
                 </div>
               )}
             </div>
           </div>
           <div className="row justify-content-between">
             <div className="col">
-              <input
-                type="button"
-                value="Swap Id"
-                className="formBtn add"
-                onClick={toggleId}
-              />
-              <input
-                type="button"
-                value="Swap Class"
-                className="formBtn add"
-                onClick={toggleClass}
-              />
-              <input
-                type="button"
-                value="Swap Content"
-                className="formBtn add"
-                onClick={toggleContent}
-              />
+              <input type="button" value="Swap Id" className="formBtn add" onClick={toggleId} />
+              <input type="button" value="Swap Class" className="formBtn add" onClick={toggleClass} />
+              <input type="button" value="Swap Content" className="formBtn add" onClick={toggleContent} />
             </div>
             <div className="col">
               <input
@@ -248,12 +211,7 @@ const ScrambleItems = () => {
                 className="formBtn add green_dark"
                 onClick={scramblePositon}
               />
-              <input
-                type="button"
-                value="Swap DOM Order"
-                className="formBtn add green_dark"
-                onClick={toggleOrder}
-              />
+              <input type="button" value="Swap DOM Order" className="formBtn add green_dark" onClick={toggleOrder} />
             </div>
           </div>
         </section>

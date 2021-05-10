@@ -64,7 +64,7 @@ const ConcatStrings = () => {
         <section className="strings_section">
           <ConcatStringsIntro />
           <input type="button" value="Generate strings" className="formBtn add" onClick={generateStrings} />
-          <section className={`output_section ${stringOne ? "show" : ""}`}>
+          <section className={`output_section ${stringOne ? "show" : ""}`} data-testid="output">
             <div className="strings">
               <p className="string1">{stringOne}</p>
               <p className="string2">{stringTwo}</p>

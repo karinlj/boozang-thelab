@@ -54,7 +54,7 @@ const CatOrDog = () => {
           <CatOrDogIntro />
           <div className="wrapper">
             <input type="button" value="Generate Image" className="formBtn add" onClick={generateImage} />
-            <section className={`output_section ${randImage ? "show" : ""}`}>
+            <section className={`output_section ${randImage ? "show" : ""}`} data-testid="output">
               <div className="image">{randImage}</div>
               <div className="btn_section">
                 {randImage && (

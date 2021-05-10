@@ -58,7 +58,7 @@ const YellowOrBlue = () => {
           <YellowOrBlueIntro />
           <div className="wrapper">
             <input type="button" value="Generate Color" className="formBtn add" onClick={generateColor} />
-            <section className={`output_section ${randColor ? "show" : ""}`}>
+            <section className={`output_section ${randColor ? "show" : ""}`} data-testid="output">
               <h5 className="color">{randColor}</h5>
               <div className="btn_section">
                 {randColor && (
