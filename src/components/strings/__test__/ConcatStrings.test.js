@@ -9,11 +9,20 @@ test("Control ConcatStrings heading", () => {
   expect(heading).toBeInTheDocument();
 });
 
-test("Check that output_section gets class show on click on btn", () => {
+test("Check that output_section gets class show on click on Generate-btn", () => {
   render(<ConcatStrings />);
   const btn = screen.getByDisplayValue("Generate strings");
   const output = screen.getByTestId("output");
   fireEvent.click(btn);
 
   expect(output).toHaveClass("output_section show");
+});
+
+test("Check that result_wrapper gets class show on click on submit-btn", () => {
+  render(<ConcatStrings />);
+  const btn = screen.getByDisplayValue("submit");
+  const result = screen.getByTestId("result");
+  fireEvent.click(btn);
+
+  expect(result).toHaveClass("result_wrapper show");
 });

@@ -145,22 +145,8 @@ const KittenCollect = () => {
           <KittenCollectIntro />
 
           <div className="points_section">
-            {!isRunning && (
-              <input
-                type="button"
-                value="Start Game"
-                className="formBtn add"
-                onClick={startGame}
-              />
-            )}
-            {isRunning && (
-              <input
-                type="button"
-                value="Abort Game"
-                className="formBtn delete"
-                onClick={abortGame}
-              />
-            )}
+            {!isRunning && <input type="button" value="Start Game" className="formBtn add" onClick={startGame} />}
+            {isRunning && <input type="button" value="Abort Game" className="formBtn delete" onClick={abortGame} />}
             <div className="counter">
               <h6>
                 Time: <strong>{Math.floor(count / 10)}</strong>{" "}
@@ -176,7 +162,7 @@ const KittenCollect = () => {
           <div className="square">
             <Kittens kittens={kittens} handleClick={kittenClick} />
             <Hedgehogs hedgehogs={hedgehogs} handleClick={hedgehogClick} />
-            <div className="message">
+            <div className="message" data-testid="message">
               <h5>{message}</h5>
               <h5>{pointsMessage}</h5>
             </div>

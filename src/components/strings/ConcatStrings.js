@@ -51,7 +51,7 @@ const ConcatStrings = () => {
     }
   };
   useEffect(() => {
-    console.log("concatStr: ", concatStr);
+    //console.log("concatStr: ", concatStr);
   }, [concatStr]);
 
   useEffect(() => {
