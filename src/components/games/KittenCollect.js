@@ -43,7 +43,6 @@ const KittenCollect = () => {
       const id = hedgehogs[0].id;
       hideHedgehog(id);
     }
-
     setCount(count + 1);
 
     if (count > finishTime) {
@@ -61,7 +60,7 @@ const KittenCollect = () => {
   //kitten
   const drawKitten = () => {
     const [randTop, randLeft] = randomPosition();
-    const catIcon = <img src={CatIcon} alt="Cat" id="cat" />;
+    const catIcon = <img src={CatIcon} alt="Cat" />;
 
     //create new
     const newKitten = {
@@ -69,7 +68,6 @@ const KittenCollect = () => {
       icon: catIcon,
       top: randTop,
       left: randLeft,
-      age: 25,
     };
     //add to array
     setKittens([...kittens, newKitten]);

@@ -2,25 +2,28 @@ import Kittens from "../Kittens";
 import { render, fireEvent, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
-test("Kittens render", () => {
+test("Kitten render", () => {
+  //   const kittens = [
+  //     { id: 1, icon: '<img src="#" alt="Cat"/>', top: "5px", left: "10px" },
+  //     { id: 2, icon: '<img src="#" alt="Cat"/>', top: "8px", left: "20px" },
+  //     { id: 3, icon: '<img src="#" alt="Cat"/>', top: "12px", left: "30px" },
+  //   ];
+  //   const handleClick = jest.fn();
+
+  // render(<Kittens kittens={kittens} onclick={handleClick} />);
+
   const defaultProps = {
-    kittens: ["luki", "truls", "hugo", "filip"],
+    kittens: [
+      { id: 1, icon: '<img src="#" alt="Cat"/>', top: "5px", left: "10px" },
+      { id: 2, icon: '<img src="#" alt="Cat"/>', top: "8px", left: "20px" },
+      { id: 3, icon: '<img src="#" alt="Cat"/>', top: "12px", left: "30px" },
+    ],
     handleClick: jest.fn(),
   };
-  //   const id = Math.random();
 
   render(<Kittens {...defaultProps} />);
 
-  //   const heading = screen.getByText("Collecting Kittens");
-  screen.debug();
-  //expect(heading).toBeInTheDocument();
+  const kitten = document.getElementsByTagName("span")[0];
+  expect(kitten).toBeInTheDocument;
+  //screen.debug();
 });
-
-// test("Check message text when click on start", () => {
-//   render(<KittenCollect />);
-//   const btn = screen.getByDisplayValue("Start Game");
-//   const message = screen.getByTestId("message");
-//   fireEvent.click(btn);
-
-//   expect(message).toHaveTextContent("");
-// });
