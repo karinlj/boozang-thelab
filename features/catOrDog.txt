@@ -9,7 +9,7 @@ Check that a success message is shown when hitting the right button,
 and an error message is show when hitting the wrong button
 """
 
-Given I have started the game
+Given I have started the cat or dog game
 When I hit the right button
 Then a success message should be shown
 When I hit the wrong button
