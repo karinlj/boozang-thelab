@@ -8,7 +8,7 @@ Scenario Outline: Add item via form
 Validate that an item can be added via the form
 """
 
-Given I have an empty list
+Given I have an empty form
 When I add an a user with <firstName>, <lastName>, <email>, and <password>,
 Then the user with <firstName> and <lastName> should be added
 
