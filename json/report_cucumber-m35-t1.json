@@ -1,0 +1,95 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "[m35] Form fill tests",
+    "line": 1,
+    "tags": [
+      {
+        "name": "@Formfills",
+        "type": "tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ],
+    "id": "m35",
+    "uri": "jira-features/2_Formfills.feature",
+    "elements": [
+      {
+        "before": [],
+        "after": [],
+        "line": 2,
+        "name": "[m35.t1] Fill form (undefined - undefined)",
+        "description": "Fill form",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "tags": [
+          {
+            "name": "@Formfills"
+          },
+          {
+            "name": "@Smoke"
+          },
+          {
+            "name": "@Authentication"
+          },
+          {
+            "name": "@Logout"
+          }
+        ],
+        "steps": [
+          {
+            "line": 3,
+            "result": {
+              "duration": 1583000000,
+              "status": "passed"
+            },
+            "name": "I have an empty form",
+            "match": {
+              "location": "6009e593b0700759eb43fb8c/master/m35/t1/2/"
+            },
+            "keyword": "Given"
+          },
+          {
+            "line": 4,
+            "result": {
+              "duration": 5958000000,
+              "status": "passed"
+            },
+            "name": "I fill the form and press enter",
+            "match": {
+              "location": "6009e593b0700759eb43fb8c/master/m35/t1/4/"
+            },
+            "embeddings": [
+              {
+                "data": "PHByZSBzdHlsZT0nYmFja2dyb3VuZC1jb2xvcjojQ0NDO3BhZGRpbmc6MTBweDsnPjxiPkRhdGE6PC9iPiA8YnIvPjxici8+ewogICIkcGFyYW1ldGVyLkVtYWlsIjogImVldXdwQGJ6bWFpbC5jb20iCn08L3ByZT4=",
+                "mime_type": "text/html"
+              }
+            ],
+            "keyword": "When"
+          },
+          {
+            "line": 5,
+            "result": {
+              "duration": 3242000000,
+              "status": "passed"
+            },
+            "name": "The result should be shown",
+            "match": {
+              "location": "6009e593b0700759eb43fb8c/master/m35/t1/6/"
+            },
+            "keyword": "Then"
+          }
+        ],
+        "extraData": {
+          "id": "m35.t1",
+          "name": "Fill form",
+          "worker": "undefined - undefined",
+          "start": "22:28:15",
+          "end": "22:28:30"
+        }
+      }
+    ]
+  }
+]
