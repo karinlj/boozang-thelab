@@ -35,7 +35,7 @@ const SpeedGame = () => {
       setMessageData({
         ...messageData,
         isOpenWrapper: true,
-        resultMessage: "You are fast!!",
+        resultMessage: "Success",
         subMessage: `Your reaction time is ${-count} ms.`,
       });
     }

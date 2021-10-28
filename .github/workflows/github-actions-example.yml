@@ -16,7 +16,7 @@ jobs:
         uses: GabrielBB/xvfb-action@v1
         with:
           working-directory: ./ #optional
-          run: boozang --file="json/report" "http://staging-be.boozang.com/extension?id=6009e593b0700759eb43fb8c#6009e593b0700759eb43fb8c/master/m35/t1/actions"    
+          run: boozang --file="json/report" "http://staging-be.boozang.com/extension?id=6009e593b0700759eb43fb8c&docker=1#6009e593b0700759eb43fb8c/master/m35/t1/actions/run"
     
       - run: npm install multiple-cucumber-html-reporter --save-dev && node reporter.js
         if: always()

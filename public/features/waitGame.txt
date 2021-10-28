@@ -6,7 +6,7 @@ Scenario: Error message shown on ending game too fast
 Check that an error message is shown when hitting the "End Game" button as soon as it appears.
 """
 
-Given I have started the game
+Given I have started the wait game
 When I end the game
 Then an error message should be shown
 
@@ -15,6 +15,6 @@ Scenario: Success message shown on ending game after delay
 Check that a success message is shown when hitting the "End Game" button after 5 seconds.
 """
 
-Given I have started the game
+Given I have started the wait game
 When I end the game after 5 seconds
-Then a success message should be shown
+Then a message with the reaction time should be shown
