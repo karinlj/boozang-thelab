@@ -168,7 +168,7 @@ export const CanvasGameIntro = () => {
   return (
     <article className="comp_intro">
       <h1>Canvas Game</h1>
-      <p>Cat ipsum....</p>
+      <p>The Canvas game helps illustrate how automate on top of an HTML canvas</p>
     </article>
   );
 };
