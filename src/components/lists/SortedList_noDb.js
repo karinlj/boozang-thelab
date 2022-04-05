@@ -4,7 +4,6 @@ import AddTodo from "./AddTodo_noDb";
 import "./lists.scss";
 import { SortedListIntro } from "./text/SortedListIntro";
 import { SortedListTestInfo } from "./text/SortedListTestInfo";
-//import ReactPlayer from "react-player/youtube";
 import ReactPlayer from "react-player/lazy";
 
 const SortedList = () => {
@@ -24,7 +23,7 @@ const SortedList = () => {
   };
 
   const handleDelete = (id) => {
-    //id= argument in handleDelete() from TodoList component
+    //id= argument in handleDelete() from Todo component
     setTodos(
       todos.filter((todo) => {
         return todo.id !== id;

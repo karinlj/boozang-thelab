@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./conditional.scss";
 import { CatOrDogIntro } from "../text/Intros";
 import { CatOrDogTestInfo } from "../text/TestInfos";

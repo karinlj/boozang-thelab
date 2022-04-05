@@ -127,6 +127,7 @@ const KittenCollect = () => {
       }, 100);
       return () => clearInterval(myInterval);
     }
+    // eslint-disable-next-line
   }, [isRunning, count]);
 
   useEffect(() => {

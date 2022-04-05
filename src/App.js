@@ -30,6 +30,7 @@ import NotFound from "./components/NotFound";
 
 function App() {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
+  
   const handleToggle = () => {
     setSideDrawerOpen(!sideDrawerOpen);
   };

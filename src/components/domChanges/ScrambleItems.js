@@ -156,6 +156,7 @@ const ScrambleItems = () => {
     setTimeout(() => {
       scramblePositon();
     }, 100);
+    // eslint-disable-next-line
   }, []);
   useEffect(() => {
     //  console.log("clickedBtn", clickedBtn);

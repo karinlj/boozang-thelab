@@ -4,7 +4,8 @@
   .apect-ratio-box {
     height: 0;
     overflow: hidden;
-    padding-top: 380px / 640px * 100%;
+    padding-top: calc(380px / 640px * 100%);
+      //  380px / 640px * 100%;
     position: relative;
     .apect-ratio-inside {
       position: absolute;

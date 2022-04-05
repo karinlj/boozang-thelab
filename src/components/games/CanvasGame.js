@@ -45,6 +45,11 @@ const CanvasGame = () => {
     ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
     ctx.fillStyle = "#f24d7f";
     ctx.fill();
+
+    // ctx.font = "9pt";
+    // ctx.fillStyle = "white";
+    // ctx.textAlign = "center";
+    // ctx.fillText("Ball", 10, 50);
   };
 
   const ballInbox = () => {
@@ -166,6 +171,7 @@ const CanvasGame = () => {
     drawBall(ctx);
     drawBox(ctx);
     ballInbox();
+    // eslint-disable-next-line
   }, [ball]);
   return (
     <div className="row justify-content-between">
