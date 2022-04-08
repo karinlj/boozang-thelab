@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "./navbarLinks.scss";
 
-const NavbarLinks = ({ handleClickLink }) => {
+const NavbarLinks = ({ toggleOpen }) => {
   return (
     <ul className="links">
       <li>
@@ -9,12 +9,12 @@ const NavbarLinks = ({ handleClickLink }) => {
         <ul className="sub_list">
           <li>
             <NavLink to="/introduction" className="link" activeClassName="current">
-              <div onClick={handleClickLink}>Introduction</div>
+              <div onClick={toggleOpen}>Introduction</div>
             </NavLink>
           </li>
           <li>
             <NavLink to="/overview" className="link" activeClassName="current">
-              <div onClick={handleClickLink}>Overview of the tool</div>
+              <div onClick={toggleOpen}>Overview of the tool</div>
             </NavLink>
           </li>
         </ul>
@@ -24,12 +24,12 @@ const NavbarLinks = ({ handleClickLink }) => {
         <ul className="sub_list">
           <li>
             <NavLink to="/speedGame" className="link" activeClassName="current">
-              <div onClick={handleClickLink}>Speed Game</div>
+              <div onClick={toggleOpen}>Speed Game</div>
             </NavLink>
           </li>
           <li>
             <NavLink to="/waitGame" className="link" activeClassName="current">
-              <div onClick={handleClickLink}>Wait Game</div>
+              <div onClick={toggleOpen}>Wait Game</div>
             </NavLink>
           </li>
         </ul>
@@ -39,12 +39,12 @@ const NavbarLinks = ({ handleClickLink }) => {
         <ul className="sub_list">
           <li>
             <NavLink to="/yellowOrBlue" className="link" activeClassName="current">
-              <div onClick={handleClickLink}>Yellow or Blue</div>
+              <div onClick={toggleOpen}>Yellow or Blue</div>
             </NavLink>
           </li>
           <li>
             <NavLink to="/catOrDog" className="link" activeClassName="current">
-              <div onClick={handleClickLink}>Cat or dog</div>
+              <div onClick={toggleOpen}>Cat or dog</div>
             </NavLink>
           </li>
         </ul>
@@ -54,12 +54,12 @@ const NavbarLinks = ({ handleClickLink }) => {
         <ul className="sub_list">
           <li>
             <NavLink to="/sortedList" className="link" activeClassName="current">
-              <div onClick={handleClickLink}>Sorted list</div>
+              <div onClick={toggleOpen}>Sorted list</div>
             </NavLink>{" "}
           </li>
           <li>
             <NavLink to="/unsortedList" className="link" activeClassName="current">
-              <div onClick={handleClickLink}>Unsorted list</div>
+              <div onClick={toggleOpen}>Unsorted list</div>
             </NavLink>{" "}
           </li>
         </ul> */}
@@ -69,22 +69,22 @@ const NavbarLinks = ({ handleClickLink }) => {
         <ul className="sub_list">
           <li>
             <NavLink to="/sortedList" className="link" activeClassName="current">
-              <div onClick={handleClickLink}>Sorted list</div>
+              <div onClick={toggleOpen}>Sorted list</div>
             </NavLink>{" "}
           </li>
           <li>
             <NavLink to="/formFill" className="link" activeClassName="current">
-              <div onClick={handleClickLink}> Form Fill</div>
+              <div onClick={toggleOpen}> Form Fill</div>
             </NavLink>
           </li>
           <li>
             <NavLink to="/catshelter" className="link" activeClassName="current">
-              <div onClick={handleClickLink}>Cat Shelter</div>
+              <div onClick={toggleOpen}>Cat Shelter</div>
             </NavLink>
           </li>
           <li>
             <NavLink to="/tables" className="link" activeClassName="current">
-              <div onClick={handleClickLink}>Tables</div>
+              <div onClick={toggleOpen}>Tables</div>
             </NavLink>
           </li>
         </ul>
@@ -94,7 +94,7 @@ const NavbarLinks = ({ handleClickLink }) => {
         <ul className="sub_list">
           <li>
             <NavLink to="/visualBugs" className="link" activeClassName="current">
-              <div onClick={handleClickLink}>Visual Bugs</div>
+              <div onClick={toggleOpen}>Visual Bugs</div>
             </NavLink>
           </li>
         </ul>
@@ -104,12 +104,12 @@ const NavbarLinks = ({ handleClickLink }) => {
         <ul className="sub_list">
           <li>
             <NavLink to="/scramble" className="link" activeClassName="current">
-              <div onClick={handleClickLink}>Scramble items</div>
+              <div onClick={toggleOpen}>Scramble items</div>
             </NavLink>
           </li>
           {/* <li>
             <NavLink to="/multiScramble" className="link" activeClassName="current">
-              <div onClick={handleClickLink}>Multi-scramble</div>
+              <div onClick={toggleOpen}>Multi-scramble</div>
             </NavLink>
           </li> */}
         </ul>
@@ -119,7 +119,7 @@ const NavbarLinks = ({ handleClickLink }) => {
         <ul className="sub_list">
           <li>
             <NavLink to="/concatStrings" className="link" activeClassName="current">
-              <div onClick={handleClickLink}>Concat strings</div>
+              <div onClick={toggleOpen}>Concat strings</div>
             </NavLink>
           </li>
         </ul>
@@ -129,12 +129,12 @@ const NavbarLinks = ({ handleClickLink }) => {
         <ul className="sub_list">
           <li>
             <NavLink to="/kittenCollect" className="link" activeClassName="current">
-              <div onClick={handleClickLink}>Collecting kittens</div>
+              <div onClick={toggleOpen}>Collecting kittens</div>
             </NavLink>
           </li>
           <li>
             <NavLink to="/canvasGame" className="link" activeClassName="current">
-              <div onClick={handleClickLink}>Canvas Game</div>
+              <div onClick={toggleOpen}>Canvas Game</div>
             </NavLink>
           </li>
         </ul>

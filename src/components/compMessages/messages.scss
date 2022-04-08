@@ -8,6 +8,11 @@
   }
   .success_message {
     color: $themecolorGreen;
+    font-size: 1.4rem;
+    @media all and (min-width: $lg-min) {
+      font-size: 1.5rem;
+    }
+
     &.fail {
       color: $themecolorNewRed;
     }

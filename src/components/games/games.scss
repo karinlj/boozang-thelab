@@ -58,6 +58,9 @@
     align-items: center;
     margin-bottom: 0.5rem;
 
+    .sub_heading {
+      color: $themecolorButtonBlue;
+    }
     .result_wrapper {
       margin-top: 0;
       .success_message {

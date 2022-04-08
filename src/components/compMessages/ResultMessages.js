@@ -4,9 +4,9 @@ const ResultMessages = ({ messageData }) => {
     // toggle between opacity:0 and 1
     <div className={`result_wrapper ${messageData.isOpenWrapper ? "show" : ""}`} data-testid="result">
       {/* toggle between green or red message */}
-      <h4 className={`success_message ${messageData.isSuccess ? "" : "fail"}`} data-testid="message">
+      <p className={`success_message ${messageData.isSuccess ? "" : "fail"}`} data-testid="message">
         {messageData.resultMessage}
-      </h4>
+      </p>
       {messageData.subMessage && <p className="sub_message">{messageData.subMessage}</p>}
     </div>
   );

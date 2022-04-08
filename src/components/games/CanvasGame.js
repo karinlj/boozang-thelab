@@ -3,7 +3,6 @@ import "./games.scss";
 import { CanvasGameVideos } from "../text/videos/VideoSections";
 import { CanvasGameIntro } from "../text/Intros";
 import { CanvasGameTestInfo } from "../text/TestInfos";
-import ResultMessages from "../compMessages/ResultMessages";
 
 const CanvasGame = () => {
   const canvasRef = useRef(null);
@@ -12,20 +11,23 @@ const CanvasGame = () => {
   const [startY, setStartY] = useState(null);
   const [offsetX, setOffsetX] = useState(null);
   const [offsetY, setOffsetY] = useState(null);
-  const [messageData, setMessageData] = useState({
-    isOpenWrapper: false,
-    resultMessage: "",
-    isSuccess: true,
-  });
 
   const [ball, setBall] = useState({
-    x: 50,
-    y: 50,
+    x: 0,
+    y: 0,
     radius: 20,
     isDragging: false,
   });
+
   const WIDTH = 450;
   const HEIGHT = 450;
+
+  const drawSucesssMessage = (ctx) => {
+    ctx.beginPath();
+    ctx.font = "28px roboto, sans-serif ";
+    ctx.fillStyle = "#15b756";
+    ctx.fillText("Success!", 350, 50);
+  };
 
   const drawBox = (ctx) => {
     ctx.beginPath();
@@ -38,6 +40,14 @@ const CanvasGame = () => {
     ctx.lineTo(380, 340);
     ctx.strokeStyle = "#f24d7f";
     ctx.stroke();
+
+    //text
+    ctx.beginPath();
+    ctx.font = "9pt";
+    ctx.fillStyle = "white";
+    ctx.textAlign = "center";
+    ctx.fillText("BOX", 315, 360);
+    ctx.textBaseline = "middle";
   };
 
   const drawBall = (ctx) => {
@@ -46,32 +56,23 @@ const CanvasGame = () => {
     ctx.fillStyle = "#f24d7f";
     ctx.fill();
 
-    // ctx.font = "9pt";
-    // ctx.fillStyle = "white";
-    // ctx.textAlign = "center";
-    // ctx.fillText("Ball", 10, 50);
+    //text
+    ctx.beginPath();
+    ctx.font = "10pt";
+    ctx.fillStyle = "white";
+    ctx.textAlign = "center";
+    ctx.fillText("BALL", ball.x, ball.y);
+    ctx.textBaseline = "middle";
   };
 
-  const ballInbox = () => {
+  const ballInbox = (ctx) => {
     let boxXMIn = 270;
     let boxXMax = 360;
     let boxYMIn = 330;
     let boxYMax = 390;
 
     if (ball.x > boxXMIn && ball.x < boxXMax && ball.y > boxYMIn && ball.y < boxYMax) {
-      setMessageData({
-        ...messageData,
-        isOpenWrapper: true,
-        resultMessage: "Success!",
-        isSuccess: true,
-      });
-    } else {
-      setMessageData({
-        ...messageData,
-        isOpenWrapper: true,
-        resultMessage: "Drag ball into box...",
-        isSuccess: false,
-      });
+      drawSucesssMessage(ctx);
     }
   };
   // handle mousedown events
@@ -152,11 +153,14 @@ const CanvasGame = () => {
   const reset = () => {
     setBall({
       ...ball,
-      x: 50,
-      y: 50,
+      x: 40 + Math.random() * 400,
+      y: 40 + Math.random() * 300,
     });
   };
 
+  useEffect(() => {
+    reset();
+  }, []);
   useEffect(() => {
     // console.log("ball: ", ball);
     //finding the <canvas> element
@@ -170,7 +174,8 @@ const CanvasGame = () => {
     setOffsetY(BB.top);
     drawBall(ctx);
     drawBox(ctx);
-    ballInbox();
+    // drawSucesssMessage(ctx);
+    ballInbox(ctx);
     // eslint-disable-next-line
   }, [ball]);
   return (
@@ -183,7 +188,7 @@ const CanvasGame = () => {
           <CanvasGameIntro />
           <div className="top_section">
             <input type="button" value="Reset" className="formBtn purple" onClick={reset} />
-            <ResultMessages messageData={messageData} />
+            <h4 className={"sub_heading"}>Drag ball into box...</h4>
           </div>
           <canvas
             ref={canvasRef}

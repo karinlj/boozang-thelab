@@ -29,24 +29,31 @@ import CanvasGame from "./components/games/CanvasGame.js";
 import NotFound from "./components/NotFound";
 
 function App() {
-  const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
-  
-  const handleToggle = () => {
-    setSideDrawerOpen(!sideDrawerOpen);
+  const [isBtnOpen, setIsBtnOpen] = useState(false);
+
+  const toggleOpen = () => {
+    setIsBtnOpen(!isBtnOpen);
   };
-  const handleBackdropAndLinkClick = () => {
-    setSideDrawerOpen(false);
-  };
+  // const handleBackdropAndLinkClick = () => {
+  //   setIsBtnOpen(false);
+  // };
   useEffect(() => {
-    // console.log("sideDrawerOpen: ", sideDrawerOpen);
-  }, [sideDrawerOpen]);
+    console.log("isBtnOpen: ", isBtnOpen);
+  }, [isBtnOpen]);
   return (
     <Router>
       <div className="App" style={{ height: "100%" }}>
-        <Navbar handleClick={handleToggle} />
-        <SideDrawer show={sideDrawerOpen} handleClickLink={handleBackdropAndLinkClick} />
-        {sideDrawerOpen && <Backdrop handleClick={handleBackdropAndLinkClick} />}
-        <Header className="header" />
+        <div className="menu">
+          <Header className="top_header" isBtnOpen={isBtnOpen} toggleOpen={toggleOpen} />
+          <Navbar isBtnOpen={isBtnOpen} toggleOpen={toggleOpen} />
+
+          {isBtnOpen && <Backdrop handleClick={toggleOpen} />}
+
+          {/* <Header className="header" />
+          <Navbar handleClick={handleToggle} show={sideDrawerOpen} />
+          <SideDrawer show={sideDrawerOpen} handleClickLink={handleBackdropAndLinkClick} /> */}
+        </div>
+
         <div className="content_section">
           <div className="container">
             <Switch>

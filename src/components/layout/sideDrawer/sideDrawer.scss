@@ -6,17 +6,24 @@
   box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
+  left: -300px;
   left: 0;
+
   bottom: 0;
-  width: 70%;
+  //  width: 70%;
+  width: 300px;
   max-width: 400px;
-  z-index: 200;
+  // z-index: 200;
+  z-index: 0; //obs!!  //same parent as vego_burger
   overflow-y: auto;
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-out;
-  z-index: 1000;
+  // transform: translateX(-100%);
+  // transition: transform 0.5s ease-out;
+  transition: left ease-in 0.3s; //obs!!
+
+  // z-index: 1000;
   &.open {
-    transform: translateX(0);
+    //transform: translateX(0);
+    left: 0;
   }
   @media all and (min-width: $lg-min) {
     display: none;

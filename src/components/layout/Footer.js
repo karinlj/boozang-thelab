@@ -2,7 +2,7 @@ import Udemy from "../../img/udemy-logo.png";
 const Footer = () => {
   //UI component
   return (
-    <footer className="footer-section">
+    <footer className="footer">
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-7">
