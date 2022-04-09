@@ -6,23 +6,9 @@ import { VisualBugsTestInfo } from "../text/TestInfos";
 
 const VisualBugs = () => {
   const [index, setIndex] = useState(0);
-  const animals = [
-    "zebra",
-    "cheetah",
-    "lion",
-    "giraffe",
-    "meerkat",
-    "elephant",
-    "leopard",
-  ];
+  const animals = ["zebra", "cheetah", "lion", "giraffe", "meerkat", "elephant", "leopard"];
   const images = animals.map((animal, i) => {
-    return (
-      <img
-        src={require(`../../img/${animal}.jpg`).default}
-        key={i}
-        alt={animal}
-      />
-    );
+    return <img src={require(`../../img/${animal}.jpg`).default} key={i} alt={animal} />;
   });
   const animalImg = images[index];
   const animalLabel = animals[index];
@@ -40,7 +26,8 @@ const VisualBugs = () => {
   }, [index]);
   return (
     <div className="row justify-content-between">
-      <div className="col-12 col-md-6 col-xl-5">
+      {/* <div className="col-12 col-md-6 col-xl-5"> */}
+      <div className="col-12 col-md-6">
         <section className="visual_bugs_section">
           <VisualBugsIntro />
           <div className="row">
@@ -53,17 +40,13 @@ const VisualBugs = () => {
               </div>
             </div>
             <div className="col-12 col-sm-2">
-              <input
-                type="button"
-                value="Next"
-                className="formBtn add"
-                onClick={handleClick}
-              />
+              <input type="button" value="Next" className="formBtn add" onClick={handleClick} />
             </div>
           </div>
         </section>
       </div>
-      <div className="col-12 col-md-5">
+      {/* <div className="col-12 col-md-5"> */}
+      <div className="col-12 col-md-6">
         <VisualBugsTestInfo />
         <VisualBugsVideos />
       </div>

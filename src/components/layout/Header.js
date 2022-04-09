@@ -7,9 +7,7 @@ const Header = ({ toggleOpen, isBtnOpen }) => {
     <header className="site_header">
       <div className="logo_section">
         <ToggleBtn toggleOpen={toggleOpen} isBtnOpen={isBtnOpen} />
-        <div className="logo">
-          <NavLink to="/">theLab</NavLink>
-        </div>
+        <div className="logo">theLab</div>
       </div>
 
       <div className="boozang_logo_text">

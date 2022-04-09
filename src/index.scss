@@ -24,7 +24,8 @@ body {
   //position: relative !important;
 }
 .container {
-  max-width: 1280px;
+  // max-width: 1280px;
+  max-width: 1000px;
   width: 100%;
   margin: 0 auto;
 }
@@ -125,11 +126,9 @@ a {
     display: flex;
     .logo {
       margin-left: 1.5rem;
-      a {
-        font-size: 2.2rem;
-        color: $themecolorNewPink;
-        font-weight: 500;
-      }
+      font-size: 2.2rem;
+      color: $themecolorNewPink;
+      font-weight: 500;
     }
   }
   .boozang_logo_text {
@@ -206,12 +205,12 @@ a {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 280px; //obs!!
+  width: 350px; //obs!!
   // width: 25%;
 
   position: fixed;
   top: 0;
-  left: -280px; //obs!!
+  left: -350px; //obs!!
   transition: left ease-in 0.3s; //obs!!
   height: 100%;
   -webkit-box-sizing: border-box;
@@ -245,7 +244,7 @@ a {
 //content
 .content_section {
   margin-top: 8rem;
-  width: 100%;
+  // width: 100%;
   min-height: 600px;
   padding: 0 calc(1.5rem - 15px) 10rem calc(1.5rem - 15px);
   @media all and (min-width: $sm-min) {
@@ -255,12 +254,12 @@ a {
     padding: 0 calc(3rem - 15px) 10rem calc(3rem - 15px);
   }
   @media all and (min-width: $lg-min) {
-    width: 75%;
-    margin-left: 25%;
+    // width: 75%;
+    // margin-left: 25%;
   }
   @media all and (min-width: $xl-min) {
-    width: 80%;
-    margin-left: 20%;
+    // width: 80%;
+    // margin-left: 20%;
     padding: 0 calc(3.75rem - 15px) 10rem calc(3.75rem - 15px);
   }
 
@@ -279,13 +278,13 @@ a {
   justify-content: space-between;
   background: $themecolorLilaDark;
   width: 100%;
-  min-height: 10rem;
+  min-height: 20rem;
   padding: 2rem calc(1.5rem - 15px) 1rem calc(1.5rem - 15px);
   @media all and (min-width: $sm-min) {
-    padding: 2rem calc(2.25rem - 15px) 1rem calc(2.25rem - 15px);
+    padding: 3rem calc(2.25rem - 15px) 1rem calc(2.25rem - 15px);
   }
   @media all and (min-width: $md-min) {
-    padding: 2rem calc(3rem - 15px) 1rem calc(3rem - 15px);
+    padding: 3rem calc(3rem - 15px) 1rem calc(3rem - 15px);
   }
   @media all and (min-width: $lg-min) {
     // width: 75%;
@@ -294,10 +293,9 @@ a {
   @media all and (min-width: $xl-min) {
     // width: 80%;
     // margin-left: 20%;
-    padding: 2rem calc(3.75rem - 15px) 1rem calc(3.75rem - 15px);
+    padding: 3rem calc(3.75rem - 15px) 1rem calc(3.75rem - 15px);
   }
   .udemy_link {
-    margin-left: 200px;
     img {
       max-width: 25px;
       margin-right: 3px;
@@ -337,7 +335,6 @@ a {
   }
   .copy {
     font-size: 0.8rem;
-    margin-left: 200px;
   }
   ul.social_icons_list {
     display: flex;

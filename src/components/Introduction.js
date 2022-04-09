@@ -3,11 +3,11 @@ import { IntroductionVideos } from "./text/videos/VideoSections";
 const Introduction = () => {
   return (
     <div className="row justify-content-between">
-      <div className="col-12 col-md-6">
+      <div className="col-12 col-md-8">
         <article className="comp_intro">
           <h1 className="center">Introduction</h1>
           <p className="preamble">
-            Sometimes wrting test automation code is as time-consuming as writing the code itself. One could wonder if
+            Sometimes writing test automation code is as time-consuming as writing the code itself. One could wonder if
             it's really worth it. Isn't writing the features more important than testing them?
           </p>
           <p>
@@ -26,7 +26,7 @@ const Introduction = () => {
         </article>
       </div>
 
-      <div className="col-12 col-md-5">
+      <div className="col-12 col-md-4">
         <IntroductionVideos />
       </div>
     </div>

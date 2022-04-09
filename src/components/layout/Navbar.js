@@ -10,6 +10,11 @@ const Navbar = ({ toggleOpen, isBtnOpen }) => (
               Getting started
               <ul className="sub_list">
                 <li>
+                  <NavLink to="/" className="link" activeClassName="current">
+                    <div onClick={toggleOpen}>Home</div>
+                  </NavLink>
+                </li>
+                <li>
                   <NavLink to="/introduction" className="link" activeClassName="current">
                     <div onClick={toggleOpen}>Introduction</div>
                   </NavLink>
