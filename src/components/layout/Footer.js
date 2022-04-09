@@ -16,17 +16,17 @@ const Footer = () => {
           <div className="col-12 col-md-5">
             <ul className="social_icons_list">
               <li className="social">
-                <a href="mailto:administrator@boozang.com" target="_top" className="mail" title="Email">
-                  mail
+                <a href="mailto:administrator@boozang.com" target="_top" aria-label="Boozang email">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>{" "}
                 </a>
-                <a href="https://www.facebook.com/boozangcloud/" target="_top" className="fb" title="Facebook">
-                  facebook
+                <a href="https://www.facebook.com/boozangcloud/" target="_top" aria-label="Boozang Facebook">
+                  <i class="fab fa-facebook-square" aria-hidden="true"></i>
                 </a>
-                <a href="https://www.linkedin.com/company/boozang" target="_top" className="linkedin" title="Linkedin">
-                  linkedin
+                <a href="https://www.linkedin.com/company/boozang" target="_top" aria-label="Boozang Likedin">
+                  <i class="fab fa-linkedin" aria-hidden="true"></i>
                 </a>
-                <a href="https://mobile.twitter.com/boozangcloud" target="_top" className="twitter" title="Twitter">
-                  twitter
+                <a href="https://mobile.twitter.com/boozangcloud" target="_top" aria-label="Boozang Twitter">
+                  <i class="fab fa-twitter-square" aria-hidden="true"></i>
                 </a>
               </li>
             </ul>

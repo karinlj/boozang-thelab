@@ -16,6 +16,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
   font-family: "Quicksand";
+
   background: $themecolorLila;
 }
 #root {
@@ -39,14 +40,14 @@ ul {
 }
 
 //typgrafi
-
 h1 {
   font-size: 1.8em;
   @media all and (min-width: $md-min) {
     font-size: 2em;
   }
   @media all and (min-width: $xl-min) {
-    font-size: 2.5rem;
+    // font-size: 2.5rem;
+    font-size: 3.2rem;
   }
 }
 h2 {
@@ -65,7 +66,11 @@ h4 {
   }
 }
 p {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  &.preamble {
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
 }
 h1,
 h2,
@@ -100,15 +105,26 @@ a {
   }
 }
 
+//menu
+.menu {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
 //header
 .site_header {
-  padding: 1.8rem calc(3.75rem - 15px);
+  padding: 0.7rem calc(3.75rem - 15px);
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  background: #2a2966;
+  border-bottom: 1px solid $themecolorLilaDark;
   .logo_section {
     z-index: 3; //obs!!  //same parent as nav
     display: flex;
     .logo {
+      margin-left: 1.5rem;
       a {
         font-size: 2.2rem;
         color: $themecolorNewPink;
@@ -154,12 +170,6 @@ a {
 //     max-width: 130px;
 //   }
 // }
-
-.menu {
-  position: fixed;
-  width: 100%;
-}
-
 //main navigation
 .navbar {
   // width: 100%;
@@ -234,7 +244,7 @@ a {
 
 //content
 .content_section {
-  margin-top: 6rem;
+  margin-top: 8rem;
   width: 100%;
   min-height: 600px;
   padding: 0 calc(1.5rem - 15px) 10rem calc(1.5rem - 15px);
@@ -341,37 +351,10 @@ a {
         font-size: 0;
         display: inline-block;
         margin-right: 2rem;
-        &:after {
-          font-weight: 900;
-          font-size: 1.2rem;
+        i {
+          font-size: 1.6rem;
           color: #fff;
-          text-align: center;
-          border-radius: 50%;
-          transition: 1s;
-        }
-        &.mail {
-          &:after {
-            font-family: "Font Awesome 5 Free";
-            content: "\f0e0";
-          }
-        }
-        &.fb {
-          &:after {
-            font-family: "Font Awesome 5 Brands";
-            content: "\f082";
-          }
-        }
-        &.linkedin {
-          &:after {
-            font-family: "Font Awesome 5 Brands";
-            content: "\f08c";
-          }
-        }
-        &.twitter {
-          &:after {
-            font-family: "Font Awesome 5 Brands";
-            content: "\f081";
-          }
+          cursor: pointer;
         }
       }
     }
