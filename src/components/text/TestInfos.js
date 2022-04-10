@@ -63,7 +63,7 @@ export const FormFillTestInfo = () => {
 export const SpeedGameTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Why learn: Speed Game</h4>
+      <h2>Why learn: Speed Game</h2>
       <p>
         A classic problem in test automation is handling render waits. If certain elements are taking longer to render,
         the test might fail. On the other hand, if we create long delays the overall test takes too long to run. Best if

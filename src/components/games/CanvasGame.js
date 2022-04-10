@@ -160,6 +160,7 @@ const CanvasGame = () => {
 
   useEffect(() => {
     reset();
+    // eslint-disable-next-line
   }, []);
   useEffect(() => {
     // console.log("ball: ", ball);

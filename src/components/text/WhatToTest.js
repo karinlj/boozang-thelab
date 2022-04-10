@@ -4,15 +4,19 @@ import "./text.scss";
 export const SpeedGameWhatToTest = () => {
   return (
     <article className="comp_what_to_test">
-      <h4>What to test?</h4>
+      <h2>What to test?</h2>
       <ul>
         <li>Check that a message is shown when hitting the "End Game" button as soon as it appears.</li>
       </ul>
-      <button className="linkBtn">
+
+      <a href="/features/speedGame.txt" target="_blank" rel="noopener noreferrer" className="linkBtn">
+        <span>Cucumber specification</span>
+      </a>
+      {/* <button className="linkBtn">
         <a href="/features/speedGame.txt" target="_blank" rel="noopener noreferrer">
           <span>Cucumber specification</span>
         </a>
-      </button>
+      </button> */}
     </article>
   );
 };

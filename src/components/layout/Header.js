@@ -1,20 +1,27 @@
 import Boozang from "../../img/boozang_logo_reverse@2x.png";
-import ToggleBtn from "./sideDrawer/ToggleBtn";
-import { NavLink } from "react-router-dom";
+import ToggleBtn from "./ToggleBtn/ToggleBtn";
 
 const Header = ({ toggleOpen, isBtnOpen }) => {
   return (
     <header className="site_header">
-      <div className="logo_section">
-        <ToggleBtn toggleOpen={toggleOpen} isBtnOpen={isBtnOpen} />
-        <div className="logo">theLab</div>
-      </div>
+      <div className="container-fluid">
+        <div className="row align-items-center">
+          <div className="col-6">
+            <div className="logo_section">
+              <ToggleBtn toggleOpen={toggleOpen} isBtnOpen={isBtnOpen} />
+              <div className="logo">theLab</div>
+            </div>
+          </div>
 
-      <div className="boozang_logo_text">
-        <span>Powered by</span>
-        <a href="https:boozang.com">
-          <img src={Boozang} alt="boozang homepage" />
-        </a>
+          <div className="col-6">
+            <div className="boozang_logo_text">
+              <span>Powered by</span>
+              <a href="https:boozang.com">
+                <img src={Boozang} alt="boozang homepage" />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
   );

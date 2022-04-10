@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import Navbar from "./components/layout/Navbar";
-import SideDrawer from "./components/layout/sideDrawer/SideDrawer";
 import Backdrop from "./components/layout/backdrop/Backdrop";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
@@ -48,10 +47,6 @@ function App() {
           <Navbar isBtnOpen={isBtnOpen} toggleOpen={toggleOpen} />
 
           {isBtnOpen && <Backdrop handleClick={toggleOpen} />}
-
-          {/* <Header className="header" />
-          <Navbar handleClick={handleToggle} show={sideDrawerOpen} />
-          <SideDrawer show={sideDrawerOpen} handleClickLink={handleBackdropAndLinkClick} /> */}
         </div>
 
         <div className="content_section">

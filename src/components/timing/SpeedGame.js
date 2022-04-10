@@ -59,23 +59,25 @@ const SpeedGame = () => {
 
   return (
     <div className="row justify-content-between" data-testid="SpeedGame">
-      <div className="col-12 col-md-6 col-xl-5">
+      <div className="col-12 col-md-6">
         <section className="timing_section">
           <SpeedGameIntro />
           <div className="game_space">
-            <input
-              type="button"
-              value="Start Game"
-              className="formBtn add"
-              onClick={handleStart}
-              data-testid="startBtn"
-            />
-            {count < 0 && <input type="button" value="End Game" className="formBtn delete" onClick={handleStop} />}
+            <button onClick={handleStart} className="formBtn add" data-testid="startBtn">
+              Start Game
+            </button>
+
+            {count < 0 && (
+              <button onClick={handleStop} className="formBtn delete">
+                End Game
+              </button>
+            )}
             <ResultMessages messageData={messageData} />
           </div>
         </section>
       </div>
-      <div className="col-12 col-md-5">
+      {/* <div className="col-12 col-md-5"> */}
+      <div className="col-12 col-md-6">
         <SpeedGameTestInfo />
         <SpeedGameWhatToTest />
         <SpeedGameVideos />

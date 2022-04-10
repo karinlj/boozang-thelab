@@ -19,6 +19,7 @@
 //video_section
 .video_section {
   margin-top: 3rem;
+
   @media all and (min-width: $md-min) {
     margin-top: 0;
   }
@@ -58,13 +59,13 @@
 //test info box
 .comp_test_info {
   background: $themecolorBlueNewLightest;
-  h4,
+  h2,
   p {
     color: $themecolorLilaDark;
   }
 }
 .comp_what_to_test {
-  h4 {
+  h2 {
     //color: $themecolorButtonBlue;
     color: $themecolorNewPink;
   }
@@ -104,6 +105,5 @@
   // }
   p {
     white-space: pre-line;
-    //color: $themecolorDarker;
   }
 }

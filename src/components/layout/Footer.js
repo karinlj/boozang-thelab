@@ -3,15 +3,13 @@ const Footer = () => {
   //UI component
   return (
     <footer className="footer">
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-12 col-md-7">
-            <h5 className="udemy_link">
-              <a href="https://www.udemy.com/code-less-test-automation-with-boozang/">
-                <img src={Udemy} alt="udemy-logo" />
-                Free Boozang Udemy course
-              </a>
-            </h5>
+            <a href="https://www.udemy.com/code-less-test-automation-with-boozang/" className="udemy_link">
+              <img src={Udemy} alt="Boozang Udemy course" />
+              Free Boozang Udemy course
+            </a>
           </div>
           <div className="col-12 col-md-5">
             <ul className="social_icons_list">
@@ -33,7 +31,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="container">
+
+      <div className="container-fluid">
         <div className="row">
           <div className="col">
             <p className="copy">© {new Date().getFullYear()} - Boozang</p>

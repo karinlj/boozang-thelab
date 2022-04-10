@@ -1,13 +1,14 @@
 import { NavLink } from "react-router-dom";
 
 const Navbar = ({ toggleOpen, isBtnOpen }) => (
-  <nav className={isBtnOpen ? "navbar open" : "navbar"}>
+  <nav className={isBtnOpen ? "navbar navbar_is_open" : "navbar"}>
     <div className="container">
       <div className="row">
         <div className="col">
           <ul className="links">
             <li>
-              Getting started
+              <h4>Getting started</h4>
+
               <ul className="sub_list">
                 <li>
                   <NavLink to="/" className="link" activeClassName="current">
@@ -27,7 +28,8 @@ const Navbar = ({ toggleOpen, isBtnOpen }) => (
               </ul>
             </li>
             <li>
-              Timing
+              <h4>Timing</h4>
+
               <ul className="sub_list">
                 <li>
                   <NavLink to="/speedGame" className="link" activeClassName="current">
@@ -42,7 +44,8 @@ const Navbar = ({ toggleOpen, isBtnOpen }) => (
               </ul>
             </li>
             <li>
-              Conditional logic
+              <h4> Conditional logic</h4>
+
               <ul className="sub_list">
                 <li>
                   <NavLink to="/yellowOrBlue" className="link" activeClassName="current">
@@ -58,7 +61,8 @@ const Navbar = ({ toggleOpen, isBtnOpen }) => (
             </li>
             <li></li>
             <li>
-              Lists, Forms and Tables
+              <h4> Lists, Forms and Tables</h4>
+
               <ul className="sub_list">
                 <li>
                   <NavLink to="/sortedList" className="link" activeClassName="current">
@@ -83,7 +87,7 @@ const Navbar = ({ toggleOpen, isBtnOpen }) => (
               </ul>
             </li>
             <li>
-              Bug reporting
+              <h4> Bug reporting</h4>
               <ul className="sub_list">
                 <li>
                   <NavLink to="/visualBugs" className="link" activeClassName="current">
@@ -93,7 +97,8 @@ const Navbar = ({ toggleOpen, isBtnOpen }) => (
               </ul>
             </li>
             <li>
-              DOM changes
+              <h4> DOM changes</h4>
+
               <ul className="sub_list">
                 <li>
                   <NavLink to="/scramble" className="link" activeClassName="current">
@@ -108,7 +113,8 @@ const Navbar = ({ toggleOpen, isBtnOpen }) => (
               </ul>
             </li>
             <li>
-              Using data
+              <h4> Using data</h4>
+
               <ul className="sub_list">
                 <li>
                   <NavLink to="/concatStrings" className="link" activeClassName="current">
@@ -118,7 +124,8 @@ const Navbar = ({ toggleOpen, isBtnOpen }) => (
               </ul>
             </li>
             <li className="games">
-              Games
+              <h4> Games</h4>
+
               <ul className="sub_list">
                 <li>
                   <NavLink to="/kittenCollect" className="link" activeClassName="current">
