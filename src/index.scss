@@ -48,7 +48,10 @@ h1 {
   }
   @media all and (min-width: $xl-min) {
     // font-size: 2.5rem;
-    font-size: 3.2rem;
+    font-size: 2.7rem;
+  }
+  @media all and (min-width: 1500px) {
+    font-size: 3.1rem;
   }
 }
 h2 {

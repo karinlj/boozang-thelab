@@ -53,32 +53,36 @@ const YellowOrBlue = () => {
 
   return (
     <div className="row justify-content-between">
-      <div className="col-12 col-md-6 col-xl-5">
+      <div className="col-12 col-md-6">
         <section className="conditional_section">
           <YellowOrBlueIntro />
+
           <div className="wrapper">
-            <input type="button" value="Generate Color" className="formBtn add" onClick={generateColor} />
+            <button className="formBtn add" onClick={generateColor}>
+              Generate Color
+            </button>
             <section className={`output_section ${randColor ? "show" : ""}`} data-testid="output">
               <h5 className="color">{randColor}</h5>
               <div className="btn_section">
                 {randColor && (
                   <div>
-                    <input
-                      type="button"
-                      value="yellow"
-                      className="formBtn yellow"
+                    <button
                       onClick={() => {
                         checkColor("yellow");
                       }}
-                    />
-                    <input
-                      type="button"
-                      value="blue"
-                      className="formBtn blue"
+                      className="formBtn yellow"
+                    >
+                      yellow
+                    </button>
+
+                    <button
                       onClick={() => {
                         checkColor("blue");
                       }}
-                    />
+                      className="formBtn blue"
+                    >
+                      blue
+                    </button>
                   </div>
                 )}
                 <ResultMessages messageData={messageData} />
@@ -87,7 +91,7 @@ const YellowOrBlue = () => {
           </div>
         </section>
       </div>
-      <div className="col-12 col-md-5">
+      <div className="col-12 col-md-6">
         <YellowOrBlueTestInfo />
         <YellowOrBlueWhatToTest />
         <YellowOrBlueVideos />

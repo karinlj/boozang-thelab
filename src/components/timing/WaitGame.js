@@ -68,18 +68,24 @@ const WaitGame = () => {
 
   return (
     <div className="row justify-content-between">
-      <div className="col-12 col-md-6 col-xl-5">
+      <div className="col-12 col-md-6">
         <section className="timing_section">
           <WaitGameIntro />
           <div className="game_space">
-            <input type="button" value="Start Game" className="formBtn add" onClick={handleStart} />
+            <button onClick={handleStart} className="formBtn add" data-testid="startBtn">
+              Start Game
+            </button>
 
-            {isRunning && <input type="button" value="End Game" className="formBtn delete" onClick={handleStop} />}
+            {isRunning && (
+              <button className="formBtn delete" onClick={handleStop}>
+                End Game
+              </button>
+            )}
             <ResultMessages messageData={messageData} />
           </div>
         </section>
       </div>
-      <div className="col-12 col-md-5">
+      <div className="col-12 col-md-6">
         <WaitGameTestInfo />
         <WaitGameWhatToTest />
         <WaitGameVideos />

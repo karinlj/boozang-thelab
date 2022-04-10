@@ -37,7 +37,7 @@ function App() {
   //   setIsBtnOpen(false);
   // };
   useEffect(() => {
-    console.log("isBtnOpen: ", isBtnOpen);
+    //console.log("isBtnOpen: ", isBtnOpen);
   }, [isBtnOpen]);
   return (
     <Router>

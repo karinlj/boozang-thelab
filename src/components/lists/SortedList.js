@@ -54,7 +54,7 @@ const SortedList = () => {
 
   return (
     <div className="row justify-content-between">
-      <div className="col-12 col-md-6 col-xl-5">
+      <div className="col-12 col-md-6">
         <section className="list_section">
           <SortedListIntro />
           {error && <div className="error">{error}</div>}
@@ -63,7 +63,7 @@ const SortedList = () => {
           <AddTodo addTodo={addTodo} todos={todos} />
         </section>
       </div>
-      <div className="col-12 col-md-5">
+      <div className="col-12 col-md-6">
         <SortedListTestInfo />
         <SortedListWhatToTest />
         <TodosDb />

@@ -49,32 +49,36 @@ const CatOrDog = () => {
 
   return (
     <div className="row justify-content-between">
-      <div className="col-12 col-md-6 col-xl-5">
+      <div className="col-12 col-md-6">
         <section className="conditional_section">
           <CatOrDogIntro />
           <div className="wrapper">
-            <input type="button" value="Generate Image" className="formBtn add" onClick={generateImage} />
+            <button className="formBtn add" onClick={generateImage}>
+              Generate Image
+            </button>
+
             <section className={`output_section ${randImage ? "show" : ""}`} data-testid="output">
               <div className="image">{randImage}</div>
               <div className="btn_section">
                 {randImage && (
                   <div>
-                    <input
-                      type="button"
-                      value="cat"
-                      className="formBtn pink"
+                    <button
                       onClick={() => {
                         checkPet("cat");
                       }}
-                    />
-                    <input
-                      type="button"
-                      value="dog"
-                      className="formBtn turqoise"
+                      className="formBtn pink"
+                    >
+                      cat
+                    </button>
+
+                    <button
                       onClick={() => {
                         checkPet("dog");
                       }}
-                    />
+                      className="formBtn turqoise"
+                    >
+                      dog
+                    </button>
                   </div>
                 )}
                 <ResultMessages messageData={messageData} />
@@ -83,7 +87,7 @@ const CatOrDog = () => {
           </div>
         </section>
       </div>
-      <div className="col-12 col-md-5">
+      <div className="col-12 col-md-6">
         <CatOrDogTestInfo />
         <CatOrDogWhatToTest />
         <CatOrDogVideos />

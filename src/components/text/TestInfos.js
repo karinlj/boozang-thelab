@@ -4,7 +4,7 @@ import "./text.scss";
 export const SortedListTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Why learn: Sorted list?</h4>
+      <h2>Why learn: Sorted list?</h2>
       <p>
         In many SaaS applications, data lists of different kinds are often used. Being able to add items in bulk to a
         list and removing them again is common practice. These operations are key to most SaaS applications and having a
@@ -16,7 +16,7 @@ export const SortedListTestInfo = () => {
 export const UnsortedListTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Why learn: Unsorted list?</h4>
+      <h2>Why learn: Unsorted list?</h2>
       <p>
         One common problem in test automation is to be able to uniquely identify objects in lists. When identifying
         elements using CSS selectors, sometimes you'll need to make assumptions about the order of an item. In general,
@@ -28,7 +28,7 @@ export const UnsortedListTestInfo = () => {
 export const CatShelterTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Why learn: Cat Shelter?</h4>
+      <h2>Why learn: Cat Shelter?</h2>
       <p>
         In this exercise, we expand on form testing. Cat Shelters contains multiple views and the form contains radio
         buttons as well as regular inputs. Try to add a list of cats based on an external data source, like a CSV file.
@@ -39,7 +39,7 @@ export const CatShelterTestInfo = () => {
 export const TablesTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Why learn: Tables?</h4>
+      <h2>Why learn: Tables?</h2>
       <p>Tables are common in SaaS application, but present a number of challenges when automating.</p>
     </article>
   );
@@ -49,7 +49,7 @@ export const TablesTestInfo = () => {
 export const FormFillTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Why learn: Form Fill?</h4>
+      <h2>Why learn: Form Fill?</h2>
       <p>
         In test automation, it's important not to not hard-code information entered in forms, as this information will
         often change. A common mistake is to record separate flows for each set of data, making tests numerous and
@@ -75,7 +75,7 @@ export const SpeedGameTestInfo = () => {
 export const WaitGameTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Why learn: Wait Game</h4>
+      <h2>Why learn: Wait Game</h2>
       <p>
         Sometimes there is a necessity to wait a certain time to make sure the application catches up. In test
         automation, being reactive is not always the best medicine, and sometimes it pays off to be patient. A common
@@ -89,7 +89,7 @@ export const WaitGameTestInfo = () => {
 export const VisualBugsTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Why learn: Visual Bugs</h4>
+      <h2>Why learn: Visual Bugs</h2>
       <p>
         Even if test automation can be a very powerful tool, doing certain kinds of tasks is best left to the human. An
         example of this is finding visual bugs. Here, you can still use automated bug reporting to help you out. Often
@@ -103,7 +103,7 @@ export const VisualBugsTestInfo = () => {
 export const YellowOrBlueTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Why learn: Yellow or Blue</h4>
+      <h2>Why learn: Yellow or Blue</h2>
       <p>
         In this case, we look at basic condition handling. If something exists, do this, otherwise, do that. This is the
         fundament on doing tests on top of a system where the initial state isn't known, or a future state cannot be
@@ -115,7 +115,7 @@ export const YellowOrBlueTestInfo = () => {
 export const CatOrDogTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Why learn: Cat or Dog</h4>
+      <h2>Why learn: Cat or Dog</h2>
       <p>
         Often it's preferred to make all assertions on existance of elements or simple Boolean expressions. There are
         times in test automation where we need to base our logic on an image.{" "}
@@ -131,7 +131,7 @@ export const CatOrDogTestInfo = () => {
 export const ScrambleItemsTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Why learn: Scramble Items</h4>
+      <h2>Why learn: Scramble Items</h2>
       <p>
         XPath and CSS selectors are notoriously brittle, and often changes to id and class attributes will break test
         cases.
@@ -145,7 +145,7 @@ export const ScrambleItemsTestInfo = () => {
 export const MultiScrambleTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Why learn: Multi scramble</h4>
+      <h2>Why learn: Multi scramble</h2>
       <p>
         Keeping your tests stable for code updates are one of the biggest challenges to test automation. Often,
         technical details like class and id are changing constantly.
@@ -161,7 +161,7 @@ export const MultiScrambleTestInfo = () => {
 export const ConcatStringTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Why learn: Concatenate Strings</h4>
+      <h2>Why learn: Concatenate Strings</h2>
       <p>
         Very often in test automation, we need to be able to use the data that the application outputs in a later test
         step. A good example of this is when doing assertions based on computer-generated id:s or time or date strings.
@@ -173,7 +173,7 @@ export const ConcatStringTestInfo = () => {
 export const KittenCollectTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Why learn: Collecting Kittens</h4>
+      <h2>Why learn: Collecting Kittens</h2>
       <p>
         Any web application is a little bit like a game. By automating game play we combine automating actions,
         conditional logic and handling waits. If you can automate this game, you are far along in handling any scenario
@@ -185,7 +185,7 @@ export const KittenCollectTestInfo = () => {
 export const CanvasGameTestInfo = () => {
   return (
     <article className="comp_test_info">
-      <h4>Why learn: Canvas Game</h4>
+      <h2>Why learn: Canvas Game</h2>
       <p>
         This exercise contains two challenging obstacles. The most challenging is that playing field is an HTML canvas,
         which is a single HTML element. This means typical test automation element locators will be useless, and one is

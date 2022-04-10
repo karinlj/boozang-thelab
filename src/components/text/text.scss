@@ -90,19 +90,15 @@
 }
 .comp_test_info,
 .comp_what_to_test {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   min-height: 150px;
-  // background: $themecolorBlueNewLightest;
   padding: 1.3rem 1.8rem;
   border-radius: $themeBorderRadius;
   box-shadow: $themeBoxShadow;
   margin-top: 6rem;
   @media all and (min-width: $md-min) {
-    margin-top: 1rem;
+    margin-top: 0rem;
   }
-  // h4 {
-  //   color: $themecolorLilaDark;
-  // }
   p {
     white-space: pre-line;
   }
