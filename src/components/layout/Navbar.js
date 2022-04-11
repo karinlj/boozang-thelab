@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import "./_layout.scss";
 
 const Navbar = ({ toggleOpen, isBtnOpen }) => (
   <nav className={isBtnOpen ? "navbar navbar_is_open" : "navbar"}>

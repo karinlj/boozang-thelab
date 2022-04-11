@@ -1,4 +1,6 @@
 import Udemy from "../../img/udemy-logo.png";
+import "./_layout.scss";
+
 const Footer = () => {
   //UI component
   return (

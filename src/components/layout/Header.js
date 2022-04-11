@@ -1,5 +1,6 @@
 import Boozang from "../../img/boozang_logo_reverse@2x.png";
-import ToggleBtn from "./ToggleBtn/ToggleBtn";
+import ToggleBtn from "./ToggleBtn";
+import "./_layout.scss";
 
 const Header = ({ toggleOpen, isBtnOpen }) => {
   return (
@@ -7,7 +8,7 @@ const Header = ({ toggleOpen, isBtnOpen }) => {
       <div className="container-fluid">
         <div className="row align-items-center">
           <div className="col-6">
-            <div className="logo_section">
+            <div className="lab_logo_section">
               <ToggleBtn toggleOpen={toggleOpen} isBtnOpen={isBtnOpen} />
               <div className="logo">theLab</div>
             </div>

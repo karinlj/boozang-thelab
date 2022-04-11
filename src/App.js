@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import Navbar from "./components/layout/Navbar";
-import Backdrop from "./components/layout/backdrop/Backdrop";
+import Backdrop from "./components/layout/Backdrop";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Home from "./components/Home";
@@ -45,11 +45,10 @@ function App() {
         <div className="menu">
           <Header className="top_header" isBtnOpen={isBtnOpen} toggleOpen={toggleOpen} />
           <Navbar isBtnOpen={isBtnOpen} toggleOpen={toggleOpen} />
-
           {isBtnOpen && <Backdrop handleClick={toggleOpen} />}
         </div>
 
-        <div className="content_section">
+        <main className="main_content_section">
           <div className="container">
             <Switch>
               <Route exact path="/">
@@ -117,7 +116,7 @@ function App() {
               </Route>
             </Switch>
           </div>
-        </div>
+        </main>
         <Footer />
       </div>
     </Router>

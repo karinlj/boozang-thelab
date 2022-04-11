@@ -1,4 +1,4 @@
-import "./backdrop.scss";
+import "./_layout.scss";
 
 const Backdrop = ({ handleClick }) => {
   return <div className="backdrop" onClick={handleClick} />;
