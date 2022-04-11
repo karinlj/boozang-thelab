@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./scramble.scss";
 import { ScrambleItemsIntro } from "../text/Intros";
-import { ScrambleItemsTestInfo } from "../text/TestInfos";
+import { ScrambleItemsTestInfo } from "../text/WhyLearn";
 import { ScrambleItemsVideos } from "../text/videos/VideoSections";
 
 const ScrambleItems = () => {
@@ -201,18 +201,18 @@ const ScrambleItems = () => {
           </div>
           <div className="row justify-content-between">
             <div className="col">
-              <input type="button" value="Swap Id" className="formBtn add" onClick={toggleId} />
-              <input type="button" value="Swap Class" className="formBtn add" onClick={toggleClass} />
-              <input type="button" value="Swap Content" className="formBtn add" onClick={toggleContent} />
+              <input type="button" value="Swap Id" className="form_btn add" onClick={toggleId} />
+              <input type="button" value="Swap Class" className="form_btn add" onClick={toggleClass} />
+              <input type="button" value="Swap Content" className="form_btn add" onClick={toggleContent} />
             </div>
             <div className="col">
               <input
                 type="button"
                 value="Random Position"
-                className="formBtn add green_dark"
+                className="form_btn add green_dark"
                 onClick={scramblePositon}
               />
-              <input type="button" value="Swap DOM Order" className="formBtn add green_dark" onClick={toggleOrder} />
+              <input type="button" value="Swap DOM Order" className="form_btn add green_dark" onClick={toggleOrder} />
             </div>
           </div>
         </section>

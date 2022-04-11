@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./lists.scss";
 import { UnsortedListIntro } from "../text/Intros";
-import { UnsortedListTestInfo } from "../text/TestInfos";
+import { UnsortedListTestInfo } from "../text/WhyLearn";
 import { UnsortedListVideos } from "../text/videos/VideoSections";
 import TodoList from "./TodoList";
 import AddTodo from "./AddTodo";

@@ -32,14 +32,17 @@ const AddTodo = ({ addTodo, todos }) => {
     <div>
       <form className="list_form" onSubmit={handleSubmit}>
         {totalTodos && totalTodos.length >= 5 && <h5 className="error">Your schedule is full!</h5>}
-        <label htmlFor="">Add new Todo:</label>
+        <label htmlFor="addTodo">Add new Todo:</label>
         <br />
-        <input type="text" required value={title} onChange={(e) => setTitle(e.target.value)} />
+        <input type="text" id="addTodo" required value={title} onChange={(e) => setTitle(e.target.value)} />
         <section className="btn_section">
           <div className="text-center">
-            {/* conditional rendering */}
-            {isLoading && <input type="submit" value="Adding Todo..." className="formBtn adding" />}
-            {!isLoading && <input type="submit" value="Add Todo" className="formBtn add" />}
+            {!isLoading && (
+              <button onClick={handleSubmit} className="form_btn add">
+                Add todo
+              </button>
+            )}
+            {isLoading && <button className="form_btn adding">Adding Todo...</button>}
           </div>
         </section>
       </form>

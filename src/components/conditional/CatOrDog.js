@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./conditional.scss";
 import { CatOrDogIntro } from "../text/Intros";
-import { CatOrDogTestInfo } from "../text/TestInfos";
+import { CatOrDogTestInfo } from "../text/WhyLearn";
 import { CatOrDogVideos } from "../text/videos/VideoSections";
 import { CatOrDogWhatToTest } from "../text/WhatToTest";
 import ResultMessages from "../compMessages/ResultMessages";
@@ -53,7 +53,7 @@ const CatOrDog = () => {
         <section className="conditional_section">
           <CatOrDogIntro />
           <div className="wrapper">
-            <button className="formBtn add" onClick={generateImage}>
+            <button className="form_btn add" onClick={generateImage}>
               Generate Image
             </button>
 
@@ -66,7 +66,7 @@ const CatOrDog = () => {
                       onClick={() => {
                         checkPet("cat");
                       }}
-                      className="formBtn pink"
+                      className="form_btn pink"
                     >
                       cat
                     </button>
@@ -74,7 +74,7 @@ const CatOrDog = () => {
                       onClick={() => {
                         checkPet("dog");
                       }}
-                      className="formBtn turqoise"
+                      className="form_btn turqoise"
                     >
                       dog
                     </button>

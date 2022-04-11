@@ -3,7 +3,7 @@ import "./text.scss";
 //Lists and Tables
 export const SortedListTestInfo = () => {
   return (
-    <section className="comp_test_info">
+    <section className="why_learn_box">
       <h2>Why learn: Sorted list?</h2>
       <p>
         In many SaaS applications, data lists of different kinds are often used. Being able to add items in bulk to a
@@ -15,7 +15,7 @@ export const SortedListTestInfo = () => {
 };
 export const UnsortedListTestInfo = () => {
   return (
-    <section className="comp_test_info">
+    <section className="why_learn_box">
       <h2>Why learn: Unsorted list?</h2>
       <p>
         One common problem in test automation is to be able to uniquely identify objects in lists. When identifying
@@ -27,7 +27,7 @@ export const UnsortedListTestInfo = () => {
 };
 export const CatShelterTestInfo = () => {
   return (
-    <section className="comp_test_info">
+    <section className="why_learn_box">
       <h2>Why learn: Cat Shelter?</h2>
       <p>
         In this exercise, we expand on form testing. Cat Shelters contains multiple views and the form contains radio
@@ -38,7 +38,7 @@ export const CatShelterTestInfo = () => {
 };
 export const TablesTestInfo = () => {
   return (
-    <section className="comp_test_info">
+    <section className="why_learn_box">
       <h2>Why learn: Tables?</h2>
       <p>Tables are common in SaaS application, but present a number of challenges when automating.</p>
     </section>
@@ -48,7 +48,7 @@ export const TablesTestInfo = () => {
 //Forms
 export const FormFillTestInfo = () => {
   return (
-    <section className="comp_test_info">
+    <section className="why_learn_box">
       <h2>Why learn: Form Fill?</h2>
       <p>
         In test automation, it's important not to not hard-code information entered in forms, as this information will
@@ -62,7 +62,7 @@ export const FormFillTestInfo = () => {
 //Timing
 export const SpeedGameTestInfo = () => {
   return (
-    <section className="comp_test_info">
+    <section className="why_learn_box">
       <h2>Why learn: Speed Game</h2>
       <p>
         A classic problem in test automation is handling render waits. If certain elements are taking longer to render,
@@ -74,7 +74,7 @@ export const SpeedGameTestInfo = () => {
 };
 export const WaitGameTestInfo = () => {
   return (
-    <section className="comp_test_info">
+    <section className="why_learn_box">
       <h2>Why learn: Wait Game</h2>
       <p>
         Sometimes there is a necessity to wait a certain time to make sure the application catches up. In test
@@ -88,7 +88,7 @@ export const WaitGameTestInfo = () => {
 //Bug reporting
 export const VisualBugsTestInfo = () => {
   return (
-    <section className="comp_test_info">
+    <section className="why_learn_box">
       <h2>Why learn: Visual Bugs</h2>
       <p>
         Even if test automation can be a very powerful tool, doing certain kinds of tasks is best left to the human. An
@@ -102,7 +102,7 @@ export const VisualBugsTestInfo = () => {
 //Conditional logic
 export const YellowOrBlueTestInfo = () => {
   return (
-    <section className="comp_test_info">
+    <section className="why_learn_box">
       <h2>Why learn: Yellow or Blue</h2>
       <p>
         In this case, we look at basic condition handling. If something exists, do this, otherwise, do that. This is the
@@ -114,7 +114,7 @@ export const YellowOrBlueTestInfo = () => {
 };
 export const CatOrDogTestInfo = () => {
   return (
-    <section className="comp_test_info">
+    <section className="why_learn_box">
       <h2>Why learn: Cat or Dog</h2>
       <p>
         Often it's preferred to make all assertions on existance of elements or simple Boolean expressions. There are
@@ -130,7 +130,7 @@ export const CatOrDogTestInfo = () => {
 //DOM changes
 export const ScrambleItemsTestInfo = () => {
   return (
-    <section className="comp_test_info">
+    <section className="why_learn_box">
       <h2>Why learn: Scramble Items</h2>
       <p>
         XPath and CSS selectors are notoriously brittle, and often changes to id and class attributes will break test
@@ -144,7 +144,7 @@ export const ScrambleItemsTestInfo = () => {
 };
 export const MultiScrambleTestInfo = () => {
   return (
-    <section className="comp_test_info">
+    <section className="why_learn_box">
       <h2>Why learn: Multi scramble</h2>
       <p>
         Keeping your tests stable for code updates are one of the biggest challenges to test automation. Often,
@@ -160,7 +160,7 @@ export const MultiScrambleTestInfo = () => {
 //strings
 export const ConcatStringTestInfo = () => {
   return (
-    <section className="comp_test_info">
+    <section className="why_learn_box">
       <h2>Why learn: Concatenate Strings</h2>
       <p>
         Very often in test automation, we need to be able to use the data that the application outputs in a later test
@@ -172,7 +172,7 @@ export const ConcatStringTestInfo = () => {
 //games
 export const KittenCollectTestInfo = () => {
   return (
-    <section className="comp_test_info">
+    <section className="why_learn_box">
       <h2>Why learn: Collecting Kittens</h2>
       <p>
         Any web application is a little bit like a game. By automating game play we combine automating actions,
@@ -184,7 +184,7 @@ export const KittenCollectTestInfo = () => {
 };
 export const CanvasGameTestInfo = () => {
   return (
-    <section className="comp_test_info">
+    <section className="why_learn_box">
       <h2>Why learn: Canvas Game</h2>
       <p>
         This exercise contains two challenging obstacles. The most challenging is that playing field is an HTML canvas,

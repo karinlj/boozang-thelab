@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./visualBugs.scss";
 import { VisualBugsVideos } from "../text/videos/VideoSections";
 import { VisualBugsIntro } from "../text/Intros";
-import { VisualBugsTestInfo } from "../text/TestInfos";
+import { VisualBugsTestInfo } from "../text/WhyLearn";
 
 const VisualBugs = () => {
   const [index, setIndex] = useState(0);
@@ -40,7 +40,7 @@ const VisualBugs = () => {
               </div>
             </div>
             <div className="col-12 col-sm-2">
-              <input type="button" value="Next" className="formBtn add" onClick={handleClick} />
+              <input type="button" value="Next" className="form_btn add" onClick={handleClick} />
             </div>
           </div>
         </section>

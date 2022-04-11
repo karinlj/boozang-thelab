@@ -3,7 +3,7 @@ import "./text.scss";
 //Lists and Tables
 export const SortedListIntro = () => {
   return (
-    <section className="comp_intro">
+    <section className="intro_section">
       <h1>Sorted list </h1>
       <p>
         In this simple application we can add and delete todos from a list. There are several small tests we can do on
@@ -15,7 +15,7 @@ export const SortedListIntro = () => {
 };
 export const UnsortedListIntro = () => {
   return (
-    <section className="comp_intro">
+    <section className="intro_section">
       <h1>Unsorted list</h1>
       <p>
         In this section we repeat the same exercise as in sorted list, but allowing the list items to be added to a
@@ -26,7 +26,7 @@ export const UnsortedListIntro = () => {
 };
 export const CatShelterIntro = () => {
   return (
-    <section className="comp_intro">
+    <section className="intro_section">
       <h1>Cat shelter</h1>
       <p>
         View the current inhabitants in the Cat Shelter below. If the house icon is enabled, the cat has found a home.
@@ -37,7 +37,7 @@ export const CatShelterIntro = () => {
 };
 export const TablesIntro = () => {
   return (
-    <section className="comp_intro">
+    <section className="intro_section">
       <h1>Tables</h1>
       <p>
         Below you'll see a table of animals from the savannah. The animal can be filtered by species, and you can also
@@ -50,7 +50,7 @@ export const TablesIntro = () => {
 //Forms
 export const FormFillIntro = () => {
   return (
-    <section className="comp_intro">
+    <section className="intro_section">
       <h1>Form Fill</h1>
       <p>
         Many applications use forms to submit data. Here you can submit a form and the contents of the form will be
@@ -62,7 +62,7 @@ export const FormFillIntro = () => {
 //Timing
 export const SpeedGameIntro = () => {
   return (
-    <section className="comp_intro">
+    <section className="intro_section">
       <h1>Speed Game</h1>
       <p>
         This game tests the user reaction time. This is also useful to show-case test automation render waits. where x
@@ -74,7 +74,7 @@ export const SpeedGameIntro = () => {
 };
 export const WaitGameIntro = () => {
   return (
-    <section className="comp_intro">
+    <section className="intro_section">
       <h1>Wait Game</h1>
       <p>
         As opposed to speed game, this game tests the users time perception skill. This is also useful to showcase delay
@@ -87,7 +87,7 @@ export const WaitGameIntro = () => {
 //Bug reporting
 export const VisualBugsIntro = () => {
   return (
-    <section className="comp_intro">
+    <section className="intro_section">
       <h1>Visual Bugs</h1>
       <p>
         In this exercise, a city dweller not too familiar with the fauna of Africa was tasked with adding labels to
@@ -99,7 +99,7 @@ export const VisualBugsIntro = () => {
 //Conditional logic
 export const YellowOrBlueIntro = () => {
   return (
-    <section className="comp_intro">
+    <section className="intro_section">
       <h1>Yellow or Blue</h1>
       <p>
         Click the Generate color button to display a color with a word and then click the button with the correspondent
@@ -110,7 +110,7 @@ export const YellowOrBlueIntro = () => {
 };
 export const CatOrDogIntro = () => {
   return (
-    <section className="comp_intro">
+    <section className="intro_section">
       <h1>Cat or Dog</h1>
       <p>Click the Generate pet button to display an image and then click the button with the correspondent pet.</p>
     </section>
@@ -119,7 +119,7 @@ export const CatOrDogIntro = () => {
 //DOM changes
 export const ScrambleItemsIntro = () => {
   return (
-    <section className="comp_intro">
+    <section className="intro_section">
       <h1>Scramble Items</h1>
       <p>
         This is a super-simple game where simply pressing the right button will result in success. We make the game
@@ -132,7 +132,7 @@ export const ScrambleItemsIntro = () => {
 };
 export const MultiScrambleIntro = () => {
   return (
-    <section className="comp_intro">
+    <section className="intro_section">
       <h1>Multi scramble</h1>
       <p>
         This is a simple game where you can change the action labels that manipulate something in your data model. In a
@@ -146,7 +146,7 @@ export const MultiScrambleIntro = () => {
 //strings
 export const ConcatStringsIntro = () => {
   return (
-    <section className="comp_intro">
+    <section className="intro_section">
       <h1>Concatenate Strings</h1>
       <p>Click the Generate string button to display two strings and then type in the strings together.</p>
     </section>
@@ -155,7 +155,7 @@ export const ConcatStringsIntro = () => {
 //games
 export const KittenCollectIntro = () => {
   return (
-    <section className="comp_intro">
+    <section className="intro_section">
       <h1>Collecting Kittens</h1>
       <p>
         The kittens have all run away, so it's your job to get them home safe. Collect as many kittens as you can by
@@ -166,7 +166,7 @@ export const KittenCollectIntro = () => {
 };
 export const CanvasGameIntro = () => {
   return (
-    <section className="comp_intro">
+    <section className="intro_section">
       <h1>Canvas Game</h1>
       <p>The Canvas game helps illustrate how automate on top of an HTML canvas</p>
     </section>

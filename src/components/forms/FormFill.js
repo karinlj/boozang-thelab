@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./form.scss";
 import { FormFillVideos } from "../text/videos/VideoSections";
 import { FormFillIntro } from "../text/Intros";
-import { FormFillTestInfo } from "../text/TestInfos";
+import { FormFillTestInfo } from "../text/WhyLearn";
 import { FormFillWhatToTest } from "../text/WhatToTest";
 import { addData } from "../fetchFunctions/fetchFunctions";
 import { getData } from "../fetchFunctions/fetchFunctions";
@@ -103,13 +103,13 @@ function FormFill() {
 
           <section className="get_from_db">
             {!printForm && (
-              <input type="button" value="Show users in db" className="formBtn orange" onClick={getUsers} />
+              <input type="button" value="Show users in db" className="form_btn orange" onClick={getUsers} />
             )}
             {printForm && (
               <input
                 type="button"
                 value="Hide users in db"
-                className="formBtn orange"
+                className="form_btn orange"
                 onClick={() => {
                   setPrintForm(false);
                 }}

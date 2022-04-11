@@ -1,10 +1,13 @@
 const Todo = ({ handleDelete, todo }) => {
   return (
-    <div className="collection-item" data-testid="todo">
+    <li className="collection_item" data-testid="todo">
       <span>{todo.title}</span>
       {/* call handleDelete(), pass todo.id as parameter to SortedList */}
-      <i className="fas fa-trash-alt delIconBtn" title="Delete" onClick={() => handleDelete(todo.id)}></i>
-    </div>
+      <button onClick={() => handleDelete(todo.id)} className="delete_btn" title="delete" aria-label="Delete todo">
+        {" "}
+        <i className="fas fa-trash-alt delete_icon" aria-hidden="true"></i>
+      </button>
+    </li>
   );
 };
 export default Todo;

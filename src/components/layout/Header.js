@@ -1,5 +1,5 @@
 import Boozang from "../../img/boozang_logo_reverse@2x.png";
-import ToggleBtn from "./ToggleBtn";
+import MenuButton from "./MenuButton";
 import "./_layout.scss";
 
 const Header = ({ toggleOpen, isBtnOpen }) => {
@@ -9,7 +9,7 @@ const Header = ({ toggleOpen, isBtnOpen }) => {
         <div className="row align-items-center">
           <div className="col-6">
             <div className="lab_logo_section">
-              <ToggleBtn toggleOpen={toggleOpen} isBtnOpen={isBtnOpen} />
+              <MenuButton toggleOpen={toggleOpen} isBtnOpen={isBtnOpen} />
               <div className="logo">theLab</div>
             </div>
           </div>

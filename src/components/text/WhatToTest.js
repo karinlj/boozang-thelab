@@ -3,7 +3,7 @@ import "./text.scss";
 //Timing
 export const SpeedGameWhatToTest = () => {
   return (
-    <section className="comp_what_to_test">
+    <section className="what_to_test_box">
       <h2>What to test?</h2>
       <ul>
         <li>Check that a message is shown when hitting the "End Game" button as soon as it appears.</li>
@@ -16,7 +16,7 @@ export const SpeedGameWhatToTest = () => {
 };
 export const WaitGameWhatToTest = () => {
   return (
-    <section className="comp_what_to_test">
+    <section className="what_to_test_box">
       <h2>What to test?</h2>
       <ul>
         <li>Check that an error message is shown when hitting the "End Game" button as soon as it appears.</li>
@@ -32,7 +32,7 @@ export const WaitGameWhatToTest = () => {
 //Conditional logic
 export const YellowOrBlueWhatToTest = () => {
   return (
-    <section className="comp_what_to_test">
+    <section className="what_to_test_box">
       <h2>What to test?</h2>
       <ul>
         <li>
@@ -49,7 +49,7 @@ export const YellowOrBlueWhatToTest = () => {
 };
 export const CatOrDogWhatToTest = () => {
   return (
-    <section className="comp_what_to_test">
+    <section className="what_to_test_box">
       <h2>What to test?</h2>
       <ul>
         <li>
@@ -66,7 +66,7 @@ export const CatOrDogWhatToTest = () => {
 //Lists, Forms and Tables
 export const CatShelterWhatToTest = () => {
   return (
-    <section className="comp_what_to_test">
+    <section className="what_to_test_box">
       <h2>What to test?</h2>
       <ul>
         <li>Validate that a cat can be added to the shelter.</li>
@@ -81,7 +81,7 @@ export const CatShelterWhatToTest = () => {
 };
 export const SortedListWhatToTest = () => {
   return (
-    <section className="comp_what_to_test">
+    <section className="what_to_test_box">
       <h2>What to test?</h2>
       <ul>
         <li>Validate that an item can be added to the list.</li>
@@ -95,7 +95,7 @@ export const SortedListWhatToTest = () => {
 };
 export const FormFillWhatToTest = () => {
   return (
-    <section className="comp_what_to_test">
+    <section className="what_to_test_box">
       <h2>What to test?</h2>
       <ul>
         <li>Validate that an item can be added via the form.</li>
@@ -108,7 +108,7 @@ export const FormFillWhatToTest = () => {
 };
 export const TablesWhatToTest = () => {
   return (
-    <section className="comp_what_to_test">
+    <section className="what_to_test_box">
       <h2>What to test?</h2>
       <ul>
         <li>Validate that the empty filters are working.</li>
@@ -123,7 +123,7 @@ export const TablesWhatToTest = () => {
 //strings
 export const ConcatStringsWhatToTest = () => {
   return (
-    <section className="comp_what_to_test">
+    <section className="what_to_test_box">
       <h2>What to test?</h2>
       <ul>
         <li>Add two strings read from the application.</li>

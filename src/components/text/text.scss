@@ -1,7 +1,7 @@
 @import "../../variables.scss";
 
 //db info section
-.db_info_section {
+.db_info_box {
   background: $themecolorLilaDark;
   padding: 0.8rem 1.8rem;
   border-radius: $themeBorderRadius;
@@ -12,14 +12,13 @@
   p {
     margin: 0;
   }
-  h6 {
-    font-weight: 600;
+  .db_url {
+    font-size: 1rem;
   }
 }
 //video_section
 .video_section {
   margin-top: 3rem;
-
   @media all and (min-width: $md-min) {
     margin-top: 0;
   }
@@ -39,7 +38,7 @@
   }
 }
 //introductions
-.comp_intro {
+.intro_section {
   margin-bottom: 2rem;
   p {
     white-space: pre-line;
@@ -57,16 +56,15 @@
   }
 }
 //test info box
-.comp_test_info {
+.why_learn_box {
   background: $themecolorBlueNewLightest;
   h2,
   p {
     color: $themecolorLilaDark;
   }
 }
-.comp_what_to_test {
+.what_to_test_box {
   h2 {
-    //color: $themecolorButtonBlue;
     color: $themecolorNewPink;
   }
   ul {
@@ -79,17 +77,15 @@
       margin-bottom: 0.5rem;
     }
   }
-
   .linkBtn {
-    // background: $themecolorButtonBlue;
     background: $themecolorNewPink;
     a {
       color: #fff;
     }
   }
 }
-.comp_test_info,
-.comp_what_to_test {
+.why_learn_box,
+.what_to_test_box {
   margin-bottom: 3rem;
   min-height: 150px;
   padding: 1.3rem 1.8rem;

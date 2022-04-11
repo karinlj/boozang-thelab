@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import "./games.scss";
 import { CanvasGameVideos } from "../text/videos/VideoSections";
 import { CanvasGameIntro } from "../text/Intros";
-import { CanvasGameTestInfo } from "../text/TestInfos";
+import { CanvasGameTestInfo } from "../text/WhyLearn";
 
 const CanvasGame = () => {
   const canvasRef = useRef(null);
@@ -188,7 +188,7 @@ const CanvasGame = () => {
         <section className="game_section">
           <CanvasGameIntro />
           <div className="top_section">
-            <input type="button" value="Reset" className="formBtn purple" onClick={reset} />
+            <input type="button" value="Reset" className="form_btn purple" onClick={reset} />
             <h4 className={"sub_heading"}>Drag ball into box...</h4>
           </div>
           <canvas

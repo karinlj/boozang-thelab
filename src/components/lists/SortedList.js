@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./lists.scss";
 import { SortedListIntro } from "../text/Intros";
-import { SortedListTestInfo } from "../text/TestInfos";
+import { SortedListTestInfo } from "../text/WhyLearn";
 import { SortedListVideos } from "../text/videos/VideoSections";
 import { SortedListWhatToTest } from "../text/WhatToTest";
 import TodoList from "./TodoList";
@@ -34,8 +34,6 @@ const SortedList = () => {
 
   //delete Todo in db and Gui
   const handleDelete = async (id) => {
-    //id= argument in handleDelete() from TodoList component
-    // console.log("todosUrl", todosUrl);
     await deleteData(todosUrl, id);
     //setting Gui state
     setTodos(

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./strings.scss";
 import { ConcatStringsIntro } from "../text/Intros";
-import { ConcatStringTestInfo } from "../text/TestInfos";
+import { ConcatStringTestInfo } from "../text/WhyLearn";
 import { ConcatStringsWhatToTest } from "../text/WhatToTest";
 import { ConcatStringsVideos } from "../text/videos/VideoSections";
 import ResultMessages from "../compMessages/ResultMessages";
@@ -63,7 +63,7 @@ const ConcatStrings = () => {
       <div className="col-12 col-md-6 col-xl-5">
         <section className="strings_section">
           <ConcatStringsIntro />
-          <input type="button" value="Generate strings" className="formBtn add" onClick={generateStrings} />
+          <input type="button" value="Generate strings" className="form_btn add" onClick={generateStrings} />
           <section className={`output_section ${stringOne ? "show" : ""}`} data-testid="output">
             <div className="strings">
               <p className="string1">{stringOne}</p>
@@ -80,7 +80,7 @@ const ConcatStrings = () => {
               />
               <section className="btn_section">
                 <div className="text-center">
-                  <input type="submit" value="submit" className="formBtn add" />
+                  <input type="submit" value="submit" className="form_btn add" />
                 </div>
               </section>
             </form>

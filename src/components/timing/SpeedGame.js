@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./timing.scss";
 import { SpeedGameVideos } from "../text/videos/VideoSections";
 import { SpeedGameIntro } from "../text/Intros";
-import { SpeedGameTestInfo } from "../text/TestInfos";
+import { SpeedGameTestInfo } from "../text/WhyLearn";
 import { SpeedGameWhatToTest } from "../text/WhatToTest";
 import ResultMessages from "../compMessages/ResultMessages";
 
@@ -63,12 +63,12 @@ const SpeedGame = () => {
         <section className="timing_section">
           <SpeedGameIntro />
           <div className="game_space">
-            <button onClick={handleStart} className="formBtn add" data-testid="startBtn">
+            <button onClick={handleStart} className="form_btn add" data-testid="startBtn">
               Start Game
             </button>
 
             {count < 0 && (
-              <button onClick={handleStop} className="formBtn delete">
+              <button onClick={handleStop} className="form_btn delete">
                 End Game
               </button>
             )}

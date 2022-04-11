@@ -102,27 +102,10 @@ const AddCat = () => {
               </div>
               <section className="btn_section">
                 <div className="text-center">
-                  {isLoading && (
-                    <input
-                      type="submit"
-                      value="Adding Cat..."
-                      className="formBtn adding"
-                    />
-                  )}
-                  {!isLoading && (
-                    <input
-                      type="submit"
-                      value="Add Cat"
-                      className="formBtn add"
-                    />
-                  )}
+                  {isLoading && <input type="submit" value="Adding Cat..." className="form_btn adding" />}
+                  {!isLoading && <input type="submit" value="Add Cat" className="form_btn add" />}
                 </div>
-                <input
-                  type="button"
-                  value="Cancel"
-                  className="formBtn cancel"
-                  onClick={handleCancel}
-                />
+                <input type="button" value="Cancel" className="form_btn cancel" onClick={handleCancel} />
               </section>
             </form>
           </article>

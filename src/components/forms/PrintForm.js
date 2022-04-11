@@ -17,7 +17,7 @@ const PrintForm = ({ printForm, users, deleteUser }) => {
                 </td>
                 <td>{user.email}</td>
                 <td
-                  className="delIconBtn"
+                  className="delete_icon"
                   title="Delete"
                   onClick={() => {
                     deleteUser(user.id);

@@ -116,7 +116,7 @@ const CatDetails = () => {
                   <input
                     type="button"
                     value="Delete"
-                    className="formBtn delete"
+                    className="form_btn delete"
                     onClick={() => handleDelete(singleCat.id)}
                   />
                 </header>
@@ -157,27 +157,10 @@ const CatDetails = () => {
                 </div>
                 <section className="btn_section">
                   <div className="text-center addTodo">
-                    {isLoading && (
-                      <input
-                        type="submit"
-                        value="Saving..."
-                        className="addBtn adding"
-                      />
-                    )}
-                    {!isLoading && (
-                      <input
-                        type="submit"
-                        value="Save"
-                        className="formBtn add"
-                      />
-                    )}
+                    {isLoading && <input type="submit" value="Saving..." className="addBtn adding" />}
+                    {!isLoading && <input type="submit" value="Save" className="form_btn add" />}
                   </div>
-                  <input
-                    type="button"
-                    value="Cancel"
-                    className="formBtn cancel"
-                    onClick={handleCancel}
-                  />
+                  <input type="button" value="Cancel" className="form_btn cancel" onClick={handleCancel} />
                 </section>
               </form>
             </article>

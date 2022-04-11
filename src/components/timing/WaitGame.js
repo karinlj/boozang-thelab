@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./timing.scss";
 import { WaitGameVideos } from "../text/videos/VideoSections";
 import { WaitGameIntro } from "../text/Intros";
-import { WaitGameTestInfo } from "../text/TestInfos";
+import { WaitGameTestInfo } from "../text/WhyLearn";
 import { WaitGameWhatToTest } from "../text/WhatToTest";
 import ResultMessages from "../compMessages/ResultMessages";
 
@@ -72,12 +72,12 @@ const WaitGame = () => {
         <section className="timing_section">
           <WaitGameIntro />
           <div className="game_space">
-            <button onClick={handleStart} className="formBtn add" data-testid="startBtn">
+            <button onClick={handleStart} className="form_btn add" data-testid="startBtn">
               Start Game
             </button>
 
             {isRunning && (
-              <button className="formBtn delete" onClick={handleStop}>
+              <button className="form_btn delete" onClick={handleStop}>
                 End Game
               </button>
             )}

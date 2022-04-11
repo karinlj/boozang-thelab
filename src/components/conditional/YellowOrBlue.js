@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./conditional.scss";
 import { YellowOrBlueIntro } from "../text/Intros";
-import { YellowOrBlueTestInfo } from "../text/TestInfos";
+import { YellowOrBlueTestInfo } from "../text/WhyLearn";
 import { YellowOrBlueVideos } from "../text/videos/VideoSections";
 import { YellowOrBlueWhatToTest } from "../text/WhatToTest";
 import ResultMessages from "../compMessages/ResultMessages";
@@ -58,7 +58,7 @@ const YellowOrBlue = () => {
           <YellowOrBlueIntro />
 
           <div className="wrapper">
-            <button className="formBtn add" onClick={generateColor}>
+            <button className="form_btn add" onClick={generateColor}>
               Generate Color
             </button>
             <section className={`output_section ${randColor ? "show" : ""}`} data-testid="output">
@@ -70,7 +70,7 @@ const YellowOrBlue = () => {
                       onClick={() => {
                         checkColor("yellow");
                       }}
-                      className="formBtn yellow"
+                      className="form_btn yellow"
                     >
                       yellow
                     </button>
@@ -78,7 +78,7 @@ const YellowOrBlue = () => {
                       onClick={() => {
                         checkColor("blue");
                       }}
-                      className="formBtn blue"
+                      className="form_btn blue"
                     >
                       blue
                     </button>

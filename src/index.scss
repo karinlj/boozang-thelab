@@ -71,12 +71,12 @@ h2 {
   // }
 }
 h3 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   @media all and (min-width: $md-min) {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   @media all and (min-width: $xl-min) {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -163,23 +163,29 @@ a {
 }
 
 //buttons
+button {
+  cursor: default !important ;
+}
 .btn_section {
   display: flex;
   justify-content: center;
   margin-top: 0.5rem;
 }
-.delIconBtn {
+.delete_btn {
+  border: none;
+  background: transparent;
+}
+.delete_icon {
   color: $themecolorNewRed !important;
   transition: 0.5s all ease;
-  cursor: pointer;
   padding: 2px;
   &:hover {
-    filter: brightness(80%);
+    filter: brightness(70%);
   }
 }
 input[type="button"],
 input[type="submit"],
-.formBtn,
+.form_btn,
 .linkBtn {
   display: inline-block;
   padding: 0.2rem 0.9rem;
@@ -232,7 +238,7 @@ input[type="submit"],
     background: $themecolorOrange;
   }
 }
-button.formBtn {
+button.form_btn {
   cursor: default;
   &:hover {
     cursor: default;

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./games.scss";
 import { KittenCollectIntro } from "../text/Intros";
-import { KittenCollectTestInfo } from "../text/TestInfos";
+import { KittenCollectTestInfo } from "../text/WhyLearn";
 import { KittenCollectVideos } from "../text/videos/VideoSections";
 import CatIcon from "../../img/kitten_icon.png";
 import HedgehogIcon from "../../img/hedgehog_icon.png";
@@ -144,8 +144,8 @@ const KittenCollect = () => {
           <KittenCollectIntro />
 
           <div className="points_section">
-            {!isRunning && <input type="button" value="Start Game" className="formBtn add" onClick={startGame} />}
-            {isRunning && <input type="button" value="Abort Game" className="formBtn delete" onClick={abortGame} />}
+            {!isRunning && <input type="button" value="Start Game" className="form_btn add" onClick={startGame} />}
+            {isRunning && <input type="button" value="Abort Game" className="form_btn delete" onClick={abortGame} />}
             <div className="counter">
               <h6>
                 Time: <strong>{Math.floor(count / 10)}</strong>{" "}

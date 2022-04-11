@@ -25,7 +25,7 @@ exports[`should render SpeedGame component 1`] = `
         className="game_space"
       >
         <input
-          className="formBtn add"
+          className="form_btn add"
           onClick={[Function]}
           type="button"
           value="Start Game"

@@ -3,12 +3,9 @@ import Todo from "./Todo";
 
 const TodoList = ({ todos, handleDelete }) => {
   return (
-    <div className="collection">
-      {todos &&
-        todos.map((todo) => (
-          <Todo todo={todo} handleDelete={handleDelete} key={todo.id} />
-        ))}
-    </div>
+    <ul className="collection">
+      {todos && todos.map((todo) => <Todo todo={todo} handleDelete={handleDelete} key={todo.id} />)}
+    </ul>
   );
 };
 export default TodoList;

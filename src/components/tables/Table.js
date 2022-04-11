@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./tables.scss";
 //import { TablesVideos } from "../text/videos/VideoSections";
 import { TablesIntro } from "../text/Intros";
-import { TablesTestInfo } from "../text/TestInfos";
+import { TablesTestInfo } from "../text/WhyLearn";
 import { TablesWhatToTest } from "../text/WhatToTest";
 import { animalList } from "./animalList";
 

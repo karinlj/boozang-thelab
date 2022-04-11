@@ -5,7 +5,7 @@ import CatList from "./CatList";
 import { getData } from "../../fetchFunctions/fetchFunctions";
 import { updateData } from "../../fetchFunctions/fetchFunctions";
 import { CatShelterIntro } from "../../text/Intros";
-import { CatShelterTestInfo } from "../../text/TestInfos";
+import { CatShelterTestInfo } from "../../text/WhyLearn";
 import { CatShelterWhatToTest } from "../../text/WhatToTest";
 import { Link } from "react-router-dom";
 import { CatsDb } from "../../text/DbInfo";
@@ -57,7 +57,7 @@ const CatShelter = () => {
           <CatShelterIntro />
           <header className="cat_shelter_heading">
             {" "}
-            <button className="formBtn add" title="Add">
+            <button className="form_btn add" title="Add">
               <Link to="/addcat">Add Cat</Link>
             </button>
           </header>
