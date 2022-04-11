@@ -76,7 +76,6 @@ const SpeedGame = () => {
           </div>
         </section>
       </div>
-      {/* <div className="col-12 col-md-5"> */}
       <div className="col-12 col-md-6">
         <SpeedGameTestInfo />
         <SpeedGameWhatToTest />

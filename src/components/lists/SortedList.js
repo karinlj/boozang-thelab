@@ -53,12 +53,12 @@ const SortedList = () => {
   }, [todos]);
 
   return (
-    <div className="row justify-content-between">
+    <div className="row">
       <div className="col-12 col-md-6">
         <section className="list_section">
           <SortedListIntro />
-          {error && <div className="error">{error}</div>}
-          {isLoading && <div className="loading">Loading...</div>}
+          {error && <p className="error">{error}</p>}
+          {isLoading && <p className="loading">Loading...</p>}
           {todos && <TodoList todos={todos} handleDelete={handleDelete} />}
           <AddTodo addTodo={addTodo} todos={todos} />
         </section>

@@ -74,7 +74,6 @@ const YellowOrBlue = () => {
                     >
                       yellow
                     </button>
-
                     <button
                       onClick={() => {
                         checkColor("blue");

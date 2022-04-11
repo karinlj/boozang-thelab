@@ -70,7 +70,6 @@ const CatOrDog = () => {
                     >
                       cat
                     </button>
-
                     <button
                       onClick={() => {
                         checkPet("dog");

@@ -3,7 +3,7 @@ import "./text.scss";
 //Timing
 export const SpeedGameWhatToTest = () => {
   return (
-    <article className="comp_what_to_test">
+    <section className="comp_what_to_test">
       <h2>What to test?</h2>
       <ul>
         <li>Check that a message is shown when hitting the "End Game" button as soon as it appears.</li>
@@ -11,12 +11,12 @@ export const SpeedGameWhatToTest = () => {
       <a href="/features/speedGame.txt" target="_blank" rel="noopener noreferrer" className="linkBtn">
         <span>Cucumber specification</span>
       </a>
-    </article>
+    </section>
   );
 };
 export const WaitGameWhatToTest = () => {
   return (
-    <article className="comp_what_to_test">
+    <section className="comp_what_to_test">
       <h2>What to test?</h2>
       <ul>
         <li>Check that an error message is shown when hitting the "End Game" button as soon as it appears.</li>
@@ -26,13 +26,13 @@ export const WaitGameWhatToTest = () => {
       <a href="/features/waitGame.txt" target="_blank" rel="noopener noreferrer" className="linkBtn">
         <span>Cucumber specification</span>
       </a>
-    </article>
+    </section>
   );
 };
 //Conditional logic
 export const YellowOrBlueWhatToTest = () => {
   return (
-    <article className="comp_what_to_test">
+    <section className="comp_what_to_test">
       <h2>What to test?</h2>
       <ul>
         <li>
@@ -44,12 +44,12 @@ export const YellowOrBlueWhatToTest = () => {
       <a href="/features/yellowOrBlue.txt" target="_blank" rel="noopener noreferrer" className="linkBtn">
         <span>Cucumber specification</span>
       </a>
-    </article>
+    </section>
   );
 };
 export const CatOrDogWhatToTest = () => {
   return (
-    <article className="comp_what_to_test">
+    <section className="comp_what_to_test">
       <h2>What to test?</h2>
       <ul>
         <li>
@@ -60,13 +60,13 @@ export const CatOrDogWhatToTest = () => {
       <a href="/features/catOrDog.txt" target="_blank" rel="noopener noreferrer" className="linkBtn">
         <span>Cucumber specification</span>
       </a>
-    </article>
+    </section>
   );
 };
 //Lists, Forms and Tables
 export const CatShelterWhatToTest = () => {
   return (
-    <article className="comp_what_to_test">
+    <section className="comp_what_to_test">
       <h2>What to test?</h2>
       <ul>
         <li>Validate that a cat can be added to the shelter.</li>
@@ -76,12 +76,12 @@ export const CatShelterWhatToTest = () => {
       <a href="/features/catShelter.txt" target="_blank" rel="noopener noreferrer" className="linkBtn">
         Cucumber specification
       </a>
-    </article>
+    </section>
   );
 };
 export const SortedListWhatToTest = () => {
   return (
-    <article className="comp_what_to_test">
+    <section className="comp_what_to_test">
       <h2>What to test?</h2>
       <ul>
         <li>Validate that an item can be added to the list.</li>
@@ -90,12 +90,12 @@ export const SortedListWhatToTest = () => {
       <a href="/features/sortedList.txt" target="_blank" rel="noopener noreferrer" className="linkBtn">
         Cucumber specification
       </a>
-    </article>
+    </section>
   );
 };
 export const FormFillWhatToTest = () => {
   return (
-    <article className="comp_what_to_test">
+    <section className="comp_what_to_test">
       <h2>What to test?</h2>
       <ul>
         <li>Validate that an item can be added via the form.</li>
@@ -103,12 +103,12 @@ export const FormFillWhatToTest = () => {
       <a href="/features/formfill.txt" target="_blank" rel="noopener noreferrer" className="linkBtn">
         Cucumber specification
       </a>
-    </article>
+    </section>
   );
 };
 export const TablesWhatToTest = () => {
   return (
-    <article className="comp_what_to_test">
+    <section className="comp_what_to_test">
       <h2>What to test?</h2>
       <ul>
         <li>Validate that the empty filters are working.</li>
@@ -117,13 +117,13 @@ export const TablesWhatToTest = () => {
       <a href="/features/tables.txt" target="_blank" rel="noopener noreferrer" className="linkBtn">
         Cucumber specification
       </a>
-    </article>
+    </section>
   );
 };
 //strings
 export const ConcatStringsWhatToTest = () => {
   return (
-    <article className="comp_what_to_test">
+    <section className="comp_what_to_test">
       <h2>What to test?</h2>
       <ul>
         <li>Add two strings read from the application.</li>
@@ -132,6 +132,6 @@ export const ConcatStringsWhatToTest = () => {
       <a href="/features/concatStrings.txt" target="_blank" rel="noopener noreferrer" className="linkBtn">
         Cucumber specification
       </a>
-    </article>
+    </section>
   );
 };
