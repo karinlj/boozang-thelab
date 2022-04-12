@@ -63,18 +63,18 @@
       "id": 3
     },
     {
-      "firstname": "Karin",
-      "lastname": "Ljunggren",
-      "email": "kaljunggren@gmail.com",
-      "password": "Jg5sHn@TaRAwhsi",
-      "id": 4
-    },
-    {
       "firstname": "Lukas",
       "lastname": "Ljunggren",
       "email": "luki@gmail.com",
       "password": "Jg5sHn@TaRAwhsidfd",
       "id": 5
+    },
+    {
+      "firstname": "Karin",
+      "lastname": "Ljunggren",
+      "email": "kaljunggren@gmail.com",
+      "password": "145632",
+      "id": 6
     }
   ]
 }

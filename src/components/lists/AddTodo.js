@@ -32,9 +32,10 @@ const AddTodo = ({ addTodo, todos }) => {
     <div>
       <form className="list_form" onSubmit={handleSubmit}>
         {totalTodos && totalTodos.length >= 5 && <h5 className="error">Your schedule is full!</h5>}
-        <label htmlFor="addTodo">Add new Todo:</label>
-        <br />
-        <input type="text" id="addTodo" required value={title} onChange={(e) => setTitle(e.target.value)} />
+        <label>
+          Add new Todo:
+          <input type="text" required value={title} onChange={(e) => setTitle(e.target.value)} />
+        </label>
         <section className="btn_section">
           <div className="text-center">
             {!isLoading && (

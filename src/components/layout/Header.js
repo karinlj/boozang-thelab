@@ -17,8 +17,14 @@ const Header = ({ toggleOpen, isBtnOpen }) => {
           <div className="col-6">
             <div className="boozang_logo_text">
               <span>Powered by</span>
-              <a href="https:boozang.com">
-                <img src={Boozang} alt="boozang homepage" />
+              <a
+                href="https:boozang.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Boozang homepage opens in new window"
+                className="boozang_link"
+              >
+                <img src={Boozang} alt="Boozang homepage" />
               </a>
             </div>
           </div>

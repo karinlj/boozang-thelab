@@ -101,22 +101,21 @@ function FormFill() {
           {error && <div className="error">{error}</div>}
           <Form formData={formData} handleChange={handleChange} saveMessage={saveMessage} handleSubmit={handleSubmit} />
 
-          <section className="get_from_db">
-            {!printForm && (
-              <input type="button" value="Show users in db" className="form_btn orange" onClick={getUsers} />
-            )}
-            {printForm && (
-              <input
-                type="button"
-                value="Hide users in db"
-                className="form_btn orange"
-                onClick={() => {
-                  setPrintForm(false);
-                }}
-              />
-            )}
-          </section>
-
+          {!printForm && (
+            <button onClick={getUsers} className="form_btn orange">
+              Show users in db
+            </button>
+          )}
+          {printForm && (
+            <button
+              onClick={() => {
+                setPrintForm(false);
+              }}
+              className="form_btn orange"
+            >
+              Hide users in db
+            </button>
+          )}
           {users && <PrintForm printForm={printForm} users={users} deleteUser={deleteUser} />}
         </section>
       </div>

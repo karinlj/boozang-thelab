@@ -23,6 +23,14 @@
       padding-right: 1rem;
       color: $navLinkColor;
     }
+    a.boozang_link {
+      //not underlining <a>
+      &:hover {
+        &::before {
+          opacity: 0;
+        }
+      }
+    }
     img {
       max-width: 130px;
     }
@@ -65,7 +73,7 @@
       transform: rotate(-45deg) translateY(-14px);
     }
     + .menu_label {
-      transform: translateX(-7px);
+      transform: translateX(-8px);
     }
   }
 }
@@ -181,18 +189,8 @@
     @media all and (min-width: $md-min) {
       font-size: 1.1rem;
     }
-    &::before {
-      opacity: 0.4;
-      position: absolute;
-      bottom: -3px;
-      left: 1px;
-      content: "";
-      width: 100%;
-      height: 2px;
-      background: #020c70;
-      background: #fff;
-      -webkit-transition: width 0.2s ease-in;
-      transition: width 0.2s ease-in;
+    &:hover {
+      color: $linkColor;
     }
     &::after {
       content: "\f061";
@@ -227,6 +225,16 @@
           font-size: 1.6rem;
           color: #fff;
           cursor: pointer;
+          transition: color 0.3s ease-in;
+        }
+        //not underlining the whole <a>
+        &:hover {
+          i {
+            color: $linkColor;
+          }
+          &::before {
+            opacity: 0;
+          }
         }
       }
     }

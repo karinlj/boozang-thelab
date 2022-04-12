@@ -8,7 +8,12 @@ export const SpeedGameWhatToTest = () => {
       <ul>
         <li>Check that a message is shown when hitting the "End Game" button as soon as it appears.</li>
       </ul>
-      <a href="/features/speedGame.txt" target="_blank" rel="noopener noreferrer" className="linkBtn">
+      <a
+        href="/features/speedGame.txt"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Cucumber specification opens in new window"
+      >
         <span>Cucumber specification</span>
       </a>
     </section>
@@ -23,7 +28,12 @@ export const WaitGameWhatToTest = () => {
         <li>Check that a success message is shown when hitting the "End Game" button after 5 seconds.</li>
       </ul>
 
-      <a href="/features/waitGame.txt" target="_blank" rel="noopener noreferrer" className="linkBtn">
+      <a
+        href="/features/waitGame.txt"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Cucumber specification opens in new window"
+      >
         <span>Cucumber specification</span>
       </a>
     </section>
@@ -41,7 +51,12 @@ export const YellowOrBlueWhatToTest = () => {
         </li>
       </ul>
 
-      <a href="/features/yellowOrBlue.txt" target="_blank" rel="noopener noreferrer" className="linkBtn">
+      <a
+        href="/features/yellowOrBlue.txt"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Cucumber specification opens in new window"
+      >
         <span>Cucumber specification</span>
       </a>
     </section>
@@ -57,7 +72,12 @@ export const CatOrDogWhatToTest = () => {
           the wrong button.
         </li>
       </ul>
-      <a href="/features/catOrDog.txt" target="_blank" rel="noopener noreferrer" className="linkBtn">
+      <a
+        href="/features/catOrDog.txt"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Cucumber specification opens in new window"
+      >
         <span>Cucumber specification</span>
       </a>
     </section>
@@ -73,7 +93,12 @@ export const CatShelterWhatToTest = () => {
         <li>Validate that a cat can be renamed.</li>
         <li>Validate that a cat can be removed from the shelter.</li>
       </ul>
-      <a href="/features/catShelter.txt" target="_blank" rel="noopener noreferrer" className="linkBtn">
+      <a
+        href="/features/catShelter.txt"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Cucumber specification opens in new window"
+      >
         Cucumber specification
       </a>
     </section>
@@ -87,7 +112,12 @@ export const SortedListWhatToTest = () => {
         <li>Validate that an item can be added to the list.</li>
         <li> Validate that maximum 5 items can be added to the list.</li>
       </ul>
-      <a href="/features/sortedList.txt" target="_blank" rel="noopener noreferrer" className="linkBtn">
+      <a
+        href="/features/sortedList.txt"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Cucumber specification opens in new window"
+      >
         Cucumber specification
       </a>
     </section>
@@ -100,7 +130,12 @@ export const FormFillWhatToTest = () => {
       <ul>
         <li>Validate that an item can be added via the form.</li>
       </ul>
-      <a href="/features/formfill.txt" target="_blank" rel="noopener noreferrer" className="linkBtn">
+      <a
+        href="/features/formfill.txt"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Cucumber specification opens in new window"
+      >
         Cucumber specification
       </a>
     </section>
@@ -114,7 +149,12 @@ export const TablesWhatToTest = () => {
         <li>Validate that the empty filters are working.</li>
         <li>Validate that the filters are working.</li>
       </ul>
-      <a href="/features/tables.txt" target="_blank" rel="noopener noreferrer" className="linkBtn">
+      <a
+        href="/features/tables.txt"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Cucumber specification opens in new window"
+      >
         Cucumber specification
       </a>
     </section>
@@ -129,7 +169,12 @@ export const ConcatStringsWhatToTest = () => {
         <li>Add two strings read from the application.</li>
         <li>Random input.</li>
       </ul>
-      <a href="/features/concatStrings.txt" target="_blank" rel="noopener noreferrer" className="linkBtn">
+      <a
+        href="/features/concatStrings.txt"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Cucumber specification opens in new window"
+      >
         Cucumber specification
       </a>
     </section>

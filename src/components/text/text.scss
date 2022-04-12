@@ -1,11 +1,29 @@
 @import "../../variables.scss";
 
+//introductions
+.intro_section {
+  margin-bottom: 3rem;
+  p {
+    white-space: pre-line;
+  }
+  a {
+    color: $linkColor;
+  }
+  ul._list {
+    list-style-type: square;
+    padding: 0 0 0 1rem;
+    li {
+      font-size: 0.9rem;
+      color: #fff;
+    }
+  }
+}
 //db info section
 .db_info_box {
   background: $themecolorLilaDark;
   padding: 0.8rem 1.8rem;
   border-radius: $themeBorderRadius;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   a {
     word-wrap: break-word;
   }
@@ -23,9 +41,9 @@
     margin-top: 0;
   }
   li {
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.4rem;
   }
-  a {
+  a.youtube_link {
     display: flex;
     align-items: center;
     .youtube_logo {
@@ -33,28 +51,36 @@
       max-height: 2rem;
     }
     span {
+      position: relative;
       line-height: 1.2;
+      &:hover {
+        &::before {
+          opacity: 0.6;
+          width: 100%;
+        }
+      }
+      &::before {
+        opacity: 0;
+        position: absolute;
+        bottom: -4px;
+        left: 1px;
+        content: "";
+        width: 0;
+        height: 3px;
+        background: $linkColor;
+        -webkit-transition: width 0.3s ease-in;
+        transition: width 0.3s ease-in;
+      }
+    }
+    //not underlining the whole <a>
+    &:hover {
+      &::before {
+        opacity: 0;
+      }
     }
   }
 }
-//introductions
-.intro_section {
-  margin-bottom: 2rem;
-  p {
-    white-space: pre-line;
-  }
-  a {
-    color: $linkColor;
-  }
-  ul._list {
-    list-style-type: square;
-    padding: 0 0 0 1rem;
-    li {
-      font-size: 0.9rem;
-      color: #fff;
-    }
-  }
-}
+
 //test info box
 .why_learn_box {
   background: $themecolorBlueNewLightest;
@@ -72,15 +98,8 @@
     padding-left: 1rem;
     li {
       list-style-type: disc;
-      // color: $navLinkColor;
       color: #fff;
       margin-bottom: 0.5rem;
-    }
-  }
-  .linkBtn {
-    background: $themecolorNewPink;
-    a {
-      color: #fff;
     }
   }
 }

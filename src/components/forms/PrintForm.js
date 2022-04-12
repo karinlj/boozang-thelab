@@ -1,6 +1,6 @@
 const PrintForm = ({ printForm, users, deleteUser }) => {
   return (
-    <article className={`print_form ${printForm ? "show" : ""}`}>
+    <section className={`print_form ${printForm ? "show" : ""}`}>
       <table className="table">
         <thead>
           <tr>
@@ -16,21 +16,24 @@ const PrintForm = ({ printForm, users, deleteUser }) => {
                   {user.firstname} {user.lastname}
                 </td>
                 <td>{user.email}</td>
-                <td
-                  className="delete_icon"
-                  title="Delete"
-                  onClick={() => {
-                    deleteUser(user.id);
-                  }}
-                >
-                  x
+                <td>
+                  <button
+                    onClick={() => {
+                      deleteUser(user.id);
+                    }}
+                    className="delete_btn"
+                    title="Delete"
+                    aria-label="Delete person from db"
+                  >
+                    x
+                  </button>
                 </td>
               </tr>
             );
           })}
         </tbody>
       </table>
-    </article>
+    </section>
   );
 };
 

@@ -11,6 +11,7 @@
         margin-bottom: 0;
         font-size: 0.9rem;
         opacity: 0;
+        font-weight: 500;
         transition: 0.5s all ease-in;
         &.show {
           opacity: 1;
@@ -47,8 +48,14 @@
           padding: 0.6rem 0.75rem;
           vertical-align: baseline;
         }
-        .delete_icon {
+        .delete_btn {
+          color: $themecolorNewRed !important;
+          transition: 0.5s all ease;
+          padding: 5px;
           font-size: 1rem;
+          &:hover {
+            filter: brightness(180%);
+          }
         }
       }
     }
