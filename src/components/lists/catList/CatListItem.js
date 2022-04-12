@@ -2,24 +2,16 @@ import { Link } from "react-router-dom";
 
 const CatListItem = ({ togglefoundHome, item }) => {
   return (
-    <div className="collection-item">
-      <div className="cat_name">
-        <Link to={`/cats/${item.id}`}>
-          <div>
-            <span>
-              {" "}
-              <i className="fas fa-paw"></i>
-            </span>
-            <span>{item.name} </span>
-          </div>
-        </Link>
-      </div>
-      <i
-        className={`fas fa-home new_home ${item.foundHome ? "found" : ""}`}
-        onClick={() => togglefoundHome(item.id)}
-        title="Found home"
-      ></i>
-    </div>
+    <li className="collection_item">
+      <Link to={`/cats/${item.id}`} className="cat_name_link" aria-label={`${item.name} details page`}>
+        <i className="fas fa-paw" aria-hidden="true"></i>
+        <span>{item.name} </span>
+      </Link>
+
+      <button onClick={() => togglefoundHome(item.id)} className={`new_home ${item.foundHome ? "found" : ""}`}>
+        <i className="fas fa-home" title="Found home" aria-hidden="true"></i>
+      </button>
+    </li>
   );
 };
 export default CatListItem;

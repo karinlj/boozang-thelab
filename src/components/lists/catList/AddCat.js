@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { addData } from "../../fetchFunctions/fetchFunctions";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const AddCat = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -50,65 +51,67 @@ const AddCat = () => {
     <div className="row justify-content-between">
       <div className="col-12 col-md-6">
         <section className="catshelter_section">
-          {error && <div className="error">{error}</div>}
-          <article className="add_cat">
-            <h2>Add Cat</h2>
-            <form className="list_form" onSubmit={handleSubmit}>
-              <label htmlFor="name">Name: </label>
-              <input
-                type="text"
-                name="name"
-                required
-                value={newValues.name}
-                onChange={(e) => handleChange(e)}
-                //onChange={(e) => setName(e.target.value)}
-              />
-              <br />
-              <label htmlFor="description" className="description">
-                Description:{" "}
-              </label>
+          <header className="add_cat_header">
+            <h1>Add cat</h1>
+            <Link to="/catshelter" className="" aria-label="Back to Cat shelter page">
+              <i class="fas fa-arrow-left" aria-hidden="true"></i>
+              Back to Cat shelter
+            </Link>
+          </header>
+          {error && <p className="error">{error}</p>}
+
+          <form className="list_form" onSubmit={handleSubmit}>
+            <label>
+              Name:
+              <input type="text" name="name" required value={newValues.name} onChange={(e) => handleChange(e)} />{" "}
+            </label>
+            <br />
+            <label className="description">
+              Description:
               <textarea
                 type="text"
                 name="description"
                 value={newValues.description}
                 onChange={(e) => handleChange(e)}
               ></textarea>
-
-              <div className="goOutOrNot">
-                <div>
-                  <label>
-                    <input
-                      type="radio"
-                      name="inOrOutside"
-                      value="outside"
-                      checked={newValues.inOrOutside === "outside"}
-                      onChange={(e) => handleChange(e)}
-                    />
-                    <span>Wants to go outside</span>
-                  </label>
-                </div>
-                <div>
-                  <label>
-                    <input
-                      type="radio"
-                      name="inOrOutside"
-                      value="inside"
-                      checked={newValues.inOrOutside === "inside"}
-                      onChange={(e) => handleChange(e)}
-                    />
-                    <span>Stay inside</span>
-                  </label>
-                </div>
+            </label>
+            <div className="go_out_or_not ">
+              <div>
+                <label>
+                  <input
+                    type="radio"
+                    name="inOrOutside"
+                    value="outside"
+                    checked={newValues.inOrOutside === "outside"}
+                    onChange={(e) => handleChange(e)}
+                  />
+                  <span>Wants to go outside</span>
+                </label>
               </div>
-              <section className="btn_section">
-                <div className="text-center">
-                  {isLoading && <input type="submit" value="Adding Cat..." className="form_btn adding" />}
-                  {!isLoading && <input type="submit" value="Add Cat" className="form_btn add" />}
-                </div>
-                <input type="button" value="Cancel" className="form_btn cancel" onClick={handleCancel} />
-              </section>
-            </form>
-          </article>
+              <div>
+                <label>
+                  <input
+                    type="radio"
+                    name="inOrOutside"
+                    value="inside"
+                    checked={newValues.inOrOutside === "inside"}
+                    onChange={(e) => handleChange(e)}
+                  />
+                  <span>Stay inside</span>
+                </label>
+              </div>
+            </div>
+            <section className="btn_section">
+              <div className="text-center">
+                {!isLoading && <button className="form_btn add">Add Cat</button>}
+                {isLoading && <button className="form_btn adding">Adding Cat...</button>}
+              </div>
+
+              <button className="form_btn cancel" onClick={handleCancel}>
+                Cancel
+              </button>
+            </section>
+          </form>
         </section>
       </div>
     </div>

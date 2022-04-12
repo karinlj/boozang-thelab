@@ -55,18 +55,18 @@ const CatShelter = () => {
       <div className="col-12 col-md-6 col-xl-5">
         <section className="catshelter_section">
           <CatShelterIntro />
-          <header className="cat_shelter_heading">
+          <header className="cat_shelter_header">
             {" "}
-            <button className="form_btn add" title="Add">
-              <Link to="/addcat">Add Cat</Link>
-            </button>
+            <Link to="/addcat" className="link_btn add" aria-label="Add Cat page">
+              Add Cat
+            </Link>
           </header>
-          {error && <div className="error">{error}</div>}
-          {isLoading && <div className="loading">Loading...</div>}
+          {error && <p className="error">{error}</p>}
+          {isLoading && <p className="loading">Loading...</p>}
           {cats && <CatList items={cats} togglefoundHome={togglefoundHome} />}
         </section>
       </div>
-      <div className="col-12 col-md-5">
+      <div className="col-12 col-md-6">
         <CatShelterTestInfo />
         <CatShelterWhatToTest />
         <CatsDb />

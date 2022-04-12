@@ -128,6 +128,7 @@
         color: $navLinkColor;
         &:hover {
           color: $linkColor;
+          text-decoration: underline;
         }
         &:active,
         visited {
@@ -135,7 +136,7 @@
         }
         &.current {
           color: $linkColor;
-          border-bottom: 1px solid $linkColor;
+          text-decoration: underline;
         }
       }
       ul.sub_list {
@@ -185,18 +186,14 @@
     color: #fff;
     font-weight: 500;
     font-size: 1rem;
-    position: relative;
     @media all and (min-width: $md-min) {
       font-size: 1.1rem;
     }
     &:hover {
       color: $linkColor;
     }
-    &::after {
-      content: "\f061";
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
-      margin-left: 10px;
+    i {
+      margin-left: 0.5rem;
     }
     img {
       max-width: 25px;

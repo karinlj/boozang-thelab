@@ -95,10 +95,10 @@ function FormFill() {
   }, [users]);
   return (
     <div className="row justify-content-between">
-      <div className="col-12 col-md-6 col-xl-5">
+      <div className="col-12 col-md-6">
         <section className="form_section">
           <FormFillIntro />
-          {error && <div className="error">{error}</div>}
+          {error && <p className="error">{error}</p>}
           <Form formData={formData} handleChange={handleChange} saveMessage={saveMessage} handleSubmit={handleSubmit} />
 
           {!printForm && (
@@ -119,7 +119,7 @@ function FormFill() {
           {users && <PrintForm printForm={printForm} users={users} deleteUser={deleteUser} />}
         </section>
       </div>
-      <div className="col-12 col-md-5">
+      <div className="col-12 col-md-6 col-xl-5">
         <FormFillTestInfo />
         <FormFillWhatToTest />
         <UsersDb />

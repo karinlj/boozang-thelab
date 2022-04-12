@@ -17,6 +17,7 @@ const Footer = () => {
             >
               <img src={Udemy} alt="Boozang Udemy course" />
               Free Boozang Udemy course
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
             </a>
           </div>
           <div className="col-12 col-md-5">

@@ -21,7 +21,7 @@
     {
       "name": "Filip",
       "description": "Big kind cat. Black and white.",
-      "inOrOutside": "inside",
+      "inOrOutside": "outside",
       "foundHome": true,
       "id": 8
     },
@@ -45,6 +45,13 @@
       "inOrOutside": "outside",
       "foundHome": true,
       "id": 11
+    },
+    {
+      "name": "Truls",
+      "description": "Beautiful!!",
+      "inOrOutside": "outside",
+      "foundHome": true,
+      "id": 12
     }
   ],
   "users": [

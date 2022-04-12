@@ -38,11 +38,7 @@ const AddTodo = ({ addTodo, todos }) => {
         </label>
         <section className="btn_section">
           <div className="text-center">
-            {!isLoading && (
-              <button onClick={handleSubmit} className="form_btn add">
-                Add todo
-              </button>
-            )}
+            {!isLoading && <button className="form_btn add">Add todo</button>}
             {isLoading && <button className="form_btn adding">Adding Todo...</button>}
           </div>
         </section>
