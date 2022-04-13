@@ -30,19 +30,15 @@ const VisualBugs = () => {
       <div className="col-12 col-md-6">
         <section className="visual_bugs_section">
           <VisualBugsIntro />
-          <div className="row">
-            <div className="col-12 col-sm-10">
-              <div className="apect-ratio-box">
-                <div className="apect-ratio-inside">{animalImg}</div>
-              </div>
-              <div className="label_wrapper">
-                <h6>{animalLabel}</h6>
-              </div>
-            </div>
-            <div className="col-12 col-sm-2">
-              <input type="button" value="Next" className="form_btn add" onClick={handleClick} />
-            </div>
+          <div className="apect_ratio_box">
+            <div className="apect_ratio_inside">{animalImg}</div>
           </div>
+          <div className="label_wrapper">
+            <p>{animalLabel}</p>
+          </div>
+          <button className="form_btn add" onClick={handleClick}>
+            Next image
+          </button>
         </section>
       </div>
       {/* <div className="col-12 col-md-5"> */}

@@ -1,13 +1,12 @@
 @import "../../variables.scss";
 .visual_bugs_section {
   /* https://css-tricks.com/aspect-ratio-boxes/ */
-  .apect-ratio-box {
+  .apect_ratio_box {
     height: 0;
     overflow: hidden;
     padding-top: calc(380px / 640px * 100%);
-      //  380px / 640px * 100%;
     position: relative;
-    .apect-ratio-inside {
+    .apect_ratio_inside {
       position: absolute;
       top: 0;
       left: 0;
@@ -24,21 +23,13 @@
     background-color: $themecolorLilaDark;
     border-bottom-left-radius: $themeBorderRadius;
     border-bottom-right-radius: $themeBorderRadius;
-    h6 {
+    margin-bottom: 1rem;
+    p {
       font-weight: 600;
       text-align: center;
       text-transform: uppercase;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       margin-bottom: 0;
-    }
-  }
-  input {
-    float: right;
-    margin-top: 1rem;
-
-    @media all and (min-width: $sm-min) {
-      float: none;
-      margin-top: 0;
     }
   }
 }
