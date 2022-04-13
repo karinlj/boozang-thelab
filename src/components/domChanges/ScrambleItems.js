@@ -201,23 +201,29 @@ const ScrambleItems = () => {
           </div>
           <div className="row justify-content-between">
             <div className="col">
-              <input type="button" value="Swap Id" className="form_btn add" onClick={toggleId} />
-              <input type="button" value="Swap Class" className="form_btn add" onClick={toggleClass} />
-              <input type="button" value="Swap Content" className="form_btn add" onClick={toggleContent} />
+              <button className="form_btn add" onClick={toggleId}>
+                Swap Id
+              </button>
+              <button className="form_btn add" onClick={toggleClass}>
+                Swap Class
+              </button>
+              <button className="form_btn add" onClick={toggleContent}>
+                Swap Content
+              </button>
             </div>
             <div className="col">
-              <input
-                type="button"
-                value="Random Position"
-                className="form_btn add green_dark"
-                onClick={scramblePositon}
-              />
-              <input type="button" value="Swap DOM Order" className="form_btn add green_dark" onClick={toggleOrder} />
+              <button className="form_btn add green_dark" onClick={scramblePositon}>
+                Random Position
+              </button>
+              <button className="form_btn add green_dark" onClick={toggleOrder}>
+                Swap DOM Order
+              </button>
             </div>
           </div>
         </section>
       </div>
-      <div className="col-12 col-md-5">
+      {/* <div className="col-12 col-md-5"> */}
+      <div className="col-12 col-md-6">
         <ScrambleItemsTestInfo />
         <ScrambleItemsVideos />
       </div>
