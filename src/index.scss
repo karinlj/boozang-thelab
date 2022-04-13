@@ -194,18 +194,22 @@ button {
   justify-content: center;
   margin-top: 0.5rem;
 }
-.delete_btn {
+.icon_btn {
   border: none;
   background: transparent;
+  &:hover {
+    filter: brightness(180%);
+  }
 }
 .delete_icon {
   color: $themecolorNewRed !important;
   transition: 0.5s all ease;
   padding: 5px;
-  &:hover {
-    filter: brightness(180%);
-  }
+  // &:hover {
+  //   filter: brightness(180%);
+  // }
 }
+
 input[type="button"],
 input[type="submit"],
 .form_btn,

@@ -94,7 +94,7 @@ const CatDetails = () => {
       <div className="col-12 col-md-6">
         <section className="catshelter_section">
           <header className="single_cat_header">
-            <h1>Single cat</h1>
+            <h1>Cat details</h1>
             <Link to="/catshelter" className="" aria-label="Back to Cat shelter page">
               <i class="fas fa-arrow-left" aria-hidden="true"></i>
               Back to Cat shelter

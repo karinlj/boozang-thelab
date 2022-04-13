@@ -52,6 +52,13 @@
       "inOrOutside": "outside",
       "foundHome": true,
       "id": 12
+    },
+    {
+      "name": "Penelope",
+      "description": "Lovely",
+      "inOrOutside": "inside",
+      "foundHome": true,
+      "id": 13
     }
   ],
   "users": [

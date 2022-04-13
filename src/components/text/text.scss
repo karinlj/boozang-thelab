@@ -90,16 +90,27 @@
   }
 }
 .what_to_test_box {
-  h2 {
-    color: $themecolorNewPink;
+  .what_to_test_section {
+    h2 {
+      color: $themecolorNewPinkLight;
+    }
+    ul {
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+      li {
+        list-style-type: disc;
+        color: #fff;
+        margin-bottom: 0.5rem;
+      }
+    }
   }
-  ul {
-    margin-bottom: 1rem;
-    padding-left: 1rem;
-    li {
-      list-style-type: disc;
-      color: #fff;
-      margin-bottom: 0.5rem;
+  .cucumber_section {
+    margin-top: 2rem;
+    h2 {
+      color: $themecolorNewPink;
+    }
+    p {
+      font-size: 1rem;
     }
   }
 }

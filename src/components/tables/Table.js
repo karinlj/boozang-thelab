@@ -64,14 +64,15 @@ const Table = () => {
   }, [myFilter, animals]);
   return (
     <div className="row justify-content-between">
-      <div className="col-12 col-md-8 col-lg-12 col-xl-6">
+      {/* <div className="col-12 col-md-8 col-lg-12 col-xl-6"> */}
+      <div className="col-12 col-md-6">
         <section className="tables_section">
           <TablesIntro />
 
-          <div className="filter_options">
+          <section className="tables_filter_options">
             {myFilter.map((item, index) => {
               return (
-                <label className="option" htmlFor="react" key={index}>
+                <label className="option" key={index}>
                   {item.species}s
                   <input
                     type="checkbox"
@@ -80,18 +81,19 @@ const Table = () => {
                     checked={item.isChecked}
                     onChange={handleChange}
                   />
-                  <span className="checkmark"></span>
+                  <span className="checkmark" role="checkbox" aria-checked={item.isChecked}></span>
                 </label>
               );
             })}
-          </div>
+          </section>
+
           <table id="animalTable" className="table">
             <thead>
               <tr>
                 <th></th>
-                <th>Name</th>
-                <th>Species</th>
-                <th>Hairdo</th>
+                <th scope="col">Name</th>
+                <th scope="col">Species</th>
+                <th scope="col">Hairdo</th>
                 <th></th>
               </tr>
             </thead>
@@ -104,17 +106,20 @@ const Table = () => {
                     <tr key={index}>
                       <td>
                         {" "}
-                        <img src={require(`../../img/tableImg/${animal.name}.jpg`).default} alt={animal} />{" "}
+                        <img src={require(`../../img/tableImg/${animal.name}.jpg`).default} alt={animal.name} />{" "}
                       </td>
                       <td>{animal.name}</td>
                       <td>{animal.species}</td>
                       <td>{animal.hairdo}</td>
                       <td>
-                        <i
-                          className={`fa fa-heart ${animal.isLiked ? "red" : ""}`}
-                          onClick={() => toggleLike(animal)}
-                          title="like"
-                        />
+                        <button className="icon_btn" aria-label="toggle liking animal">
+                          <i
+                            className={`fa fa-heart liked_icon ${animal.isLiked ? "liked" : ""}`}
+                            onClick={() => toggleLike(animal)}
+                            title="like"
+                            aria-hidden="true"
+                          />
+                        </button>
                       </td>
                     </tr>
                   ) : (
@@ -125,21 +130,22 @@ const Table = () => {
           </table>
           <div className="pagination">
             {startPageIndex !== 0 && (
-              <button onClick={prevPage}>
-                <i className="fas fa-angle-double-left"></i>
+              <button className="icon_btn" onClick={prevPage} aria-label="previous page">
+                <i className="fas fa-angle-double-left" aria-hidden="true"></i>
                 &nbsp; Previous
               </button>
             )}
             {animals && startPageIndex < animals.length - itemsPerPage && (
-              <button onClick={nextPage}>
+              <button className="icon_btn" onClick={nextPage} aria-label="next page">
                 Next &nbsp;
-                <i className="fas fa-angle-double-right"></i>
+                <i className="fas fa-angle-double-right" aria-hidden="true"></i>
               </button>
             )}
           </div>
         </section>
       </div>
-      <div className="col-12 col-md-4 col-lg-12 col-xl-5">
+      <div className="col-12 col-md-6">
+        {/* <div className="col-12 col-md-4 col-lg-12 col-xl-5"> */}
         <TablesTestInfo />
         <TablesWhatToTest />
         {/* <TablesVideos /> */}

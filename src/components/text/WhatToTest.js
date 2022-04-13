@@ -87,20 +87,28 @@ export const CatOrDogWhatToTest = () => {
 export const CatShelterWhatToTest = () => {
   return (
     <section className="what_to_test_box">
-      <h2>What to test?</h2>
-      <ul>
-        <li>Validate that a cat can be added to the shelter.</li>
-        <li>Validate that a cat can be renamed.</li>
-        <li>Validate that a cat can be removed from the shelter.</li>
-      </ul>
-      <a
-        href="/features/catShelter.txt"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Cucumber specification opens in new window"
-      >
-        Cucumber specification
-      </a>
+      <section className="what_to_test_section">
+        <h2>What to test?</h2>
+        <ul>
+          <li>Validate that a cat can be added to the shelter.</li>
+          <li>Validate that a cat can be renamed.</li>
+          <li>Validate that a cat can be removed from the shelter.</li>
+        </ul>
+      </section>
+
+      <section className="cucumber_section">
+        <h2>Cucumber Gherkin syntax</h2>
+        <p>Behaviour-Driven Development. See specification below:</p>
+
+        <a
+          href="/features/catShelter.txt"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Cucumber specification opens in new window"
+        >
+          Cucumber feature: CatShelter
+        </a>
+      </section>
     </section>
   );
 };

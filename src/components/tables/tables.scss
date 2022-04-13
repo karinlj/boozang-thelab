@@ -13,142 +13,124 @@
         margin-right: 0;
         max-width: 40px;
         border-radius: 50%;
-        //   @media all and (max-width: $sm-max) {
-        //     display: none;
-        //   }
       }
-      .fa.fa-heart {
-        cursor: pointer;
-        color: #354e97;
-        transition:  all 0.3s ease;
-        &.red {
+      .liked_icon {
+        color: #fff;
+        transition: 0.5s all ease;
+        padding: 5px;
+        &:hover {
+          filter: brightness(180%);
+        }
+        &.liked {
           color: $themecolorNewRed;
         }
-        &:hover {
-          color: $themecolorNewPinkLight
-        }
-      }
-    }
-    // th {
-    //   font-size: 0.8rem;
-    // }
-  }
-
-  div.filter_options {
-    padding: 1rem 0;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    label {
-      color: #fff;
-    }
-
-    //custom checkboxes
-    /* Customize the label (the container) */
-    .option {
-      text-transform: capitalize;
-      display: block;
-      position: relative;
-      padding-left: 1.6rem;
-      margin-bottom: 12px;
-      margin-right: 0.7rem;
-      cursor: pointer;
-      font-size: 0.9rem;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      @media all and (min-width: $md-min) {
-        margin-right: 1rem;
-        padding-left: 1.9rem;
-        font-size: 1rem;
-      }
-      /* Hide the browser's default checkbox */
-      input {
-        position: absolute;
-        //opacity, not display:none!
-        opacity: 0;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        height: 19px;
-        width: 19px;
-        z-index: 100;
-        &:checked {
-          ~ .checkmark {
-            // background-color: #2196f3;
-            border: 2px solid $themecolorButtonBlue;
-            background-color: $themecolorButtonBlue;
-            /* Show the checkmark when checked */
-            &:after {
-              display: block;
-            }
-          }
-        }
-      }
-      /* Create a custom checkbox */
-      .checkmark {
-        border-radius: 3px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 19px;
-        width: 19px;
-        background-color: $themecolorLila;
-        border: 2px solid $themecolorButtonBlue;
-        @media all and (min-width: $md-min) {
-          height: 21px;
-          width: 21px;
-        }
-        /* Create the checkmark/indicator (hidden when not checked) */
-        &:after {
-          content: "";
-          position: absolute;
-          display: none;
-          //style it
-          left: 7px;
-          top: 3px;
-          width: 5px;
-          height: 10px;
-          border: solid white;
-          border-width: 0 3px 3px 0;
-          -webkit-transform: rotate(45deg);
-          -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
-          @media all and (min-width: $md-min) {
-            left: 8px;
-            top: 4px;
-          }
-        }
-      }
-      /* On mouse-over, add a grey background color */
-      &:hover {
-        input {
-          ~ .checkmark {
-            filter: brightness(80%);
-            -webkit-filter: brightness(80%);
-            transition: all 1s ease;
-          }
-        }
       }
     }
   }
-  .pagination{
+  .pagination {
     float: right;
     margin-bottom: 5rem;
- 
-      margin-left: 1rem;
-      button{
-        margin-left: 1rem;
-        color: #75bff0;
-        background: inherit;
-        padding: 0;
-        box-shadow: none;
-        border: none;
-        &:hover {
-          filter: brightness(80%);
+
+    margin-left: 1rem;
+    .icon_btn {
+      color: #75bff0;
+    }
+  }
+}
+.tables_filter_options {
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  label {
+    color: #fff;
+  }
+  //custom checkboxes
+  /* Customize the label (the container) */
+  .option {
+    text-transform: capitalize;
+    display: block;
+    position: relative;
+    padding-left: 1.6rem;
+    margin-bottom: 12px;
+    margin-right: 0.7rem;
+    // cursor: pointer;
+    font-size: 0.9rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    @media all and (min-width: $md-min) {
+      margin-right: 1rem;
+      padding-left: 1.9rem;
+      font-size: 1rem;
+    }
+    /* Hide the browser's default checkbox */
+    input {
+      position: absolute;
+      //opacity, not display:none!
+      opacity: 0;
+      // cursor: pointer;
+      top: 0;
+      left: 0;
+      height: 19px;
+      width: 19px;
+      z-index: 100;
+      &:checked {
+        ~ .checkmark {
+          border: 2px solid $themecolorButtonBlue;
+          background-color: $themecolorButtonBlue;
+          /* Show the checkmark when checked */
+          &:after {
+            display: block;
+          }
         }
       }
-    
+    }
+    /* Create a custom checkbox */
+    .checkmark {
+      border-radius: 3px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 19px;
+      width: 19px;
+      background-color: $themecolorLila;
+      border: 2px solid $themecolorButtonBlue;
+      @media all and (min-width: $md-min) {
+        height: 21px;
+        width: 21px;
+      }
+      /* Create the checkmark/indicator (hidden when not checked) */
+      &:after {
+        content: "";
+        position: absolute;
+        display: none;
+        //style it
+        left: 7px;
+        top: 3px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        @media all and (min-width: $md-min) {
+          left: 8px;
+          top: 4px;
+        }
+      }
+    }
+    /* On mouse-over, add a grey background color */
+    &:hover {
+      input {
+        ~ .checkmark {
+          filter: brightness(150%);
+          -webkit-filter: brightness(150%);
+          transition: all 1s ease;
+        }
+      }
+    }
   }
 }

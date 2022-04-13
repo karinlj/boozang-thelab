@@ -21,7 +21,7 @@ const PrintForm = ({ printForm, users, deleteUser }) => {
                     onClick={() => {
                       deleteUser(user.id);
                     }}
-                    className="delete_btn"
+                    className="icon_btn"
                     title="Delete"
                     aria-label="Delete person from db"
                   >
