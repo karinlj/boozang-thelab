@@ -30,9 +30,9 @@
   p {
     margin: 0;
   }
-  .db_url {
-    font-size: 1rem;
-  }
+  // .db_url {
+  //   font-size: 1rem;
+  // }
 }
 //video_section
 .video_section {
@@ -82,40 +82,36 @@
 }
 
 //test info box
-.why_learn_box {
+.why_learn {
   background: $themecolorBlueNewLightest;
   h2,
   p {
     color: $themecolorLilaDark;
   }
 }
-.what_to_test_box {
-  .what_to_test_section {
-    h2 {
-      color: $themecolorNewPinkLight;
-    }
-    ul {
-      margin-bottom: 1rem;
-      padding-left: 1rem;
-      li {
-        list-style-type: disc;
-        color: #fff;
-        margin-bottom: 0.5rem;
-      }
+//What to test and How to test
+.what_to_test {
+  h2 {
+    //color: $themecolorNewPink;
+  }
+  ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    li {
+      list-style-type: disc;
+      color: #fff;
+      margin-bottom: 0.5rem;
     }
   }
-  .cucumber_section {
-    margin-top: 2rem;
-    h2 {
-      color: $themecolorNewPink;
-    }
-    p {
-      font-size: 1rem;
-    }
+  .link_btn {
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 1rem;
   }
 }
-.why_learn_box,
-.what_to_test_box {
+.why_learn,
+.what_to_test {
   margin-bottom: 3rem;
   min-height: 150px;
   padding: 1.3rem 1.8rem;

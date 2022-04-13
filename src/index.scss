@@ -74,12 +74,12 @@ h2 {
   // }
 }
 h3 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   @media all and (min-width: $md-min) {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   @media all and (min-width: $xl-min) {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -129,7 +129,7 @@ a:not(.link_btn) {
   cursor: pointer;
   font-weight: 500;
   transition: all 0.3s ease-in;
-
+  white-space: nowrap;
   &:hover {
     color: $linkColor;
     text-decoration: none;
@@ -205,9 +205,6 @@ button {
   color: $themecolorNewRed !important;
   transition: 0.5s all ease;
   padding: 5px;
-  // &:hover {
-  //   filter: brightness(180%);
-  // }
 }
 
 input[type="button"],
@@ -219,7 +216,7 @@ input[type="submit"],
   transition: 0.5s all ease;
   border: none;
   border-radius: $themeBorderRadius;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
   line-height: 1.8;
@@ -228,12 +225,12 @@ input[type="submit"],
   box-shadow: $themeBoxShadowLight;
   color: #fff;
   &:hover {
-    filter: brightness(80%);
+    filter: brightness(150%);
     text-decoration: none;
   }
-  &:focus {
-    outline: none;
-  }
+  // &:focus {
+  //   outline: none;
+  // }
   &.add {
     background: $themecolorGreen;
   }
@@ -264,6 +261,13 @@ input[type="submit"],
   }
   &.orange {
     background: $themecolorOrange;
+  }
+}
+.link_btn {
+  &:hover {
+    filter: none;
+    text-decoration: underline;
+    color: #fff;
   }
 }
 button.form_btn {

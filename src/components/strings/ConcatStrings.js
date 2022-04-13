@@ -88,7 +88,7 @@ const ConcatStrings = () => {
           </section>
         </section>
       </div>
-      <div className="col-12 col-md-5">
+      <div className="col-12 col-md-6">
         <ConcatStringTestInfo />
         <ConcatStringsWhatToTest />
         <ConcatStringsVideos />

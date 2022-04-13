@@ -117,9 +117,6 @@
         font-size: 1rem;
         margin: 10px 0 5px 0;
         color: #fff;
-        // @media all and (min-width: $lg-min) {
-        //   margin: 15px 0 10px 0;
-        // }
         @media all and (min-width: 1600px) {
           margin: 15px 0 10px 0;
         }
@@ -134,7 +131,7 @@
         visited {
           color: $linkColor;
         }
-        &.current {
+        &.active {
           color: $linkColor;
           text-decoration: underline;
         }
