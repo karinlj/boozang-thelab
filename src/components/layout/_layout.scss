@@ -2,9 +2,21 @@
 
 //header
 .site_header {
-  padding: 0.7rem calc(3.75rem - 15px);
+  // padding: 0.7rem calc(3.75rem - 15px);
   background: #2a2966;
   border-bottom: 1px solid $themecolorLilaDark;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 2px 0px;
+  padding: 0.7rem calc(1.5rem - 15px);
+  @media all and (min-width: $sm-min) {
+    padding: 0.7rem calc(2.25rem - 15px);
+  }
+  @media all and (min-width: $md-min) {
+    padding: 0.7rem calc(3rem - 15px);
+  }
+  @media all and (min-width: $xl-min) {
+    padding: 0.7rem calc(3.75rem - 15px);
+  }
+
   .lab_logo_section {
     z-index: 3; //obs!
     position: relative;
@@ -17,8 +29,11 @@
     }
   }
   .boozang_logo_text {
-    display: flex;
     justify-content: flex-end;
+    display: none;
+    @media all and (min-width: $sm-min) {
+      display: flex;
+    }
     span {
       padding-right: 1rem;
       color: $navLinkColor;

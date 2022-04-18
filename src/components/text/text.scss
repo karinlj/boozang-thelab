@@ -46,6 +46,7 @@
   a.youtube_link {
     display: flex;
     align-items: center;
+    white-space: normal;
     .youtube_logo {
       max-width: 2.2rem;
       max-height: 2rem;

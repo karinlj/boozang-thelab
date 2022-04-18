@@ -59,7 +59,7 @@ const SpeedGame = () => {
 
   return (
     <div className="row justify-content-between" data-testid="SpeedGame">
-      <div className="col-12 col-md-6">
+      <div className="col-12 col-md-6 col-xl-5">
         <section className="timing_section">
           <SpeedGameIntro />
           <div className="game_space">

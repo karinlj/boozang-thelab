@@ -68,7 +68,7 @@ const WaitGame = () => {
 
   return (
     <div className="row justify-content-between">
-      <div className="col-12 col-md-6">
+      <div className="col-12 col-md-6 col-xl-5">
         <section className="timing_section">
           <WaitGameIntro />
           <div className="game_space">

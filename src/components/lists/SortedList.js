@@ -51,8 +51,8 @@ const SortedList = () => {
   }, [todos]);
 
   return (
-    <div className="row">
-      <div className="col-12 col-md-6">
+    <div className="row justify-content-between">
+      <div className="col-12 col-md-6 col-xl-5">
         <section className="list_section">
           <SortedListIntro />
           {error && <p className="error">{error}</p>}

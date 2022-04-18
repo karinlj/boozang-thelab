@@ -2,7 +2,7 @@ import { HomeVideos } from "./text/videos/VideoSections";
 const Home = () => {
   return (
     <div className="row justify-content-between">
-      <div className="col-12 col-md-8">
+      <div className="col-12 col-md-8 col-xl-7">
         <article className="comp_intro">
           <h1 className="center">Welcome to the Boozang Test Lab!</h1>
           <p className="preamble">Test different aspects of web applications and practice how to do test automation.</p>
