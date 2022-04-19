@@ -105,6 +105,13 @@
     font-size: 1rem;
   }
 }
+//cucumber
+.cucumber {
+  .gherkin {
+    font-weight: bold;
+    color: $themecolorNewPink;
+  }
+}
 .why_learn,
 .what_to_test {
   margin-bottom: 3rem;
