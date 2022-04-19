@@ -20,9 +20,6 @@ const CanvasGame = () => {
     isDragging: false,
   });
 
-  const WIDTH = 450;
-  const HEIGHT = 450;
-
   const drawSucesssMessage = (ctx) => {
     ctx.beginPath();
     ctx.font = "28px roboto, sans-serif ";
@@ -172,8 +169,6 @@ const CanvasGame = () => {
     const ctx = canvasObj.getContext("2d");
     const BB = canvasObj.getBoundingClientRect();
     ctx.reset();
-    //canvasObj.width = WIDTH;
-    //canvasObj.height = HEIGHT;
     setOffsetX(BB.left);
     setOffsetY(BB.top);
     drawBall(ctx);
@@ -196,7 +191,9 @@ const CanvasGame = () => {
           </div>
           <canvas
             ref={canvasRef}
-            className="canvas" width="450" height="450"
+            className="canvas"
+            width="450"
+            height="450"
             onMouseDown={(e) => myDown(e)}
             onMouseUp={(e) => myUp(e)}
             onMouseMove={(e) => myMove(e)}

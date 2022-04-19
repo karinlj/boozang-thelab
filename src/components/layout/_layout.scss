@@ -56,13 +56,13 @@
   display: block;
   background: transparent;
   font-size: 1.2em;
-  cursor: default !important;
   border: none;
   margin-top: 10px;
   &:hover {
-    span {
-      background: $themecolorNewPink;
-    }
+    opacity: 0.7;
+    // span {
+    //   background: $themecolorNewPink;
+    // }
   }
   span {
     display: block;
@@ -102,7 +102,6 @@
 //navbar
 .navbar {
   padding: 1.8rem calc(1.5rem - 15px);
-  //  padding: 2rem calc(1.75rem - 15px) 1rem calc(3.75rem - 15px);
   padding-top: 5rem !important;
   z-index: 2;
   @media all and (min-width: $sm-min) {
@@ -120,7 +119,6 @@
   left: -350px; //obs!
   transition: left ease-in 0.3s; //obs!
   height: 100%;
-  //!!!!
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   background: $themecolorLilaDarkest;
@@ -130,8 +128,11 @@
     li {
       h4 {
         font-size: 1rem;
-        margin: 10px 0 5px 0;
+        margin: 8px 0 4px 0;
         color: #fff;
+        @media all and (min-width: $sm-min) {
+          margin: 10px 0 5px 0;
+        }
         @media all and (min-width: 1600px) {
           margin: 15px 0 10px 0;
         }
@@ -154,7 +155,10 @@
       ul.sub_list {
         li {
           font-size: 0.9rem;
-          margin: 1px 14px;
+          margin: 0 14px;
+          @media all and (min-width: 1600px) {
+            margin: 2px 14px;
+          }
         }
       }
     }
@@ -163,7 +167,6 @@
     left: 0;
   }
 }
-
 //backdrop
 .backdrop {
   position: fixed;
@@ -174,7 +177,6 @@
   background: rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
-
 //footer
 .footer {
   display: flex;
