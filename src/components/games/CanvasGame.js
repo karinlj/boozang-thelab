@@ -169,8 +169,9 @@ const CanvasGame = () => {
     //creating a drawing object for our canvas
     const ctx = canvasObj.getContext("2d");
     const BB = canvasObj.getBoundingClientRect();
-    canvasObj.width = WIDTH;
-    canvasObj.height = HEIGHT;
+    ctx.reset();
+    //canvasObj.width = WIDTH;
+    //canvasObj.height = HEIGHT;
     setOffsetX(BB.left);
     setOffsetY(BB.top);
     drawBall(ctx);
@@ -193,7 +194,7 @@ const CanvasGame = () => {
           </div>
           <canvas
             ref={canvasRef}
-            className="canvas"
+            className="canvas" width="450" height="450"
             onMouseDown={(e) => myDown(e)}
             onMouseUp={(e) => myUp(e)}
             onMouseMove={(e) => myMove(e)}
