@@ -9,12 +9,14 @@
   .success_message {
     color: $themecolorGreen;
     font-size: 1.4rem;
+    font-weight: 500;
     @media all and (min-width: $lg-min) {
       font-size: 1.5rem;
     }
 
     &.fail {
       color: $themecolorNewRed;
+      font-weight: 500;
     }
   }
   .sub_message {

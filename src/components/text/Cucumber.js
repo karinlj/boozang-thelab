@@ -3,7 +3,7 @@ const Cucumber = ({ url, feature }) => {
     <section className="cucumber">
       <h2>How to test?</h2>
       <p>
-        See specification in <strong>Cucumber Gherkin</strong> syntax by clicking button below.{" "}
+        See specification in <span className="gherkin">Cucumber Gherkin</span> syntax by clicking button below.{" "}
       </p>
       <a
         href={`/features/${url}.txt`}
