@@ -1,5 +1,78 @@
 import "./text.scss";
 
+//Intro pages
+export const HomeIntro = () => {
+  return (
+    <section className="intro_section">
+      <h1 className="center">Welcome to the Boozang Test Lab!</h1>
+      <p className="preamble">Test different aspects of web applications and practice how to do test automation.</p>
+      <p className="preamble">The site also to acts as a testing ground for your automation tools.</p>
+      <p>
+        Here you find a number of test categories, that each has a number of problems to solve. Each problem has a brief
+        description and an information box of why this problem is worth solving. There is also one or two videos on how
+        to solve it using the Boozang tool.{" "}
+      </p>
+
+      <p>
+        You will be able to play around with the tool, but in order to save your tests to our Cloud server you'll need
+        to sign-up for a{" "}
+        <a target="_blank" rel="noreferrer" href="https://ai.boozang.com/#security/signup">
+          Free Trial
+        </a>
+        .
+      </p>
+      <p>There will also be a Udemy course shortly that will take you through each task with a solution.</p>
+    </section>
+  );
+};
+export const IntroductionIntro = () => {
+  return (
+    <section className="intro_section">
+      <h1 className="center">Introduction</h1>
+      <p className="preamble">
+        Sometimes writing test automation code is as time-consuming as writing the code itself. One could wonder if it's
+        really worth it. Isn't writing the features more important than testing them?
+      </p>
+      <p>
+        Perhaps this is accurate in the beginning of your applications life-cycle. But as your application grows, new
+        application features tend to break existing ones.
+      </p>
+      <p>
+        Having automated end-to-end tests greatly reduces the amount of manual testing needed. Developers get instant
+        feedback when their code updates break crucial application flows.
+      </p>
+      <p>
+        This increases the productive output from your development team dramatically, and allows you to push features
+        into your live system at a faster pace, while resting assured you didn't introduce bugs in your live system.
+      </p>
+    </section>
+  );
+};
+export const OverviewIntro = () => {
+  return (
+    <section className="intro_section">
+      {" "}
+      <h1 className="center">Overview of the Tool</h1>
+      <p>
+        Boozang is a tool that runs directly in your browser, that allows you to test the application just like a user
+        would. It differs from common test automation frameworks by being completely code-less.
+      </p>
+      <p>
+        Boozang instead uses natural-language element selectors, that has the advantage of being extremely stable to
+        code changes. They allow you to differentiate element based on the what the user sees, not the underlying
+        implementation details of your application.
+      </p>
+      <p> Advantages of the Boozang approach:</p>
+      <ul className="_list">
+        <li>Tests can be created thirty (x30) times faster compared to coding tests</li>
+        <li>Non-programmers can do test automation</li>
+        <li>Tests are ultra-stable to changes to your application</li>
+        <li>AI can be used to automatically repair tests that are broken</li>
+      </ul>
+    </section>
+  );
+};
+
 //Lists and Tables
 export const SortedListIntro = () => {
   return (

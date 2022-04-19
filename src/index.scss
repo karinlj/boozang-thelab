@@ -45,13 +45,16 @@ ul {
 
 //typgrafi
 h1 {
+  margin-bottom: 0.8rem;
   font-size: 1.8em;
-  @media all and (min-width: $md-min) {
-    font-size: 2em;
+  @media all and (min-width: $sm-min) {
+    font-size: 2rem;
+  }
+  @media all and (min-width: $lg-min) {
+    font-size: 2.3rem;
   }
   @media all and (min-width: $xl-min) {
-    // font-size: 2.5rem;
-    font-size: 2.7rem;
+    font-size: 2.6rem;
   }
   @media all and (min-width: 1500px) {
     font-size: 3.1rem;
@@ -65,13 +68,6 @@ h2 {
   @media all and (min-width: $xl-min) {
     font-size: 1.7rem;
   }
-  // font-size: 1.6rem;
-  // @media all and (min-width: $md-min) {
-  //   font-size: 1.8rem;
-  // }
-  // @media all and (min-width: $lg-min) {
-  //   font-size: 2rem;
-  // }
 }
 h3 {
   font-size: 1rem;
@@ -82,7 +78,6 @@ h3 {
     font-size: 1.2rem;
   }
 }
-
 h4 {
   font-size: 1.4rem;
   @media all and (min-width: $lg-min) {
@@ -90,12 +85,14 @@ h4 {
   }
 }
 p {
-  font-size: 1.1rem;
+  font-size: 1rem;
+  @media all and (min-width: $sm-min) {
+    font-size: 1.1rem;
+  }
   &.preamble {
     font-weight: 500;
     font-size: 1.2rem;
-
-    @media all and (min-width: $md-min) {
+    @media all and (min-width: $sm-min) {
       font-size: 1.3rem;
     }
     @media all and (min-width: $xl-min) {
@@ -228,9 +225,6 @@ input[type="submit"],
     filter: brightness(150%);
     text-decoration: none;
   }
-  // &:focus {
-  //   outline: none;
-  // }
   &.add {
     background: $themecolorGreen;
   }
