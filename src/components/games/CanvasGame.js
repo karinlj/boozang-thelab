@@ -213,11 +213,5 @@ const CanvasGame = () => {
     </div>
   );
 };
-<<<<<<< HEAD
-setTimeout(() => {
-  lws();
-}, 100);
-=======
->>>>>>> d3a8a9cd5edebe7fd5a66c4e60ee30c3ba221f6e
 
 export default CanvasGame;
