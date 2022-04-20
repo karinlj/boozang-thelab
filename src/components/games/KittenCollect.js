@@ -144,8 +144,16 @@ const KittenCollect = () => {
           <KittenCollectIntro />
 
           <div className="points_section">
-            {!isRunning && <input type="button" value="Start Game" className="form_btn add" onClick={startGame} />}
-            {isRunning && <input type="button" value="Abort Game" className="form_btn delete" onClick={abortGame} />}
+            {!isRunning && (
+              <button className="form_btn add" onClick={startGame}>
+                Start Game
+              </button>
+            )}
+            {isRunning && (
+              <button className="form_btn delete" onClick={abortGame}>
+                Abort Game
+              </button>
+            )}
             <div className="counter">
               <h6>
                 Time: <strong>{Math.floor(count / 10)}</strong>{" "}
