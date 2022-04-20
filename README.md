@@ -2,7 +2,7 @@
 
 ## Description
 
-Frontend platform built with React.js for learning test automation and the Boozang tool. Mock backend with json-server. Version 2.
+Frontend platform built with React.js for learning test automation and the Boozang tool. Semantic update. Version 3 April 2022.
 
 ![Screenshot](/src/assets/screenshot.jpg?raw=true "Screenshot")
 

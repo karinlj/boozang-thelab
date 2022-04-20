@@ -4,7 +4,7 @@ import { CanvasGameVideos } from "../text/videos/VideoSections";
 import { CanvasGameIntro } from "../text/Intros";
 import { CanvasGameTestInfo } from "../text/WhyLearn";
 
-let lws
+let lws;
 const CanvasGame = () => {
   const canvasRef = useRef(null);
   const [dragOk, setDragOk] = useState(false);
@@ -155,7 +155,7 @@ const CanvasGame = () => {
       y: 40 + Math.random() * 300,
     });
   };
-  lws=reset
+  lws = reset;
 
   useEffect(() => {
     reset();
@@ -179,16 +179,18 @@ const CanvasGame = () => {
   }, [ball]);
   return (
     <div className="row justify-content-between">
-      <div className="col-12 col-md-8 col-lg-12 col-xl-5">
+      <div className="col-12 col-md-8 col-xl-5">
         <section className="mobile_game_section">
-          <h5>This game is only available on larger display size...</h5>
+          <h2>This game is only available on larger display size...</h2>
         </section>
         <section className="game_section">
           <CanvasGameIntro />
-          <div className="top_section">
-            <input type="button" value="Reset" className="form_btn purple" onClick={reset} />
-            <h4 className={"sub_heading"}>Drag ball into box...</h4>
-          </div>
+          <header className="game_header">
+            <button className="form_btn purple" onClick={reset}>
+              Reset
+            </button>
+            <h3 className={"sub_heading"}>Drag ball into box...</h3>
+          </header>
           <canvas
             ref={canvasRef}
             className="canvas"
@@ -200,15 +202,15 @@ const CanvasGame = () => {
           />
         </section>
       </div>
-      <div className="col-12 col-md-4 col-lg-12 col-xl-5">
+      <div className="col-12 col-xl-6">
         <CanvasGameTestInfo />
         <CanvasGameVideos />
       </div>
     </div>
   );
 };
-setTimeout(()=>{
-  lws()
-},100)
+setTimeout(() => {
+  lws();
+}, 100);
 
 export default CanvasGame;

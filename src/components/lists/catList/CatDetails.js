@@ -96,7 +96,7 @@ const CatDetails = () => {
           <header className="single_cat_header">
             <h1>Cat details</h1>
             <Link to="/catshelter" className="" aria-label="Back to Cat shelter page">
-              <i class="fas fa-arrow-left" aria-hidden="true"></i>
+              <i className="fas fa-arrow-left" aria-hidden="true"></i>
               Back to Cat shelter
             </Link>
           </header>

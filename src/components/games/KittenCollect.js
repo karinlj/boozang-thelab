@@ -136,14 +136,14 @@ const KittenCollect = () => {
 
   return (
     <div className="row justify-content-between">
-      <div className="col-12 col-md-8 col-lg-12 col-xl-5">
+      <div className="col-12 col-md-8 col-xl-5">
         <section className="mobile_game_section">
-          <h5>This game is only available on larger display size...</h5>
+          <h2>This game is only available on larger display size...</h2>
         </section>
         <section className="game_section">
           <KittenCollectIntro />
 
-          <div className="points_section">
+          <header className="game_header">
             {!isRunning && (
               <button className="form_btn add" onClick={startGame}>
                 Start Game
@@ -154,29 +154,25 @@ const KittenCollect = () => {
                 Abort Game
               </button>
             )}
-            <div className="counter">
-              <h6>
-                Time: <strong>{Math.floor(count / 10)}</strong>{" "}
-              </h6>
-            </div>
-            <div className="points">
-              <h6>
-                Points: <strong>{points}</strong>
-              </h6>
-            </div>
-          </div>
+            <p className="game_header_counter time">
+              Time: <strong>{Math.floor(count / 10)}</strong>{" "}
+            </p>
+            <p className="game_header_counter points">
+              Points: <strong>{points}</strong>
+            </p>
+          </header>
 
-          <div className="square">
+          <div className="playground">
             <Kittens kittens={kittens} handleClick={kittenClick} />
             <Hedgehogs hedgehogs={hedgehogs} handleClick={hedgehogClick} />
             <div className="message" data-testid="message">
-              <h5>{message}</h5>
-              <h5>{pointsMessage}</h5>
+              <p>{message}</p>
+              <p>{pointsMessage}</p>
             </div>
           </div>
         </section>
       </div>
-      <div className="col-12 col-md-4 col-lg-12 col-xl-5">
+      <div className="col-12 col-xl-6">
         <KittenCollectTestInfo />
         <KittenCollectVideos />
       </div>

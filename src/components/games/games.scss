@@ -1,28 +1,45 @@
 @import "../../variables.scss";
 
+.mobile_game_section {
+  display: block;
+  @media all and (min-width: $sm-min) {
+    display: none;
+  }
+}
 .game_section {
-  .points_section {
+  .game_header {
     width: 450px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    h6 {
+    margin-bottom: 0.8rem;
+    .game_header_counter {
+      font-weight: 500;
       text-transform: uppercase;
       margin-bottom: 0;
       font-size: 0.9rem;
+      &.time {
+        strong {
+          color: $themecolorNewPink;
+        }
+      }
+      &.points {
+        strong {
+          color: $themecolorGreen;
+        }
+      }
       strong {
-        font-size: 1.2rem;
-        color: $themecolorNewPink;
-        text-transform: lowercase;
+        font-size: 1.4rem;
       }
     }
   }
-  .square {
+  //kitten collect
+  .playground {
     position: relative;
     background: $themecolorLilaDark;
     box-shadow: $themeBoxShadow;
     border-radius: $themeBorderRadius;
-    margin: 1.5rem 0;
+    margin: 0 0 1.5rem 0;
     width: 450px;
     height: 450px;
     display: flex;
@@ -33,9 +50,12 @@
       z-index: 500;
       max-width: 50%;
       text-align: center;
-      h5 {
+      p {
         line-height: 1.5;
         margin-bottom: 0;
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: $themecolorBlueNewLightest;
       }
     }
     .kitten,
@@ -49,28 +69,7 @@
       }
     }
   }
-
   //canvas
-  .top_section {
-    width: 450px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-
-    .sub_heading {
-      color: $themecolorButtonBlue;
-    }
-    .result_wrapper {
-      margin-top: 0;
-      .success_message {
-        &.fail {
-          color: $themecolorButtonBlue;
-        }
-      }
-    }
-  }
-
   .canvas {
     background: $themecolorLilaDark;
     box-shadow: $themeBoxShadow;
@@ -79,11 +78,5 @@
   display: none;
   @media all and (min-width: $sm-min) {
     display: block;
-  }
-}
-.mobile_game_section {
-  display: block;
-  @media all and (min-width: $sm-min) {
-    display: none;
   }
 }

@@ -241,7 +241,7 @@ export const CanvasGameIntro = () => {
   return (
     <section className="intro_section">
       <h1>Canvas Game</h1>
-      <p>The Canvas game helps illustrate how automate on top of an HTML canvas</p>
+      <p>The Canvas game helps illustrate how automate on top of an HTML canvas.</p>
     </section>
   );
 };

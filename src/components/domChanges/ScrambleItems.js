@@ -62,7 +62,7 @@ const ScrambleItems = () => {
       '"' +
       comp.props.id +
       '"' +
-      " class=" +
+      " className=" +
       '"' +
       comp.props.className +
       '"' +
