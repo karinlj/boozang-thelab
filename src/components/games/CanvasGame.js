@@ -4,7 +4,6 @@ import { CanvasGameVideos } from "../text/videos/VideoSections";
 import { CanvasGameIntro } from "../text/Intros";
 import { CanvasGameTestInfo } from "../text/WhyLearn";
 
-let lws
 const CanvasGame = () => {
   const canvasRef = useRef(null);
   const [dragOk, setDragOk] = useState(false);
@@ -155,10 +154,11 @@ const CanvasGame = () => {
       y: 40 + Math.random() * 300,
     });
   };
-  lws=reset
 
   useEffect(() => {
-    reset();
+    setTimeout(()=>{
+      reset();
+    },100)
     // eslint-disable-next-line
   }, []);
   useEffect(() => {
@@ -207,8 +207,5 @@ const CanvasGame = () => {
     </div>
   );
 };
-setTimeout(()=>{
-  lws()
-},100)
 
 export default CanvasGame;
