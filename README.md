@@ -10,21 +10,27 @@ Frontend platform built with React.js for learning test automation and the Booza
 
 ## Installation
 
+To clone
+
+`git clone https://github.com/karinlj/boozang-thelab.git`
+
 To install
+
+`cd boozang-thelab`
 
 `npm install`
 
-To run
-
-npm start
-
 Install json-server
 
-npm install -g json-server
+`npm install -g json-server`
 
 To run db with json-server (can be run in different terminal)
 
-json-server --watch data/db.json --port 9000
+`json-server --watch data/db.json --port 9000`
+
+To run
+
+`npm start`
 
 ## To build
 
@@ -37,6 +43,7 @@ Then use the dist folder you get.
 - React.js
 - Scss
 - Bootstrap 4
+- Semantic HTML5
 
 ## Author
 
