@@ -2,7 +2,7 @@
 
 ## Description
 
-Frontend platform built with React.js for learning test automation and the Boozang tool. Semantic update. Version 3 April 2022.
+Frontend platform built with React.js for learning test automation and the Boozang tool. Some accessibility improvements. Version 3 April 2022.
 
 ![Screenshot](/src/assets/screenshot.jpg?raw=true "Screenshot")
 
@@ -16,9 +16,15 @@ To install
 
 To run
 
-`npm start`
+npm start
 
-`npm run server`
+Install json-server
+
+npm install -g json-server
+
+To run db with json-server (can be run in different terminal)
+
+json-server --watch data/db.json --port 9000
 
 ## To build
 
