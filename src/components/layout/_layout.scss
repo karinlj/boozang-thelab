@@ -2,7 +2,6 @@
 
 //header
 .site_header {
-  // padding: 0.7rem calc(3.75rem - 15px);
   background: #2a2966;
   border-bottom: 1px solid $themecolorLilaDark;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 2px 0px;
@@ -117,6 +116,7 @@
   width: 350px; //obs!
   top: 0;
   left: -350px; //obs!
+  visibility: hidden;
   transition: left ease-in 0.3s; //obs!
   height: 100%;
   -webkit-box-sizing: border-box;
@@ -162,6 +162,7 @@
   }
   &.navbar_is_open {
     left: 0;
+    visibility: visible;
   }
 }
 //backdrop

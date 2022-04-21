@@ -116,7 +116,7 @@ td {
 }
 
 //links
-a:not(.link_btn) {
+a:not(.link_btn, .link) {
   position: relative;
   color: $linkColor;
   cursor: pointer;
