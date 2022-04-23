@@ -127,33 +127,36 @@ a:not(.link_btn, .link) {
     color: $linkColor;
     text-decoration: none;
     &::before {
-      opacity: 0.6;
+      opacity: 0.7;
       width: 100%;
     }
   }
   &::before {
     opacity: 0;
+    width: 0;
     position: absolute;
     bottom: -4px;
     left: 1px;
     content: "";
-    width: 0;
     height: 3px;
     background: $linkColor;
     -webkit-transition: width 0.3s ease-in;
     transition: width 0.3s ease-in;
   }
+  &::after {
+    opacity: 0.3;
+    width: 100%;
+    position: absolute;
+    bottom: -4px;
+    left: 1px;
+    content: "";
+    height: 3px;
+    background: $linkColor;
+  }
   &:active {
     //when click
     color: $linkColor;
   }
-}
-
-//menu
-.menu {
-  position: fixed;
-  width: 100%;
-  z-index: 2;
 }
 
 //content
@@ -191,7 +194,7 @@ button {
   border: none;
   background: transparent;
   &:hover {
-    filter: brightness(180%);
+    filter: brightness(150%);
   }
 }
 .delete_icon {
@@ -200,8 +203,6 @@ button {
   padding: 5px;
 }
 
-input[type="button"],
-input[type="submit"],
 .form_btn,
 .link_btn {
   display: inline-block;
@@ -218,7 +219,7 @@ input[type="submit"],
   box-shadow: $themeBoxShadowLight;
   color: #fff;
   &:hover {
-    filter: brightness(150%);
+    filter: brightness(130%);
     text-decoration: none;
   }
   &.add {

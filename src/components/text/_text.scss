@@ -59,11 +59,23 @@
       }
       &::before {
         opacity: 0;
+        width: 0;
         position: absolute;
         bottom: -4px;
         left: 1px;
         content: "";
-        width: 0;
+        height: 3px;
+        background: $linkColor;
+        -webkit-transition: width 0.3s ease-in;
+        transition: width 0.3s ease-in;
+      }
+      &::after {
+        opacity: 0.3;
+        width: 100%;
+        position: absolute;
+        bottom: -4px;
+        left: 1px;
+        content: "";
         height: 3px;
         background: $linkColor;
         -webkit-transition: width 0.3s ease-in;
@@ -75,6 +87,9 @@
       &::before {
         opacity: 0;
       }
+    }
+    &::after {
+      opacity: 0;
     }
   }
 }

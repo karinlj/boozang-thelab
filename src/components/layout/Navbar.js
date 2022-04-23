@@ -12,25 +12,25 @@ const Navbar = ({ toggleOpen, isBtnOpen }) => (
 
               <ul className="sub_list">
                 <li>
-                  <NavLink to="/" exact={true} className="link">
-                    <span role="button" onClick={toggleOpen}>
+                  <span onClick={toggleOpen}>
+                    <NavLink to="/" exact={true} className="link">
                       Home
-                    </span>
-                  </NavLink>
+                    </NavLink>
+                  </span>
                 </li>
                 <li>
-                  <NavLink to="/introduction" className="link">
-                    <span role="button" onClick={toggleOpen}>
+                  <span onClick={toggleOpen}>
+                    <NavLink to="/introduction" className="link">
                       Introduction
-                    </span>
-                  </NavLink>
+                    </NavLink>
+                  </span>
                 </li>
                 <li>
-                  <NavLink to="/overview" className="link">
-                    <span role="button" onClick={toggleOpen}>
+                  <span onClick={toggleOpen}>
+                    <NavLink to="/overview" className="link">
                       Overview of the tool
-                    </span>
-                  </NavLink>
+                    </NavLink>
+                  </span>
                 </li>
               </ul>
             </li>
@@ -39,18 +39,19 @@ const Navbar = ({ toggleOpen, isBtnOpen }) => (
 
               <ul className="sub_list">
                 <li>
-                  <NavLink to="/speedGame" className="link">
-                    <span role="button" onClick={toggleOpen}>
+                  <span onClick={toggleOpen}>
+                    <NavLink to="/speedGame" className="link">
+                      {" "}
                       Speed Game
-                    </span>
-                  </NavLink>
+                    </NavLink>
+                  </span>
                 </li>
                 <li>
-                  <NavLink to="/waitGame" className="link">
-                    <span role="button" onClick={toggleOpen}>
+                  <span onClick={toggleOpen}>
+                    <NavLink to="/waitGame" className="link">
                       Wait Game
-                    </span>
-                  </NavLink>
+                    </NavLink>
+                  </span>
                 </li>
               </ul>
             </li>
@@ -59,54 +60,53 @@ const Navbar = ({ toggleOpen, isBtnOpen }) => (
 
               <ul className="sub_list">
                 <li>
-                  <NavLink to="/yellowOrBlue" className="link">
-                    <span role="button" onClick={toggleOpen}>
+                  <span onClick={toggleOpen}>
+                    <NavLink to="/yellowOrBlue" className="link">
                       Yellow or Blue
-                    </span>
-                  </NavLink>
+                    </NavLink>
+                  </span>
                 </li>
                 <li>
-                  <NavLink to="/catOrDog" className="link">
-                    <span role="button" onClick={toggleOpen}>
+                  <span onClick={toggleOpen}>
+                    <NavLink to="/catOrDog" className="link">
                       Cat or dog
-                    </span>
-                  </NavLink>
+                    </NavLink>
+                  </span>
                 </li>
               </ul>
             </li>
-            <li></li>
+
             <li>
               <h4> Lists, Forms and Tables</h4>
 
               <ul className="sub_list">
                 <li>
-                  <NavLink to="/sortedList" className="link">
-                    <span role="button" onClick={toggleOpen}>
+                  <span onClick={toggleOpen}>
+                    <NavLink to="/sortedList" className="link">
                       Sorted list
-                    </span>
-                  </NavLink>{" "}
+                    </NavLink>
+                  </span>
                 </li>
                 <li>
-                  <NavLink to="/formFill" className="link">
-                    <span role="button" onClick={toggleOpen}>
-                      {" "}
+                  <span onClick={toggleOpen}>
+                    <NavLink to="/formFill" className="link">
                       Form Fill
-                    </span>
-                  </NavLink>
+                    </NavLink>
+                  </span>
                 </li>
                 <li>
-                  <NavLink to="/catshelter" className="link">
-                    <span role="button" onClick={toggleOpen}>
+                  <span onClick={toggleOpen}>
+                    <NavLink to="/catshelter" className="link">
                       Cat Shelter
-                    </span>
-                  </NavLink>
+                    </NavLink>
+                  </span>
                 </li>
                 <li>
-                  <NavLink to="/tables" className="link">
-                    <span role="button" onClick={toggleOpen}>
+                  <span onClick={toggleOpen}>
+                    <NavLink to="/tables" className="link">
                       Tables
-                    </span>
-                  </NavLink>
+                    </NavLink>
+                  </span>
                 </li>
               </ul>
             </li>
@@ -114,11 +114,11 @@ const Navbar = ({ toggleOpen, isBtnOpen }) => (
               <h4> Bug reporting</h4>
               <ul className="sub_list">
                 <li>
-                  <NavLink to="/visualBugs" className="link">
-                    <span role="button" onClick={toggleOpen}>
+                  <span onClick={toggleOpen}>
+                    <NavLink to="/visualBugs" className="link">
                       Visual Bugs
-                    </span>
-                  </NavLink>
+                    </NavLink>
+                  </span>
                 </li>
               </ul>
             </li>
@@ -127,17 +127,12 @@ const Navbar = ({ toggleOpen, isBtnOpen }) => (
 
               <ul className="sub_list">
                 <li>
-                  <NavLink to="/scramble" className="link">
-                    <span role="button" onClick={toggleOpen}>
+                  <span onClick={toggleOpen}>
+                    <NavLink to="/scramble" className="link">
                       Scramble items
-                    </span>
-                  </NavLink>
+                    </NavLink>
+                  </span>
                 </li>
-                {/* <li>
-            <NavLink to="/multiScramble" className="link" >
-            <span role="button" onClick={toggleOpen}>Multi-scramble</div>
-            </NavLink>
-          </li> */}
               </ul>
             </li>
             <li>
@@ -145,11 +140,11 @@ const Navbar = ({ toggleOpen, isBtnOpen }) => (
 
               <ul className="sub_list">
                 <li>
-                  <NavLink to="/concatStrings" className="link">
-                    <span role="button" onClick={toggleOpen}>
+                  <span onClick={toggleOpen}>
+                    <NavLink to="/concatStrings" className="link">
                       Concat strings
-                    </span>
-                  </NavLink>
+                    </NavLink>
+                  </span>
                 </li>
               </ul>
             </li>
@@ -158,18 +153,18 @@ const Navbar = ({ toggleOpen, isBtnOpen }) => (
 
               <ul className="sub_list">
                 <li>
-                  <NavLink to="/kittenCollect" className="link">
-                    <span role="button" onClick={toggleOpen}>
+                  <span onClick={toggleOpen}>
+                    <NavLink to="/kittenCollect" className="link">
                       Collecting kittens
-                    </span>
-                  </NavLink>
+                    </NavLink>
+                  </span>
                 </li>
                 <li>
-                  <NavLink to="/canvasGame" className="link">
-                    <span role="button" onClick={toggleOpen}>
+                  <span onClick={toggleOpen}>
+                    <NavLink to="/canvasGame" className="link">
                       Canvas Game
-                    </span>
-                  </NavLink>
+                    </NavLink>
+                  </span>
                 </li>
               </ul>
             </li>

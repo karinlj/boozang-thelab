@@ -1,5 +1,11 @@
 @import "../../variables.scss";
 
+//menu
+.menu {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
 //header
 .site_header {
   background: #2a2966;
@@ -15,16 +21,16 @@
   @media all and (min-width: $xl-min) {
     padding: 0.7rem calc(3.75rem - 15px);
   }
-
   .lab_logo_section {
     z-index: 3; //obs!
     position: relative;
     display: flex;
+    align-items: baseline;
     .logo {
       margin-left: 1.5rem;
-      font-size: 2.2rem;
+      font-size: 2.3rem;
       color: $themecolorNewPink;
-      font-weight: 500;
+      font-weight: 600;
     }
   }
   .boozang_logo_text {
@@ -39,6 +45,9 @@
     }
     a.boozang_link {
       //not underlining <a>
+      &::after {
+        opacity: 0;
+      }
       &:hover {
         &::before {
           opacity: 0;
@@ -244,6 +253,9 @@
           &::before {
             opacity: 0;
           }
+        }
+        &::after {
+          opacity: 0;
         }
       }
     }
