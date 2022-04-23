@@ -1,4 +1,4 @@
-import "./text.scss";
+import "./_text.scss";
 
 //Intro pages
 export const HomeIntro = () => {

@@ -1,4 +1,4 @@
-import "./text.scss";
+import "./_text.scss";
 import Cucumber from "./Cucumber";
 
 //Timing

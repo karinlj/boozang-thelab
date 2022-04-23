@@ -119,11 +119,19 @@
   padding: 1.3rem 1.8rem;
   border-radius: $themeBorderRadius;
   box-shadow: $themeBoxShadow;
-  margin-top: 6rem;
+  margin-top: 5rem;
   @media all and (min-width: $md-min) {
     margin-top: 0rem;
   }
   p {
     white-space: pre-line;
+  }
+  &.games {
+    @media all and (min-width: $md-min) {
+      margin-top: 4rem;
+    }
+    @media all and (min-width: $xl-min) {
+      margin-top: 0;
+    }
   }
 }

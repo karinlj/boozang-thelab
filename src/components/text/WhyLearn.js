@@ -1,4 +1,4 @@
-import "./text.scss";
+import "./_text.scss";
 
 //Lists and Tables
 export const SortedListTestInfo = () => {
@@ -172,7 +172,7 @@ export const ConcatStringTestInfo = () => {
 //games
 export const KittenCollectTestInfo = () => {
   return (
-    <section className="why_learn">
+    <section className="why_learn games">
       <h2>Why learn: Collecting Kittens</h2>
       <p>
         Any web application is a little bit like a game. By automating game play we combine automating actions,
@@ -184,7 +184,7 @@ export const KittenCollectTestInfo = () => {
 };
 export const CanvasGameTestInfo = () => {
   return (
-    <section className="why_learn">
+    <section className="why_learn games">
       <h2>Why learn: Canvas Game</h2>
       <p>
         This exercise contains two challenging obstacles. The most challenging is that playing field is an HTML canvas,
