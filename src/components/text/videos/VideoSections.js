@@ -278,7 +278,7 @@ export const ScrambleItemsVideos = () => {
     {
       id: 1,
       url: "https://www.youtube.com/watch?v=52kPIvoVxcc&list=PLhdB7gylbUzpRBVLjpi4KI-g2j7U0y9Qr&index=25",
-      text: "Robustness of tests and how to customize the elment selector",
+      text: "Robustness of tests and customizing selector",
     },
   ];
   return (

@@ -7,7 +7,7 @@ const Cucumber = ({ url, feature }) => {
       </p>
       <a
         href={`/features/${url}.txt`}
-        className="link_btn pink"
+        className="link_btn pink_dark"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Cucumber specification opens in new window"

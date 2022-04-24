@@ -15,7 +15,7 @@ const ScrambleItems = () => {
   });
   const [btnTwoAttributes, setBtnTwoAttributes] = useState({
     myId: "big",
-    myClass: "pink",
+    myClass: "pink_dark",
     myContent: "tiger",
     styles: {},
   });

@@ -72,19 +72,6 @@
       color: #fff;
     }
   }
-  .cat_name_link {
-    display: block;
-    width: 90%;
-    color: $themecolor;
-    &::after {
-      width: 25%;
-    }
-    &:hover {
-      &::before {
-        width: 25%;
-      }
-    }
-  }
   .new_home {
     border: none;
     background: transparent;

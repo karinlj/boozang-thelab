@@ -66,7 +66,7 @@ const CatOrDog = () => {
                       onClick={() => {
                         checkPet("cat");
                       }}
-                      className="form_btn pink"
+                      className="form_btn pink_dark"
                     >
                       cat
                     </button>
