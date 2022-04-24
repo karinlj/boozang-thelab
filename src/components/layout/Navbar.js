@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import "./_layout.scss";
 
 const Navbar = ({ toggleOpen, isBtnOpen }) => (
-  <nav className={isBtnOpen ? "navbar navbar_is_open" : "navbar"}>
+  <section className={isBtnOpen ? "navbar navbar_is_open" : "navbar"}>
     <div className="container">
       <div className="row">
         <div className="col">
@@ -172,6 +172,6 @@ const Navbar = ({ toggleOpen, isBtnOpen }) => (
         </div>
       </div>
     </div>
-  </nav>
+  </section>
 );
 export default Navbar;

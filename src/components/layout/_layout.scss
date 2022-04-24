@@ -1,7 +1,6 @@
 @import "../../variables.scss";
 
-//menu
-.menu {
+.menu_section {
   position: fixed;
   width: 100%;
   z-index: 2;
@@ -12,6 +11,8 @@
   border-bottom: 1px solid $themecolorLilaDark;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 2px 0px;
   padding: 0.7rem calc(1.5rem - 15px);
+  display: flex;
+  align-items: baseline;
   @media all and (min-width: $sm-min) {
     padding: 0.7rem calc(2.25rem - 15px);
   }
@@ -21,18 +22,137 @@
   @media all and (min-width: $xl-min) {
     padding: 0.7rem calc(3.75rem - 15px);
   }
-  .lab_logo_section {
-    z-index: 3; //obs!
-    position: relative;
-    display: flex;
-    align-items: baseline;
-    .logo {
-      margin-left: 1.5rem;
-      font-size: 2.3rem;
-      color: $themecolorNewPink;
-      font-weight: 600;
+
+  //main_menu
+  .main_menu {
+    width: 30px;
+    display: inline-block;
+
+    //menu button
+    .menu_btn {
+      z-index: 3;
+      position: relative;
+    }
+    .veggie_burger {
+      display: block;
+      background: transparent;
+      font-size: 1.2em;
+      border: none;
+      margin-top: 10px;
+      &:hover {
+        opacity: 0.7;
+      }
+      span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        border-radius: 8px;
+        background: #fff;
+        margin-bottom: 7px;
+        transition: all ease-in 0.3s; //obs!!
+        &:last-child {
+          margin-bottom: 1px;
+        }
+      }
+      &.veggie_burger_isOpen {
+        span:nth-child(1) {
+          transform: rotate(45deg) translateY(14px);
+        }
+        span:nth-child(2) {
+          opacity: 0;
+          width: 0;
+        }
+        span:nth-child(3) {
+          transform: rotate(-45deg) translateY(-14px);
+        }
+        + .menu_label {
+          transform: translateX(-8px);
+        }
+      }
+    }
+    .menu_label {
+      font-size: 0.7rem;
+      margin-bottom: 0;
+      padding: 1px 6px;
+      transition: all ease-in 0.3s; //obs!!
+    }
+    //navbar
+    .navbar {
+      padding: 1.8rem calc(1.5rem - 15px);
+      padding-top: 5rem !important;
+      z-index: 2;
+      @media all and (min-width: $sm-min) {
+        padding: 1.8rem calc(2.25rem - 15px);
+      }
+      @media all and (min-width: $md-min) {
+        padding: 1.8rem calc(3rem - 15px);
+      }
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      position: fixed;
+      width: 350px; //obs!
+      top: 0;
+      left: -350px; //obs!
+      visibility: hidden;
+      transition: left ease-in 0.3s; //obs!
+      height: 100%;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      background: $themecolorLilaDarkest;
+      ul.links {
+        display: block;
+        margin-top: 0;
+        li {
+          h4 {
+            font-size: 1rem;
+            margin: 7px 0 3px 0;
+            color: #fff;
+            @media all and (min-width: $sm-min) {
+              margin: 10px 0 5px 0;
+            }
+            @media all and (min-width: 1600px) {
+              margin: 15px 0 10px 0;
+            }
+          }
+          a.link {
+            color: $navLinkColor;
+            &:hover {
+              color: $linkColor;
+              text-decoration: underline;
+            }
+            &:active,
+            visited {
+              color: $linkColor;
+            }
+            &.active {
+              color: $linkColor;
+              text-decoration: underline;
+            }
+          }
+          ul.sub_list {
+            li {
+              font-size: 0.9rem;
+              margin: 1px 14px;
+            }
+          }
+        }
+      }
+      &.navbar_is_open {
+        left: 0;
+        visibility: visible;
+      }
     }
   }
+  //thelab_logo
+  .thelab_logo {
+    margin-left: 1.5rem;
+    font-size: 2.3rem;
+    color: $themecolorNewPink;
+    font-weight: 600;
+  }
+
+  //boozang logo
   .boozang_logo_text {
     justify-content: flex-end;
     display: none;
@@ -59,121 +179,7 @@
     }
   }
 }
-//menu button
-.veggie_burger {
-  display: block;
-  background: transparent;
-  font-size: 1.2em;
-  border: none;
-  margin-top: 10px;
-  &:hover {
-    opacity: 0.7;
-    // span {
-    //   background: $themecolorNewPink;
-    // }
-  }
-  span {
-    display: block;
-    width: 30px;
-    height: 3px;
-    border-radius: 8px;
-    background: #fff;
-    margin-bottom: 7px;
-    transition: all ease-in 0.3s; //obs!!
-    &:last-child {
-      margin-bottom: 1px;
-    }
-  }
-  &.veggie_burger_isOpen {
-    span:nth-child(1) {
-      transform: rotate(45deg) translateY(14px);
-    }
-    span:nth-child(2) {
-      opacity: 0;
-      width: 0;
-    }
-    span:nth-child(3) {
-      transform: rotate(-45deg) translateY(-14px);
-    }
-    + .menu_label {
-      transform: translateX(-8px);
-    }
-  }
-}
-.menu_label {
-  font-size: 0.7rem;
-  margin-bottom: 0;
-  padding: 1px 6px;
-  transition: all ease-in 0.3s; //obs!!
-}
 
-//navbar
-.navbar {
-  padding: 1.8rem calc(1.5rem - 15px);
-  padding-top: 5rem !important;
-  z-index: 2;
-  @media all and (min-width: $sm-min) {
-    padding: 1.8rem calc(2.25rem - 15px);
-  }
-  @media all and (min-width: $md-min) {
-    padding: 1.8rem calc(3rem - 15px);
-  }
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  position: fixed;
-  width: 350px; //obs!
-  top: 0;
-  left: -350px; //obs!
-  visibility: hidden;
-  transition: left ease-in 0.3s; //obs!
-  height: 100%;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  background: $themecolorLilaDarkest;
-  ul.links {
-    display: block;
-    margin-top: 0;
-    li {
-      h4 {
-        font-size: 1rem;
-        margin: 7px 0 3px 0;
-        color: #fff;
-        @media all and (min-width: $sm-min) {
-          margin: 10px 0 5px 0;
-        }
-        @media all and (min-width: 1600px) {
-          margin: 15px 0 10px 0;
-        }
-      }
-      a.link {
-        color: $navLinkColor;
-        &:hover {
-          color: $linkColor;
-          text-decoration: underline;
-        }
-        &:active,
-        visited {
-          color: $linkColor;
-        }
-        &.active {
-          color: $linkColor;
-          text-decoration: underline;
-        }
-      }
-      ul.sub_list {
-        li {
-          font-size: 0.9rem;
-          margin: 1px 14px;
-        }
-      }
-    }
-  }
-  &.navbar_is_open {
-    left: 0;
-    visibility: visible;
-  }
-}
 //backdrop
 .backdrop {
   position: fixed;

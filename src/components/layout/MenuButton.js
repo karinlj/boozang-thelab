@@ -3,7 +3,7 @@ import "./_layout.scss";
 
 const MenuButton = ({ toggleOpen, isBtnOpen }) => (
   // passed prop from Navbar but function is in App.js
-  <div>
+  <div className="menu_btn">
     <button
       className={isBtnOpen ? "veggie_burger veggie_burger_isOpen" : "veggie_burger"}
       aria-label="Menu"

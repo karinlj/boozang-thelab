@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import Navbar from "./components/layout/Navbar";
+// import Navbar from "./components/layout/Navbar";
 import Backdrop from "./components/layout/Backdrop";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
@@ -42,9 +42,15 @@ function App() {
   return (
     <Router>
       <div className="App" style={{ height: "100%" }}>
-        <div className="menu">
+        {/* <div className="menu">
           <Header className="top_header" isBtnOpen={isBtnOpen} toggleOpen={toggleOpen} />
           <Navbar isBtnOpen={isBtnOpen} toggleOpen={toggleOpen} />
+          {isBtnOpen && <Backdrop handleClick={toggleOpen} />}
+        </div> */}
+
+        <div className="menu_section">
+          <Header className="top_header" isBtnOpen={isBtnOpen} toggleOpen={toggleOpen} />
+
           {isBtnOpen && <Backdrop handleClick={toggleOpen} />}
         </div>
 

@@ -1,6 +1,7 @@
 import Boozang from "../../img/boozang_logo_reverse@2x.png";
 import MenuButton from "./MenuButton";
 import "./_layout.scss";
+import Navbar from "./Navbar";
 
 const Header = ({ toggleOpen, isBtnOpen }) => {
   return (
@@ -8,12 +9,12 @@ const Header = ({ toggleOpen, isBtnOpen }) => {
       <div className="container-fluid">
         <div className="row align-items-center">
           <div className="col-6">
-            <div className="lab_logo_section">
+            <nav className="main_menu">
               <MenuButton toggleOpen={toggleOpen} isBtnOpen={isBtnOpen} />
-              <div className="logo">theLab</div>
-            </div>
+              <Navbar isBtnOpen={isBtnOpen} toggleOpen={toggleOpen} />
+            </nav>
+            <span className="thelab_logo">theLab</span>
           </div>
-
           <div className="col-6">
             <div className="boozang_logo_text">
               <span>Powered by</span>
