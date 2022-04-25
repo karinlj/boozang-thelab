@@ -23,6 +23,10 @@
     padding: 0.7rem calc(3.75rem - 15px);
   }
 
+  .header_first_part {
+    display: flex;
+    align-items: center;
+  }
   //main_menu
   .main_menu {
     width: 30px;
@@ -153,8 +157,9 @@
   }
 
   //boozang logo
-  .boozang_logo_text {
+  .header_second_part {
     justify-content: flex-end;
+    align-items: center;
     display: none;
     @media all and (min-width: $sm-min) {
       display: flex;

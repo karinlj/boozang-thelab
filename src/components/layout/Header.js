@@ -9,14 +9,16 @@ const Header = ({ toggleOpen, isBtnOpen }) => {
       <div className="container-fluid">
         <div className="row align-items-center">
           <div className="col-6">
-            <nav className="main_menu">
-              <MenuButton toggleOpen={toggleOpen} isBtnOpen={isBtnOpen} />
-              <Navbar isBtnOpen={isBtnOpen} toggleOpen={toggleOpen} />
-            </nav>
-            <span className="thelab_logo">theLab</span>
+            <div className="header_first_part">
+              <nav className="main_menu">
+                <MenuButton toggleOpen={toggleOpen} isBtnOpen={isBtnOpen} />
+                <Navbar isBtnOpen={isBtnOpen} toggleOpen={toggleOpen} />
+              </nav>
+              <span className="thelab_logo">theLab</span>
+            </div>
           </div>
           <div className="col-6">
-            <div className="boozang_logo_text">
+            <div className="header_second_part">
               <span>Powered by</span>
               <a
                 href="https:boozang.com"
