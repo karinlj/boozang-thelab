@@ -52,10 +52,12 @@
         .icon_btn {
           color: $themecolorNewRed !important;
           transition: 0.5s all ease;
-          padding: 5px;
-          font-size: 1rem;
+          padding: 5px 5px 10px 5px;
+          font-size: 1.2rem;
+          font-weight: 600;
           &:hover {
-            filter: brightness(180%);
+            filter: brightness(70%);
+            background-image: none !important;
           }
         }
       }

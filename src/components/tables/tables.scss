@@ -14,13 +14,16 @@
         max-width: 40px;
         border-radius: 50%;
       }
+      .icon_btn {
+        &:hover {
+          filter: brightness(70%);
+          background-image: none !important;
+        }
+      }
       .liked_icon {
         color: #fff;
         transition: 0.5s all ease;
         padding: 5px;
-        &:hover {
-          filter: brightness(180%);
-        }
         &.liked {
           color: $themecolorNewRed;
         }
@@ -30,10 +33,13 @@
   .pagination {
     float: right;
     margin-bottom: 5rem;
-
     margin-left: 1rem;
     .icon_btn {
       color: #75bff0;
+      &:hover {
+        filter: brightness(70%);
+        background-image: none !important;
+      }
     }
   }
 }
@@ -70,12 +76,12 @@
       position: absolute;
       //opacity, not display:none!
       opacity: 0;
-      // cursor: pointer;
       top: 0;
       left: 0;
       height: 19px;
       width: 19px;
       z-index: 100;
+
       &:checked {
         ~ .checkmark {
           border: 2px solid $themecolorButtonBlue;
@@ -126,8 +132,8 @@
     &:hover {
       input {
         ~ .checkmark {
-          filter: brightness(150%);
-          -webkit-filter: brightness(150%);
+          // filter: brightness(150%);
+          // -webkit-filter: brightness(150%);
           transition: all 1s ease;
         }
       }

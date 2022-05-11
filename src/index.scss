@@ -48,12 +48,14 @@ h1 {
   }
   @media all and (min-width: $lg-min) {
     font-size: 2.3rem;
+    margin-bottom: 1rem;
   }
   @media all and (min-width: $xl-min) {
     font-size: 2.5rem;
   }
   @media all and (min-width: 1500px) {
-    font-size: 3.1rem;
+    font-size: 2.7rem;
+    margin-bottom: 1.3rem;
   }
 }
 h2 {
@@ -193,8 +195,9 @@ button {
 .icon_btn {
   border: none;
   background: transparent;
+  transition: all 0.3s ease-in;
   &:hover {
-    filter: brightness(150%);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0 0) !important;
   }
 }
 .delete_icon {
@@ -219,7 +222,8 @@ input[type="button"],
   box-shadow: $themeBoxShadowLight;
   color: #fff;
   &:hover {
-    filter: brightness(130%);
+    //filter: brightness(130%);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0 0) !important;
     text-decoration: none;
   }
   &.add {
@@ -259,8 +263,6 @@ input[type="button"],
 }
 .link_btn {
   &:hover {
-    filter: none;
-    text-decoration: underline;
     color: #fff;
   }
 }
