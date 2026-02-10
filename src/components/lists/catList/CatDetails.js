@@ -17,7 +17,7 @@ const CatDetails = () => {
   });
 
   const { cat_id } = useParams();
-  const catsUrl = "//localhost:9000/cats/";
+  const catsUrl = "http://api.boozang.com/cats/";
   const singleCatUrl = catsUrl + cat_id;
   const history = useHistory();
 
@@ -62,10 +62,10 @@ const CatDetails = () => {
       inOrOutside: newValues.inOrOutside,
     };
     //PUT request...send update
-    const updatedCatFromServer = await updateData(singleCatUrl, updatedCat);
+    const cupdatedCatFromServer = await updateData(singleCatUrl, updatedCat);
     // console.log("cupdatedCatFromServer", cupdatedCatFromServer);
 
-    if (updatedCatFromServer) {
+    if (cupdatedCatFromServer) {
       //redirecting so do not have to set gui state
       history.push("/catshelter");
     } else {

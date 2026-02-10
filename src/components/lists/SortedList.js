@@ -15,7 +15,7 @@ const SortedList = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const todosUrl = "//localhost:9000/todos/";
+  const todosUrl = "http://api.boozang.com/todos/";
   useEffect(() => {
     const getTodos = async () => {
       const todosFromServer = await getData(todosUrl);
