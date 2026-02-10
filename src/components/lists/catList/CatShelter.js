@@ -15,7 +15,7 @@ const CatShelter = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const catsUrl = "//localhost:9000/cats";
+  const catsUrl = "http://api.boozang.com/cats";
 
   useEffect(() => {
     const getCats = async () => {

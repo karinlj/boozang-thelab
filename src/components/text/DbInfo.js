@@ -1,6 +1,6 @@
-const usersUrl = "//localhost:9000/users/";
-const catsUrl = "//localhost:9000/cats";
-const todosUrl = "//localhost:9000/todos/";
+const usersUrl = "http://api.boozang.com/users/";
+const catsUrl = "http://api.boozang.com/cats";
+const todosUrl = "http://api.boozang.com/todos/";
 
 export const UsersDb = () => {
   return (
